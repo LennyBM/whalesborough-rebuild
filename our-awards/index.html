@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.png" />
+  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Awards & Accreditations | Whalesborough Farm Resort & Spa</title>
   <meta name="description" content="Whalesborough Farm Resort & Spa has won the Cornwall Tourism Gold Award 2024/25 for Ethical, Responsible & Sustainable Tourism. VisitEngland 5-Star Gold rated. UK's first resort with Cleaner Seas microplastic filters." />
@@ -10,12 +11,17 @@
   <meta property="og:title" content="Awards & Accreditations | Whalesborough Farm Resort & Spa" />
   <meta property="og:description" content="Cornwall Tourism Gold Award 2024/25 winner. VisitEngland 5-Star Gold. UK-first Cleaner Seas initiative. Discover what sets Whalesborough apart." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/awards/cta-gold.jpg" />
+  <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/awards/cta-gold.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@whalesborough" />
+  <meta name="twitter:title" content="Awards & Accreditations | Whalesborough Farm Resort & Spa" />
+  <meta name="twitter:description" content="Cornwall Tourism Gold Award 2024/25 winner. VisitEngland 5-Star Gold. UK-first Cleaner Seas initiative. Discover what sets Whalesborough apart." />
+  <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/awards/cta-gold.webp" />
   <meta property="og:url" content="https://www.whalesborough.co.uk/our-awards/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image:alt" content="Awards & Accreditations | Whalesborough Farm Resort & Spa" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/whalesborough.css" />
 
   <style>
@@ -33,7 +39,7 @@
       top: -10%;
       width: 50%;
       height: 120%;
-      background: url('../assets/images/awards/visitengland-background.jpg') center/cover no-repeat;
+      background: url('../assets/images/awards/visitengland-background.webp') center/cover no-repeat;
       opacity: 0.08;
     }
     .awards-hero-content { position: relative; z-index: 1; }
@@ -176,12 +182,24 @@
       .star-items { grid-template-columns: 1fr; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"Awards & Accreditations","item":"https://www.whalesborough.co.uk/our-awards/"}
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo" aria-label="Whalesborough Farm Resort &amp; Spa — Home"><img src="../assets/images/logo/Resort-Spa.png" alt="Whalesborough Farm Resort &amp; Spa" /></a>
+      <a href="../index.html" class="nav-logo" aria-label="Whalesborough Farm Resort &amp; Spa — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
       <ul class="nav-links" role="list">
         <li><a href="../our-cottages/index.html">Cottages</a></li>
         <li><a href="../arvor-suites/index.html">Arvor Suites</a></li>
@@ -192,7 +210,7 @@
       </ul>
       <div style="display:flex;align-items:center;gap:1.5rem;">
         <a href="tel:01288361940" style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;color:rgba(255,255,255,0.7);">01288 361940</a>
-        <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book">Book Now</a>
+        <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">Book Now</a>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -206,10 +224,10 @@
     <a href="../weir-restaurant/index.html">Dining</a>
     <a href="../dog-friendly-breaks/index.html">Dog Friendly</a>
     <a href="../contact-us/index.html">Contact</a>
-    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="margin-top:1rem;">Book Now</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;">Book Now</a>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- Hero -->
     <section class="awards-hero" aria-label="Awards and accreditations">
@@ -227,7 +245,7 @@
 
           <!-- CTA Gold -->
           <div class="award-card award-card--highlight">
-            <img src="../assets/images/awards/cornwall-tourism-award-2024.png" alt="Cornwall Tourism Awards Gold 2024" class="award-card-img" loading="eager" />
+            <img src="../assets/images/awards/cornwall-tourism-award-2024.webp" alt="Cornwall Tourism Awards Gold 2024" class="award-card-img" loading="eager" />
             <p class="award-card-year">2024 / 25</p>
             <h2>Cornwall Tourism Awards</h2>
             <h3>Gold — Ethical, Responsible &amp; Sustainable Tourism</h3>
@@ -244,7 +262,7 @@
 
           <!-- VisitEngland 5-Star -->
           <div class="award-card">
-            <img src="../assets/images/awards/gold-award.jpg" alt="VisitEngland 5-Star Gold" class="award-card-img" loading="lazy" />
+            <img src="../assets/images/awards/gold-award.webp" alt="VisitEngland 5-Star Gold" class="award-card-img" loading="lazy" />
             <p class="award-card-year">Ongoing · Multiple Properties</p>
             <h2>VisitEngland</h2>
             <h3>5-Star Gold — Self-Catering Accommodation</h3>
@@ -261,16 +279,16 @@
 
           <!-- Wildlife Trust -->
           <div class="award-card">
-            <img src="../assets/images/awards/wildlife-trust.jpg" alt="Cornwall Wildlife Trust partnership" class="award-card-img" loading="lazy" />
+            <img src="../assets/images/awards/wildlife-trust.webp" alt="Cornwall Wildlife Trust partnership" class="award-card-img" loading="lazy" />
             <p class="award-card-year">Partnership</p>
             <h2>Cornwall Wildlife Trust</h2>
             <h3>Conservation &amp; Biodiversity Partnership</h3>
-            <p>Whalesborough works in partnership with Cornwall Wildlife Trust on the management of its 450-acre estate. Hedgerow restoration, wildflower meadow creation, and pond management programmes run alongside the working farm — helping to protect and extend the local habitat corridor for native species including dormice, bats, barn owls, and otter.</p>
+            <p>Whalesborough works in partnership with Cornwall Wildlife Trust on the management of its 428-acre estate. Hedgerow restoration, wildflower meadow creation, and pond management programmes run alongside the working farm — helping to protect and extend the local habitat corridor for native species including dormice, bats, barn owls, and otter.</p>
           </div>
 
           <!-- CTA Silver (previous) -->
           <div class="award-card">
-            <img src="../assets/images/awards/cta-silver.jpg" alt="Cornwall Tourism Awards Silver" class="award-card-img" loading="lazy" />
+            <img src="../assets/images/awards/cta-silver.webp" alt="Cornwall Tourism Awards Silver" class="award-card-img" loading="lazy" />
             <p class="award-card-year">Previous Year</p>
             <h2>Cornwall Tourism Awards</h2>
             <h3>Silver — Ethical, Responsible &amp; Sustainable Tourism</h3>
@@ -327,7 +345,7 @@
             <a href="../green-sustainability-credentials/index.html" class="btn-primary">Our Sustainability Credentials</a>
           </div>
           <div style="overflow:hidden;">
-            <img src="../assets/images/general/estate-aerial.jpeg" alt="450-acre Whalesborough estate from the air" loading="lazy" style="width:100%;height:420px;object-fit:cover;" />
+            <img src="../assets/images/general/estate-aerial.webp" alt="428-acre Whalesborough estate from the air" loading="lazy" style="width:100%;height:420px;object-fit:cover;" />
           </div>
         </div>
       </div>
@@ -339,8 +357,8 @@
     <div class="container">
       <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem;">
         <div>
-          <div class="footer-brand" style="margin-bottom:1.25rem;"><img src="../assets/images/logo/Resort-Spa.png" alt="Whalesborough Farm Resort &amp; Spa" style="height:72px;width:auto;" /></div>
-          <p style="font-size:0.85rem;color:var(--secondary);opacity:0.75;line-height:1.8;max-width:340px;margin-bottom:1.5rem;">A destination for those who seek the extraordinary. North Cornwall — 450 acres of luxury, sustainability, and genuine connection with place.</p>
+          <div class="footer-brand" style="margin-bottom:1.25rem;"><img src="../assets/images/logo/Resort-Spa.webp" alt="Whalesborough Farm Resort &amp; Spa" style="height:72px;width:auto;" /></div>
+          <p style="font-size:0.85rem;color:var(--secondary);opacity:0.75;line-height:1.8;max-width:340px;margin-bottom:1.5rem;">A destination for those who seek the extraordinary. North Cornwall — 428 acres of luxury, sustainability, and genuine connection with place.</p>
           <p style="font-size:0.8rem;color:var(--secondary);font-weight:600;">Whalesborough Farm, Marhamchurch<br>Bude EX23 0JD, Cornwall</p>
           <p style="margin-top:0.75rem;"><a href="tel:01288361940" style="color:var(--primary);font-weight:600;font-size:0.8rem;">01288 361940</a></p>
         </div>
@@ -358,6 +376,7 @@
             <li><a href="../spa-and-treatments/index.html">Spa &amp; Wellness</a></li>
             <li><a href="../weir-restaurant/index.html">The Weir Restaurant</a></li>
             <li><a href="../green-sustainability-credentials/index.html">Sustainability</a></li>
+            <li><a href="../our-awards/index.html">Awards</a></li>
           </ul>
         </div>
         <div>
@@ -383,9 +402,6 @@
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/441288361940" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -422,5 +438,6 @@
   </script>
 
   <script src="../assets/js/main.js" defer></script>
+  <script src="/assets/js/consent.js" defer></script>
 </body>
 </html>

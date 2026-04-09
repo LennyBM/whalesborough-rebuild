@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
+Disallow: /assets/css/
+Disallow: /assets/js/
 Allow: /assets/images/
+
+# Block design-system preview files from indexing
+Disallow: /design-system/
 
 # AI search crawlers — explicitly permitted for GEO (Generative Engine Optimisation)
 User-agent: GPTBot
@@ -27,10 +31,5 @@ Allow: /
 
 User-agent: Googlebot-Image
 Allow: /assets/images/
-
-# Block access to private/utility files
-User-agent: *
-Disallow: /assets/css/
-Disallow: /assets/js/
 
 Sitemap: https://www.whalesborough.co.uk/sitemap.xml

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.png" />
+  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sustainable Luxury Holidays in Cornwall | Eco-Luxury Resort | Whalesborough</title>
   <meta name="description" content="Sustainable luxury holidays at Whalesborough Farm Resort — Gold Award eco-luxury in North Cornwall. 60kW wind turbine, UK-first microplastic filters, 50 acres of rewilding, paddock-to-plate dining. Guilt-free luxury.">
@@ -12,11 +13,16 @@
   <meta property="og:description" content="Gold Award eco-luxury in North Cornwall. Wind turbine, microplastic filters, 50 acres of rewilding. Luxury that gives back more than it takes." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.whalesborough.co.uk/sustainable-luxury/" />
-  <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/sustainability/sustainability-poster.jpg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/sustainability/sustainability-poster.webp" />
+  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image:alt" content="Sustainable Luxury Holidays in Cornwall | Whalesborough Farm Resort" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@whalesborough" />
+  <meta name="twitter:title" content="Sustainable Luxury Holidays in Cornwall | Whalesborough Farm Resort" />
+  <meta name="twitter:description" content="Gold Award eco-luxury in North Cornwall. Wind turbine, microplastic filters, 50 acres of rewilding. Luxury that gives back more than it takes." />
+  <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/sustainability/sustainability-poster.webp" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/whalesborough.css">
 
   <script type="application/ld+json">
@@ -200,8 +206,20 @@
       .proof-strip { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"Sustainable Luxury","item":"https://www.whalesborough.co.uk/sustainable-luxury/"}
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="urgency-banner" role="banner">
     Gold Award — Cornwall Tourism Awards 2024/25 — Ethical, Responsible & Sustainable Tourism
@@ -216,9 +234,9 @@
         <li><a href="../spa-and-treatments/">Spa</a></li>
         <li><a href="../weir-restaurant/">Dining</a></li>
         <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
-        <li><a href="../local-area/">Local Area</a></li>
+        <li><a href="../exploring-cornwall/index.html">Explore</a></li>
       </ul>
-      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book">Book with Landal</a>
+      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">Book with Landal</a>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -230,15 +248,15 @@
     <a href="../spa-and-treatments/">Spa</a>
     <a href="../weir-restaurant/">Dining</a>
     <a href="../dog-friendly-breaks/">Dog Friendly</a>
-    <a href="../local-area/">Local Area</a>
+    <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
     <a href="../contact-us/">Contact</a>
-    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
   </div>
 
   <!-- Hero -->
-  <section class="slux-hero" aria-label="Sustainable luxury holidays in Cornwall">
+  <section id="main-content" class="" aria-label="Sustainable luxury holidays in Cornwall">
     <div class="slux-hero-bg">
-      <img src="../assets/images/sustainability/sustainability-poster.jpg" alt="Whalesborough estate — sustainable luxury in North Cornwall" fetchpriority="high" decoding="sync" width="1800" height="1200">
+      <img src="../assets/images/sustainability/sustainability-poster.webp" alt="Whalesborough estate — sustainable luxury in North Cornwall" fetchpriority="high" decoding="sync" width="1800" height="1200">
     </div>
     <div class="slux-hero-overlay"></div>
     <div style="position:relative;z-index:2;width:100%;padding:0 0 6rem;">
@@ -251,7 +269,7 @@
           Whalesborough is where the idea that luxury and sustainability are in tension goes to die. You do not have to choose between staying somewhere extraordinary and doing the right thing. Here, the two are the same thing.
         </p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;">
-          <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="padding:1.125rem 2.5rem;">Book a Stay</a>
+          <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="padding:1.125rem 2.5rem;">Book a Stay</a>
           <a href="../green-sustainability-credentials/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);padding:1.125rem 2.5rem;">Our Credentials</a>
         </div>
       </div>
@@ -297,7 +315,7 @@
             The luxury holiday industry has a complicated relationship with sustainability. Most resorts add a green tick to their marketing without changing what they do. We did it the other way around: we changed what we do, then told you about it.
           </p>
           <p class="body-md" style="margin-bottom:1.25rem;">
-            Whalesborough Farm is a 450-acre working estate that has existed for centuries. Our relationship with this land is not decorative — it is fundamental. Which means sustainability is not a policy here. It is how a farm estate survives and thrives across generations.
+            Whalesborough Farm is a 428-acre working estate that has existed for centuries. Our relationship with this land is not decorative — it is fundamental. Which means sustainability is not a policy here. It is how a farm estate survives and thrives across generations.
           </p>
           <p class="body-md">
             What you get as a guest is luxury — genuinely world-class luxury — in a place that is actively improving the land around it. The hot tub, the spa, the private cottages, the restaurant. All of it powered by wind, heated by biomass, stocked from within Cornwall. That is not a compromise. That is what luxury looks like when it takes responsibility seriously.
@@ -344,7 +362,7 @@
     <div class="container">
       <div class="argument-grid reveal">
         <div>
-          <img src="../assets/images/general/estate-aerial.jpeg" alt="Whalesborough estate aerial — 450 acres of North Cornwall countryside" loading="lazy" width="900" height="700" style="width:100%;height:520px;object-fit:cover;display:block;">
+          <img src="../assets/images/general/estate-aerial.webp" alt="Whalesborough estate aerial — 428 acres of North Cornwall countryside" loading="lazy" width="900" height="700" style="width:100%;height:520px;object-fit:cover;display:block;">
         </div>
         <div>
           <p class="label" style="margin-bottom:1.5rem;">Why It Matters</p>
@@ -358,7 +376,7 @@
             Whalesborough is a Cornwall Tourism Award Gold winner for Sustainable Tourism. Our credentials are independently assessed, not self-certified. The microplastic filters are real and running. The wind turbine is real and spinning. The woodland was planted tree by tree.
           </p>
           <p class="body-md" style="margin-bottom:2rem;">
-            When you stay here, the money you spend helps fund a working conservation programme on a 450-acre estate. The land you walk on is actively getting richer. The sea near where you swim is getting cleaner. We can prove all of it.
+            When you stay here, the money you spend helps fund a working conservation programme on a 428-acre estate. The land you walk on is actively getting richer. The sea near where you swim is getting cleaner. We can prove all of it.
           </p>
           <a href="../green-sustainability-credentials/" class="btn-primary" style="padding:1.125rem 2.5rem;font-size:0.6875rem;">See Our Full Transparency Report</a>
         </div>
@@ -387,7 +405,7 @@
           <a href="../weir-restaurant/" class="btn-text">Explore The Weir Restaurant</a>
         </div>
         <div>
-          <img src="../assets/images/restaurant/weir-restaurant-exterior.jpg" alt="The Weir Restaurant at Whalesborough — lakeside paddock-to-plate dining" loading="lazy" width="800" height="700" style="width:100%;height:540px;object-fit:cover;display:block;">
+          <img src="../assets/images/restaurant/weir-restaurant-exterior.webp" alt="The Weir Restaurant at Whalesborough — lakeside paddock-to-plate dining" loading="lazy" width="800" height="700" style="width:100%;height:540px;object-fit:cover;display:block;">
         </div>
       </div>
     </div>
@@ -398,7 +416,7 @@
     <div class="container">
       <div style="display:grid;grid-template-columns:5fr 7fr;gap:6rem;align-items:center;" class="reveal">
         <div>
-          <img src="../assets/images/spa/pool.png" alt="W Club Spa indoor pool at Whalesborough — eco-luxury wellness" loading="lazy" width="800" height="600" style="width:100%;height:480px;object-fit:cover;display:block;">
+          <img src="../assets/images/spa/pool.webp" alt="W Club Spa indoor pool at Whalesborough — eco-luxury wellness" loading="lazy" width="800" height="600" style="width:100%;height:480px;object-fit:cover;display:block;">
         </div>
         <div>
           <p class="label" style="margin-bottom:1.5rem;">Sustainable Wellness</p>
@@ -459,10 +477,10 @@
             The sustainable luxury holiday you've been looking for actually exists
           </h2>
           <p style="font-family:var(--font-body);font-size:1rem;color:rgba(255,255,255,0.75);line-height:1.8;max-width:560px;margin-bottom:2.5rem;">
-            26 five-star cottages. 22 eco-apartment suites. A spa powered by wind and botanicals from the land. A restaurant that sources 90% within Cornwall. And 450 acres of active conservation right outside your door.
+            26 five-star cottages. 22 eco-apartment suites. A spa powered by wind and botanicals from the land. A restaurant that sources 90% within Cornwall. And 428 acres of active conservation right outside your door.
           </p>
           <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-            <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="padding:1.125rem 2.5rem;background:white;color:var(--secondary);">Book a Sustainable Stay</a>
+            <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="padding:1.125rem 2.5rem;background:white;color:var(--secondary);">Book a Sustainable Stay</a>
             <a href="../our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.35);padding:1.125rem 2.5rem;">Browse the Cottages</a>
           </div>
         </div>
@@ -498,6 +516,7 @@
             <li><a href="../spa-and-treatments/">Spa</a></li>
             <li><a href="../weir-restaurant/">The Weir</a></li>
             <li><a href="../green-sustainability-credentials/">Sustainability</a></li>
+            <li><a href="../our-awards/">Awards</a></li>
           </ul>
         </div>
         <div>
@@ -514,10 +533,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/441288361940" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-  </a>
-
   <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/consent.js" defer></script>
 </body>
 </html>

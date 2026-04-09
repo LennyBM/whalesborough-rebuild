@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.png" />
+  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exploring Cornwall from Whalesborough | Beaches, Walks & Days Out near Bude</title>
   <meta name="description" content="Discover North Cornwall from Whalesborough Farm. Beaches at Widemouth Bay, Crooklets and Bude. The South West Coast Path. Tintagel, Port Isaac, Padstow, Bodmin Moor. Your guide to the best of Cornwall." />
   <link rel="canonical" href="https://www.whalesborough.co.uk/exploring-cornwall/" />
-  <meta property="og:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture" />
+  <meta property="og:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture"
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@whalesborough" />
+  <meta name="twitter:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture" />
+  <meta name="twitter:description" content="North Cornwall's finest beaches, coastal walks, heritage sites and food destinations — all within easy reach of Whalesborough Farm Resort." />
   <meta property="og:description" content="North Cornwall's finest beaches, coastal walks, heritage sites and food destinations — all within easy reach of Whalesborough Farm Resort." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.whalesborough.co.uk/exploring-cornwall/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+  <meta property="og:locale" content="en_GB" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/whalesborough.css" />
 
   <style>
@@ -28,7 +32,7 @@
     }
     .explore-hero-bg {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, #0d1e2a 0%, #1a3040 30%, #1e4535 55%, #2a5a42 80%);
+      overflow: hidden;
     }
     .explore-hero-overlay {
       position: absolute; inset: 0;
@@ -193,11 +197,23 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"Exploring Cornwall","item":"https://www.whalesborough.co.uk/exploring-cornwall/"}
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="urgency-banner">
-    500 acres of estate walks on your doorstep — <a href="../our-cottages/" style="color:white;text-decoration:underline;text-underline-offset:3px;">view all 26 cottages</a>
+    428 acres of estate walks on your doorstep — <a href="../our-cottages/" style="color:white;text-decoration:underline;text-underline-offset:3px;">view all 26 cottages</a>
   </div>
 
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
@@ -209,10 +225,10 @@
         <li><a href="../spa-and-treatments/">Spa</a></li>
         <li><a href="../weir-restaurant/">Dining</a></li>
         <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
-        <li><a href="../local-area/">Local Area</a></li>
+        <li><a href="../exploring-cornwall/index.html">Explore</a></li>
       </ul>
       <div style="display:flex;align-items:center;gap:1.5rem;">
-        <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book">Book with Landal</a>
+        <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">Book with Landal</a>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -225,22 +241,22 @@
     <a href="../spa-and-treatments/">Spa</a>
     <a href="../weir-restaurant/">Dining</a>
     <a href="../dog-friendly-breaks/">Dog Friendly</a>
-    <a href="../local-area/">Local Area</a>
+    <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
     <a href="../contact-us/">Contact</a>
-    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- Hero -->
     <section class="explore-hero" aria-label="Exploring Cornwall from Whalesborough">
-      <div class="explore-hero-bg"></div>
+      <div class="explore-hero-bg"><img src="../assets/images/landal-reference/facilities/coast-and-country.webp" alt="North Cornwall coast and countryside from Whalesborough" fetchpriority="high" decoding="sync" width="1800" height="1200" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div class="explore-hero-overlay"></div>
       <div style="position:relative;z-index:2;width:100%;padding:0 0 6rem;">
         <div class="container">
           <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:1.25rem;">Your Base for North Cornwall</p>
           <h1 class="headline-xl" style="color:white;font-style:italic;max-width:780px;">
-            Five hundred acres of estate<br>walks. And beyond them,<br>all of Cornwall.
+            428 acres of estate<br>walks. And beyond them,<br>all of Cornwall.
           </h1>
           <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);margin-top:1.5rem;max-width:520px;line-height:1.8;">
             Whalesborough puts you at the heart of one of Britain's finest stretches of coast. Surf beaches, ancient cliffs, fishing villages, and wild moorland — all within reach.
@@ -286,7 +302,7 @@
 
           <div class="beach-card reveal">
             <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/crooklets-beach.jpg" alt="Crooklets Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="../assets/images/landal-reference/surroundings/crooklets-beach.webp" alt="Crooklets Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="beach-body">
               <div class="beach-name">Crooklets Beach</div>
@@ -297,7 +313,7 @@
 
           <div class="beach-card reveal" style="transition-delay:0.1s;">
             <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/summerleaze-beach.jpg" alt="Summerleaze Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="../assets/images/landal-reference/surroundings/summerleaze-beach.webp" alt="Summerleaze Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="beach-body">
               <div class="beach-name">Summerleaze Beach</div>
@@ -308,7 +324,7 @@
 
           <div class="beach-card reveal" style="transition-delay:0.2s;">
             <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/widemouth-beach.jpg" alt="Widemouth Bay surf beach, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="../assets/images/landal-reference/surroundings/widemouth-beach.webp" alt="Widemouth Bay surf beach, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="beach-body">
               <div class="beach-name">Widemouth Bay</div>
@@ -319,7 +335,7 @@
 
           <div class="beach-card reveal" style="transition-delay:0.3s;">
             <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.jpg" alt="Sandy Mouth, North Cornwall coast" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.webp" alt="Sandy Mouth, North Cornwall coast" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="beach-body">
               <div class="beach-name">Sandy Mouth</div>
@@ -335,7 +351,7 @@
     <!-- Chapter 2: Coastal Walking -->
     <div class="chapter reveal" aria-labelledby="walking-heading" id="walking">
       <div class="chapter-img">
-        <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.jpg" alt="South West Coast Path cliffs near Bude, Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.webp" alt="South West Coast Path cliffs near Bude, Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="chapter-body">
         <p class="label" style="margin-bottom:1.5rem;">South West Coast Path</p>
@@ -437,7 +453,7 @@
     <!-- Chapter 4: Bude Town -->
     <div class="chapter reveal" aria-labelledby="bude-heading" id="bude">
       <div class="chapter-img">
-        <img src="../assets/images/general/bude-canal.jpg" alt="Bude Canal, Bude, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="../assets/images/general/bude-canal.webp" alt="Bude Canal, Bude, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="chapter-body">
         <p class="label" style="margin-bottom:1.5rem;">Bude Town</p>
@@ -455,7 +471,7 @@
     <!-- Chapter 5: Surfing & Activities -->
     <div class="chapter reveal" aria-labelledby="activities-heading" id="activities">
       <div class="chapter-img">
-        <img src="../assets/images/general/outdoor-activities.jpeg" alt="Surfing at Widemouth Bay, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="../assets/images/general/outdoor-activities.webp" alt="Surfing at Widemouth Bay, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="chapter-body">
         <p class="label" style="margin-bottom:1.5rem;">Surf &amp; Adventure</p>
@@ -495,10 +511,10 @@
             Start here. Explore everywhere.
           </h2>
           <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);max-width:500px;margin:0 auto 2.5rem;line-height:1.8;">
-            26 luxury cottages on a 450-acre estate in the heart of North Cornwall. The coast on your doorstep. The rest of it within reach.
+            26 luxury cottages on a 428-acre estate in the heart of North Cornwall. The coast on your doorstep. The rest of it within reach.
           </p>
           <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-primary">Check Availability</a>
+            <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-primary">Check Availability</a>
             <a href="../our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.25);">Browse Cottages</a>
           </div>
         </div>
@@ -536,8 +552,9 @@
           <p class="label" style="margin-bottom:1.5rem;">Resort</p>
           <ul class="footer-links">
             <li><a href="../green-sustainability-credentials/">Sustainability</a></li>
+            <li><a href="../our-awards/">Awards</a></li>
             <li><a href="../contact-us/">Contact Us</a></li>
-            <li><a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener">Book with Landal</a></li>
+            <li><a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer">Book with Landal</a></li>
           </ul>
         </div>
       </div>
@@ -546,10 +563,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/441288361940" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  </a>
-
   <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/consent.js" defer></script>
 </body>
 </html>

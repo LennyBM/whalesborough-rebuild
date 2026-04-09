@@ -54,11 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Testimonial carousel --- */
   const testimonials = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dots button');
   let current = 0;
   const showTestimonial = (idx) => {
     testimonials.forEach((t, i) => {
       t.style.opacity = i === idx ? '1' : '0';
       t.style.position = i === idx ? 'relative' : 'absolute';
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
     });
   };
   if (testimonials.length > 1) {
@@ -70,6 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.testimonial-next')?.addEventListener('click', () => {
       current = (current + 1) % testimonials.length;
       showTestimonial(current);
+    });
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        current = i;
+        showTestimonial(current);
+      });
     });
     setInterval(() => {
       current = (current + 1) % testimonials.length;

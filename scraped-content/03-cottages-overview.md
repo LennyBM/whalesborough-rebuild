@@ -67,7 +67,6 @@ Your cottage will be set in acres and acres of gorgeous green countryside, surro
 | Windy Hills | 6 | 1 | No | Yes | Newly refurbished near Weir |
 | Whalesborough Cottage | 8 | 2 | Yes | Yes | 17th century barn |
 | The Farmhouse | 8 | 2 | Yes | Yes | Grade II listed, 14th century |
-| Nan's House | 10 | 2 | Yes | Yes | 5-star gold, countryside views |
 | Calf House | 8 | 2 | Yes | Yes | 5-star gold barn conversion |
 | Eagle's Nest | 6+cot | 2 | No | No | 5-star gold, built 2014 |
 | Trevelyan | 6+cot | 2 | No | Yes | 5-star gold, built 2014 |

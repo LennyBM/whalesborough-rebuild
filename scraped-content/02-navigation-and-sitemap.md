@@ -126,7 +126,6 @@
 - /our-cottages/windy-hills
 - /our-cottages/whalesborough-cottage
 - /our-cottages/the-farmhouse
-- /our-cottages/nans-house
 - /our-cottages/calf-house
 - /our-cottages/eagles-nest
 - /our-cottages/trevelyan

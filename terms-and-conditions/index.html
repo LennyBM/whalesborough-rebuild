@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.png" />
+  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms & Conditions — Whalesborough Farm Resort & Spa</title>
   <meta name="description" content="Terms and Conditions for Whalesborough Farm Resort & Spa. Booking conditions, cancellation policy, and guest rules.">
   <link rel="canonical" href="https://www.whalesborough.co.uk/terms-and-conditions/">
   <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/fonts.css" />
   <link rel="stylesheet" href="../assets/css/whalesborough.css">
   <style>
     .legal-layout{max-width:760px;margin:0 auto;padding:5rem 0 8rem}
@@ -20,8 +19,20 @@
     .legal-layout ul{padding-left:1.5rem;margin-bottom:1rem}
     .legal-layout a{color:var(--primary)}
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"Terms & Conditions","item":"https://www.whalesborough.co.uk/terms-and-conditions/"}
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
@@ -32,9 +43,9 @@
         <li><a href="../spa-and-treatments/">Spa</a></li>
         <li><a href="../weir-restaurant/">Dining</a></li>
         <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
-        <li><a href="../local-area/">Local Area</a></li>
+        <li><a href="../exploring-cornwall/index.html">Explore</a></li>
       </ul>
-      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book">Book with Landal</a>
+      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">Book with Landal</a>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -45,12 +56,12 @@
     <a href="../spa-and-treatments/">Spa</a>
     <a href="../weir-restaurant/">Dining</a>
     <a href="../dog-friendly-breaks/">Dog Friendly</a>
-    <a href="../local-area/">Local Area</a>
+    <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
     <a href="../contact-us/">Contact</a>
-    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
   </div>
 
-  <main>
+  <main id="main-content">
     <div class="container">
       <div class="legal-layout">
         <p style="font-family:var(--font-body);font-size:.625rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--secondary);margin-bottom:1rem">Legal</p>
@@ -129,5 +140,6 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="/assets/js/consent.js" defer></script>
 </body>
 </html>

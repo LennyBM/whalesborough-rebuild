@@ -19,13 +19,65 @@
       --on-surface-variant: #5a5450;
       --font-headline: 'Newsreader', Georgia, serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      /* UI/UX Pro Max Tokens */
+      --glass-bg: rgba(255, 255, 255, 0.45);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-blur: 16px;
+      --mesh-1: rgba(112, 58, 29, 0.08); /* Cognac */
+      --mesh-2: rgba(74, 100, 87, 0.06); /* Sage */
+      --mesh-3: rgba(26, 24, 20, 0.04);  /* Deep slate */
     }
 
     body {
       font-family: var(--font-body);
       background: var(--surface);
       color: var(--on-surface);
+      overflow-x: hidden;
     }
+
+    /* ─── MESH BACKGROUND ────────────────────────────────── */
+    .mesh-bg {
+      background: 
+        radial-gradient(at 0% 0%, var(--mesh-1) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, var(--mesh-2) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, var(--mesh-3) 0px, transparent 50%),
+        var(--surface);
+      min-height: 100vh;
+    }
+
+    /* ─── GLASSMORPHISM ──────────────────────────────────── */
+    .glass-surface {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      box-shadow: 
+        0 4px 24px -1px rgba(0, 0, 0, 0.04),
+        0 1px 2px -1px rgba(0, 0, 0, 0.02);
+      border-radius: 1.5rem;
+    }
+
+    /* ─── MOTION ─────────────────────────────────────────── */
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .reveal-delay-1 { animation-delay: 0.1s; }
+    .reveal-delay-2 { animation-delay: 0.2s; }
+    .reveal-delay-3 { animation-delay: 0.3s; }
+
 
     /* ─── WORDMARK COMPONENT ─────────────────────────────── */
     .logo-wordmark {
@@ -137,19 +189,32 @@
       border: 1.5px solid var(--primary);
     }
 
-    /* ─── SIMULATED SAGE NAV ─────────────────────────────── */
-    .sim-nav-sage {
-      background: var(--secondary);
+    /* ─── INTERACTION ───────────────────────────────────── */
+    .logo-wordmark {
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
     }
 
-    .sim-nav-sage .sim-nav-links a {
-      color: rgba(251,249,246,0.75);
+    .logo-wordmark:hover {
+      transform: scale(1.04) translateY(-2px);
     }
 
-    .sim-nav-sage .sim-nav-btn {
-      color: rgba(251,249,246,0.85);
-      border-color: rgba(251,249,246,0.3);
+    .logo-wordmark:active {
+      transform: scale(0.98);
     }
+
+    .sim-nav-btn {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sim-nav-btn:hover {
+      background: var(--primary);
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(112, 58, 29, 0.15);
+    }
+
 
     /* ─── SIMULATED FOOTER ───────────────────────────────── */
     .sim-footer {
@@ -188,6 +253,26 @@
     .compare-card.warm  { background: var(--surface-low); border: 1px solid #e0dbd4; }
     .compare-card.sage  { background: var(--secondary); }
     .compare-card.dark  { background: #1a1814; }
+
+    .compare-card.glass {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-mesh {
+      position: relative;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(112, 58, 29, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(74, 100, 87, 0.15) 0%, transparent 40%),
+        linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+      border-radius: 2rem;
+      margin: 1rem;
+      overflow: hidden;
+    }
+
 
     /* ─── PAGE HEADER ────────────────────────────────────── */
     .page-header {
@@ -231,29 +316,29 @@
     }
   </style>
 </head>
-<body>
+<body class="mesh-bg">
 
-  <div class="page-header container">
+  <div class="page-header container reveal">
     <p class="label">Logo Mockup</p>
     <h1>Whalesborough Wordmark</h1>
     <p class="note">CSS/SVG wordmark using the site's existing fonts — Newsreader italic for the name, Plus Jakarta Sans for the subtitle. No image file required; renders crisp at any resolution and inherits the design system colours.</p>
   </div>
 
   <!-- ─── CURRENT VS NEW ─────────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-1">
     <div class="container">
       <h2>Current vs Proposed</h2>
       <div class="compare-grid">
         <div>
           <p class="label" style="margin-bottom:1rem;">Current — Resort-Spa.png</p>
           <div class="compare-card light">
-            <img src="assets/images/logo/Resort-Spa.png" alt="Current logo" height="80" class="current-logo" />
+            <img src="assets/images/logo/Resort-Spa.webp" alt="Current logo" height="80" class="current-logo" />
           </div>
           <p class="note" style="margin-top:1rem;font-size:0.75rem;">Teal colours out of sync with design system. White background baked in. Raster PNG at 72px will look soft on retina screens.</p>
         </div>
         <div>
           <p class="label" style="margin-bottom:1rem;">Proposed — CSS wordmark</p>
-          <div class="compare-card light">
+          <div class="compare-card glass reveal-delay-2" style="border: 1px solid rgba(112,58,29,0.2);">
             <a href="#" class="logo-wordmark logo-footer">
               <span class="logo-name">Whalesborough</span>
               <span class="logo-sub">Farm Resort &amp; Spa</span>
@@ -266,7 +351,7 @@
   </div>
 
   <!-- ─── NAV — LIGHT ───────────────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-2">
     <div class="container">
       <h2>Nav — Light Background</h2>
     </div>
@@ -286,7 +371,7 @@
   </div>
 
   <!-- ─── NAV — SAGE ────────────────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-3">
     <div class="container">
       <h2>Nav — Sage Background (current site colour)</h2>
     </div>
@@ -306,7 +391,7 @@
   </div>
 
   <!-- ─── FOOTER ────────────────────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-3">
     <div class="container">
       <h2>Footer — Dark Background</h2>
     </div>
@@ -322,11 +407,11 @@
   </div>
 
   <!-- ─── HERO ──────────────────────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-2">
     <div class="container">
       <h2>Hero / Large Format</h2>
     </div>
-    <div class="sim-hero">
+    <div class="sim-hero hero-mesh reveal">
       <a href="#" class="logo-wordmark logo-display on-dark" style="text-align:center;align-items:center;">
         <span class="logo-name">Whalesborough</span>
         <span class="logo-sub">Farm Resort &amp; Spa</span>
@@ -335,7 +420,7 @@
   </div>
 
   <!-- ─── ALL BACKGROUNDS ───────────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-3">
     <div class="container">
       <h2>All Background Variants</h2>
       <div class="compare-grid">
@@ -368,7 +453,7 @@
   </div>
 
   <!-- ─── OPTIONAL MARK IDEAS ───────────────────────── -->
-  <div class="preview-section">
+  <div class="preview-section reveal reveal-delay-2">
     <div class="container">
       <h2>Optional — With a Minimal Mark</h2>
       <p class="note">If you want a mark alongside the wordmark, here are two directions using CSS only. Both are abstract enough to not compete with the text.</p>
