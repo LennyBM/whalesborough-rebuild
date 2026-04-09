@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cornish Farm Holidays | Working Farm Estate, Bude, North Cornwall | Whalesborough</title>
+  <meta name="description" content="Farm holidays in Cornwall at Whalesborough Farm Resort — a real working 450-acre estate near Bude. Family farm breaks with spa, restaurant, outdoor pools, farm animals, coastal walks. Five-star self-catering cottages.">
+  <link rel="canonical" href="https://www.whalesborough.co.uk/cornish-farm-holidays/">
+
+  <meta property="og:title" content="Cornish Farm Holidays — Whalesborough Farm Resort, Bude, North Cornwall" />
+  <meta property="og:description" content="Real working farm, five-star cottages, spa, outdoor pools, paddock-to-plate restaurant. Cornish farm holidays for families, multi-gen groups, and anyone who wants space to breathe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.whalesborough.co.uk/cornish-farm-holidays/" />
+  <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/farm-animals.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/whalesborough.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cornish Farm Holidays — Whalesborough Farm Resort",
+    "description": "Farm holidays in Cornwall at Whalesborough Farm Resort near Bude. A real working 450-acre estate with five-star self-catering cottages, spa, paddock-to-plate restaurant, and outdoor pools.",
+    "url": "https://www.whalesborough.co.uk/cornish-farm-holidays/",
+    "isPartOf": {
+      "@type": "Resort",
+      "name": "Whalesborough Farm Resort & Spa",
+      "url": "https://www.whalesborough.co.uk/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Whalesborough Farm, Marhamchurch",
+        "addressLocality": "Bude",
+        "addressRegion": "Cornwall",
+        "postalCode": "EX23 0JD",
+        "addressCountry": "GB"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    .farm-hero {
+      position: relative;
+      height: 88vh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .farm-hero-bg { position: absolute; inset: 0; }
+    .farm-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .farm-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(27,28,26,0.88) 0%, rgba(27,28,26,0.3) 50%, transparent 80%);
+    }
+
+    /* Farm facts strip */
+    .farm-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--surface-low);
+      border-bottom: 1px solid var(--surface-high);
+    }
+    .farm-fact {
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--surface-high);
+      text-align: center;
+    }
+    .farm-fact:last-child { border-right: none; }
+    .farm-fact-num {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--secondary);
+      line-height: 1;
+    }
+    .farm-fact-label {
+      font-family: var(--font-body);
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      margin-top: 0.5rem;
+    }
+
+    /* What makes it a farm */
+    .farm-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--surface-high);
+    }
+    .farm-feature {
+      background: var(--surface);
+      padding: 2.5rem;
+    }
+    .farm-feature-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--surface-low);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .farm-feature-title {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 1.125rem;
+      color: var(--on-surface);
+      margin-bottom: 0.625rem;
+    }
+    .farm-feature-desc {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      line-height: 1.8;
+    }
+
+    /* Who comes here */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--surface-mid);
+    }
+    .who-card {
+      background: var(--surface);
+      padding: 2.5rem;
+    }
+    .who-heading {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 1.375rem;
+      color: var(--on-surface);
+      margin-bottom: 0.875rem;
+      line-height: 1.3;
+    }
+    .who-list {
+      list-style: none;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      line-height: 2;
+    }
+    .who-list li::before { content: '— '; color: var(--secondary); }
+
+    /* Cottage showcase */
+    .cottage-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--surface-high);
+    }
+    .cottage-tile {
+      background: var(--surface);
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+    }
+    .cottage-tile-img {
+      height: 240px;
+      overflow: hidden;
+      background: var(--surface-low);
+    }
+    .cottage-tile-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .cottage-tile:hover .cottage-tile-img img { transform: scale(1.04); }
+    .cottage-tile-body { padding: 1.75rem; }
+    .cottage-tile-label {
+      font-family: var(--font-body);
+      font-size: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+      margin-bottom: 0.5rem;
+    }
+    .cottage-tile-name {
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 1.375rem;
+      color: var(--on-surface);
+      margin-bottom: 0.375rem;
+    }
+
+    @media (max-width: 1024px) {
+      .farm-facts { grid-template-columns: repeat(2, 1fr); }
+      .farm-features-grid { grid-template-columns: repeat(2, 1fr); }
+      .who-grid { grid-template-columns: 1fr; }
+      .cottage-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .farm-hero { height: 72vh; }
+      .farm-facts { grid-template-columns: repeat(2, 1fr); }
+      .farm-features-grid { grid-template-columns: 1fr; }
+      .cottage-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="urgency-banner" role="banner">
+    Family farm breaks from £450 per night — <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" style="color:white;text-decoration:underline;text-underline-offset:3px;">check availability</a>
+  </div>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../" class="nav-logo"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../our-cottages/">Cottages</a></li>
+        <li><a href="../arvor-suites/">Arvor Suites</a></li>
+        <li><a href="../spa-and-treatments/">Spa</a></li>
+        <li><a href="../weir-restaurant/">Dining</a></li>
+        <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
+        <li><a href="../local-area/">Local Area</a></li>
+      </ul>
+      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book">Book with Landal</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-close" aria-label="Close menu">×</button>
+    <a href="../our-cottages/">Cottages</a>
+    <a href="../arvor-suites/">Arvor Suites</a>
+    <a href="../spa-and-treatments/">Spa</a>
+    <a href="../weir-restaurant/">Dining</a>
+    <a href="../dog-friendly-breaks/">Dog Friendly</a>
+    <a href="../local-area/">Local Area</a>
+    <a href="../contact-us/">Contact</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="farm-hero" aria-label="Cornish farm holidays at Whalesborough">
+    <div class="farm-hero-bg">
+      <img src="../assets/images/general/farm-animals.jpeg" alt="Whalesborough Farm — working farm estate in North Cornwall near Bude" fetchpriority="high" decoding="sync" width="1800" height="1200">
+    </div>
+    <div class="farm-hero-overlay"></div>
+    <div style="position:relative;z-index:2;width:100%;padding:0 0 6rem;">
+      <div class="container">
+        <p class="label" style="color:rgba(255,255,255,0.5);margin-bottom:1.25rem;">Cornish Farm Holidays · Near Bude · North Cornwall</p>
+        <h1 class="headline-xl" style="color:white;font-style:italic;max-width:720px;line-height:1.1;">
+          A real working farm.<br>A proper Cornish holiday.
+        </h1>
+        <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);margin-top:1.5rem;max-width:520px;line-height:1.8;">
+          Whalesborough is 450 acres of real Cornish farmland. Working fields. Actual animals. Estate-grown food in the restaurant. And twenty-seven five-star cottages in the farm buildings that have been here for centuries.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;">
+          <a href="../our-cottages/" class="btn-book" style="padding:1.125rem 2.5rem;">Find Your Cottage</a>
+          <a href="#the-farm" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);padding:1.125rem 2.5rem;">About The Farm</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farm facts strip -->
+  <div class="farm-facts" aria-label="Whalesborough Farm key facts">
+    <div class="farm-fact">
+      <div class="farm-fact-num">450</div>
+      <div class="farm-fact-label">Acres of working Cornish farmland</div>
+    </div>
+    <div class="farm-fact">
+      <div class="farm-fact-num">27</div>
+      <div class="farm-fact-label">Five-star cottages in historic farm buildings</div>
+    </div>
+    <div class="farm-fact">
+      <div class="farm-fact-num">90%</div>
+      <div class="farm-fact-label">Of restaurant ingredients from Cornwall</div>
+    </div>
+    <div class="farm-fact">
+      <div class="farm-fact-num">2.5mi</div>
+      <div class="farm-fact-label">From Bude's surf beaches and coast path</div>
+    </div>
+  </div>
+
+  <!-- What makes it a real farm -->
+  <section id="the-farm" class="section" aria-labelledby="farm-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:5fr 7fr;gap:6rem;align-items:center;margin-bottom:4rem;" class="reveal">
+        <div>
+          <p class="label" style="margin-bottom:1.5rem;">The Estate</p>
+          <h2 class="headline-lg" id="farm-heading" style="font-style:italic;">
+            This is not a theme park farm
+          </h2>
+        </div>
+        <div>
+          <p class="body-lg" style="margin-bottom:1.25rem;">
+            Whalesborough Farm has been a working agricultural estate for centuries. The cottages you stay in were, within living memory, barns, a milking parlour, a calf house, a workshop. The 14th-century Farmhouse — now our most spectacular property — has warmed itself through Cornish winters since before anyone can reliably count.
+          </p>
+          <p class="body-md">
+            When we built the resort, we worked with the architecture of the land rather than against it. The stone walls are original. The views across the valley are the same views the farm workers had. The difference is that you have an indoor heated pool, a spa, and a restaurant that cooks what the estate grows.
+          </p>
+        </div>
+      </div>
+
+      <div class="farm-features-grid reveal">
+        <div class="farm-feature">
+          <div class="farm-feature-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--secondary);" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"/></svg>
+          </div>
+          <h3 class="farm-feature-title">450 acres to explore</h3>
+          <p class="farm-feature-desc">Fields, woodland, wildflower meadows, and the Bude Canal towpath all connected from the estate. Walk or cycle out from your cottage door without getting in a car.</p>
+        </div>
+        <div class="farm-feature">
+          <div class="farm-feature-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--secondary);" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75"/></svg>
+          </div>
+          <h3 class="farm-feature-title">Farm buildings, not chalets</h3>
+          <p class="farm-feature-desc">Our cottages are converted farm buildings — a milking parlour, a calf house, a 14th-century farmhouse, a workshop. They look like what they were because they are. Just with underfloor heating and Bosch appliances now.</p>
+        </div>
+        <div class="farm-feature">
+          <div class="farm-feature-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--secondary);" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+          </div>
+          <h3 class="farm-feature-title">Paddock-to-plate at The Weir</h3>
+          <p class="farm-feature-desc">The Weir Restaurant sources 90% within Cornwall and 30% from the estate itself. The kitchen garden is visible from the terrace. The cheese on the board was aged here. This is farm-to-table in the literal sense of those words.</p>
+        </div>
+        <div class="farm-feature">
+          <div class="farm-feature-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--secondary);" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h3 class="farm-feature-title">Gold Award sustainability</h3>
+          <p class="farm-feature-desc">Whalesborough holds the Cornwall Tourism Award Gold for Sustainable Tourism. 50 acres of rewilded woodland, 9,000 sunflowers for pollinators, and a 60kW wind turbine. The farm is getting better every year.</p>
+        </div>
+        <div class="farm-feature">
+          <div class="farm-feature-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--secondary);" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+          </div>
+          <h3 class="farm-feature-title">Multi-generational space</h3>
+          <p class="farm-feature-desc">From The Farmhouse sleeping 8 to Trelowen Lodges sleeping up to 8, there are properties here for every size of group. Grandparents, parents, and small children — everyone has room, and there's something for every age on 450 acres.</p>
+        </div>
+        <div class="farm-feature">
+          <div class="farm-feature-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--secondary);" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
+          </div>
+          <h3 class="farm-feature-title">Full resort facilities</h3>
+          <p class="farm-feature-desc">Every cottage guest gets full access to the W Club Spa — indoor pool, outdoor pool, Technogym fitness suite, sauna, and steam room. Farm holiday with hotel amenities. Neither compromises the other.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who comes here -->
+  <section class="section" style="background:var(--surface-low);" aria-labelledby="who-heading">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;" class="reveal">
+        <p class="label" style="margin-bottom:1rem;">Who comes to Whalesborough</p>
+        <h2 class="headline-lg" id="who-heading" style="font-style:italic;max-width:600px;margin:0 auto;">
+          A farm stay for every kind of family
+        </h2>
+      </div>
+      <div class="who-grid reveal">
+        <div class="who-card">
+          <p class="label" style="margin-bottom:1rem;">Multi-generational families</p>
+          <h3 class="who-heading">Three generations, one estate</h3>
+          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.8;margin-bottom:1.25rem;">Grandparents who want the spa. Parents who want the walks. Children who want the pool and the animals. Everyone has everything they need, and the bigger properties — The Farmhouse Trelowen — keep everyone under the same roof.</p>
+          <ul class="who-list">
+            <li>Properties sleeping up to 10 guests</li>
+            <li>Indoor and outdoor heated pools</li>
+            <li>W Club Spa for the grandparents</li>
+            <li>450 acres of outdoor space</li>
+          </ul>
+        </div>
+        <div class="who-card">
+          <p class="label" style="margin-bottom:1rem;">Families with young children</p>
+          <h3 class="who-heading">The best kind of childhood holiday</h3>
+          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.8;margin-bottom:1.25rem;">Space to run, things to discover, and none of the anxiety of airports. A working estate with fields, tracks, wildlife, and the South West Coast Path starting from the gate. Bude beach — one of the best surf beaches in England — is 2.5 miles away.</p>
+          <ul class="who-list">
+            <li>Outdoor pools open in season</li>
+            <li>Farm tracks and wildlife to explore</li>
+            <li>2.5 miles to Bude Beach</li>
+            <li>SWCP walks from the gate</li>
+          </ul>
+        </div>
+        <div class="who-card">
+          <p class="label" style="margin-bottom:1rem;">Large groups</p>
+          <h3 class="who-heading">Book adjacent cottages for the full group</h3>
+          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.8;margin-bottom:1.25rem;">Reunions, landmark birthdays, group celebrations — Whalesborough can accommodate larger parties by booking multiple cottages on the estate. Contact us to arrange side-by-side properties and group packages at The Weir.</p>
+          <ul class="who-list">
+            <li>Multiple cottages bookable together</li>
+            <li>Group dining at The Weir Restaurant</li>
+            <li>Private tractor rides by arrangement</li>
+            <li>Contact us for bespoke group rates</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cottages for farm holidays -->
+  <section class="section" aria-labelledby="cottages-heading">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;" class="reveal">
+        <div>
+          <p class="label" style="margin-bottom:0.75rem;">Best for Farm Holidays</p>
+          <h2 class="headline-lg" id="cottages-heading" style="font-style:italic;">Cottages for groups and families</h2>
+        </div>
+        <a href="../our-cottages/" class="btn-text">View all 26 cottages</a>
+      </div>
+      <div class="cottage-row reveal">
+        <a href="../our-cottages/the-farmhouse/" class="cottage-tile">
+          <div class="cottage-tile-img">
+            <div style="width:100%;height:100%;background-image:url('../assets/images/cottages/the-farmhouse.jpg');background-size:cover;background-position:center;"></div>
+          </div>
+          <div class="cottage-tile-body">
+            <p class="cottage-tile-label">Sleeps 8 · Grade II Listed · Hot Tub</p>
+            <h3 class="cottage-tile-name">The Farmhouse</h3>
+            <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">14th-century inglenook fireplace, snooker table, cinema snug, private hot tub. The crown jewel of the estate.</p>
+            <span class="btn-text" style="margin-top:1rem;display:inline-block;font-size:0.5625rem;">View Cottage</span>
+          </div>
+        </a>
+        <a href="../our-cottages/trelowen/" class="cottage-tile">
+          <div class="cottage-tile-img">
+            <div style="width:100%;height:100%;background-image:url('../assets/images/cottages/trelowen.png');background-size:cover;background-position:center;"></div>
+          </div>
+          <div class="cottage-tile-body">
+            <p class="cottage-tile-label">Sleeps 4, 6 or 8 · Hot Tub · Contemporary</p>
+            <h3 class="cottage-tile-name">Trelowen Lodges</h3>
+            <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Contemporary open-plan lodges with full-height windows and private hot tubs. Available in three configurations.</p>
+            <span class="btn-text" style="margin-top:1rem;display:inline-block;font-size:0.5625rem;">View Cottage</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paddock-to-plate dining callout -->
+  <section class="section" style="background:var(--surface-low);" aria-labelledby="dining-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:7fr 5fr;gap:6rem;align-items:center;" class="reveal">
+        <div>
+          <p class="label" style="margin-bottom:1.5rem;">The Weir Restaurant</p>
+          <h2 class="headline-lg" id="dining-heading" style="font-style:italic;margin-bottom:1.5rem;">
+            Eat what the farm grows
+          </h2>
+          <p class="body-lg" style="margin-bottom:1.25rem;">
+            The Weir Restaurant sits at the heart of the estate, looking out over the lake. It serves breakfast and lunch every day, and dinner on Thursday, Friday, and Saturday evenings. The menu changes with the seasons — because it follows what's actually being grown, caught, and raised in Cornwall.
+          </p>
+          <p class="body-md" style="margin-bottom:1.25rem;">
+            This is a farm holiday restaurant in the honest sense: the cheese on the board was aged on this estate. The beef came from Phillip Warren — Cornish butchers since 1880 whose farms you could walk to from the coastal path. The fish was on a boat yesterday morning.
+          </p>
+          <p class="body-md" style="margin-bottom:2rem;">
+            Coffee and cake are always available. Groups can book the restaurant for private events. Children are welcome.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="../weir-restaurant/" class="btn-primary" style="padding:1.125rem 2.5rem;font-size:0.6875rem;">Explore The Weir</a>
+            <a href="tel:01288361940" class="btn-ghost" style="padding:1.125rem 2.5rem;font-size:0.6875rem;">Call to Book</a>
+          </div>
+        </div>
+        <div>
+          <img src="../assets/images/restaurant/weir-restaurant-exterior.jpg" alt="The Weir Restaurant at Whalesborough — paddock-to-plate Cornish farm dining" loading="lazy" width="800" height="700" style="width:100%;height:540px;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location section -->
+  <section class="section" aria-labelledby="location-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:5fr 7fr;gap:6rem;align-items:center;" class="reveal">
+        <div>
+          <p class="label" style="margin-bottom:1.5rem;">Location</p>
+          <h2 class="headline-lg" id="location-heading" style="font-style:italic;margin-bottom:1.5rem;">
+            North Cornwall's best address for a farm stay
+          </h2>
+          <p class="body-md" style="margin-bottom:1.25rem;">Whalesborough Farm is in Marhamchurch, near Bude — one of the finest surf towns on the Atlantic coast of England. You are 2.5 miles from Bude beach, 7 minutes from the town, and one gate-opening from the South West Coast Path.</p>
+          <p class="body-md" style="margin-bottom:1.25rem;">The estate connects to the Bude Canal towpath for flat cycling and walking, and to Sustrans cycle routes for those coming by bike. We have 4 EV charging points on site.</p>
+          <div style="background:var(--surface-low);padding:1.75rem;margin-top:2rem;">
+            <p class="label" style="margin-bottom:1rem;">Key Distances</p>
+            <div style="display:flex;flex-direction:column;gap:0.625rem;">
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);">
+                <span>Bude Beach</span><span style="color:var(--primary);font-weight:600;">2.5 miles</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);">
+                <span>Bude Town</span><span style="color:var(--primary);font-weight:600;">7 min drive</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);">
+                <span>South West Coast Path</span><span style="color:var(--primary);font-weight:600;">On estate</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);">
+                <span>Bude Canal Towpath</span><span style="color:var(--primary);font-weight:600;">Adjacent</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);">
+                <span>Tintagel</span><span style="color:var(--primary);font-weight:600;">28 miles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="../assets/images/general/estate-aerial.jpeg" alt="Whalesborough Farm estate aerial — 450 acres of North Cornwall near Bude" loading="lazy" width="900" height="700" style="width:100%;height:520px;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:var(--primary);padding:5rem 0;" aria-label="Book a Cornish farm holiday">
+    <div class="container-sm" style="text-align:center;">
+      <div class="reveal">
+        <p class="label" style="color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Cornish Farm Holidays · Whalesborough</p>
+        <h2 class="headline-xl" style="color:white;font-style:italic;margin-bottom:1.25rem;">
+          26 five-star cottages.<br>450 acres of real Cornwall.
+        </h2>
+        <p style="font-family:var(--font-body);font-size:1rem;color:rgba(255,255,255,0.78);margin:0 auto 2.5rem;max-width:520px;line-height:1.8;">
+          Whalesborough Farm, Marhamchurch, Bude, Cornwall EX23 0JD. Call <a href="tel:01288361940" style="color:white;text-decoration:underline;text-underline-offset:3px;">01288 361940</a> or book online.
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener" class="btn-book" style="background:white;color:var(--primary);padding:1.125rem 2.75rem;font-size:0.6875rem;">Check Availability</a>
+          <a href="../our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.4);padding:1.125rem 2.75rem;font-size:0.6875rem;">Browse All Cottages</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem;">
+        <div>
+          <div class="footer-brand"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></div>
+          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:1rem;line-height:1.8;max-width:300px;">Whalesborough Farm, Marhamchurch, Bude, Cornwall EX23 0JD</p>
+          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:0.5rem;"><a href="tel:01288361940">01288 361940</a></p>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:1.5rem;">Stay</p>
+          <ul class="footer-links">
+            <li><a href="../our-cottages/">Our Cottages</a></li>
+            <li><a href="../arvor-suites/">Arvor Suites</a></li>
+            <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:1.5rem;">Experience</p>
+          <ul class="footer-links">
+            <li><a href="../spa-and-treatments/">Spa</a></li>
+            <li><a href="../weir-restaurant/">The Weir</a></li>
+            <li><a href="../green-sustainability-credentials/">Sustainability</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:1.5rem;">Explore</p>
+          <ul class="footer-links">
+            <li><a href="../sustainable-luxury/">Sustainable Luxury</a></li>
+            <li><a href="../cornish-farm-holidays/">Farm Holidays</a></li>
+            <li><a href="../contact-us/">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p style="font-family:var(--font-body);font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--on-surface-variant);opacity:0.5;">© 2026 Whalesborough Farm Resort & Spa. Managed by Landal GreenParks.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/441288361940" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb691",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#424844",
+                    "surface-tint": "#8a4f30",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#61403f",
+                    "on-primary-fixed-variant": "#6d391b",
+                    "surface-container-high": "#eae8e5",
+                    "primary": "#703a1d",
+                    "on-primary-container": "#ffd2be",
+                    "on-surface": "#1b1c1a",
+                    "on-tertiary-container": "#ffd0ce",
+                    "surface-dim": "#dbdad7",
+                    "surface-container-low": "#f5f3f0",
+                    "surface-variant": "#e4e2df",
+                    "on-primary-fixed": "#341100",
+                    "on-tertiary-fixed": "#2e1414",
+                    "primary-fixed": "#ffdbcb",
+                    "on-secondary-container": "#4e685b",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb691",
+                    "on-secondary-fixed": "#062016",
+                    "surface-container-highest": "#e4e2df",
+                    "secondary-container": "#c9e6d6",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#efeeeb",
+                    "secondary-fixed-dim": "#b1cdbd",
+                    "on-primary": "#ffffff",
+                    "background": "#fbf9f6",
+                    "error": "#ba1a1a",
+                    "outline": "#727974",
+                    "tertiary-fixed-dim": "#e9bbba",
+                    "primary-container": "#8c5132",
+                    "secondary": "#4a6457",
+                    "on-secondary-fixed-variant": "#334c40",
+                    "on-tertiary-fixed-variant": "#5f3e3d",
+                    "tertiary-fixed": "#ffdad8",
+                    "tertiary-container": "#7b5756",
+                    "inverse-on-surface": "#f2f0ed",
+                    "secondary-fixed": "#cce9d9",
+                    "inverse-surface": "#30312f",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c1a",
+                    "surface": "#fbf9f6",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c2c8c3",
+                    "surface-bright": "#fbf9f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Plus Jakarta Sans", "sans-serif"],
+                    "label": ["Plus Jakarta Sans", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
+<!-- TopNavBar -->
+<header class="bg-[#4a6457] dark:bg-[#4a6457] font-['Newsreader'] italic tracking-tight text-white docked full-width top-0 sticky z-50 transition-colors duration-300">
+<nav class="flex justify-between items-center w-full px-12 py-6">
+<div class="font-['Newsreader'] text-2xl font-light tracking-widest uppercase text-white">Whalesborough</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Dog Friendly</a>
+<a class="text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Families</a>
+<a class="text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Couples</a>
+<a class="text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Wellness</a>
+<a class="text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Groups</a>
+</div>
+<button class="bg-primary px-8 py-3 text-white uppercase text-xs tracking-widest font-bold hover:bg-primary/90 transition-all scale-95 duration-200">
+                Book Now
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Majestic 14th-century Grade II listed stone farmhouse with ivy-covered walls at sunset, surrounded by lush green lawn and heritage trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjgJGTbTjMuW-yip6m0ALF2klt68iSMEd1lhIAywfju_Wn3iP64XgO5zVR2mwp4zbtKlSO9_IiiqW95M6Gk6unOhY52mtgp7i06-lVAwqFVUs8CySxfDjMWcJh1hSqJgw0_yQMlaNS6kHek2K94J952D6ZAAdkZiTTh_Ym1CP1vengWfrCNhTKjO_Qk2jgX0RYSkdrQSYQ_UB8wWjNKu39GW9nNuNGU4ay5UEZDrmPTjHhDxFEga5cdp8qJu0FNW6jhixozF_j5_M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-20 left-12 max-w-2xl">
+<span class="inline-block px-4 py-1 bg-secondary/80 backdrop-blur-md text-white text-[10px] tracking-[0.2em] uppercase mb-6">Historical Landmark</span>
+<h1 class="font-headline text-6xl md:text-8xl text-white italic leading-none mb-6">The Farmhouse</h1>
+<p class="text-white/90 text-lg md:text-xl font-light leading-relaxed max-w-xl">
+                    A 14th-century Grade II listed masterpiece, where medieval heritage meets the curated comfort of a modern retreat.
+                </p>
+</div>
+</section>
+<!-- Editorial Intro -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-20 items-start">
+<div class="w-full md:w-1/3">
+<h2 class="font-headline text-4xl text-on-surface leading-tight italic">A Legacy Reimagined.</h2>
+<div class="h-px w-24 bg-primary mt-8 mb-8"></div>
+<p class="font-body text-xs uppercase tracking-[0.3em] text-secondary font-bold">Sleeps 8 · Cornwall</p>
+</div>
+<div class="w-full md:w-2/3">
+<p class="text-xl md:text-2xl font-light leading-relaxed text-on-surface/80">
+                        Step through the heavy oak doors of our crown jewel. The Farmhouse is not merely a residence; it is a narrative of seven centuries. Thick granite walls and hand-hewn beams house a sanctuary of four expansive bedrooms, a dedicated snooker room, and a private courtyard featuring a secluded hot tub.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Asymmetric Editorial Gallery -->
+<section class="px-12 pb-32">
+<div class="editorial-grid">
+<!-- Large Vertical -->
+<div class="col-span-12 md:col-span-5 h-[800px]">
+<img class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" data-alt="Interior of a luxury bedroom with high beamed ceilings, neutral linens, and light streaming through ancient stone mullioned windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzq7plWBENxSgGEpCKNDt5nSPNn9eC0GfoWl3yu4MaOoZ0FUKggyskOzWJnsMjXlyV8B79eGGho4dbbneeys1ghgyAAFrvbqcOSBSDdckIeKiarE1DUv_TQsgw_-riVcy4d-TwCYt-NecQlSRKjM1WGy1SxrF7MTwA4NnNbzroTx4kcHp1soTR_Bno4rUzXoLvJngOM0nC5VxdZZsh-KlfrlkTIAP33bWnU5PMs938XxadVQbBnK-6XnHnL3f3HtnpfsmfBc5u_j8"/>
+</div>
+<!-- Top Right -->
+<div class="col-span-12 md:col-span-7 grid grid-cols-2 gap-8">
+<div class="col-span-2 h-[384px]">
+<img class="w-full h-full object-cover" data-alt="Spacious farmhouse kitchen with a large range cooker, marble countertops, and rustic wooden dining table, soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbB2VVDunmDLUzHXMzfPXGSFDnfT79h4KeLOW6-LBWU3FzSRy3f9mmPuQJcSypvHxlUepFFfC_qaquyrb_7T1_IixsZ5RzeNdHXEIZd8yGmi4faNLDFh_zJv7Tjidy_VLSzvGqlKpNtQl0UvqJbbK4gDCM-yz_jCx3mYmqwDqAcfiz7zljZy_cMrkhzZFeW-0GxvSKpOnBGpiWPFvsIyhfjfAuTTHCg3F6xKy6n1LbkY_k3XXHyNxInWbAXSqBEgq_9Y_U94gekKU"/>
+</div>
+<div class="h-[384px]">
+<img class="w-full h-full object-cover" data-alt="Private outdoor terrace at night with a steaming cedar-clad hot tub under a starry Cornish sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiyyeOYCfHQCGJCNK5Fdjwv_sGdw1IgbvX478beiBLQ1hdDMhbw4yPvXMmfxrCeE0bZy_KmswKFyd-sthxhXIlYGAMON88hGqNmuIYx-QFwBwzcc3U3OXqljsSLCK2vSa50UsXBk4WNduTtUbpKx9RIAnDL1wtnoFqTgSM4aafoGFS0uqV1T2Kc53vOiNnZ0FoJNeky7Zt3HOiGWLxAfEoQsFoMrZO9X5ga5mmAh6r1jyC394nNTQN8INRDHEheG9tImWTE6q80Xk"/>
+</div>
+<div class="h-[384px]">
+<img class="w-full h-full object-cover" data-alt="Stately snooker room with a vintage full-size table, dark green cloth, and antique brass lighting fixtures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUJ_k4Fq_b_ydhX7MmVNxPSHxpRue6TZ4v9cLISIFNC2faRg6xXSDa4lbr3VqRlB5IBTzrT4sKHwMKVxvWqw2CqtZ6Xjfg0iOPAsSOMBwoKPx74-_XDbucaNA95DqLof1YDvss1B7Mpulsn3UNM6lCvfSooS9dZ5_EHK2q0nsU_ROXtonKMlBaYsjR5zg6kPyLcgzJ1paQG2hpwpZQ5Q7p-uU6rkPHD4xLcy54dlF5crxvArDWIhFjPFHr9hSGl7fIIXx8RihVZZc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Room Breakdown -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center max-w-3xl mx-auto">
+<h3 class="font-headline text-5xl mb-6">The Sanctuary Layout</h3>
+<p class="text-on-surface-variant leading-loose">Designed for effortless gatherings, the Farmhouse offers a perfect balance of communal vibrancy and private repose across two historic floors.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20">
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="text-primary font-bold text-xs tracking-widest block mb-4 uppercase">Ground Floor</span>
+<h4 class="font-headline text-3xl mb-6">The Gathering Spaces</h4>
+<ul class="space-y-4 text-on-surface-variant font-light">
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Professional Chef's Kitchen</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Formal Dining for 10</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> The Snooker Suite &amp; Library</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Great Hall with Open Inglenook</li>
+</ul>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="text-primary font-bold text-xs tracking-widest block mb-4 uppercase">First Floor</span>
+<h4 class="font-headline text-3xl mb-6">The Quarters</h4>
+<ul class="space-y-4 text-on-surface-variant font-light">
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Master Suite with Roll-top Bath</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Two King En-Suites</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Twin Gallery Bedroom</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-secondary"></span> Original Vaulted Beams</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Amenity Icons -->
+<section class="py-24 px-12 border-b border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-12">
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl">hot_tub</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Private Spa</span>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl">games</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Games Room</span>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl">pets</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Dog Friendly</span>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl">wifi</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">High Speed</span>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl">fireplace</span>
+</div>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Open Fires</span>
+</div>
+</div>
+</section>
+<!-- Availability & Pricing -->
+<section class="py-32 px-12 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-24 items-start">
+<!-- Calendar (Simulation) -->
+<div class="lg:col-span-3">
+<h3 class="font-headline text-4xl mb-12">Availability</h3>
+<div class="bg-white p-10 shadow-xl shadow-secondary/5 border border-outline-variant/20">
+<div class="flex justify-between items-center mb-8">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low transition-colors">chevron_left</button>
+<span class="font-label font-bold uppercase tracking-widest">December 2024</span>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low transition-colors">chevron_right</button>
+</div>
+<div class="grid grid-cols-7 gap-4 text-center">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Sun</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Mon</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Tue</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Wed</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Thu</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Fri</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-4">Sat</span>
+<!-- Simple Days Simulation -->
+<div class="p-4 text-on-surface-variant/30 italic">1</div>
+<div class="p-4 text-on-surface-variant/30 italic">2</div>
+<div class="p-4 bg-secondary/10 text-secondary border border-secondary/20">3</div>
+<div class="p-4 bg-secondary/10 text-secondary border border-secondary/20">4</div>
+<div class="p-4 bg-secondary/10 text-secondary border border-secondary/20">5</div>
+<div class="p-4 bg-primary text-white font-bold">6</div>
+<div class="p-4 bg-primary text-white font-bold">7</div>
+<div class="p-4 bg-primary text-white font-bold">8</div>
+<div class="p-4">9</div>
+<div class="p-4">10</div>
+<div class="p-4">11</div>
+<div class="p-4">12</div>
+<div class="p-4">13</div>
+<div class="p-4">14</div>
+<div class="p-4">15</div>
+<!-- ...truncated for design demonstration -->
+</div>
+<div class="mt-8 flex gap-6 text-[10px] uppercase tracking-widest font-bold">
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-primary"></div> Selected</div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 bg-secondary/10"></div> Booked</div>
+</div>
+</div>
+</div>
+<!-- Pricing Table & CTA -->
+<div class="lg:col-span-2 bg-surface-container p-12">
+<h3 class="font-headline text-3xl mb-8">Reservations</h3>
+<div class="space-y-6 mb-12">
+<div class="flex justify-between items-end border-b border-outline-variant pb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest block text-on-surface-variant mb-1">Weekend (3 nights)</span>
+<span class="font-headline text-xl italic">Winter Escape</span>
+</div>
+<span class="font-bold text-lg">£1,450</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant pb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest block text-on-surface-variant mb-1">Mid-week (4 nights)</span>
+<span class="font-headline text-xl italic">Retreat Stay</span>
+</div>
+<span class="font-bold text-lg">£1,200</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant pb-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest block text-on-surface-variant mb-1">Weekly (7 nights)</span>
+<span class="font-headline text-xl italic">The Farmhouse Grand</span>
+</div>
+<span class="font-bold text-lg">£2,400</span>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-[#703a1d] py-6 text-white text-xs uppercase tracking-[0.3em] font-bold hover:brightness-110 transition-all">
+                            Book Now
+                        </button>
+<p class="text-center text-[10px] uppercase tracking-widest text-on-surface-variant leading-relaxed">
+                            Full concierge support included with every stay.<br/>
+                            Cancellation policy: 14 days full refund.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fbf9f6] dark:bg-[#1b1c1a] full-width relative pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-4 gap-12 font-['Plus_Jakarta_Sans'] leading-[1.8] tracking-wider uppercase text-[10px]">
+<div class="md:col-span-1">
+<span class="font-['Newsreader'] text-4xl text-[#4a6457] mb-8 block capitalize italic">Whalesborough.</span>
+<p class="text-[#4a6457]">Marhamchurch, Bude<br/>Cornwall, EX23 0PA</p>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-[#703a1d]">The Estate</h5>
+<ul class="space-y-3">
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Our Story</a></li>
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Sustainability</a></li>
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-[#703a1d]">Experience</h5>
+<ul class="space-y-3">
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">The Spa</a></li>
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Farm Shop</a></li>
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Coastline Guide</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-[#703a1d]">Legal</h5>
+<ul class="space-y-3">
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-20 pt-12 border-t border-secondary/10">
+<p class="text-[#4a6457] text-[10px] tracking-widest text-center opacity-60">
+                © Whalesborough Farm Resort &amp; Spa. All Rights Reserved.
+            </p>
+</div>
+</footer>
+</body></html>

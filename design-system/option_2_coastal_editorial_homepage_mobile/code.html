@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,500;0,700;1,300;1,500&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb691",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#424844",
+                    "surface-tint": "#8a4f30",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#61403f",
+                    "on-primary-fixed-variant": "#6d391b",
+                    "surface-container-high": "#eae8e5",
+                    "primary": "#703a1d",
+                    "on-primary-container": "#ffd2be",
+                    "on-surface": "#1b1c1a",
+                    "on-tertiary-container": "#ffd0ce",
+                    "surface-dim": "#dbdad7",
+                    "surface-container-low": "#f5f3f0",
+                    "surface-variant": "#e4e2df",
+                    "on-primary-fixed": "#341100",
+                    "on-tertiary-fixed": "#2e1414",
+                    "primary-fixed": "#ffdbcb",
+                    "on-secondary-container": "#4e685b",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb691",
+                    "on-secondary-fixed": "#062016",
+                    "surface-container-highest": "#e4e2df",
+                    "secondary-container": "#c9e6d6",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#efeeeb",
+                    "secondary-fixed-dim": "#b1cdbd",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f6",
+                    "error": "#ba1a1a",
+                    "outline": "#727974",
+                    "tertiary-fixed-dim": "#e9bbba",
+                    "primary-container": "#8c5132",
+                    "secondary": "#4a6457",
+                    "on-secondary-fixed-variant": "#334c40",
+                    "on-tertiary-fixed-variant": "#5f3e3d",
+                    "tertiary-fixed": "#ffdad8",
+                    "tertiary-container": "#7b5756",
+                    "inverse-on-surface": "#f2f0ed",
+                    "secondary-fixed": "#cce9d9",
+                    "inverse-surface": "#30312f",
+                    "on-error": "#ffffff",
+                    "on-background": "#1b1c1a",
+                    "surface": "#fbf9f6",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c2c8c3",
+                    "surface-bright": "#fbf9f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0rem",
+                    "xl": "0rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Plus Jakarta Sans", "sans-serif"],
+                    "label": ["Plus Jakarta Sans", "sans-serif"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 50px rgba(74, 100, 87, 0.05);
+        }
+        .glass-nav {
+            background: rgba(251, 249, 246, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-[#4a6457] text-white">
+<nav class="flex justify-between items-center w-full px-6 py-4">
+<div class="font-['Newsreader'] text-xl font-light tracking-widest uppercase text-white">Whalesborough</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white">menu</span>
+</div>
+</nav>
+</header>
+<!-- Mobile Hero Section -->
+<section class="relative h-[751px] w-full flex flex-col justify-end overflow-hidden">
+<img alt="Coastal Escape" class="absolute inset-0 w-full h-full object-cover" data-alt="atmospheric coastal landscape at dusk with soft golden light hitting green cliffs and rugged shoreline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpn-jiF_9hB76p7zLvjdvAHfwP1Y8aRbiDDm9uE57JpLDCQ3UamqUKCRVCYx8QTFKZHnLcOsqSfOFssnqyquRHOmD8wx-D0bafDyH7g6SY3Er1AR5KwiAB-JhaqcGtgjU6nPmFHgxeVyIRUAGqVlEP5ELMmTGeF42cURGAGuWStu4babvtaIn_mtgWTo0Ciclna2iFbPBhBNf8hFh9xBW392yjN--gLKOibqPlsFEY6F5TfwVCNvLo30AXlVGnmC5hDjwkLZ-GYbY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"></div>
+<div class="relative p-8 mb-12">
+<h1 class="font-headline text-5xl italic text-white leading-tight mb-6 tracking-tight">
+                Where the Farm<br/>Meets the Atlantic.
+            </h1>
+<!-- Compact Search/Booking -->
+<div class="bg-surface p-6 editorial-shadow flex flex-col gap-4">
+<div class="flex divide-x divide-outline-variant/30">
+<div class="flex-1 pr-4">
+<p class="font-label text-[10px] uppercase tracking-widest mb-1 opacity-60">Arrival</p>
+<p class="font-headline italic text-lg">14 Oct</p>
+</div>
+<div class="flex-1 pl-4">
+<p class="font-label text-[10px] uppercase tracking-widest mb-1 opacity-60">Guests</p>
+<p class="font-headline italic text-lg">2 Adults</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label uppercase tracking-widest text-sm hover:opacity-90 transition-opacity">
+                    Check Availability
+                </button>
+</div>
+</div>
+</section>
+<!-- Estate Story -->
+<section class="py-20 px-8 bg-surface">
+<div class="max-w-md mx-auto">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-4 block">The Heritage</span>
+<h2 class="font-headline text-4xl mb-8 leading-tight">Curating the wild spirit of North Cornwall.</h2>
+<div class="w-12 h-[1px] bg-primary mb-8"></div>
+<p class="text-on-surface-variant leading-[1.8] mb-8 font-light italic">
+                From organic meadows to the salt-spray of the coast, Whalesborough is an estate redefined. A collection of sustainable retreats designed for the modern curator.
+            </p>
+<img alt="Estate Landscape" class="w-full h-64 object-cover mb-4" data-alt="misty sunrise over rolling green hills and traditional stone farmhouse in the English countryside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu8dbcEd0XWKTvJxC0YRMyWuq91-adkmamWI5djKFdAZz57mZ_kmDklf0M_b5bH-z8YbURcsHjQQnd16I5_iQUROlQg9IHNhyNn2aDJAo5XnIHMHKLhfW6qcwQ1uGAJUwZ3nl_PGxzxFQxShVKlbGUVgXu1jvnj3m4yL8ReUQnXkkH1t9qPbxDOk343uDs3VAv2aaL8gJRv0nkVImCl930qgN2AcyJPXceFeQPiAolNuVdhvQZYIfuUiAlCjUc9QbsjVYeRkcXG6o"/>
+</div>
+</section>
+<!-- Featured Cottages - Horizontal Scroll/Bento Hybrid -->
+<section class="py-20 bg-surface-container-low">
+<div class="px-8 mb-12">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-4 block">Featured Retreats</span>
+<h2 class="font-headline text-4xl italic">Selected Cottages</h2>
+</div>
+<div class="flex overflow-x-auto gap-6 px-8 snap-x no-scrollbar pb-8">
+<!-- Cottage 1 -->
+<div class="min-w-[85vw] snap-center bg-surface-container-lowest editorial-shadow">
+<img alt="The Grain Store" class="w-full h-72 object-cover" data-alt="luxury barn conversion interior with high ceilings exposed wooden beams and minimalist modern furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBucL-HDsAA53fD6AXv9QRgPSkEw90mWmmMDT-aD1aStrk3LJpFJoKuw7fwFAzCHfVVzTAFiaTmBPIifsj2DvXAytHnd7y0zMq7DPPPBhNGrx26g6DPjbGhhpHlL3O-UaFlZUQw3_7lU6iCJQCx1JD6LC9fbTEZSXQIWBUQ_oCTqs2E1uH7BHa6z5RuRLdQVzYEpKvxT0Eccs4V7Lzk6Hq8p8LUYZiee9iBlJZWf8jmZiA3vNDTKuiM3H9pIQXmUn0kkFXZCR8sXUA"/>
+<div class="p-8">
+<p class="font-label text-[10px] uppercase tracking-widest text-primary mb-2">Families &amp; Dogs</p>
+<h3 class="font-headline text-2xl mb-4 italic">The Grain Store</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Vaulted ceilings and sunset views over the valley.</p>
+</div>
+</div>
+<!-- Cottage 2 -->
+<div class="min-w-[85vw] snap-center bg-surface-container-lowest editorial-shadow">
+<img alt="The Lookout" class="w-full h-72 object-cover" data-alt="contemporary glass fronted coastal cabin overlooking the sea with a private outdoor terrace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8a6kQlvkuT6W9r62y4q1wIaSoD46wx7gdHwfae90nsr9u6Jc9quy9MVX4SBFIhNEoCUbjWEGMNQZ0yYR4RmB0f8cv-Rc9ex2YVnp-2x-6i1QiYw28zE7JwxZTJgBFy6PjWh7Q9oAOna6XUHr8buwns7LOZRyJpistZjwuIaDChcRuXlTH_vBV-yLRSNAA8JBvNVJqcx3IaOpJ9zwajeEa-Ehco1MMo0QCHz_49fEZjE_SMbkLPr4XUTEXysMiiZiWmsj-O1UOqzg"/>
+<div class="p-8">
+<p class="font-label text-[10px] uppercase tracking-widest text-primary mb-2">Wellness &amp; Couples</p>
+<h3 class="font-headline text-2xl mb-4 italic">The Lookout</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Direct path to the beach with a private hot tub.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Wellness -->
+<section class="relative py-24 px-8 overflow-hidden bg-secondary text-white">
+<div class="relative z-10">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] mb-4 block">Restoration</span>
+<h2 class="font-headline text-4xl mb-6 italic">The Sanctuary Spa</h2>
+<p class="text-white/80 leading-[1.8] mb-10 font-light max-w-xs">
+                Heated infinity pools, wood-fired saunas, and treatments inspired by the Atlantic breeze.
+            </p>
+<button class="border-b border-white pb-2 font-label text-xs uppercase tracking-widest">Explore Wellness</button>
+</div>
+<div class="absolute right-[-10%] top-0 h-full w-1/2 opacity-20">
+<img alt="Spa Pool" class="h-full w-full object-cover" data-alt="abstract close up of rippling water in a luxury spa pool with soft lighting and steam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhNRC_33oxW87BA5nA9l7upEUKfMtLHGovVyeHBbCY-olP9hV2R8eCrFud0sxLijZ0uk7w_x-YLUqk7829B0iz_H6UX7kcQs3aenqnY5xZ_2nYNSJs9LXk6ijJo0vLloy1kK8jD4VGGxaKplly_e_w8amMcyPyS_qEuaKnLY5SSYO3_qD_1RjhVbp6YLZPE6mQTYAlSc6Mo2TWaxpA0rNwQQZMMTJmoPXhfHB3gUu3Cg8BVqTnJsya2VWtx1yWqOxjOzB_rLnYcf0"/>
+</div>
+</section>
+<!-- Sustainability Counter -->
+<section class="py-20 bg-surface">
+<div class="max-w-md mx-auto px-8">
+<div class="grid grid-cols-2 gap-12">
+<div class="text-center">
+<p class="font-headline text-5xl text-primary mb-2 italic">100%</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary">Renewable energy</p>
+</div>
+<div class="text-center">
+<p class="font-headline text-5xl text-primary mb-2 italic">500+</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary">Trees Planted</p>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="font-headline text-2xl italic mb-4">Sustainability isn't a goal; it's our foundation.</p>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed">Our story is written in the land we protect and the future we cultivate.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="full-width relative pt-24 pb-32 bg-[#fbf9f6] text-[#4a6457]">
+<div class="max-w-7xl mx-auto px-8">
+<div class="font-['Newsreader'] text-4xl text-[#4a6457] mb-12 block">Whalesborough</div>
+<div class="grid grid-cols-1 gap-12">
+<div class="flex flex-col gap-6">
+<p class="font-['Plus_Jakarta_Sans'] leading-[1.8] tracking-wider uppercase text-[10px] text-on-surface">Navigating</p>
+<ul class="flex flex-col gap-4">
+<li><a class="font-headline italic text-lg hover:text-[#703a1d] transition-all" href="#">Our Story</a></li>
+<li><a class="font-headline italic text-lg hover:text-[#703a1d] transition-all" href="#">Sustainability</a></li>
+<li><a class="font-headline italic text-lg hover:text-[#703a1d] transition-all" href="#">Careers</a></li>
+<li><a class="font-headline italic text-lg hover:text-[#703a1d] transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-headline italic text-lg hover:text-[#703a1d] transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="pt-12">
+<p class="font-['Plus_Jakarta_Sans'] leading-[1.8] tracking-wider uppercase text-[10px] text-secondary opacity-60">
+                        © Whalesborough Farm Resort &amp; Spa. All Rights Reserved.
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Sticky Mobile Action -->
+<div class="fixed bottom-0 left-0 right-0 z-[60] glass-nav p-4 flex justify-between items-center shadow-2xl">
+<div class="flex flex-col">
+<span class="font-label text-[9px] uppercase tracking-widest opacity-60">Avg. Night</span>
+<span class="font-headline italic text-xl">£245</span>
+</div>
+<button class="bg-[#703a1d] text-white px-8 py-3 font-label uppercase tracking-widest text-sm hover:scale-95 transition-transform">
+            Book Now
+        </button>
+</div>
+</body></html>

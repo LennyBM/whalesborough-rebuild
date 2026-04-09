@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Whalesborough | Coastal Editorial Luxury</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed-dim": "#ffb691",
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#424844",
+                "surface-tint": "#8a4f30",
+                "on-secondary": "#ffffff",
+                "tertiary": "#61403f",
+                "on-primary-fixed-variant": "#6d391b",
+                "surface-container-high": "#eae8e5",
+                "primary": "#703a1d",
+                "on-primary-container": "#ffd2be",
+                "on-surface": "#1b1c1a",
+                "on-tertiary-container": "#ffd0ce",
+                "surface-dim": "#dbdad7",
+                "surface-container-low": "#f5f3f0",
+                "surface-variant": "#e4e2df",
+                "on-primary-fixed": "#341100",
+                "on-tertiary-fixed": "#2e1414",
+                "primary-fixed": "#ffdbcb",
+                "on-secondary-container": "#4e685b",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#ffb691",
+                "on-secondary-fixed": "#062016",
+                "surface-container-highest": "#e4e2df",
+                "secondary-container": "#c9e6d6",
+                "on-error-container": "#93000a",
+                "surface-container": "#efeeeb",
+                "secondary-fixed-dim": "#b1cdbd",
+                "on-primary": "#ffffff",
+                "background": "#fbf9f6",
+                "error": "#ba1a1a",
+                "outline": "#727974",
+                "tertiary-fixed-dim": "#e9bbba",
+                "primary-container": "#8c5132",
+                "secondary": "#4a6457",
+                "on-secondary-fixed-variant": "#334c40",
+                "on-tertiary-fixed-variant": "#5f3e3d",
+                "tertiary-fixed": "#ffdad8",
+                "tertiary-container": "#7b5756",
+                "inverse-on-surface": "#f2f0ed",
+                "secondary-fixed": "#cce9d9",
+                "inverse-surface": "#30312f",
+                "on-error": "#ffffff",
+                "on-background": "#1b1c1a",
+                "surface": "#fbf9f6",
+                "on-tertiary": "#ffffff",
+                "outline-variant": "#c2c8c3",
+                "surface-bright": "#fbf9f6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Newsreader"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+      body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fbf9f6; color: #1b1c1a; }
+      h1, h2, h3 { font-family: 'Newsreader', serif; }
+      .editorial-grid { display: grid; grid-template-columns: repeat(12, 1fr); }
+      .glass-nav { background: rgba(251, 249, 246, 0.05); backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-[#4a6457] dark:bg-[#4a6457] docked full-width top-0 sticky z-50 transition-all duration-300">
+<nav class="flex justify-between items-center w-full px-12 py-6">
+<div class="font-['Newsreader'] text-2xl font-light tracking-widest uppercase text-white">Whalesborough</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Newsreader'] italic tracking-tight text-[#703a1d] font-bold border-b-0 hover:text-[#703a1d] transition-colors duration-300" href="#">Dog Friendly</a>
+<a class="font-['Newsreader'] italic tracking-tight text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Families</a>
+<a class="font-['Newsreader'] italic tracking-tight text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Couples</a>
+<a class="font-['Newsreader'] italic tracking-tight text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Wellness</a>
+<a class="font-['Newsreader'] italic tracking-tight text-white/90 font-medium hover:text-[#703a1d] transition-colors duration-300" href="#">Groups</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-none uppercase tracking-widest text-xs font-bold hover:opacity-90 transition-all active:scale-95 duration-200">
+                Book Now
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[972px] flex flex-col justify-center items-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Cinematic wide shot of North Cornwall coastline at sunset, crashing waves against dark jagged cliffs under a soft orange and purple sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7V7sXJAjfQii9fr0JfUQOkn08rMhN7Ezassr-Uy7RzqVWunl_T88QnKB_W_w6D-jS3wR4v11Heqa_tHVdNcqeWZ1RKAX8Ds1W2tqLQN8UDWDxvAFV65FwM3ykJ2y-7BIaqRD9RSZ9Bv920cGAB0Hmq5c6Toa5W5Pcue9lPQxTHa-JER-ycXbMIyD4iYj1Vx9YNbBc1OcPidlSnd6DwFbfqbnWiBKe19TGnljKLHUQv_VJ_GaneWsZF86RjFYvElov2_m4cHaXaRA"/>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 text-center px-6">
+<h1 class="text-6xl md:text-8xl text-white mb-8 italic font-light tracking-tight">A New Tide of Luxury in Cornwall</h1>
+</div>
+<!-- Availability Widget -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-5xl px-6 z-20">
+<div class="glass-nav p-1 bg-white/10 backdrop-blur-md">
+<div class="bg-surface p-8 grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+<div class="space-y-2">
+<label class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Arrival</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-sm" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Departure</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-sm" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Guests</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 px-0 text-sm">
+<option>2 Adults</option>
+<option>Family (2+2)</option>
+<option>Group (6+)</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary py-4 px-6 rounded-none uppercase text-xs font-bold tracking-[0.2em] hover:bg-primary-container transition-colors">
+                        Check Availability
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Estate Story -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-12 editorial-grid gap-16 items-center">
+<div class="col-span-12 md:col-span-5">
+<span class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.3em] text-secondary mb-6 font-bold">The Heritage</span>
+<h2 class="text-5xl md:text-6xl mb-8 leading-[1.1]">Where the farm meets the Atlantic.</h2>
+<p class="font-['Plus_Jakarta_Sans'] text-lg leading-[1.8] text-on-surface-variant mb-8">
+                    Spanning 400 acres of wild Cornish countryside, Whalesborough is more than a resort. It is a curated sanctuary where luxury architecture rests gently upon a working farm. Here, the scent of sea salt mingles with damp earth, offering a profound connection to the elements without compromising on contemporary elegance.
+                </p>
+<a class="text-primary font-bold uppercase tracking-widest text-xs inline-flex items-center group" href="#">
+                    Our Story <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="col-span-12 md:col-span-7 relative h-[600px]">
+<img class="w-full h-full object-cover" data-alt="Lush green rolling hills of a Cornish farm with a classic stone farmhouse in the distance under a bright morning sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV1R7ZveUArBq-YOSUO7J4wdnPtTgAo3J2Cb4gjTx62S3GgVaq_JpkFLDn1qmnqBk4nFt9eHdBVVZJmXJzbCiXqjnX43mR98umVD5mXFJaiq_qVVO2lIW5jprs57bpjaL9QeGvsSAmy5RIO13JPSwnLjPo8Qv7LGaaWA3r71Jk-AnoHFN8PluDJv_Mc_NPbvItjYsmrTckgC5V2f0Lec5eUY7BiIgB2fEIacTN0da7l0D__Ipxo3Fi5Da8eW9SRRKyxIwyzNU7UsQ"/>
+<div class="absolute -bottom-8 -left-8 w-64 h-80 hidden md:block">
+<img class="w-full h-full object-cover" data-alt="Black and white close up of textured stone walls and rustic wooden door details of a luxury farm estate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6JD6u8I2bOEfz2JL3X7ogJTZYLrDlhb5wjpAbalAXfEo_ScmIAa5-Z1AQrj0iPh51RyhaZmLu3BkmAAF9XpqOB4yAvfEYF0nZmjbgRv-L1y7FUTbZzPoZKGwosNCaR-UnwPdtmRmpuOCNieZrYBhmnP7IK3mqXpI8LGoQv1J5gRppkIKBLv0gEM9ObIvMWO9-h5AFJ4dGBYz6YXntnorvkRCJE0Qmz1GN4Pr67cep1O1Ob6pQyZ0Y9racfU8GU0tYjKUM3Fi6Ah0"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Press Strip -->
+<section class="py-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-12 flex flex-wrap justify-between items-center opacity-40 grayscale gap-8">
+<span class="font-['Newsreader'] italic text-2xl">Condé Nast</span>
+<span class="font-['Plus_Jakarta_Sans'] font-black uppercase text-xl">Vogue</span>
+<span class="font-['Newsreader'] font-bold text-2xl">The Times</span>
+<span class="font-['Plus_Jakarta_Sans'] font-light uppercase text-2xl tracking-[0.4em]">Tatler</span>
+<span class="font-['Newsreader'] italic text-2xl">Wallpaper*</span>
+</div>
+</section>
+<!-- Featured Cottages -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-12">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.3em] text-secondary mb-4 font-bold">Residences</span>
+<h2 class="text-5xl">The Collections</h2>
+</div>
+<a class="text-on-surface-variant font-bold uppercase tracking-widest text-[10px] border-b-2 border-primary/20 pb-1" href="#">View All Properties</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Cottage 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Elegant stone cottage exterior with modern floor-to-ceiling windows and a private infinity pool overlooking the valley." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuMAhXtspQNCxzM1yPivhG7j7RUChsgP8WkY_8UrWPSrydaLxmQ2xu88tM6Z-BF5zh-WOuBEO2KftZVFkPX65mtZ7XSXMcNPLpqzwafl1YGOv8dpOJtPUhxRcfloxdgyWH_WYq0KZTpMWkMIof0ul0R4IbJyAt_uWH-QGN7D9qVbpItmoWI4Gf85-Lh2SZscbjJt_5EuuvqSjYz5Ubz8JJyRj8DcHQMLWfccFyCAhzZVt48cqmWKeA0rvox5d1ZeGLi6iHZupLeDI"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl mb-2 italic">The Moorings</h3>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Sleeps 6 • Dog Friendly</p>
+</div>
+<p class="text-primary font-bold">From £420</p>
+</div>
+</div>
+<!-- Cottage 2 -->
+<div class="group cursor-pointer md:mt-16">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Interior of a luxury bedroom with soft linen bedding, oak wood beams, and a view of the ocean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP1UkRbm4dfzTE1hvqjTxBSL83sHnkV3pw0hNbtgV63NIXdR9-3we-jncGWzRxtdB7f4PRuCYCfY8YBg0bhdk4zQ_hQHWypcCnkxEj1nOVZBs_l2u7q41V1VSjDKYY4lZGjZ3wpKZQFqVPcqGvSvq8_ZFdWGybITJnGXMfsKl-Rs92-C6GQYbMr9-1naz-6e-0rizmdOUiwXX42op7hqay_DEz-DuqV9qnJFRpCGvAC8-Xjh89KbUH2wlpHCRcemdykuMiJFrFdJs"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl mb-2 italic">Atlantic Reach</h3>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Sleeps 4 • Couples</p>
+</div>
+<p class="text-primary font-bold">From £350</p>
+</div>
+</div>
+<!-- Cottage 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern architecture cottage with black timber cladding and a large outdoor deck set in wildflowers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkO7--8NsIMdlgtFN8omKM6dkAmeoamtBiBuVMolfZGcjZjZb7WNS6v2cLBsMsMpRmGaMv1MxfVrHm3SWC1Kl8mtqZsdTnVofX4LtIo_oV9_7qogrbuewWch7k_c1T2VlEmK5LVnm9IE7Wl0uk--z_G6crHfMHUfiPO4UqVPstg-JmvlCs_runVuJve7WL0INYxe6jM0UFC_5WwVE1bz2dil8_WyZHaVl0DALOuPbGhF1qvFq7T7DsiM7PuD-s-IHO7-GOA-vz1M8"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl mb-2 italic">Lowen Barn</h3>
+<p class="text-[10px] uppercase tracking-widest text-secondary font-bold">Sleeps 8 • Families</p>
+</div>
+<p class="text-primary font-bold">From £580</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Arvor Suites Highlight -->
+<section class="py-32 bg-secondary text-white relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-12 editorial-grid items-center">
+<div class="col-span-12 md:col-span-6 relative z-10">
+<span class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.3em] text-secondary-fixed mb-6 font-bold">New for 2024</span>
+<h2 class="text-6xl mb-8 leading-[1.1]">The Arvor Suites.</h2>
+<p class="font-['Plus_Jakarta_Sans'] text-lg leading-[1.8] text-white/80 mb-8 max-w-lg">
+                    22 architecturally-led eco-suites designed for profound rest. Featuring sedum roofs, geothermal heating, and interiors curated with locally sourced Cornish wool and reclaimed oak.
+                </p>
+<div class="flex gap-12 mb-12">
+<div>
+<span class="block text-4xl italic mb-2">22</span>
+<span class="text-[10px] uppercase tracking-widest text-white/60">New Suites</span>
+</div>
+<div>
+<span class="block text-4xl italic mb-2">A+</span>
+<span class="text-[10px] uppercase tracking-widest text-white/60">Energy Rating</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-none uppercase tracking-widest text-xs font-bold hover:opacity-90 transition-all">
+                    Explore Wellness
+                </button>
+</div>
+<div class="col-span-12 md:col-span-6 mt-12 md:mt-0">
+<div class="aspect-video bg-surface-container-high relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Interior of a minimalist luxury suite with floor-to-ceiling glass looking out at the North Cornwall coast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa2RpYFy5aK28jn1Dee_KZ5cQfSRK4Z92Fb6829U1z5Cx1mhgpLhLoUaJGpj4UCCt8awFykHAncGI5M6CRZPotHSbFBwGQnxdbJIuFkHq95913n1lSb71jvV1lYkjfTJYIp1hd3-vVP_XUeXj9oLHSIsunAgdY7TldkmQkLrLuB0ph2DEUhKdroLVVjnci79wu58cWAkuEDPcOqt8yIT73jofmrrrrjvvm8dhFgiVd7Iye_1232p3_nl9TkBvze9pp_xKzVHTsGHY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Sustainability Counter -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div class="space-y-4">
+<div class="font-['Newsreader'] text-5xl text-secondary">85%</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Self-Generated Energy</p>
+</div>
+<div class="space-y-4">
+<div class="font-['Newsreader'] text-5xl text-secondary">0</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Single-Use Plastics</p>
+</div>
+<div class="space-y-4">
+<div class="font-['Newsreader'] text-5xl text-secondary">400</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Acres of Habitat</p>
+</div>
+<div class="space-y-4">
+<div class="font-['Newsreader'] text-5xl text-secondary">1.2k</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">Native Trees Planted</p>
+</div>
+</div>
+</section>
+<!-- Farm/Restaurant/Spa Overlap Layout -->
+<section class="py-32 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-12">
+<!-- Overlap Row 1: Restaurant -->
+<div class="editorial-grid gap-12 items-center mb-48">
+<div class="col-span-12 md:col-span-7 relative">
+<img class="w-full h-[600px] object-cover" data-alt="Overhead shot of artisan farm-to-table dishes featuring fresh seafood, local herbs, and seasonal vegetables." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN61sBF2_4ew2fsXqqCNHyCdtG88F4U3CaX9ruCWPx3RqwHx1prd94YXqgcEtlxUIcTWEMGXmCEeLIpQ2XRmmwjQmX3RFho9v-tOBjUowMh03RvjEvB4Dr5scDzl-EA-v6NguQbApHEpbfLBXrNF7TzuX-UECUMkde1Bdfuc0qe_Hbq68zsYIc0I0uWDJsNvtPbhmQkFxEMiI0j2jVPUQ5JZHzfH90MgPOJJ_ORHnEAARPsdEnBTYtAuX1nRxkW4cJYycKt7yjP2w"/>
+<div class="absolute top-1/2 -right-12 md:-right-24 transform -translate-y-1/2 bg-surface p-12 shadow-2xl max-w-md hidden md:block">
+<span class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.3em] text-secondary mb-6 font-bold">The Kitchen</span>
+<h3 class="text-4xl mb-6 italic">The Wodehouse Restaurant</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Rooted in the soil of our farm. Every dish tells the story of the morning harvest, from sea-fresh scallops to our own pasture-raised beef.
+                        </p>
+<a class="text-primary font-bold uppercase tracking-widest text-xs" href="#">View the Menu</a>
+</div>
+</div>
+</div>
+<!-- Overlap Row 2: Spa -->
+<div class="editorial-grid gap-12 items-center flex-row-reverse">
+<div class="col-span-12 md:col-span-7 md:col-start-6 relative">
+<img class="w-full h-[600px] object-cover" data-alt="Soft focused image of a luxury spa treatment room with steam rising from a stone hot tub and eucalyptus branches." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV7S9HlRLF6wLAV3IpUqEblrXkfbppT-CvoU7cU9xI6zucLEG-Paa8Hpz0diaWCb9yQTlR_s50t1KjZRLnEdxcolRbqCplelc9hg8FE6_0hy5wwIRnK61Saf07evzf9Xm_Ej1PT5C0YI0xSqLj025oCyuwS8WbB43_ZI4rV-W_Vqz1z7LMmb72fp-Xt5JGVGlwvASlblFCkYFD4FP_Wr9WLLzmP1oueV24Ii7KSFraYNeVExGG5RE8z0zN9oqN-8wVl-nMC8tb9Do"/>
+<div class="absolute top-1/2 -left-12 md:-left-24 transform -translate-y-1/2 bg-surface p-12 shadow-2xl max-w-md hidden md:block">
+<span class="block font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.3em] text-secondary mb-6 font-bold">The Sanctuary</span>
+<h3 class="text-4xl mb-6 italic">Elemis Wellness Spa</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            An immersion in tranquility. Our heated indoor pool and outdoor hydrotherapy pool overlook the valley, providing a meditative backdrop for signature Elemis rituals.
+                        </p>
+<a class="text-primary font-bold uppercase tracking-widest text-xs" href="#">View Spa Packages</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface-container">
+<div class="max-w-3xl mx-auto px-12 text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-8">format_quote</span>
+<div class="mb-8">
+<div class="flex justify-center gap-1 mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="text-3xl md:text-4xl italic font-light leading-relaxed mb-8">
+                    "A transformative experience. The balance of high-end design and the raw beauty of the Cornwall coast is unlike anything else we've found."
+                </h3>
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.3em] text-on-surface-variant font-bold">— ELIZABETH HARVEY, LONDON</p>
+</div>
+<div class="flex justify-center gap-4">
+<button class="w-10 h-10 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 border border-outline rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Newsletter Sign-up -->
+<section class="py-32 bg-surface">
+<div class="max-w-5xl mx-auto px-12 text-center">
+<h2 class="text-5xl italic mb-6">Stay for a while.</h2>
+<p class="font-['Plus_Jakarta_Sans'] text-on-surface-variant mb-12 max-w-lg mx-auto">
+                Join our private mailing list for early access to seasonal offers, estate updates, and curated Cornish guides.
+            </p>
+<form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+<input class="flex-1 bg-surface-container-low border-0 border-b border-outline-variant focus:ring-0 focus:border-primary p-4 text-sm font-['Plus_Jakarta_Sans']" placeholder="Your email address" type="email"/>
+<button class="bg-secondary text-white px-12 py-4 rounded-none uppercase tracking-widest text-xs font-bold hover:bg-primary transition-all">
+                    Subscribe
+                </button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#fbf9f6] dark:bg-[#1b1c1a] full-width relative pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<span class="font-['Newsreader'] text-4xl text-[#4a6457] mb-8 block">Whalesborough</span>
+<p class="max-w-md text-[#4a6457] font-['Plus_Jakarta_Sans'] text-sm leading-relaxed mb-8 opacity-80">
+                    A destination for those who seek the extraordinary. Nestled on the rugged coast of North Cornwall, we offer luxury accommodation within a sustainably managed 400-acre estate.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest text-[#4a6457] font-bold">Discover</h4>
+<ul class="space-y-4">
+<li><a class="font-['Plus_Jakarta_Sans'] uppercase text-[10px] tracking-wider text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Our Story</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] uppercase text-[10px] tracking-wider text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Sustainability</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] uppercase text-[10px] tracking-wider text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest text-[#4a6457] font-bold">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-['Plus_Jakarta_Sans'] uppercase text-[10px] tracking-wider text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] uppercase text-[10px] tracking-wider text-[#4a6457] hover:text-[#703a1d] transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-24 pt-12 border-t border-[#4a6457]/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-wider text-[#4a6457] opacity-60">© Whalesborough Farm Resort &amp; Spa. All Rights Reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#4a6457] cursor-pointer hover:text-[#703a1d]">social_leaderboard</span>
+<span class="material-symbols-outlined text-[#4a6457] cursor-pointer hover:text-[#703a1d]">photo_camera</span>
+<span class="material-symbols-outlined text-[#4a6457] cursor-pointer hover:text-[#703a1d]">alternate_email</span>
+</div>
+</div>
+</footer>
+</body></html>
