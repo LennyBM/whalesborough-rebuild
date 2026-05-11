@@ -63,7 +63,18 @@
   to = "/our-cottages/"
   status = 301
 
-# Custom 404
+# Passthrough for pitch page (static file must bypass catch-all 404)
+[[redirects]]
+  from = "/pitch"
+  to = "/pitch/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pitch/"
+  to = "/pitch/index.html"
+  status = 200
+
+# Custom 404 — catch-all for any path without a matching file or rule above
 [[redirects]]
   from = "/*"
   to = "/404.html"
