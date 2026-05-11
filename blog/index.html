@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+ <meta name="referrer" content="strict-origin-when-cross-origin" />
+ <meta charset="UTF-8" />
+ <meta name="theme-color" content="#4a6457" />
+ <meta name="color-scheme" content="light" />
+ <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c0a" />
+ <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="format-detection" content="telephone=no" />
+ <title>Journal | Whalesborough Farm Resort &amp; Spa</title>
+ <meta name="description" content="Stories, guides and inspiration from Whalesborough Farm Resort &amp; Spa. Exploring Cornwall, life on the estate, seasonal highlights, and tips for the perfect Cornish holiday." />
+ <link rel="canonical" href="https://www.whalesborough.co.uk/blog/" />
+ <link rel="alternate" hreflang="en-gb" href="https://www.whalesborough.co.uk/blog/" />
+ <link rel="alternate" hreflang="x-default" href="https://www.whalesborough.co.uk/blog/" />
+ <meta property="og:title" content="Journal | Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://www.whalesborough.co.uk/blog/" />
+ <meta property="og:description" content="Stories and guides from Whalesborough — North Cornwall beaches, walks, dog-friendly days out, family adventures and life on the farm." />
+ <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/estate-view.webp" />
+ <meta property="og:image:width" content="1800" />
+ <meta property="og:image:height" content="1200" />
+ <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:locale" content="en_GB" />
+ <meta property="og:image:alt" content="Journal | Whalesborough Farm Resort &amp; Spa" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:site" content="@whalesborough" />
+ <meta name="twitter:title" content="Journal | Whalesborough Farm Resort &amp; Spa" />
+ <meta name="twitter:description" content="Stories and guides from Whalesborough — North Cornwall beaches, walks, dog-friendly days out, family adventures and life on the farm." />
+ <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/general/estate-view.webp" />
+ <meta name="twitter:image:alt" content="Journal | Whalesborough Farm Resort &amp; Spa" />
+ <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
+ <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b" />
+ <style>
+  .journal-hero {
+   background: var(--ink);
+   padding: 8rem 3rem 5rem;
+  }
+  .journal-hero-inner {
+   max-width: 760px;
+  }
+  .journal-label {
+   font-family: var(--font-body);
+   font-size: 0.75rem;
+   font-weight: 600;
+   letter-spacing: 0.15em;
+   text-transform: uppercase;
+   color: var(--secondary-light, #8fb4a5);
+   margin: 0 0 1.25rem;
+  }
+  .journal-hero h1 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(2.5rem, 5vw, 4rem);
+   color: var(--warm-white);
+   margin: 0 0 1.25rem;
+   line-height: 1.1;
+  }
+  .journal-hero p {
+   font-family: var(--font-body);
+   color: rgba(251,249,246,0.65);
+   font-size: 1.0625rem;
+   line-height: 1.65;
+   max-width: 540px;
+  }
+
+  /* Featured article */
+  .featured-section {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 4rem 3rem 0;
+  }
+  .featured-article {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 0;
+   background: var(--surface);
+   border: 1px solid var(--surface-high);
+   overflow: hidden;
+  }
+  .featured-img {
+   position: relative;
+   overflow: hidden;
+   min-height: 420px;
+  }
+  .featured-img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: transform 0.5s ease;
+  }
+  .featured-article:hover .featured-img img { transform: scale(1.04); }
+  .featured-body {
+   padding: 3.5rem 3rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+  .article-tag {
+   font-family: var(--font-body);
+   font-size: 0.6875rem;
+   font-weight: 700;
+   letter-spacing: 0.14em;
+   text-transform: uppercase;
+   color: var(--primary);
+   margin: 0 0 1rem;
+  }
+  .featured-body h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.625rem, 2.5vw, 2.25rem);
+   color: var(--ink);
+   margin: 0 0 1rem;
+   line-height: 1.2;
+  }
+  .featured-body p {
+   font-family: var(--font-body);
+   color: var(--ink-mid);
+   line-height: 1.65;
+   margin: 0 0 2rem;
+  }
+  .article-meta {
+   font-family: var(--font-body);
+   font-size: 0.8125rem;
+   color: var(--ink-light);
+   margin-bottom: 1.75rem;
+  }
+
+  /* Article grid */
+  .articles-section {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 3rem 3rem 5rem;
+  }
+  .articles-section h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.5rem, 2.5vw, 2rem);
+   color: var(--ink);
+   margin: 0 0 2.5rem;
+  }
+  .articles-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2rem;
+  }
+  @media (max-width: 1024px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+   .articles-grid { grid-template-columns: 1fr; }
+   .featured-article { grid-template-columns: 1fr; }
+   .featured-img { min-height: 260px; }
+   .featured-body { padding: 2rem 1.75rem; }
+   .featured-section, .articles-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+   .journal-hero { padding: 6rem 1.5rem 3.5rem; }
+  }
+
+  .article-card {
+   background: var(--surface);
+   border: 1px solid var(--surface-high);
+   display: flex;
+   flex-direction: column;
+   text-decoration: none;
+   overflow: hidden;
+   transition: box-shadow 0.25s;
+  }
+  .article-card:hover { box-shadow: 0 8px 32px rgba(20,18,14,0.1); }
+  .article-card-img {
+   height: 220px;
+   overflow: hidden;
+  }
+  .article-card-img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: transform 0.45s ease;
+  }
+  .article-card:hover .article-card-img img { transform: scale(1.05); }
+  .article-card-body {
+   padding: 1.75rem;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+  }
+  .article-card-body .article-tag { margin-bottom: 0.75rem; }
+  .article-card-body h3 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: 1.25rem;
+   color: var(--ink);
+   margin: 0 0 0.75rem;
+   line-height: 1.3;
+  }
+  .article-card-body p {
+   font-family: var(--font-body);
+   font-size: 0.9375rem;
+   color: var(--ink-mid);
+   line-height: 1.6;
+   margin: 0 0 1.25rem;
+   flex: 1;
+  }
+  .article-card-body .article-meta { margin: 0; }
+
+  /* Explore more band */
+  .explore-band {
+   background: var(--secondary);
+   padding: 4.5rem 3rem;
+   text-align: center;
+  }
+  .explore-band h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.75rem, 3vw, 2.5rem);
+   color: var(--warm-white);
+   margin: 0 0 1rem;
+  }
+  .explore-band p {
+   font-family: var(--font-body);
+   color: rgba(251,249,246,0.75);
+   margin: 0 0 2.5rem;
+  }
+  .explore-links {
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+   flex-wrap: wrap;
+  }
+ </style>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+   {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.whalesborough.co.uk/blog/"}
+  ]
+ }
+ </script>
+ <link rel="preconnect" href="https://www.landal.co.uk" crossorigin />
+ <link rel="dns-prefetch" href="https://www.landal.co.uk" />
+ <link rel="manifest" href="/manifest.webmanifest" />
+ <link rel="apple-touch-icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="alternate" type="application/rss+xml" title="Whalesborough Journal RSS" href="/feed.xml" />
+ <meta name="DC.title" content="Whalesborough Journal" />
+ <meta name="DC.creator" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta name="DC.subject" content="Cornwall, luxury travel, dog-friendly holidays, wellness" />
+ <meta name="DC.description" content="Stories and guides from Whalesborough Farm Resort — Cornwall beaches, walks, farm life, family and dog-friendly travel." />
+ <meta name="DC.publisher" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta name="DC.date" content="2026-04-09" />
+ <meta name="DC.language" content="en-GB" />
+ <meta name="DC.rights" content="Copyright Whalesborough Farm Resort &amp; Spa" />
+</head>
+<body class="has-sticky-book">
+ <div class="urgency-banner">
+  Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Arvor Suite Packages from £175 per night per person &nbsp;|&nbsp; Call 01288 361940
+ </div>
+
+ <nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+   <a href="../index.html" class="nav-logo" aria-label="Whalesborough — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+   <ul class="nav-links" role="list">
+    <li><a href="../our-cottages/index.html">Cottages</a></li>
+    <li><a href="../arvor-suites/index.html">Arvor Suites</a></li>
+    <li><a href="../spa-and-treatments/index.html">Spa</a></li>
+    <li><a href="../weir-restaurant/index.html">Dining</a></li>
+    <li><a href="../dog-friendly-breaks/index.html">Dog Friendly</a></li>
+    <li><a href="../exploring-cornwall/index.html">Explore</a></li>
+   </ul>
+   <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:01288361940" style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;color:rgba(255,255,255,0.7);">01288 361940</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Book with Landal</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+   </div>
+  </div>
+ </nav>
+
+ <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-close" aria-label="Close menu">&times;</button>
+  <a href="../our-cottages/index.html">Cottages</a>
+  <a href="../arvor-suites/index.html">Arvor Suites</a>
+  <a href="../spa-and-treatments/index.html">Spa</a>
+  <a href="../weir-restaurant/index.html">Dining</a>
+  <a href="../dog-friendly-breaks/index.html">Dog Friendly</a>
+  <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
+  <a href="../contact-us/index.html">Contact</a>
+  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Book with Landal</a>
+ </div>
+
+ <!-- HERO -->
+ <section id="main-content" class="">
+  <div class="journal-hero-inner">
+   <p class="journal-label">The Whalesborough Journal</p>
+   <h1>Stories from the Farm</h1>
+   <p>Guides to North Cornwall, life on the estate through the seasons, dog-friendly adventures, and inspiration for your next stay.</p>
+  </div>
+ </section>
+
+ <!-- FEATURED -->
+ <div class="featured-section">
+  <a class="featured-article" href="../exploring-cornwall/hitting-the-coast/">
+   <div class="featured-img">
+    <img src="../assets/images/general/bude-canal.webp" alt="North Cornwall coast near Bude" />
+   </div>
+   <div class="featured-body">
+    <p class="article-tag">Exploring Cornwall</p>
+    <h2>Hitting the Coast — North Cornwall's Best Beaches &amp; Coastal Walks</h2>
+    <p class="article-meta">A guide from the Whalesborough team</p>
+    <p>Widemouth Bay, Summerleaze, Crooklets and the South West Coast Path are right on your doorstep. Here's how to make the most of the North Cornwall coastline from Whalesborough.</p>
+    <span class="btn btn-secondary" style="align-self:flex-start;">Read the Guide</span>
+   </div>
+  </a>
+ </div>
+
+ <!-- ARTICLE GRID -->
+ <div class="articles-section">
+  <h2>More from the Journal</h2>
+  <div class="articles-grid">
+
+   <a class="article-card" href="../exploring-cornwall/days-with-dog/">
+    <div class="article-card-img">
+     <img src="../assets/images/general/farm-animals.webp" alt="Dogs at Whalesborough" loading="lazy" decoding="async" />
+    </div>
+    <div class="article-card-body">
+     <p class="article-tag">Dog-Friendly</p>
+     <h3>Days Out with Your Dog in Cornwall</h3>
+     <p>Dog-friendly beaches, coastal paths, open moors and welcoming pubs — a guide to the best canine adventures near Whalesborough.</p>
+     <p class="article-meta">Beaches &bull; Moors &bull; Pubs</p>
+    </div>
+   </a>
+
+   <a class="article-card" href="../exploring-cornwall/dog-walks/">
+    <div class="article-card-img">
+     <img src="../assets/images/general/outdoor-activities.webp" alt="Walking on the Whalesborough estate" loading="lazy" decoding="async" />
+    </div>
+    <div class="article-card-body">
+     <p class="article-tag">Walking</p>
+     <h3>Estate Walking Routes — 428 Acres on Your Doorstep</h3>
+     <p>From short strolls through the valley to the full coastal loop via Widemouth Bay — the walking routes that start right from your cottage door.</p>
+     <p class="article-meta">Estate &bull; Coast Path &bull; Bude Canal</p>
+    </div>
+   </a>
+
+   <a class="article-card" href="../exploring-cornwall/family-days-out/">
+    <div class="article-card-img">
+     <img src="../assets/images/general/kids-activities.webp" alt="Family activities in Cornwall" loading="lazy" decoding="async" />
+    </div>
+    <div class="article-card-body">
+     <p class="article-tag">Family</p>
+     <h3>Family Days Out in Cornwall — Tintagel, Zoos &amp; More</h3>
+     <p>Tintagel Castle, Camel Creek, Newquay Zoo, the Museum of Witchcraft — the best days out for families staying at Whalesborough.</p>
+     <p class="article-meta">Tintagel &bull; Padstow &bull; Newquay</p>
+    </div>
+   </a>
+
+   <a class="article-card" href="../exploring-cornwall/">
+    <div class="article-card-img">
+     <img src="../assets/images/general/estate-aerial.webp" alt="Whalesborough estate from above" loading="lazy" decoding="async" />
+    </div>
+    <div class="article-card-body">
+     <p class="article-tag">Exploring Cornwall</p>
+     <h3>Your Complete Guide to North Cornwall from Whalesborough</h3>
+     <p>Everything within reach — beaches, heritage sites, food destinations, walks and hidden gems across North Cornwall and beyond.</p>
+     <p class="article-meta">Bude &bull; Port Isaac &bull; Bodmin Moor</p>
+    </div>
+   </a>
+
+   <a class="article-card" href="../spa-and-treatments/">
+    <div class="article-card-img">
+     <img src="../assets/images/spa/spa-wellness.webp" alt="Spa at Whalesborough" loading="lazy" decoding="async" />
+    </div>
+    <div class="article-card-body">
+     <p class="article-tag">Spa &amp; Wellness</p>
+     <h3>How to Make the Most of the Whalesborough Spa</h3>
+     <p>From the hydrotherapy pool and steam room to our signature Cornish treatments — a guide to everything the spa has to offer.</p>
+     <p class="article-meta">Treatments &bull; Pool &bull; Thermal Suite</p>
+    </div>
+   </a>
+
+   <a class="article-card" href="../holiday-treats/">
+    <div class="article-card-img">
+     <img src="../assets/images/general/couples-cottage.webp" alt="Couples cottage at Whalesborough" loading="lazy" decoding="async" />
+    </div>
+    <div class="article-card-body">
+     <p class="article-tag">Planning Your Stay</p>
+     <h3>Holiday Treats &amp; Surprises — Pre-Arrival Extras</h3>
+     <p>Cornish hampers, champagne on arrival, private dining and anniversary packages — everything you can arrange before you even arrive.</p>
+     <p class="article-meta">Hampers &bull; Spa Packages &bull; Dining</p>
+    </div>
+   </a>
+
+  </div>
+ </div>
+
+ <!-- EXPLORE BAND -->
+ <section class="explore-band">
+  <h2>Planning a trip to Cornwall?</h2>
+  <p>Browse our cottages, check availability and start planning your stay.</p>
+  <div class="explore-links">
+   <a href="../our-cottages/" class="btn btn-light">View All Cottages</a>
+   <a href="../booking/" class="btn btn-outline-light">Check Availability</a>
+  </div>
+ </section>
+
+ <p class="page-last-modified" aria-label="Last updated">Last updated: <time datetime="2026-04-09">9 April 2026</time></p>
+
+ <footer class="site-footer">
+  <div class="footer-inner">
+   <div class="footer-brand">
+    <span class="logo-name">Whalesborough</span>
+    <span class="logo-sub">Farm Resort &amp; Spa</span>
+   </div>
+   <nav class="footer-nav">
+    <div class="footer-col">
+     <h4>Stay</h4>
+     <ul>
+      <li><a href="../our-cottages/">Holiday Cottages</a></li>
+      <li><a href="../arvor-suites/">Arvor Suites</a></li>
+      <li><a href="../groups/">Groups &amp; Buyouts</a></li>
+      <li><a href="../holiday-home-investment/">Holiday Home Investment</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Experience</h4>
+     <ul>
+      <li><a href="../spa-and-treatments/">Spa &amp; Treatments</a></li>
+      <li><a href="../weir-restaurant/">Weir Restaurant</a></li>
+      <li><a href="../outdoor-activities/">Activities</a></li>
+      <li><a href="../holiday-treats/">Holiday Treats</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Discover</h4>
+     <ul>
+      <li><a href="../exploring-cornwall/">Exploring Cornwall</a></li>
+      <li><a href="../dog-friendly-breaks/">Dog-Friendly Breaks</a></li>
+      <li><a href="../family-holidays/">Family Holidays</a></li>
+      <li><a href="../gallery/">Gallery</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Info</h4>
+     <ul>
+      <li><a href="../about/">About Us</a></li>
+      <li><a href="index.html">Journal</a></li>
+      <li><a href="../contact-us/">Contact</a></li><li><a href="../gift-vouchers/">Gift Vouchers</a></li>
+      <li><a href="../terms-and-conditions/">Terms &amp; Conditions</a> \&nbsp;|\&nbsp; <a href="#" data-cookie-settings>Cookie Settings</a></li>
+     </ul>
+    </div>
+   </nav>
+  </div>
+  <div class="footer-bottom">
+   <p>&copy; 2025 Whalesborough Farm Resort &amp; Spa. All rights reserved.</p>
+   <p>Whalesborough Farm, Bude, Cornwall, EX23 &nbsp;|&nbsp; <a href="../privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp; <a href="../terms-and-conditions/">Terms &amp; Conditions</a></p>
+  </div>
+ </footer>
+
+ <script src="../assets/js/main.js?v=25e5e2b" defer></script>
+ <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
+
+ <!-- Sticky mobile booking bar -->
+ <div class="sticky-book-bar" aria-label="Quick booking actions">
+  <div class="sbb-inner">
+   <a class="sbb-call" href="tel:01288361940">Call 01288 361940</a>
+   <a class="sbb-book" href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" data-track="book-click">Check 2026 Dates</a>
+  </div>
+ </div>
+ <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
+</body>
+</html>

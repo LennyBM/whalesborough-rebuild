@@ -1,0 +1,27 @@
+{
+  "name": "Whalesborough Farm Resort & Spa",
+  "short_name": "Whalesborough",
+  "description": "Award-winning luxury self-catering cottages and Arvor Suites on a 428-acre Cornish estate near Bude.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf9f6",
+  "theme_color": "#4a6457",
+  "lang": "en-GB",
+  "categories": ["travel", "lifestyle", "wellness"],
+  "icons": [
+    {
+      "src": "/assets/images/logo/Resort-Spa.webp",
+      "sizes": "400x120",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/logo/Resort-Spa.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ]
+}

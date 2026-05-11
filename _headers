@@ -1,0 +1,46 @@
+/*
+  # Security response headers for all pages
+  # Applied by Netlify on every response.
+  # These provide WAF-equivalent protections at the edge.
+
+  # Prevent clickjacking — page cannot be embedded in an <iframe> on another domain
+  X-Frame-Options: DENY
+
+  # Prevent MIME-type sniffing — browser must honour Content-Type header
+  X-Content-Type-Options: nosniff
+
+  # Referrer policy — only send origin (no path) on cross-origin requests
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Force HTTPS for 1 year (HSTS) — browser will refuse HTTP connections
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Restrict browser feature APIs — no access to camera, mic, location, payment, USB
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # Content Security Policy
+  # All fonts and assets are self-hosted so no external script/font/style sources needed.
+  # 'unsafe-inline' required for inline <script> and <style> blocks in existing pages.
+  # Landal (booking partner) and WhatsApp allowed for outbound navigation only (via links, not src).
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://maps.gstatic.com https://maps.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; frame-src https://www.google.com https://maps.googleapis.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://www.whalesborough.co.uk; upgrade-insecure-requests
+
+  # Prevent IE/Edge compatibility mode
+  X-UA-Compatible: IE=edge
+
+# Long-lived cache for fingerprinted static assets (immutable = no revalidation)
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages — short cache, always revalidate so edits appear quickly
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Service worker — never cache (must always fetch latest version)
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate

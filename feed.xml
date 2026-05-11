@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Whalesborough Journal</title>
+    <link>https://www.whalesborough.co.uk/blog/</link>
+    <atom:link href="https://www.whalesborough.co.uk/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Stories and guides from Whalesborough Farm Resort &amp; Spa — Cornwall beaches, walks, dog-friendly days out, family adventures, and life on the farm.</description>
+    <language>en-gb</language>
+    <copyright>Copyright Whalesborough Farm Resort &amp; Spa</copyright>
+    <managingEditor>info@whalesborough.co.uk (Whalesborough Farm Resort &amp; Spa)</managingEditor>
+    <webMaster>info@whalesborough.co.uk (Whalesborough Farm Resort &amp; Spa)</webMaster>
+    <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <category>Travel</category>
+    <category>Cornwall</category>
+    <image>
+      <url>https://www.whalesborough.co.uk/assets/images/logo/Resort-Spa.webp</url>
+      <title>Whalesborough Journal</title>
+      <link>https://www.whalesborough.co.uk/blog/</link>
+    </image>
+
+    <item>
+      <title>Welcome to the Whalesborough Journal</title>
+      <link>https://www.whalesborough.co.uk/blog/</link>
+      <guid isPermaLink="true">https://www.whalesborough.co.uk/blog/</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Whalesborough Farm Resort &amp; Spa</dc:creator>
+      <description>Stories, guides, and seasonal notes from our 428-acre Cornish estate near Bude.</description>
+    </item>
+  </channel>
+</rss>

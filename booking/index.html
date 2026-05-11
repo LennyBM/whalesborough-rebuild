@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+ <meta name="referrer" content="strict-origin-when-cross-origin" />
+ <meta charset="UTF-8" />
+ <meta name="theme-color" content="#4a6457" />
+ <meta name="color-scheme" content="light" />
+ <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c0a" />
+ <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="format-detection" content="telephone=no" />
+ <title>Book Your Stay | Whalesborough Farm Resort &amp; Spa</title>
+ <meta name="description" content="Book your Whalesborough holiday — 26 award-winning self-catering cottages via Landal, or call direct to reserve an Arvor Suite package. Best rate guaranteed when you book direct." />
+ <link rel="canonical" href="https://www.whalesborough.co.uk/booking/" />
+ <link rel="alternate" hreflang="en-gb" href="https://www.whalesborough.co.uk/booking/" />
+ <link rel="alternate" hreflang="x-default" href="https://www.whalesborough.co.uk/booking/" />
+ <meta property="og:title" content="Book Your Stay | Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://www.whalesborough.co.uk/booking/" />
+ <meta property="og:description" content="Book your Whalesborough stay — 26 award-winning cottages via Landal, or Arvor Suite packages from £175pp/night. Call 01288 361940." />
+ <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/estate-view.webp" />
+ <meta property="og:image:width" content="1800" />
+ <meta property="og:image:height" content="1200" />
+ <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:locale" content="en_GB" />
+ <meta property="og:image:alt" content="Book Your Stay | Whalesborough Farm Resort &amp; Spa" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:site" content="@whalesborough" />
+ <meta name="twitter:title" content="Book Your Stay | Whalesborough Farm Resort &amp; Spa" />
+ <meta name="twitter:description" content="Book your Whalesborough stay — 26 award-winning cottages via Landal, or Arvor Suite packages from £175pp/night. Call 01288 361940." />
+ <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/general/estate-view.webp" />
+ <meta name="twitter:image:alt" content="Book Your Stay | Whalesborough Farm Resort &amp; Spa" />
+ <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
+ <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b" />
+ <style>
+  .booking-hero {
+   background: var(--ink);
+   padding: 8rem 3rem 5.5rem;
+  }
+  .booking-hero-inner {
+   max-width: 1400px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 5rem;
+   align-items: end;
+  }
+  .booking-hero h1 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(2.25rem, 4vw, 3.75rem);
+   color: var(--warm-white);
+   margin: 0 0 1.25rem;
+   line-height: 1.1;
+  }
+  .booking-hero p {
+   font-family: var(--font-body);
+   color: rgba(251,249,246,0.65);
+   font-size: 1.0625rem;
+   line-height: 1.65;
+  }
+  .booking-guarantee {
+   background: rgba(251,249,246,0.06);
+   border: 1px solid rgba(251,249,246,0.12);
+   padding: 2rem;
+  }
+  .booking-guarantee h3 {
+   font-family: var(--font-body);
+   font-size: 0.75rem;
+   font-weight: 700;
+   letter-spacing: 0.14em;
+   text-transform: uppercase;
+   color: var(--secondary-light, #8fb4a5);
+   margin: 0 0 1rem;
+  }
+  .guarantee-list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 0.625rem;
+  }
+  .guarantee-list li {
+   font-family: var(--font-body);
+   font-size: 0.9375rem;
+   color: rgba(251,249,246,0.8);
+   padding-left: 1.25rem;
+   position: relative;
+  }
+  .guarantee-list li::before {
+   content: '✓';
+   position: absolute;
+   left: 0;
+   color: var(--secondary-light, #8fb4a5);
+   font-weight: 700;
+  }
+
+  /* Option cards */
+  .booking-options {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 5rem 3rem;
+  }
+  .booking-options > h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.75rem, 3vw, 2.5rem);
+   color: var(--ink);
+   margin: 0 0 2.5rem;
+  }
+  .options-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 2rem;
+  }
+  .option-card {
+   border: 1px solid var(--surface-high);
+   overflow: hidden;
+  }
+  .option-img {
+   height: 260px;
+   overflow: hidden;
+  }
+  .option-img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: transform 0.45s ease;
+  }
+  .option-card:hover .option-img img { transform: scale(1.04); }
+  .option-body {
+   padding: 2.5rem;
+  }
+  .option-tag {
+   font-family: var(--font-body);
+   font-size: 0.6875rem;
+   font-weight: 700;
+   letter-spacing: 0.14em;
+   text-transform: uppercase;
+   color: var(--primary);
+   margin: 0 0 0.75rem;
+  }
+  .option-body h3 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: 1.625rem;
+   color: var(--ink);
+   margin: 0 0 0.875rem;
+  }
+  .option-body p {
+   font-family: var(--font-body);
+   color: var(--ink-mid);
+   line-height: 1.65;
+   margin: 0 0 1.5rem;
+  }
+  .option-details {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   margin-bottom: 2rem;
+  }
+  .option-detail {
+   font-family: var(--font-body);
+   font-size: 0.875rem;
+   color: var(--ink-mid);
+   display: flex;
+   gap: 0.625rem;
+  }
+  .option-detail strong {
+   color: var(--ink);
+   font-weight: 600;
+   min-width: 80px;
+  }
+  .option-cta-group {
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+  .option-phone {
+   font-family: var(--font-body);
+   font-size: 0.875rem;
+   color: var(--ink-mid);
+  }
+  .option-phone a {
+   color: var(--primary);
+   text-decoration: none;
+   font-weight: 600;
+  }
+
+  /* FAQ strip */
+  .booking-faq {
+   background: var(--surface);
+   border-top: 1px solid var(--surface-high);
+   padding: 5rem 3rem;
+  }
+  .booking-faq-inner {
+   max-width: 1400px;
+   margin: 0 auto;
+  }
+  .booking-faq h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.75rem, 3vw, 2.5rem);
+   color: var(--ink);
+   margin: 0 0 2.5rem;
+  }
+  .faq-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 2rem 4rem;
+  }
+  .faq-item h3 {
+   font-family: var(--font-body);
+   font-size: 0.9375rem;
+   font-weight: 700;
+   color: var(--ink);
+   margin: 0 0 0.5rem;
+  }
+  .faq-item p {
+   font-family: var(--font-body);
+   font-size: 0.9375rem;
+   color: var(--ink-mid);
+   line-height: 1.65;
+   margin: 0;
+  }
+  .faq-item a { color: var(--primary); }
+
+  /* Contact banner */
+  .booking-contact {
+   background: var(--primary);
+   padding: 4rem 3rem;
+   text-align: center;
+  }
+  .booking-contact h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.75rem, 3vw, 2.5rem);
+   color: var(--warm-white);
+   margin: 0 0 0.75rem;
+  }
+  .booking-contact p {
+   font-family: var(--font-body);
+   color: rgba(251,249,246,0.75);
+   margin: 0 0 2rem;
+  }
+  .booking-contact-links {
+   display: flex;
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+  .booking-contact-links a {
+   font-family: var(--font-body);
+   color: rgba(251,249,246,0.85);
+   text-decoration: none;
+   font-weight: 600;
+   font-size: 1.125rem;
+   transition: color 0.2s;
+  }
+  .booking-contact-links a:hover { color: var(--warm-white); }
+  .booking-contact-links span { color: rgba(251,249,246,0.3); }
+
+  @media (max-width: 900px) {
+   .booking-hero-inner, .options-grid, .faq-grid { grid-template-columns: 1fr; }
+   .booking-hero, .booking-options, .booking-faq-inner, .booking-contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+  }
+ </style>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+   {"@type":"ListItem","position":2,"name":"Book Your Stay","item":"https://www.whalesborough.co.uk/booking/"}
+  ]
+ }
+ </script>
+ <link rel="preconnect" href="https://www.landal.co.uk" crossorigin />
+ <link rel="dns-prefetch" href="https://www.landal.co.uk" />
+ <link rel="manifest" href="/manifest.webmanifest" />
+ <link rel="apple-touch-icon" href="/assets/images/logo/Resort-Spa.webp" />
+</head>
+<body class="has-sticky-book">
+ <div class="urgency-banner">
+  Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Arvor Suite Packages from £175 per night per person &nbsp;|&nbsp; Call 01288 361940
+ </div>
+
+ <nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+   <a href="../index.html" class="nav-logo" aria-label="Whalesborough — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+   <ul class="nav-links" role="list">
+    <li><a href="../our-cottages/index.html">Cottages</a></li>
+    <li><a href="../arvor-suites/index.html">Arvor Suites</a></li>
+    <li><a href="../spa-and-treatments/index.html">Spa</a></li>
+    <li><a href="../weir-restaurant/index.html">Dining</a></li>
+    <li><a href="../dog-friendly-breaks/index.html">Dog Friendly</a></li>
+    <li><a href="../exploring-cornwall/index.html">Explore</a></li>
+   </ul>
+   <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:01288361940" style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;color:rgba(255,255,255,0.7);">01288 361940</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Book with Landal</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+   </div>
+  </div>
+ </nav>
+
+ <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-close" aria-label="Close menu">&times;</button>
+  <a href="../our-cottages/index.html">Cottages</a>
+  <a href="../arvor-suites/index.html">Arvor Suites</a>
+  <a href="../spa-and-treatments/index.html">Spa</a>
+  <a href="../weir-restaurant/index.html">Dining</a>
+  <a href="../dog-friendly-breaks/index.html">Dog Friendly</a>
+  <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
+  <a href="../contact-us/index.html">Contact</a>
+  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Book with Landal</a>
+ </div>
+
+ <!-- HERO -->
+ <section id="main-content" class="">
+  <div class="booking-hero-inner">
+   <div>
+    <h1>Book your<br>Whalesborough stay</h1>
+    <p>Choose from 26 self-catering cottages, or book an Arvor Suite package directly with our team. Spa access included for all cottage guests. Dogs always welcome, always free.</p>
+   </div>
+   <div class="booking-guarantee">
+    <h3>Best Rate Guaranteed</h3>
+    <ul class="guarantee-list">
+     <li>Spa access included for all cottage guests</li>
+     <li>Dogs stay free — no per-night charge</li>
+     <li>No booking fees</li>
+     <li>Flexible cancellation on most dates</li>
+     <li>Arvor Suite packages from £175pp/night</li>
+    </ul>
+   </div>
+  </div>
+ </section>
+
+ <!-- OPTIONS -->
+ <div class="booking-options">
+  <h2>How to book</h2>
+  <div class="options-grid">
+
+   <!-- Cottages -->
+   <div class="option-card">
+    <div class="option-img">
+     <img src="../assets/images/general/cottages-exterior.webp" alt="Whalesborough self-catering cottages" loading="lazy" decoding="async" />
+    </div>
+    <div class="option-body">
+     <p class="option-tag">Self-Catering</p>
+     <h3>Holiday Cottages</h3>
+     <p>All 26 cottages are booked online through our partner Landal. Check live availability, view pricing, and secure your dates in minutes.</p>
+     <div class="option-details">
+      <div class="option-detail"><strong>Sleeps</strong> 2 to 14 guests</div>
+      <div class="option-detail"><strong>From</strong> Varies by cottage &amp; season</div>
+      <div class="option-detail"><strong>Includes</strong> W Club Spa access &amp; dogs free</div>
+      <div class="option-detail"><strong>Booking</strong> Online via Landal</div>
+     </div>
+     <div class="option-cta-group">
+      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-track="book-click">Check Availability on Landal</a>
+     </div>
+    </div>
+   </div>
+
+   <!-- Arvor Suites -->
+   <div class="option-card">
+    <div class="option-img">
+     <img src="../assets/images/arvor/arvor-suites-exterior.webp" alt="Arvor Suites at Whalesborough" loading="lazy" decoding="async" />
+    </div>
+    <div class="option-body">
+     <p class="option-tag">Hotel-Style</p>
+     <h3>Arvor Suite Packages</h3>
+     <p>22 contemporary self-catering suites with private balcony and kitchenette — ideal for couples and wellness breaks. Book directly with our team for the full package.</p>
+     <div class="option-details">
+      <div class="option-detail"><strong>Sleeps</strong> 2 guests (couples)</div>
+      <div class="option-detail"><strong>From</strong> £175 per person per night</div>
+      <div class="option-detail"><strong>Includes</strong> Breakfast, spa &amp; resort access</div>
+      <div class="option-detail"><strong>Booking</strong> Call or WhatsApp direct</div>
+     </div>
+     <div class="option-cta-group">
+      <a href="tel:+441288361940" class="btn btn-secondary">Call 01288 361940</a>
+      <p class="option-phone">or <a href="https://wa.me/441288361940" target="_blank" rel="noopener noreferrer">WhatsApp us</a></p>
+     </div>
+    </div>
+   </div>
+
+  </div>
+ </div>
+
+ <!-- FAQ -->
+ <section class="booking-faq">
+  <div class="booking-faq-inner">
+   <h2>Booking questions</h2>
+   <div class="faq-grid">
+    <div class="faq-item">
+     <h3>Is spa access included?</h3>
+     <p>Yes — all cottage guests receive complimentary full access to The W Club Spa, including the indoor heated pool, outdoor pool, sauna, steam room and Technogym gym. No booking required.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Can I bring my dog?</h3>
+     <p>All 26 cottages are dog-friendly at no extra charge. Up to 2 dogs are welcome per cottage. Each cottage has an enclosed private garden and there are 428 acres of walking trails on the estate.</p>
+    </div>
+    <div class="faq-item">
+     <h3>What's the minimum stay?</h3>
+     <p>Cottages are typically booked for a minimum of 3 nights, with 7-night Saturday–Saturday changeovers during peak school holidays. Short breaks are available outside peak season.</p>
+    </div>
+    <div class="faq-item">
+     <h3>When can I check in?</h3>
+     <p>Cottage check-in is from 4pm; check-out by 10am. Arvor Suite check-in is from 3pm; check-out by 11am. Early or late options can sometimes be arranged — call the team.</p>
+    </div>
+    <div class="faq-item">
+     <h3>Can I book the whole resort?</h3>
+     <p>Yes — Whalesborough is available for exclusive hire for large groups, family gatherings, corporate retreats and weddings. <a href="../groups/">Contact our groups team</a> for a tailored quote.</p>
+    </div>
+    <div class="faq-item">
+     <h3>What is Landal?</h3>
+     <p>Landal GreenParks is our booking partner for cottage reservations. They handle the secure payment and booking system on our behalf. Your stay itself is entirely at Whalesborough — Landal just manage the booking platform.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- CONTACT BAND -->
+ <section class="booking-contact">
+  <h2>Still have questions?</h2>
+  <p>Our team is available seven days a week to help you plan the perfect stay.</p>
+  <div class="booking-contact-links">
+   <a href="tel:+441288361940">01288 361940</a>
+   <span>|</span>
+   <a href="https://wa.me/441288361940" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+   <span>|</span>
+   <a href="../contact-us/">Send a message</a>
+  </div>
+ </section>
+
+ <footer class="site-footer">
+  <div class="footer-inner">
+   <div class="footer-brand">
+    <span class="logo-name">Whalesborough</span>
+    <span class="logo-sub">Farm Resort &amp; Spa</span>
+   </div>
+   <nav class="footer-nav">
+    <div class="footer-col">
+     <h4>Stay</h4>
+     <ul>
+      <li><a href="../our-cottages/">Holiday Cottages</a></li>
+      <li><a href="../arvor-suites/">Arvor Suites</a></li>
+      <li><a href="../groups/">Groups &amp; Buyouts</a></li>
+      <li><a href="../holiday-home-investment/">Holiday Home Investment</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Experience</h4>
+     <ul>
+      <li><a href="../spa-and-treatments/">Spa &amp; Treatments</a></li>
+      <li><a href="../weir-restaurant/">Weir Restaurant</a></li>
+      <li><a href="../outdoor-activities/">Activities</a></li>
+      <li><a href="../holiday-treats/">Holiday Treats</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Discover</h4>
+     <ul>
+      <li><a href="../exploring-cornwall/">Exploring Cornwall</a></li>
+      <li><a href="../dog-friendly-breaks/">Dog-Friendly Breaks</a></li>
+      <li><a href="../family-holidays/">Family Holidays</a></li>
+      <li><a href="../gallery/">Gallery</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Info</h4>
+     <ul>
+      <li><a href="../about/">About Us</a></li>
+      <li><a href="../blog/">Journal</a></li>
+      <li><a href="../contact-us/">Contact</a></li><li><a href="../gift-vouchers/">Gift Vouchers</a></li>
+      <li><a href="../terms-and-conditions/">Terms &amp; Conditions</a> \&nbsp;|\&nbsp; <a href="#" data-cookie-settings>Cookie Settings</a></li>
+     </ul>
+    </div>
+   </nav>
+  </div>
+  <div class="footer-bottom">
+   <p>&copy; 2025 Whalesborough Farm Resort &amp; Spa. All rights reserved.</p>
+   <p>Whalesborough Farm, Bude, Cornwall, EX23 &nbsp;|&nbsp; <a href="../privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp; <a href="../terms-and-conditions/">Terms &amp; Conditions</a></p>
+  </div>
+ </footer>
+
+ <script src="../assets/js/main.js?v=25e5e2b" defer></script>
+ <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
+
+ <!-- Sticky mobile booking bar -->
+ <div class="sticky-book-bar" aria-label="Quick booking actions">
+  <div class="sbb-inner">
+   <a class="sbb-call" href="tel:01288361940">Call 01288 361940</a>
+   <a class="sbb-book" href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" data-track="book-click">Check 2026 Dates</a>
+  </div>
+ </div>
+ <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
+</body>
+</html>

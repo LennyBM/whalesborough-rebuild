@@ -1,569 +1,593 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="../assets/images/logo/Resort-Spa.webp" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exploring Cornwall from Whalesborough | Beaches, Walks & Days Out near Bude</title>
-  <meta name="description" content="Discover North Cornwall from Whalesborough Farm. Beaches at Widemouth Bay, Crooklets and Bude. The South West Coast Path. Tintagel, Port Isaac, Padstow, Bodmin Moor. Your guide to the best of Cornwall." />
-  <link rel="canonical" href="https://www.whalesborough.co.uk/exploring-cornwall/" />
-  <meta property="og:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture"
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@whalesborough" />
-  <meta name="twitter:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture" />
-  <meta name="twitter:description" content="North Cornwall's finest beaches, coastal walks, heritage sites and food destinations — all within easy reach of Whalesborough Farm Resort." />
-  <meta property="og:description" content="North Cornwall's finest beaches, coastal walks, heritage sites and food destinations — all within easy reach of Whalesborough Farm Resort." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.whalesborough.co.uk/exploring-cornwall/" />
-  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
-  <meta property="og:locale" content="en_GB" />
-  <link rel="stylesheet" href="../assets/css/fonts.css" />
-  <link rel="stylesheet" href="../assets/css/whalesborough.css" />
+ <meta name="referrer" content="strict-origin-when-cross-origin" />
+ <meta charset="UTF-8" />
+ <meta name="theme-color" content="#4a6457" />
+ <meta name="color-scheme" content="light" />
+ <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c0a" />
+ <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="format-detection" content="telephone=no" />
+ <title>Exploring Cornwall from Whalesborough | Beaches, Walks & Days Out near Bude</title>
+ <meta name="description" content="Discover North Cornwall from Whalesborough Farm. Beaches at Widemouth Bay, Crooklets and Bude. The South West Coast Path. Tintagel, Port Isaac, Padstow, Bodmin Moor. Your guide to the best of Cornwall." />
+ <link rel="canonical" href="https://www.whalesborough.co.uk/exploring-cornwall/" />
+ <link rel="alternate" hreflang="en-gb" href="https://www.whalesborough.co.uk/exploring-cornwall/" />
+ <link rel="alternate" hreflang="x-default" href="https://www.whalesborough.co.uk/exploring-cornwall/" />
+ <meta property="og:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture"
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:site" content="@whalesborough" />
+ <meta name="twitter:title" content="Exploring Cornwall from Whalesborough | Beaches, Coast & Culture" />
+ <meta name="twitter:description" content="North Cornwall's finest beaches, coastal walks, heritage sites and food destinations — all within easy reach of Whalesborough Farm Resort." />
+ <meta property="og:description" content="North Cornwall's finest beaches, coastal walks, heritage sites and food destinations — all within easy reach of Whalesborough Farm Resort." />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://www.whalesborough.co.uk/exploring-cornwall/" />
+ <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:locale" content="en_GB" />
+ <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
+ <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b" />
 
-  <style>
-    .explore-hero {
-      height: 90vh;
-      min-height: 600px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-    }
-    .explore-hero-bg {
-      position: absolute; inset: 0;
-      overflow: hidden;
-    }
-    .explore-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,18,16,0.9) 0%, rgba(13,18,16,0.3) 50%, transparent 80%);
-    }
-
-    .distance-strip {
-      background: var(--surface);
-      border-bottom: 1px solid var(--surface-high);
-    }
-    .distance-strip-inner {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-    .distance-item {
-      padding: 2rem 1.5rem;
-      border-right: 1px solid var(--surface-high);
-      text-align: center;
-    }
-    .distance-item:last-child { border-right: none; }
-    .distance-num {
-      font-family: var(--font-headline);
-      font-style: italic;
-      font-size: 1.75rem;
-      color: var(--secondary);
-      font-weight: 300;
-      line-height: 1;
-      margin-bottom: 0.375rem;
-    }
-    .distance-label {
-      font-family: var(--font-body);
-      font-size: 0.5625rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--on-surface-variant);
-    }
-
-    .chapter {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
-    }
-    .chapter-img {
-      overflow: hidden;
-      position: relative;
-    }
-    .chapter-img .ph {
-      width: 100%; height: 100%; min-height: 480px;
-      display: flex; align-items: flex-end; padding: 2rem;
-    }
-    .chapter-body {
-      padding: 6rem 5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .chapter:nth-child(even) .chapter-img { order: 2; }
-    .chapter:nth-child(even) .chapter-body { order: 1; background: var(--surface-low); }
-    .chapter:nth-child(odd) .chapter-body { background: var(--surface); }
-
-    .destination-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--surface-high);
-    }
-    .destination-card {
-      background: var(--surface-low);
-      padding: 2.5rem 2rem;
-      transition: background 0.2s;
-    }
-    .destination-card:hover { background: var(--surface-mid); }
-    .destination-dist {
-      font-family: var(--font-headline);
-      font-style: italic;
-      font-size: 1.5rem;
-      color: var(--secondary);
-      font-weight: 300;
-      margin-bottom: 0.625rem;
-      line-height: 1;
-    }
-
-    .beach-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .beach-card {
-      overflow: hidden;
-    }
-    .beach-img {
-      height: 240px;
-      overflow: hidden;
-    }
-    .beach-img .ph {
-      width: 100%; height: 100%;
-    }
-    .beach-body { padding: 1.25rem 0 0.5rem; }
-    .beach-name {
-      font-family: var(--font-headline);
-      font-style: italic;
-      font-size: 1.25rem;
-      color: var(--on-surface);
-      margin-bottom: 0.375rem;
-    }
-
-    .trail-list {
-      list-style: none;
-      margin-top: 2rem;
-    }
-    .trail-list li {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--surface-mid);
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    .trail-dist {
-      font-family: var(--font-headline);
-      font-style: italic;
-      font-size: 1.125rem;
-      color: var(--secondary);
-      font-weight: 300;
-    }
-
-    @media (max-width: 1100px) {
-      .chapter { grid-template-columns: 1fr; }
-      .chapter:nth-child(even) .chapter-img { order: 1; }
-      .chapter:nth-child(even) .chapter-body { order: 2; }
-      .chapter-img .ph { min-height: 320px; }
-      .chapter-body { padding: 3.5rem 2rem; }
-      .destination-grid { grid-template-columns: 1fr 1fr; }
-      .beach-row { grid-template-columns: repeat(2, 1fr); }
-      .distance-strip-inner { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .explore-hero { height: 80vh; }
-      .destination-grid { grid-template-columns: 1fr; }
-      .beach-row { grid-template-columns: 1fr 1fr; }
-      .distance-strip-inner { grid-template-columns: repeat(2, 1fr); }
-      .trail-list li { grid-template-columns: 60px 1fr; gap: 1rem; }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TouristDestination",
-    "name": "Exploring Cornwall from Whalesborough",
-    "description": "Beaches, coastal walks, heritage sites and day trips in North Cornwall — all within easy reach of Whalesborough Farm Resort, Bude.",
-    "url": "https://www.whalesborough.co.uk/exploring-cornwall/",
-    "touristType": "Beach", "nearbyAttraction": [
-      { "@type": "TouristAttraction", "name": "Widemouth Bay", "description": "Surf beach 3 miles south" },
-      { "@type": "TouristAttraction", "name": "South West Coast Path", "description": "Runs along the clifftops above Bude" },
-      { "@type": "TouristAttraction", "name": "Tintagel Castle", "description": "Legendary home of King Arthur, 25 miles" }
-    ]
+ <style>
+  .explore-hero {
+   height: 90vh;
+   min-height: 600px;
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   align-items: flex-end;
   }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
-      {"@type":"ListItem","position":2,"name":"Exploring Cornwall","item":"https://www.whalesborough.co.uk/exploring-cornwall/"}
-    ]
+  .explore-hero-bg {
+   position: absolute; inset: 0;
+   overflow: hidden;
   }
-  </script>
+  .explore-hero-overlay {
+   position: absolute; inset: 0;
+   background: linear-gradient(to top, rgba(13,18,16,0.9) 0%, rgba(13,18,16,0.3) 50%, transparent 80%);
+  }
+
+  .distance-strip {
+   background: var(--surface);
+   border-bottom: 1px solid var(--surface-high);
+  }
+  .distance-strip-inner {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 0 3rem;
+  }
+  .distance-item {
+   padding: 2rem 1.5rem;
+   border-right: 1px solid var(--surface-high);
+   text-align: center;
+  }
+  .distance-item:last-child { border-right: none; }
+  .distance-num {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-size: 1.75rem;
+   color: var(--secondary);
+   font-weight: 300;
+   line-height: 1;
+   margin-bottom: 0.375rem;
+  }
+  .distance-label {
+   font-family: var(--font-body);
+   font-size: 0.5625rem;
+   font-weight: 700;
+   letter-spacing: 0.18em;
+   text-transform: uppercase;
+   color: var(--on-surface-variant);
+  }
+
+  .chapter {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   min-height: 480px;
+  }
+  .chapter-img {
+   overflow: hidden;
+   position: relative;
+  }
+  .chapter-img .ph {
+   width: 100%; height: 100%; min-height: 480px;
+   display: flex; align-items: flex-end; padding: 2rem;
+  }
+  .chapter-body {
+   padding: 6rem 5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+  .chapter:nth-child(even) .chapter-img { order: 2; }
+  .chapter:nth-child(even) .chapter-body { order: 1; background: var(--surface-low); }
+  .chapter:nth-child(odd) .chapter-body { background: var(--surface); }
+
+  .destination-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.5px;
+   background: var(--surface-high);
+  }
+  .destination-card {
+   background: var(--surface-low);
+   padding: 2.5rem 2rem;
+   transition: background 0.2s;
+  }
+  .destination-card:hover { background: var(--surface-mid); }
+  .destination-dist {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-size: 1.5rem;
+   color: var(--secondary);
+   font-weight: 300;
+   margin-bottom: 0.625rem;
+   line-height: 1;
+  }
+
+  .beach-row {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 1.5rem;
+   margin-top: 3rem;
+  }
+  .beach-card {
+   overflow: hidden;
+  }
+  .beach-img {
+   height: 240px;
+   overflow: hidden;
+  }
+  .beach-img .ph {
+   width: 100%; height: 100%;
+  }
+  .beach-body { padding: 1.25rem 0 0.5rem; }
+  .beach-name {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-size: 1.25rem;
+   color: var(--on-surface);
+   margin-bottom: 0.375rem;
+  }
+
+  .trail-list {
+   list-style: none;
+   margin-top: 2rem;
+  }
+  .trail-list li {
+   padding: 1.5rem 0;
+   border-bottom: 1px solid var(--surface-mid);
+   display: grid;
+   grid-template-columns: 80px 1fr;
+   gap: 2rem;
+   align-items: start;
+  }
+  .trail-dist {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-size: 1.125rem;
+   color: var(--secondary);
+   font-weight: 300;
+  }
+
+  @media (max-width: 1100px) {
+   .chapter { grid-template-columns: 1fr; }
+   .chapter:nth-child(even) .chapter-img { order: 1; }
+   .chapter:nth-child(even) .chapter-body { order: 2; }
+   .chapter-img .ph { min-height: 320px; }
+   .chapter-body { padding: 3.5rem 2rem; }
+   .destination-grid { grid-template-columns: 1fr 1fr; }
+   .beach-row { grid-template-columns: repeat(2, 1fr); }
+   .distance-strip-inner { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 640px) {
+   .explore-hero { height: 80vh; }
+   .destination-grid { grid-template-columns: 1fr; }
+   .beach-row { grid-template-columns: 1fr 1fr; }
+   .distance-strip-inner { grid-template-columns: repeat(2, 1fr); }
+   .trail-list li { grid-template-columns: 60px 1fr; gap: 1rem; }
+  }
+ </style>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  "name": "Exploring Cornwall from Whalesborough",
+  "description": "Beaches, coastal walks, heritage sites and day trips in North Cornwall — all within easy reach of Whalesborough Farm Resort, Bude.",
+  "url": "https://www.whalesborough.co.uk/exploring-cornwall/",
+  "touristType": "Beach", "nearbyAttraction": [
+   { "@type": "TouristAttraction", "name": "Widemouth Bay", "description": "Surf beach 3 miles south" },
+   { "@type": "TouristAttraction", "name": "South West Coast Path", "description": "Runs along the clifftops above Bude" },
+   { "@type": "TouristAttraction", "name": "Tintagel Castle", "description": "Legendary home of King Arthur, 25 miles" }
+  ]
+ }
+ </script>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+   {"@type":"ListItem","position":2,"name":"Exploring Cornwall","item":"https://www.whalesborough.co.uk/exploring-cornwall/"}
+  ]
+ }
+ </script>
+ <link rel="preconnect" href="https://www.landal.co.uk" crossorigin />
+ <link rel="dns-prefetch" href="https://www.landal.co.uk" />
+ <link rel="manifest" href="/manifest.webmanifest" />
+ <link rel="apple-touch-icon" href="/assets/images/logo/Resort-Spa.webp" />
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="has-sticky-book">
+ <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <div class="urgency-banner">
-    428 acres of estate walks on your doorstep — <a href="../our-cottages/" style="color:white;text-decoration:underline;text-underline-offset:3px;">view all 26 cottages</a>
+ <div class="urgency-banner">
+  428 acres of estate walks on your doorstep — <a href="../our-cottages/" style="color:white;text-decoration:underline;text-underline-offset:3px;">view all 26 cottages</a>
+ </div>
+
+ <nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+   <a href="../" class="nav-logo" aria-label="Whalesborough Farm Resort &amp; Spa — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+   <ul class="nav-links" role="list">
+    <li><a href="../our-cottages/">Cottages</a></li>
+    <li><a href="../arvor-suites/">Arvor Suites</a></li>
+    <li><a href="../spa-and-treatments/">Spa</a></li>
+    <li><a href="../weir-restaurant/">Dining</a></li>
+    <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
+    <li><a href="../exploring-cornwall/index.html">Explore</a></li>
+    <li><a href="../holiday-home-investment/index.html">Investment</a></li>
+   </ul>
+   <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Book with Landal</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+   </div>
   </div>
+ </nav>
 
-  <nav class="site-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="../" class="nav-logo" aria-label="Whalesborough Farm Resort &amp; Spa — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
-      <ul class="nav-links" role="list">
-        <li><a href="../our-cottages/">Cottages</a></li>
-        <li><a href="../arvor-suites/">Arvor Suites</a></li>
-        <li><a href="../spa-and-treatments/">Spa</a></li>
-        <li><a href="../weir-restaurant/">Dining</a></li>
-        <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
-        <li><a href="../exploring-cornwall/index.html">Explore</a></li>
-      </ul>
-      <div style="display:flex;align-items:center;gap:1.5rem;">
-        <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">Book with Landal</a>
-        <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </nav>
+ <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-close" aria-label="Close menu">&times;</button>
+  <a href="../our-cottages/">Cottages</a>
+  <a href="../arvor-suites/">Arvor Suites</a>
+  <a href="../spa-and-treatments/">Spa</a>
+  <a href="../weir-restaurant/">Dining</a>
+  <a href="../dog-friendly-breaks/">Dog Friendly</a>
+  <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
+  <a href="../holiday-home-investment/index.html">Holiday Home Investment</a>
+  <a href="../contact-us/">Contact</a>
+  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Book with Landal</a>
+ </div>
 
-  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <button class="mobile-close" aria-label="Close menu">&times;</button>
-    <a href="../our-cottages/">Cottages</a>
-    <a href="../arvor-suites/">Arvor Suites</a>
-    <a href="../spa-and-treatments/">Spa</a>
-    <a href="../weir-restaurant/">Dining</a>
-    <a href="../dog-friendly-breaks/">Dog Friendly</a>
-    <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
-    <a href="../contact-us/">Contact</a>
-    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;">Book with Landal</a>
-  </div>
+ <main id="main-content">
 
-  <main id="main-content">
-
-    <!-- Hero -->
-    <section class="explore-hero" aria-label="Exploring Cornwall from Whalesborough">
-      <div class="explore-hero-bg"><img src="../assets/images/landal-reference/facilities/coast-and-country.webp" alt="North Cornwall coast and countryside from Whalesborough" fetchpriority="high" decoding="sync" width="1800" height="1200" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="explore-hero-overlay"></div>
-      <div style="position:relative;z-index:2;width:100%;padding:0 0 6rem;">
-        <div class="container">
-          <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:1.25rem;">Your Base for North Cornwall</p>
-          <h1 class="headline-xl" style="color:white;font-style:italic;max-width:780px;">
-            428 acres of estate<br>walks. And beyond them,<br>all of Cornwall.
-          </h1>
-          <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);margin-top:1.5rem;max-width:520px;line-height:1.8;">
-            Whalesborough puts you at the heart of one of Britain's finest stretches of coast. Surf beaches, ancient cliffs, fishing villages, and wild moorland — all within reach.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Distance strip -->
-    <div class="distance-strip" aria-label="Key distances from Whalesborough">
-      <div class="distance-strip-inner">
-        <div class="distance-item">
-          <div class="distance-num">1<span style="font-size:1rem;">mi</span></div>
-          <div class="distance-label">Bude Town &amp; Canal</div>
-        </div>
-        <div class="distance-item">
-          <div class="distance-num">3<span style="font-size:1rem;">mi</span></div>
-          <div class="distance-label">Widemouth Bay</div>
-        </div>
-        <div class="distance-item">
-          <div class="distance-num">25<span style="font-size:1rem;">mi</span></div>
-          <div class="distance-label">Tintagel Castle</div>
-        </div>
-        <div class="distance-item">
-          <div class="distance-num">30<span style="font-size:1rem;">mi</span></div>
-          <div class="distance-label">Port Isaac</div>
-        </div>
-        <div class="distance-item">
-          <div class="distance-num">45<span style="font-size:1rem;">mi</span></div>
-          <div class="distance-label">Padstow</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapter 1: Beaches -->
-    <section class="section" style="background:var(--surface);" aria-labelledby="beaches-heading" id="beaches">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:4rem;">
-          <p class="label" style="margin-bottom:1rem;">The Coast</p>
-          <h2 class="headline-lg" id="beaches-heading" style="font-style:italic;max-width:600px;">Some of England's best beaches begin at your doorstep</h2>
-        </div>
-        <div class="beach-row">
-
-          <div class="beach-card reveal">
-            <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/crooklets-beach.webp" alt="Crooklets Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div class="beach-body">
-              <div class="beach-name">Crooklets Beach</div>
-              <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">0.8 miles · Surf &amp; Swim</p>
-              <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Bude's most northerly surf beach. Wide, sandy, lifeguarded in summer. A steady beach break that suits beginners and intermediates. Consistent swell, good facilities, and a car park right above the sand.</p>
-            </div>
-          </div>
-
-          <div class="beach-card reveal" style="transition-delay:0.1s;">
-            <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/summerleaze-beach.webp" alt="Summerleaze Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div class="beach-body">
-              <div class="beach-name">Summerleaze Beach</div>
-              <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">1.2 miles · Town &amp; Canal</p>
-              <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Bude's town beach where the canal meets the sea. A unique tidal sea pool, the Bude Sea Pool, sits at the southern end — heated by the sun, sheltered from waves. A local institution.</p>
-            </div>
-          </div>
-
-          <div class="beach-card reveal" style="transition-delay:0.2s;">
-            <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/widemouth-beach.webp" alt="Widemouth Bay surf beach, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div class="beach-body">
-              <div class="beach-name">Widemouth Bay</div>
-              <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">3 miles · Best Surf</p>
-              <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">The most popular surf beach in North Cornwall. A two-mile arc of golden sand with powerful, consistent waves that draw surfers from across the country. Excellent surf schools operate year-round.</p>
-            </div>
-          </div>
-
-          <div class="beach-card reveal" style="transition-delay:0.3s;">
-            <div class="beach-img">
-              <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.webp" alt="Sandy Mouth, North Cornwall coast" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-            </div>
-            <div class="beach-body">
-              <div class="beach-name">Sandy Mouth</div>
-              <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">5 miles · Wild &amp; Unspoilt</p>
-              <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">National Trust-owned cove tucked between dramatic cliffs. No development, no noise — just Atlantic rollers, rock pools, and a rare sense of wildness. Excellent for dogs and coastal walking.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Chapter 2: Coastal Walking -->
-    <div class="chapter reveal" aria-labelledby="walking-heading" id="walking">
-      <div class="chapter-img">
-        <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.webp" alt="South West Coast Path cliffs near Bude, Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div class="chapter-body">
-        <p class="label" style="margin-bottom:1.5rem;">South West Coast Path</p>
-        <h2 class="headline-md" id="walking-heading" style="font-style:italic;margin-bottom:1.5rem;">
-          630 miles of path.<br>The most dramatic part<br>runs through here.
-        </h2>
-        <p class="body-lg" style="margin-bottom:1.25rem;">
-          The South West Coast Path runs along the clifftops above Bude, connecting Hartland Point to the north and Widemouth Bay to the south. The stretch through Morwenstow — just 6 miles up the coast — is regularly cited as the finest coastal scenery in England.
-        </p>
-        <p class="body-md" style="margin-bottom:1.5rem;">The estate's own network of footpaths connects directly to the Bude Canal towpath and Sustrans cycle tracks. You can leave Whalesborough on foot and walk to Bude, along the coast, or up to Morwenstow without touching a road.</p>
-        <ul class="trail-list" role="list" id="dog-walks">
-          <li>
-            <div class="trail-dist">2 mi</div>
-            <div>
-              <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Estate to Bude via the Canal</p>
-              <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Flat, easy walking along the Bude Canal towpath into town. Excellent for dogs, pushchairs, and anyone wanting a gentle evening stroll to a pub.</p>
-            </div>
-          </li>
-          <li>
-            <div class="trail-dist">6 mi</div>
-            <div>
-              <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Bude to Morwenstow</p>
-              <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">A classic half-day coastal route. North from Bude via Crooklets, Sandy Mouth and Duckpool to the remote hamlet of Morwenstow. Return via lanes or taxi.</p>
-            </div>
-          </li>
-          <li>
-            <div class="trail-dist">8 mi</div>
-            <div>
-              <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Bude to Widemouth Bay Loop</p>
-              <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">South along the coast path to Widemouth Bay, then return via inland lanes. Dramatic cliff scenery and the chance to finish with a swim.</p>
-            </div>
-          </li>
-          <li>
-            <div class="trail-dist">4 mi</div>
-            <div>
-              <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Estate Estate Loop</p>
-              <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">A circular walk through the Whalesborough estate — woodland, meadows, the working farm, and views over the Atlantic. Your dogs will be tired out by the third mile.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Chapter 3: Day Trips -->
-    <section class="section" style="background:var(--surface-low);" aria-labelledby="daytrips-heading" id="day-trips">
-      <div class="container">
-        <div class="reveal" style="margin-bottom:4rem;">
-          <p class="label" style="margin-bottom:1rem;">Days Out</p>
-          <h2 class="headline-lg" id="daytrips-heading" style="font-style:italic;max-width:580px;">Two hours in any direction and Cornwall astonishes</h2>
-        </div>
-        <div class="destination-grid reveal">
-
-          <div class="destination-card">
-            <div class="destination-dist">25 mi</div>
-            <p class="label" style="margin-bottom:0.5rem;">Heritage</p>
-            <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Tintagel Castle</h3>
-            <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">The legendary birthplace of King Arthur, perched on a peninsula of sheer black cliffs above the Atlantic. English Heritage have created a breathtaking footbridge connecting the mainland to the castle ruins. Allow half a day.</p>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-dist">30 mi</div>
-            <p class="label" style="margin-bottom:0.5rem;">Coast &amp; Village</p>
-            <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Port Isaac</h3>
-            <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">The most photogenic fishing village in Cornwall — familiar to many as Doc Martin's Portwenn. Narrow lanes, whitewashed cottages, a working harbour, and outstanding fresh fish. Arrive early in season.</p>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-dist">45 mi</div>
-            <p class="label" style="margin-bottom:0.5rem;">Food &amp; Harbour</p>
-            <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Padstow</h3>
-            <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Rick Stein's home port and one of the finest food towns in Britain. The harbour front, the Camel Trail for cycling, and the beaches at Trevone and Harlyn Bay make it a natural full-day destination.</p>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-dist">18 mi</div>
-            <p class="label" style="margin-bottom:0.5rem;">Heritage &amp; Harbour</p>
-            <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Boscastle</h3>
-            <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">A medieval harbour village tucked into one of the most dramatic inlets on the North Cornish coast. The Museum of Witchcraft and Magic is genuinely fascinating. The walk in from the car park through the valley is stunning.</p>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-dist">22 mi</div>
-            <p class="label" style="margin-bottom:0.5rem;">Moor &amp; Legend</p>
-            <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Bodmin Moor</h3>
-            <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Wild granite moorland with Bronze Age monuments, ancient stone circles, and the highest point in Cornwall. Jamaica Inn sits at the heart of it. Rough Tor and Brown Willy offer magnificent walks on clear days.</p>
-          </div>
-
-          <div class="destination-card">
-            <div class="destination-dist">14 mi</div>
-            <p class="label" style="margin-bottom:0.5rem;">Market Town</p>
-            <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Launceston</h3>
-            <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Cornwall's ancient capital with a Norman castle commanding views over the Tamar valley. Good independent shops, the Steam Railway, and a gateway to both Dartmoor and the Tamar Valley.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Chapter 4: Bude Town -->
-    <div class="chapter reveal" aria-labelledby="bude-heading" id="bude">
-      <div class="chapter-img">
-        <img src="../assets/images/general/bude-canal.webp" alt="Bude Canal, Bude, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div class="chapter-body">
-        <p class="label" style="margin-bottom:1.5rem;">Bude Town</p>
-        <h2 class="headline-md" id="bude-heading" style="font-style:italic;margin-bottom:1.5rem;">
-          A surf town that never<br>takes itself too seriously.
-        </h2>
-        <p class="body-lg" style="margin-bottom:1.25rem;">
-          Bude sits less than a mile from the estate. It has the energy of a proper surf town — board shops, wetsuit hire, excellent independent food — without the crowds of Newquay or the prices of Padstow.
-        </p>
-        <p class="body-md" style="margin-bottom:1.25rem;">The Bude Canal is one of the few remaining navigable canals in the South West. The towpath is flat, traffic-free, and connects Bude to Holsworthy — excellent for walking and cycling with children and dogs.</p>
-        <p class="body-md">The Bude Sea Pool is a tidal open-air pool at Summerleaze Beach — free to use, warmed by the sun, sheltered from the Atlantic swell. One of the best wild swimming spots in the country.</p>
-      </div>
-    </div>
-
-    <!-- Chapter 5: Surfing & Activities -->
-    <div class="chapter reveal" aria-labelledby="activities-heading" id="activities">
-      <div class="chapter-img">
-        <img src="../assets/images/general/outdoor-activities.webp" alt="Surfing at Widemouth Bay, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div class="chapter-body">
-        <p class="label" style="margin-bottom:1.5rem;">Surf &amp; Adventure</p>
-        <h2 class="headline-md" id="activities-heading" style="font-style:italic;margin-bottom:1.5rem;">
-          The Atlantic arrives here<br>with serious intent.
-        </h2>
-        <p class="body-lg" style="margin-bottom:1.5rem;">
-          Bude sits on one of the most consistent stretches of surf in England. Crooklets and Widemouth Bay receive Atlantic swell year-round — summer is beginner-friendly, autumn and winter bring the serious waves.
-        </p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:0.5rem;">
-          <div style="background:var(--surface-low);padding:1.75rem;">
-            <p class="label" style="margin-bottom:0.75rem;">Surfing</p>
-            <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Multiple SASA-accredited surf schools operate at Crooklets and Widemouth Bay. Board and wetsuit hire widely available. Lessons for all ages.</p>
-          </div>
-          <div style="background:var(--surface-low);padding:1.75rem;">
-            <p class="label" style="margin-bottom:0.75rem;">Coasteering</p>
-            <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Jump, swim and scramble along the cliff edges north of Bude. Guided sessions available for groups. Minimum age 8.</p>
-          </div>
-          <div style="background:var(--surface-low);padding:1.75rem;">
-            <p class="label" style="margin-bottom:0.75rem;">Kayaking &amp; SUP</p>
-            <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Paddle the Bude Canal for calm-water exploration, or take a guided sea kayak along the coast from Bude harbour to Millook or beyond.</p>
-          </div>
-          <div style="background:var(--surface-low);padding:1.75rem;">
-            <p class="label" style="margin-bottom:0.75rem;">Cycling</p>
-            <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Sustrans cycle tracks connect directly from the estate. EV charging and secure bike storage available at Whalesborough. Hire available in Bude.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <section class="section-sm" style="background:var(--secondary);" aria-label="Book your stay">
-      <div class="container-sm" style="text-align:center;">
-        <div class="reveal">
-          <p class="label" style="color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Your Base for All of This</p>
-          <h2 class="headline-lg" style="color:white;font-style:italic;margin-bottom:1.25rem;">
-            Start here. Explore everywhere.
-          </h2>
-          <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);max-width:500px;margin:0 auto 2.5rem;line-height:1.8;">
-            26 luxury cottages on a 428-acre estate in the heart of North Cornwall. The coast on your doorstep. The rest of it within reach.
-          </p>
-          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-            <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-primary">Check Availability</a>
-            <a href="../our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.25);">Browse Cottages</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
+  <!-- Hero -->
+  <section class="explore-hero" aria-label="Exploring Cornwall from Whalesborough">
+   <div class="explore-hero-bg"><img src="../assets/images/landal-reference/facilities/coast-and-country.webp" alt="North Cornwall coast and countryside from Whalesborough" fetchpriority="high" decoding="sync" width="1800" height="1200" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+   <div class="explore-hero-overlay"></div>
+   <div style="position:relative;z-index:2;width:100%;padding:0 0 6rem;">
     <div class="container">
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem;">
-        <div>
-          <div class="footer-brand"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></div>
-          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:1rem;line-height:1.8;max-width:300px;">Whalesborough Farm, Marhamchurch, Bude, Cornwall EX23 0JD</p>
-          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:0.5rem;"><a href="tel:01288361940" style="color:var(--primary);font-weight:600;">01288 361940</a></p>
-        </div>
-        <div>
-          <p class="label" style="margin-bottom:1.5rem;">Stay</p>
-          <ul class="footer-links">
-            <li><a href="../our-cottages/">Our Cottages</a></li>
-            <li><a href="../arvor-suites/">Arvor Suites</a></li>
-            <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="label" style="margin-bottom:1.5rem;">Experience</p>
-          <ul class="footer-links">
-            <li><a href="../spa-and-treatments/">Spa</a></li>
-            <li><a href="../weir-restaurant/">The Weir</a></li>
-            <li><a href="../local-area/">Local Area Guide</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="label" style="margin-bottom:1.5rem;">Resort</p>
-          <ul class="footer-links">
-            <li><a href="../green-sustainability-credentials/">Sustainability</a></li>
-            <li><a href="../our-awards/">Awards</a></li>
-            <li><a href="../contact-us/">Contact Us</a></li>
-            <li><a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer">Book with Landal</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr class="footer-divider">
-      <p style="font-family:var(--font-body);font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--on-surface-variant);opacity:0.5;">© 2026 Whalesborough Farm Resort &amp; Spa. Managed by Landal GreenParks.</p>
+     <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:1.25rem;">Your Base for North Cornwall</p>
+     <h1 class="headline-xl" style="color:white;font-style:italic;max-width:780px;">
+      428 acres of estate<br>walks. And beyond them,<br>all of Cornwall.
+     </h1>
+     <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);margin-top:1.5rem;max-width:520px;line-height:1.8;">
+      Whalesborough puts you at the heart of one of Britain's finest stretches of coast. Surf beaches, ancient cliffs, fishing villages, and wild moorland — all within reach.
+     </p>
     </div>
-  </footer>
+   </div>
+  </section>
 
-  <script src="../assets/js/main.js"></script>
-  <script src="/assets/js/consent.js" defer></script>
+  <!-- Distance strip -->
+  <div class="distance-strip" aria-label="Key distances from Whalesborough">
+   <div class="distance-strip-inner">
+    <div class="distance-item">
+     <div class="distance-num">1<span style="font-size:1rem;">mi</span></div>
+     <div class="distance-label">Bude Town &amp; Canal</div>
+    </div>
+    <div class="distance-item">
+     <div class="distance-num">3<span style="font-size:1rem;">mi</span></div>
+     <div class="distance-label">Widemouth Bay</div>
+    </div>
+    <div class="distance-item">
+     <div class="distance-num">25<span style="font-size:1rem;">mi</span></div>
+     <div class="distance-label">Tintagel Castle</div>
+    </div>
+    <div class="distance-item">
+     <div class="distance-num">30<span style="font-size:1rem;">mi</span></div>
+     <div class="distance-label">Port Isaac</div>
+    </div>
+    <div class="distance-item">
+     <div class="distance-num">45<span style="font-size:1rem;">mi</span></div>
+     <div class="distance-label">Padstow</div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Chapter 1: Beaches -->
+  <section class="section" style="background:var(--surface);" aria-labelledby="beaches-heading" id="beaches">
+   <div class="container">
+    <div class="reveal" style="margin-bottom:4rem;">
+     <p class="label" style="margin-bottom:1rem;">The Coast</p>
+     <h2 class="headline-lg" id="beaches-heading" style="font-style:italic;max-width:600px;">Some of England's best beaches begin at your doorstep</h2>
+    </div>
+    <div class="beach-row">
+
+     <div class="beach-card reveal">
+      <div class="beach-img">
+       <img src="../assets/images/landal-reference/surroundings/crooklets-beach.webp" alt="Crooklets Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+      </div>
+      <div class="beach-body">
+       <div class="beach-name">Crooklets Beach</div>
+       <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">0.8 miles · Surf &amp; Swim</p>
+       <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Bude's most northerly surf beach. Wide, sandy, lifeguarded in summer. A steady beach break that suits beginners and intermediates. Consistent swell, good facilities, and a car park right above the sand.</p>
+      </div>
+     </div>
+
+     <div class="beach-card reveal" style="transition-delay:0.1s;">
+      <div class="beach-img">
+       <img src="../assets/images/landal-reference/surroundings/summerleaze-beach.webp" alt="Summerleaze Beach, Bude" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+      </div>
+      <div class="beach-body">
+       <div class="beach-name">Summerleaze Beach</div>
+       <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">1.2 miles · Town &amp; Canal</p>
+       <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Bude's town beach where the canal meets the sea. A unique tidal sea pool, the Bude Sea Pool, sits at the southern end — heated by the sun, sheltered from waves. A local institution.</p>
+      </div>
+     </div>
+
+     <div class="beach-card reveal" style="transition-delay:0.2s;">
+      <div class="beach-img">
+       <img src="../assets/images/landal-reference/surroundings/widemouth-beach.webp" alt="Widemouth Bay surf beach, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+      </div>
+      <div class="beach-body">
+       <div class="beach-name">Widemouth Bay</div>
+       <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">3 miles · Best Surf</p>
+       <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">The most popular surf beach in North Cornwall. A two-mile arc of golden sand with powerful, consistent waves that draw surfers from across the country. Excellent surf schools operate year-round.</p>
+      </div>
+     </div>
+
+     <div class="beach-card reveal" style="transition-delay:0.3s;">
+      <div class="beach-img">
+       <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.webp" alt="Sandy Mouth, North Cornwall coast" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+      </div>
+      <div class="beach-body">
+       <div class="beach-name">Sandy Mouth</div>
+       <p class="label" style="margin-bottom:0.5rem;color:var(--secondary);">5 miles · Wild &amp; Unspoilt</p>
+       <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">National Trust-owned cove tucked between dramatic cliffs. No development, no noise — just Atlantic rollers, rock pools, and a rare sense of wildness. Excellent for dogs and coastal walking.</p>
+      </div>
+     </div>
+
+    </div>
+   </div>
+  </section>
+
+  <!-- Chapter 2: Coastal Walking -->
+  <div class="chapter reveal" aria-labelledby="walking-heading" id="walking">
+   <div class="chapter-img">
+    <img src="../assets/images/landal-reference/surroundings/south-west-coast-path.webp" alt="South West Coast Path cliffs near Bude, Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+   </div>
+   <div class="chapter-body">
+    <p class="label" style="margin-bottom:1.5rem;">South West Coast Path</p>
+    <h2 class="headline-md" id="walking-heading" style="font-style:italic;margin-bottom:1.5rem;">
+     630 miles of path.<br>The most dramatic part<br>runs through here.
+    </h2>
+    <p class="body-lg" style="margin-bottom:1.25rem;">
+     The South West Coast Path runs along the clifftops above Bude, connecting Hartland Point to the north and Widemouth Bay to the south. The stretch through Morwenstow — just 6 miles up the coast — is regularly cited as the finest coastal scenery in England.
+    </p>
+    <p class="body-md" style="margin-bottom:1.5rem;">The estate's own network of footpaths connects directly to the Bude Canal towpath and Sustrans cycle tracks. You can leave Whalesborough on foot and walk to Bude, along the coast, or up to Morwenstow without touching a road.</p>
+    <ul class="trail-list" role="list" id="dog-walks">
+     <li>
+      <div class="trail-dist">2 mi</div>
+      <div>
+       <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Estate to Bude via the Canal</p>
+       <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Flat, easy walking along the Bude Canal towpath into town. Excellent for dogs, pushchairs, and anyone wanting a gentle evening stroll to a pub.</p>
+      </div>
+     </li>
+     <li>
+      <div class="trail-dist">6 mi</div>
+      <div>
+       <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Bude to Morwenstow</p>
+       <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">A classic half-day coastal route. North from Bude via Crooklets, Sandy Mouth and Duckpool to the remote hamlet of Morwenstow. Return via lanes or taxi.</p>
+      </div>
+     </li>
+     <li>
+      <div class="trail-dist">8 mi</div>
+      <div>
+       <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Bude to Widemouth Bay Loop</p>
+       <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">South along the coast path to Widemouth Bay, then return via inland lanes. Dramatic cliff scenery and the chance to finish with a swim.</p>
+      </div>
+     </li>
+     <li>
+      <div class="trail-dist">4 mi</div>
+      <div>
+       <p style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Estate Estate Loop</p>
+       <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">A circular walk through the Whalesborough estate — woodland, meadows, the working farm, and views over the Atlantic. Your dogs will be tired out by the third mile.</p>
+      </div>
+     </li>
+    </ul>
+   </div>
+  </div>
+
+  <!-- Chapter 3: Day Trips -->
+  <section class="section" style="background:var(--surface-low);" aria-labelledby="daytrips-heading" id="day-trips">
+   <div class="container">
+    <div class="reveal" style="margin-bottom:4rem;">
+     <p class="label" style="margin-bottom:1rem;">Days Out</p>
+     <h2 class="headline-lg" id="daytrips-heading" style="font-style:italic;max-width:580px;">Two hours in any direction and Cornwall astonishes</h2>
+    </div>
+    <div class="destination-grid reveal">
+
+     <div class="destination-card">
+      <div class="destination-dist">25 mi</div>
+      <p class="label" style="margin-bottom:0.5rem;">Heritage</p>
+      <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Tintagel Castle</h3>
+      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">The legendary birthplace of King Arthur, perched on a peninsula of sheer black cliffs above the Atlantic. English Heritage have created a breathtaking footbridge connecting the mainland to the castle ruins. Allow half a day.</p>
+     </div>
+
+     <div class="destination-card">
+      <div class="destination-dist">30 mi</div>
+      <p class="label" style="margin-bottom:0.5rem;">Coast &amp; Village</p>
+      <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Port Isaac</h3>
+      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">The most photogenic fishing village in Cornwall — familiar to many as Doc Martin's Portwenn. Narrow lanes, whitewashed cottages, a working harbour, and outstanding fresh fish. Arrive early in season.</p>
+     </div>
+
+     <div class="destination-card">
+      <div class="destination-dist">45 mi</div>
+      <p class="label" style="margin-bottom:0.5rem;">Food &amp; Harbour</p>
+      <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Padstow</h3>
+      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Rick Stein's home port and one of the finest food towns in Britain. The harbour front, the Camel Trail for cycling, and the beaches at Trevone and Harlyn Bay make it a natural full-day destination.</p>
+     </div>
+
+     <div class="destination-card">
+      <div class="destination-dist">18 mi</div>
+      <p class="label" style="margin-bottom:0.5rem;">Heritage &amp; Harbour</p>
+      <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Boscastle</h3>
+      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">A medieval harbour village tucked into one of the most dramatic inlets on the North Cornish coast. The Museum of Witchcraft and Magic is genuinely fascinating. The walk in from the car park through the valley is stunning.</p>
+     </div>
+
+     <div class="destination-card">
+      <div class="destination-dist">22 mi</div>
+      <p class="label" style="margin-bottom:0.5rem;">Moor &amp; Legend</p>
+      <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Bodmin Moor</h3>
+      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Wild granite moorland with Bronze Age monuments, ancient stone circles, and the highest point in Cornwall. Jamaica Inn sits at the heart of it. Rough Tor and Brown Willy offer magnificent walks on clear days.</p>
+     </div>
+
+     <div class="destination-card">
+      <div class="destination-dist">14 mi</div>
+      <p class="label" style="margin-bottom:0.5rem;">Market Town</p>
+      <h3 style="font-family:var(--font-headline);font-style:italic;font-size:1.375rem;color:var(--on-surface);margin-bottom:0.75rem;">Launceston</h3>
+      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);line-height:1.7;">Cornwall's ancient capital with a Norman castle commanding views over the Tamar valley. Good independent shops, the Steam Railway, and a gateway to both Dartmoor and the Tamar Valley.</p>
+     </div>
+
+    </div>
+   </div>
+  </section>
+
+  <!-- Chapter 4: Bude Town -->
+  <div class="chapter reveal" aria-labelledby="bude-heading" id="bude">
+   <div class="chapter-img">
+    <img src="../assets/images/general/bude-canal.webp" alt="Bude Canal, Bude, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+   </div>
+   <div class="chapter-body">
+    <p class="label" style="margin-bottom:1.5rem;">Bude Town</p>
+    <h2 class="headline-md" id="bude-heading" style="font-style:italic;margin-bottom:1.5rem;">
+     A surf town that never<br>takes itself too seriously.
+    </h2>
+    <p class="body-lg" style="margin-bottom:1.25rem;">
+     Bude sits less than a mile from the estate. It has the energy of a proper surf town — board shops, wetsuit hire, excellent independent food — without the crowds of Newquay or the prices of Padstow.
+    </p>
+    <p class="body-md" style="margin-bottom:1.25rem;">The Bude Canal is one of the few remaining navigable canals in the South West. The towpath is flat, traffic-free, and connects Bude to Holsworthy — excellent for walking and cycling with children and dogs.</p>
+    <p class="body-md">The Bude Sea Pool is a tidal open-air pool at Summerleaze Beach — free to use, warmed by the sun, sheltered from the Atlantic swell. One of the best wild swimming spots in the country.</p>
+   </div>
+  </div>
+
+  <!-- Chapter 5: Surfing & Activities -->
+  <div class="chapter reveal" aria-labelledby="activities-heading" id="activities">
+   <div class="chapter-img">
+    <img src="../assets/images/general/outdoor-activities.webp" alt="Surfing at Widemouth Bay, North Cornwall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" decoding="async">
+   </div>
+   <div class="chapter-body">
+    <p class="label" style="margin-bottom:1.5rem;">Surf &amp; Adventure</p>
+    <h2 class="headline-md" id="activities-heading" style="font-style:italic;margin-bottom:1.5rem;">
+     The Atlantic arrives here<br>with serious intent.
+    </h2>
+    <p class="body-lg" style="margin-bottom:1.5rem;">
+     Bude sits on one of the most consistent stretches of surf in England. Crooklets and Widemouth Bay receive Atlantic swell year-round — summer is beginner-friendly, autumn and winter bring the serious waves.
+    </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:0.5rem;">
+     <div style="background:var(--surface-low);padding:1.75rem;">
+      <p class="label" style="margin-bottom:0.75rem;">Surfing</p>
+      <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Multiple SASA-accredited surf schools operate at Crooklets and Widemouth Bay. Board and wetsuit hire widely available. Lessons for all ages.</p>
+     </div>
+     <div style="background:var(--surface-low);padding:1.75rem;">
+      <p class="label" style="margin-bottom:0.75rem;">Coasteering</p>
+      <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Jump, swim and scramble along the cliff edges north of Bude. Guided sessions available for groups. Minimum age 8.</p>
+     </div>
+     <div style="background:var(--surface-low);padding:1.75rem;">
+      <p class="label" style="margin-bottom:0.75rem;">Kayaking &amp; SUP</p>
+      <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Paddle the Bude Canal for calm-water exploration, or take a guided sea kayak along the coast from Bude harbour to Millook or beyond.</p>
+     </div>
+     <div style="background:var(--surface-low);padding:1.75rem;">
+      <p class="label" style="margin-bottom:0.75rem;">Cycling</p>
+      <p style="font-family:var(--font-body);font-size:0.8125rem;color:var(--on-surface-variant);line-height:1.7;">Sustrans cycle tracks connect directly from the estate. EV charging and secure bike storage available at Whalesborough. Hire available in Bude.</p>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="section-sm" style="background:var(--secondary);" aria-label="Book your stay">
+   <div class="container-sm" style="text-align:center;">
+    <div class="reveal">
+     <p class="label" style="color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Your Base for All of This</p>
+     <h2 class="headline-lg" style="color:white;font-style:italic;margin-bottom:1.25rem;">
+      Start here. Explore everywhere.
+     </h2>
+     <p style="font-family:var(--font-body);font-size:1.0625rem;color:rgba(255,255,255,0.78);max-width:500px;margin:0 auto 2.5rem;line-height:1.8;">
+      26 luxury cottages on a 428-acre estate in the heart of North Cornwall. The coast on your doorstep. The rest of it within reach.
+     </p>
+     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-track="book-click">Check Availability</a>
+      <a href="../our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.25);">Browse Cottages</a>
+     </div>
+    </div>
+   </div>
+  </section>
+
+ </main>
+
+ <!-- Footer -->
+ <footer class="site-footer" role="contentinfo">
+  <div class="container">
+   <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem;">
+    <div>
+     <div class="footer-brand"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></div>
+     <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:1rem;line-height:1.8;max-width:300px;">Whalesborough Farm, Marhamchurch, Bude, Cornwall <abbr title="Postcode — Whalesborough Farm, Marhamchurch, Bude, Cornwall">EX23 0JD</abbr></p>
+     <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:0.5rem;"><a href="tel:01288361940" style="color:var(--primary);font-weight:600;">01288 361940</a></p>
+    </div>
+    <div>
+     <p class="label" style="margin-bottom:1.5rem;">Stay</p>
+     <ul class="footer-links">
+      <li><a href="../our-cottages/">Our Cottages</a></li>
+      <li><a href="../arvor-suites/">Arvor Suites</a></li>
+      <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
+     </ul>
+    </div>
+    <div>
+     <p class="label" style="margin-bottom:1.5rem;">Experience</p>
+     <ul class="footer-links">
+      <li><a href="../spa-and-treatments/">Spa</a></li>
+      <li><a href="../weir-restaurant/">The Weir</a></li>
+      <li><a href="../local-area/">Local Area Guide</a></li>
+     </ul>
+    </div>
+    <div>
+     <p class="label" style="margin-bottom:1.5rem;">Resort</p>
+     <ul class="footer-links">
+      <li><a href="../green-sustainability-credentials/">Sustainability</a></li>
+      <li><a href="../our-awards/">Awards</a></li>
+      <li><a href="../contact-us/">Contact Us</a></li>
+      <li><a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" data-track="book-click">Book with Landal</a></li>
+     </ul>
+    </div>
+   </div>
+   <hr class="footer-divider">
+   <p style="font-family:var(--font-body);font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--on-surface-variant);opacity:0.5;">© 2026 Whalesborough Farm Resort &amp; Spa. Managed by Landal GreenParks.</p>
+  </div>
+ </footer>
+
+ <script src="../assets/js/main.js?v=25e5e2b"></script>
+ <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
+
+ <!-- Sticky mobile booking bar -->
+ <div class="sticky-book-bar" aria-label="Quick booking actions">
+  <div class="sbb-inner">
+   <a class="sbb-call" href="tel:01288361940">Call 01288 361940</a>
+   <a class="sbb-book" href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" data-track="book-click">Check 2026 Dates</a>
+  </div>
+ </div>
+ <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
 </body>
 </html>

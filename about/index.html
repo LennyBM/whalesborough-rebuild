@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+ <meta name="referrer" content="strict-origin-when-cross-origin" />
+ <meta charset="UTF-8" />
+ <meta name="theme-color" content="#4a6457" />
+ <meta name="color-scheme" content="light" />
+ <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c0a" />
+ <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="format-detection" content="telephone=no" />
+ <title>About Us | Whalesborough Farm Resort &amp; Spa</title>
+ <meta name="description" content="Whalesborough Farm Resort &amp; Spa is a privately owned 428-acre working farm resort on the North Cornwall coast near Bude — 26 award-winning cottages, the W Club Spa, Weir Restaurant and Arvor Suites." />
+ <link rel="canonical" href="https://www.whalesborough.co.uk/about/" />
+ <link rel="alternate" hreflang="en-gb" href="https://www.whalesborough.co.uk/about/" />
+ <link rel="alternate" hreflang="x-default" href="https://www.whalesborough.co.uk/about/" />
+ <meta property="og:title" content="About Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="https://www.whalesborough.co.uk/about/" />
+ <meta property="og:description" content="A privately owned 428-acre working farm on the North Cornwall coast. 26 award-winning self-catering cottages, Arvor Suites, The W Club Spa, and The Weir Restaurant — all within one Cornish estate." />
+ <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/estate-aerial.webp" />
+ <meta property="og:image:width" content="1800" />
+ <meta property="og:image:height" content="1200" />
+ <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta property="og:locale" content="en_GB" />
+ <meta property="og:image:alt" content="About Whalesborough Farm Resort &amp; Spa" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:site" content="@whalesborough" />
+ <meta name="twitter:title" content="About Whalesborough Farm Resort &amp; Spa" />
+ <meta name="twitter:description" content="A privately owned 428-acre working farm on the North Cornwall coast. 26 award-winning self-catering cottages, Arvor Suites, The W Club Spa, and The Weir Restaurant — all within one Cornish estate." />
+ <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/general/estate-aerial.webp" />
+ <meta name="twitter:image:alt" content="About Whalesborough Farm Resort &amp; Spa" />
+ <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
+ <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b" />
+ <style>
+  .about-hero {
+   position: relative;
+   height: 80vh;
+   min-height: 520px;
+   overflow: hidden;
+   display: flex;
+   align-items: flex-end;
+  }
+  .about-hero img {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center 40%;
+  }
+  .about-hero::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(to top, rgba(14,12,10,0.75) 0%, rgba(14,12,10,0.2) 50%, transparent 100%);
+  }
+  .about-hero-content {
+   position: relative;
+   z-index: 1;
+   padding: 0 3rem 5rem;
+   max-width: 1400px;
+   margin: 0 auto;
+   width: 100%;
+  }
+  .about-hero-content h1 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(2.5rem, 5vw, 4.5rem);
+   color: var(--warm-white);
+   margin: 0 0 1rem;
+   line-height: 1.05;
+  }
+  .about-hero-content p {
+   font-family: var(--font-body);
+   font-size: 1.0625rem;
+   color: rgba(251,249,246,0.75);
+   max-width: 560px;
+  }
+
+  /* Intro */
+  .about-intro {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 5rem 3rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 6rem;
+   align-items: center;
+  }
+  .about-intro h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.875rem, 3vw, 2.75rem);
+   color: var(--ink);
+   margin: 0 0 1.5rem;
+   line-height: 1.15;
+  }
+  .about-intro p {
+   font-family: var(--font-body);
+   color: var(--ink-mid);
+   line-height: 1.75;
+   margin: 0 0 1.25rem;
+  }
+  .about-intro p:last-child { margin: 0; }
+  .about-intro-img {
+   overflow: hidden;
+  }
+  .about-intro-img img {
+   width: 100%;
+   display: block;
+   aspect-ratio: 4/5;
+   object-fit: cover;
+  }
+
+  /* Stats strip */
+  .about-stats {
+   background: var(--ink);
+   padding: 4rem 3rem;
+  }
+  .about-stats-inner {
+   max-width: 1400px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 2rem;
+   text-align: center;
+  }
+  .stat-num {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(2.5rem, 4vw, 3.5rem);
+   color: var(--warm-white);
+   display: block;
+   line-height: 1;
+   margin-bottom: 0.5rem;
+  }
+  .stat-label {
+   font-family: var(--font-body);
+   font-size: 0.75rem;
+   font-weight: 600;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   color: rgba(251,249,246,0.5);
+  }
+
+  /* What's here section */
+  .about-pillars {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 5rem 3rem;
+  }
+  .about-pillars > h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.875rem, 3vw, 2.75rem);
+   color: var(--ink);
+   margin: 0 0 3rem;
+   text-align: center;
+  }
+  .pillars-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 2px;
+   background: var(--surface-high);
+  }
+  .pillar {
+   background: var(--surface);
+   padding: 3rem;
+   display: flex;
+   gap: 2rem;
+   align-items: flex-start;
+  }
+  .pillar-icon {
+   font-size: 1.75rem;
+   flex-shrink: 0;
+   margin-top: 0.1rem;
+  }
+  .pillar h3 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: 1.375rem;
+   color: var(--ink);
+   margin: 0 0 0.75rem;
+  }
+  .pillar p {
+   font-family: var(--font-body);
+   font-size: 0.9375rem;
+   color: var(--ink-mid);
+   line-height: 1.65;
+   margin: 0 0 1rem;
+  }
+  .pillar a {
+   font-family: var(--font-body);
+   font-size: 0.8125rem;
+   font-weight: 600;
+   color: var(--primary);
+   text-decoration: none;
+   letter-spacing: 0.04em;
+  }
+  .pillar a:hover { text-decoration: underline; }
+
+  /* Values */
+  .about-values {
+   background: var(--secondary);
+   padding: 5rem 3rem;
+  }
+  .about-values-inner {
+   max-width: 1400px;
+   margin: 0 auto;
+  }
+  .about-values h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.875rem, 3vw, 2.75rem);
+   color: var(--warm-white);
+   margin: 0 0 3rem;
+  }
+  .values-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 2.5rem;
+  }
+  .value h3 {
+   font-family: var(--font-body);
+   font-size: 0.75rem;
+   font-weight: 700;
+   letter-spacing: 0.15em;
+   text-transform: uppercase;
+   color: rgba(251,249,246,0.55);
+   margin: 0 0 0.75rem;
+  }
+  .value p {
+   font-family: var(--font-body);
+   color: rgba(251,249,246,0.8);
+   line-height: 1.7;
+   margin: 0;
+  }
+
+  /* Visit section */
+  .about-visit {
+   max-width: 1400px;
+   margin: 0 auto;
+   padding: 5rem 3rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 5rem;
+   align-items: start;
+  }
+  .about-visit h2 {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.75rem, 3vw, 2.5rem);
+   color: var(--ink);
+   margin: 0 0 1.5rem;
+  }
+  .about-visit p, .about-visit address {
+   font-family: var(--font-body);
+   color: var(--ink-mid);
+   line-height: 1.75;
+   font-style: normal;
+   margin: 0 0 1.25rem;
+  }
+  .contact-item {
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+   margin-bottom: 1.5rem;
+  }
+  .contact-item span:first-child {
+   font-family: var(--font-body);
+   font-size: 0.6875rem;
+   font-weight: 700;
+   letter-spacing: 0.14em;
+   text-transform: uppercase;
+   color: var(--primary);
+  }
+  .contact-item a, .contact-item span:last-child {
+   font-family: var(--font-body);
+   color: var(--ink);
+   text-decoration: none;
+   font-size: 1rem;
+  }
+  .contact-item a:hover { color: var(--primary); }
+
+  @media (max-width: 900px) {
+   .about-intro, .about-visit { grid-template-columns: 1fr; gap: 3rem; }
+   .pillars-grid, .values-grid { grid-template-columns: 1fr; }
+   .about-stats-inner { grid-template-columns: repeat(2, 1fr); }
+   .about-hero-content, .about-intro, .about-pillars, .about-values-inner, .about-visit, .about-stats-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+  }
+ </style>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
+   {"@type":"ListItem","position":2,"name":"About Whalesborough","item":"https://www.whalesborough.co.uk/about/"}
+  ]
+ }
+ </script>
+ <link rel="preconnect" href="https://www.landal.co.uk" crossorigin />
+ <link rel="dns-prefetch" href="https://www.landal.co.uk" />
+ <link rel="manifest" href="/manifest.webmanifest" />
+ <link rel="apple-touch-icon" href="/assets/images/logo/Resort-Spa.webp" />
+</head>
+<body class="has-sticky-book">
+ <div class="urgency-banner">
+  Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Arvor Suite Packages from £175 per night per person &nbsp;|&nbsp; Call 01288 361940
+ </div>
+
+ <nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+   <a href="../index.html" class="nav-logo" aria-label="Whalesborough — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+   <ul class="nav-links" role="list">
+    <li><a href="../our-cottages/index.html">Cottages</a></li>
+    <li><a href="../arvor-suites/index.html">Arvor Suites</a></li>
+    <li><a href="../spa-and-treatments/index.html">Spa</a></li>
+    <li><a href="../weir-restaurant/index.html">Dining</a></li>
+    <li><a href="../dog-friendly-breaks/index.html">Dog Friendly</a></li>
+    <li><a href="../exploring-cornwall/index.html">Explore</a></li>
+   </ul>
+   <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:01288361940" style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;color:rgba(255,255,255,0.7);">01288 361940</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Book with Landal</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+   </div>
+  </div>
+ </nav>
+
+ <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="mobile-close" aria-label="Close menu">&times;</button>
+  <a href="../our-cottages/index.html">Cottages</a>
+  <a href="../arvor-suites/index.html">Arvor Suites</a>
+  <a href="../spa-and-treatments/index.html">Spa</a>
+  <a href="../weir-restaurant/index.html">Dining</a>
+  <a href="../dog-friendly-breaks/index.html">Dog Friendly</a>
+  <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
+  <a href="../contact-us/index.html">Contact</a>
+  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Book with Landal</a>
+ </div>
+
+ <!-- HERO -->
+ <section id="main-content" class="">
+  <img src="../assets/images/general/estate-aerial.webp" alt="Aerial view of the Whalesborough estate, North Cornwall" />
+  <div class="about-hero-content">
+   <h1>428 acres of Cornwall,<br>privately yours</h1>
+   <p>A working farm turned five-star resort — where the land still works, the food still grows, and guests still feel like they've found somewhere genuinely rare.</p>
+  </div>
+ </section>
+
+ <!-- INTRO -->
+ <section class="about-intro">
+  <div>
+   <h2>One estate. Everything you need.</h2>
+   <p>Whalesborough Farm Resort &amp; Spa is a privately owned 428-acre working farm on the Atlantic coast of North Cornwall, set above the cliffs between Bude and Widemouth Bay. It's been farmed for generations — the landscape, the hedgerows, the stone walls — and that working history is woven into everything we do.</p>
+   <p>Today the estate is home to 26 VisitEngland 5-Star self-catering cottages, 22 Arvor Suite self-catering suites, The W Club Spa, The Weir Restaurant, and an organic market garden that supplies the kitchen. All within one privately held Cornish estate — no neighbours, no traffic, no interruptions.</p>
+   <p>Every element of the resort has been built around a single principle: that the landscape is the luxury. The Atlantic cliff path runs through the estate. The farm animals are the activities. The valley with its two lakes is the spa backdrop. Cornwall is not a backdrop here — it's the whole point.</p>
+  </div>
+  <div class="about-intro-img">
+   <img src="../assets/images/general/estate-view.webp" alt="Whalesborough estate valley with lakes and farmland" loading="lazy" decoding="async" />
+  </div>
+ </section>
+
+ <!-- STATS -->
+ <div class="about-stats">
+  <div class="about-stats-inner">
+   <div>
+    <span class="stat-num">428</span>
+    <span class="stat-label">Acres of working estate</span>
+   </div>
+   <div>
+    <span class="stat-num">26</span>
+    <span class="stat-label">Award-winning cottages</span>
+   </div>
+   <div>
+    <span class="stat-num">5★</span>
+    <span class="stat-label">VisitEngland rated</span>
+   </div>
+   <div>
+    <span class="stat-num">22</span>
+    <span class="stat-label">Arvor Suite apartments</span>
+   </div>
+  </div>
+ </div>
+
+ <!-- PILLARS -->
+ <section class="about-pillars">
+  <h2>What's here</h2>
+  <div class="pillars-grid">
+   <div class="pillar">
+    <span class="pillar-icon">🏡</span>
+    <div>
+     <h3>26 Self-Catering Cottages</h3>
+     <p>All VisitEngland 5-Star rated, all dog-friendly at no extra charge, all with complimentary access to The W Club Spa. Sleeping from 2 to 14 — stone barns, farmhouses, barn conversions and purpose-built lodges across the estate.</p>
+     <a href="../our-cottages/">Browse all cottages</a>
+    </div>
+   </div>
+   <div class="pillar">
+    <span class="pillar-icon">🌿</span>
+    <div>
+     <h3>22 Arvor Suite Eco-Apartments</h3>
+     <p>Contemporary suites in the Arvor building — designed for couples and wellness breaks. Each suite includes private balcony, kitchenette, and access to all resort facilities. Packages from £175 per person per night.</p>
+     <a href="../arvor-suites/">Explore the Arvor Suites</a>
+    </div>
+   </div>
+   <div class="pillar">
+    <span class="pillar-icon">💧</span>
+    <div>
+     <h3>The W Club Spa</h3>
+     <p>Indoor heated pool (29–30°C), outdoor pool (17m × 8m), sauna, steam room, Technogym fitness suite, and Gaia treatment rooms. Included for all cottage guests; bookable as day spa for Arvor guests and outside visitors.</p>
+     <a href="../spa-and-treatments/">Spa &amp; treatments</a>
+    </div>
+   </div>
+   <div class="pillar">
+    <span class="pillar-icon">🍽</span>
+    <div>
+     <h3>The Weir Restaurant</h3>
+     <p>Farm-to-fork dining beside the estate lake. A seasonal menu built around the organic market garden, local fishing boats, and the farm's own produce — from breakfast through to evening dinner.</p>
+     <a href="../weir-restaurant/">The Weir Restaurant</a>
+    </div>
+   </div>
+   <div class="pillar">
+    <span class="pillar-icon">🐾</span>
+    <div>
+     <h3>Genuinely Dog-Friendly</h3>
+     <p>All 26 cottages welcome up to 2 dogs at no charge. Welcome pack on arrival, a heated dog wash station, and 428 acres of trails — plus a list of dog-friendly beaches within 15 minutes.</p>
+     <a href="../dog-friendly-breaks/">Dog-friendly breaks</a>
+    </div>
+   </div>
+   <div class="pillar">
+    <span class="pillar-icon">🌱</span>
+    <div>
+     <h3>The Organic Market Garden</h3>
+     <p>A working kitchen garden supplying The Weir Restaurant with seasonal vegetables, herbs and salads grown within the estate. Part of our broader commitment to low-carbon, locally sourced food and sustainable farming.</p>
+     <a href="../green-sustainability-credentials/">Our sustainability story</a>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- VALUES -->
+ <section class="about-values">
+  <div class="about-values-inner">
+   <h2>What we believe in</h2>
+   <div class="values-grid">
+    <div class="value">
+     <h3>The land comes first</h3>
+     <p>Whalesborough has been farmed for generations. The farm still works — the cattle graze, the garden still grows, the hedgerows are managed. The resort has been built around the land, not in spite of it.</p>
+    </div>
+    <div class="value">
+     <h3>Privacy as standard</h3>
+     <p>One estate, one resort. There's no public road through the property, no passing trade, no strangers in the courtyard. When you're here, it's yours — whether you've taken one cottage or the whole farm.</p>
+    </div>
+    <div class="value">
+     <h3>No hidden extras</h3>
+     <p>Spa access is included for cottage guests. Dogs stay free. The price you see is the price you pay. We'd rather earn your loyalty than win your booking with a misleading headline rate.</p>
+    </div>
+    <div class="value">
+     <h3>Cornish at heart</h3>
+     <p>The food on the menu comes from here or near here. The building materials came from the estate. The paths follow ancient field boundaries. We're not a branded resort dropped into Cornwall — we are Cornish.</p>
+    </div>
+    <div class="value">
+     <h3>Five stars, no pretension</h3>
+     <p>Every cottage carries a VisitEngland 5-Star rating. The W Club Spa, the Arvor Suites, the Weir Restaurant — all built to the highest standard. But the welcome is always warm, never stiff.</p>
+    </div>
+    <div class="value">
+     <h3>Sustainability without greenwash</h3>
+     <p>Solar energy, organic growing, low-impact building, responsible sourcing — not because it makes good marketing copy, but because it's the right way to steward land you care about.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- CONTACT / FIND US -->
+ <section class="about-visit">
+  <div>
+   <h2>Plan your visit</h2>
+   <p>Whalesborough Farm is located between Bude and Widemouth Bay on the North Cornwall Atlantic coast — roughly 2.5 hours from Bristol, 4.5 hours from London.</p>
+   <address>
+    Whalesborough Farm Resort &amp; Spa<br />
+    Widemouth Bay<br />
+    Bude, Cornwall<br />
+    EX23 0NA
+   </address>
+   <div class="contact-item">
+    <span>Telephone</span>
+    <a href="tel:+441288361940">01288 361940</a>
+   </div>
+   <div class="contact-item">
+    <span>Cottage Bookings</span>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" data-track="book-click">Book online via Landal</a>
+   </div>
+   <div class="contact-item">
+    <span>Arvor Suite Packages</span>
+    <span>Call 01288 361940 to book direct</span>
+   </div>
+   <a href="../finding-us/" class="btn btn-secondary" style="margin-top:1rem;">Directions &amp; Getting Here</a>
+  </div>
+  <div>
+   <h2>Get in touch</h2>
+   <p>For enquiries about group bookings, holiday home ownership, wedding or event hire, or any other questions — our team is available seven days a week.</p>
+   <div class="contact-item">
+    <span>General Enquiries</span>
+    <a href="tel:+441288361940">01288 361940</a>
+   </div>
+   <div class="contact-item">
+    <span>WhatsApp</span>
+    <a href="https://wa.me/441288361940" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+   </div>
+   <div class="contact-item">
+    <span>Follow Us</span>
+    <span>
+     <a href="https://www.instagram.com/whalesborough" target="_blank" rel="noopener noreferrer me">Instagram</a> &nbsp;&bull;&nbsp;
+     <a href="https://www.facebook.com/whalesborough" target="_blank" rel="noopener noreferrer me">Facebook</a>
+    </span>
+   </div>
+   <a href="../contact-us/" class="btn btn-secondary" style="margin-top:1rem;">Contact Us</a>
+  </div>
+ </section>
+
+ <footer class="site-footer">
+  <div class="footer-inner">
+   <div class="footer-brand">
+    <span class="logo-name">Whalesborough</span>
+    <span class="logo-sub">Farm Resort &amp; Spa</span>
+   </div>
+   <nav class="footer-nav">
+    <div class="footer-col">
+     <h4>Stay</h4>
+     <ul>
+      <li><a href="../our-cottages/">Holiday Cottages</a></li>
+      <li><a href="../arvor-suites/">Arvor Suites</a></li>
+      <li><a href="../groups/">Groups &amp; Buyouts</a></li>
+      <li><a href="../holiday-home-investment/">Holiday Home Investment</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Experience</h4>
+     <ul>
+      <li><a href="../spa-and-treatments/">Spa &amp; Treatments</a></li>
+      <li><a href="../weir-restaurant/">Weir Restaurant</a></li>
+      <li><a href="../outdoor-activities/">Activities</a></li>
+      <li><a href="../holiday-treats/">Holiday Treats</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Discover</h4>
+     <ul>
+      <li><a href="../exploring-cornwall/">Exploring Cornwall</a></li>
+      <li><a href="../dog-friendly-breaks/">Dog-Friendly Breaks</a></li>
+      <li><a href="../family-holidays/">Family Holidays</a></li>
+      <li><a href="../gallery/">Gallery</a></li>
+     </ul>
+    </div>
+    <div class="footer-col">
+     <h4>Info</h4>
+     <ul>
+      <li><a href="index.html">About Us</a></li>
+      <li><a href="../blog/">Journal</a></li>
+      <li><a href="../contact-us/">Contact</a></li><li><a href="../gift-vouchers/">Gift Vouchers</a></li>
+      <li><a href="../terms-and-conditions/">Terms &amp; Conditions</a> \&nbsp;|\&nbsp; <a href="#" data-cookie-settings>Cookie Settings</a></li>
+     </ul>
+    </div>
+   </nav>
+  </div>
+  <div class="footer-bottom">
+   <p>&copy; 2025 Whalesborough Farm Resort &amp; Spa. All rights reserved.</p>
+   <p>Whalesborough Farm, Bude, Cornwall, EX23 &nbsp;|&nbsp; <a href="../privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp; <a href="../terms-and-conditions/">Terms &amp; Conditions</a></p>
+  </div>
+ </footer>
+
+ <script src="../assets/js/main.js?v=25e5e2b" defer></script>
+ <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
+
+ <!-- Sticky mobile booking bar -->
+ <div class="sticky-book-bar" aria-label="Quick booking actions">
+  <div class="sbb-inner">
+   <a class="sbb-call" href="tel:01288361940">Call 01288 361940</a>
+   <a class="sbb-book" href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" data-track="book-click">Check 2026 Dates</a>
+  </div>
+ </div>
+ <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
+</body>
+</html>

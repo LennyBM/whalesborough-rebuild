@@ -4,75 +4,81 @@
   <!-- ===== CORE PAGES ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/arvor-suites/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/spa-and-treatments/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/weir-restaurant/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/contact-us/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.whalesborough.co.uk/gift-vouchers/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- ===== HOLIDAY TYPE SILO PAGES ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/dog-friendly-breaks/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/couples-breaks/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/family-holidays/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/short-breaks/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/wellness-breaks/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/groups/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -80,49 +86,49 @@
   <!-- ===== CONTENT / SEO PILLAR PAGES ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/cornish-farm-holidays/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/sustainable-luxury/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/green-sustainability-credentials/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/local-area/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/exploring-cornwall/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/outdoor-activities/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/facilities-for-kids/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/holiday-home-investment/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -130,25 +136,25 @@
   <!-- ===== EXPLORING CORNWALL SUB-PAGES ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/exploring-cornwall/hitting-the-coast/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/exploring-cornwall/family-days-out/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/exploring-cornwall/days-with-dog/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/exploring-cornwall/dog-walks/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -156,49 +162,49 @@
   <!-- ===== ABOUT & AWARDS ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/our-awards/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/finding-us/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/gallery/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/about/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/booking/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/blog/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/holiday-treats/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/dog-rules/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -206,157 +212,157 @@
   <!-- ===== INDIVIDUAL COTTAGE PAGES ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/arundell/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/barley-park/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/beachcombers/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/calf-house/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/chapel-park/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/eagles-nest/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/gwari-spa-barn-2-0/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/gwari-spa-barn-3-0/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/jacks-house/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/little-main/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/long-down/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/medlands/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/middle-hill/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/moleyns/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/nettlecoombe/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/sand-parks/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/sheeps-house/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/the-farmhouse/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/trelowen/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/trevelyan/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/venners/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/warrens/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/westcotts/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/whalesborough-cottage/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/windy-hills/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/our-cottages/woodyplatt/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -364,25 +370,25 @@
   <!-- ===== LEGAL & UTILITY (low priority, no crawl waste) ===== -->
   <url>
     <loc>https://www.whalesborough.co.uk/accessibility/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/cookie-policy/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/privacy-policy/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.whalesborough.co.uk/terms-and-conditions/</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

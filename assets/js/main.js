@@ -5,13 +5,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* --- Sticky nav shadow on scroll --- */
+  /* --- Unified scroll handler (nav shadow + scroll-to-top) --- */
   const nav = document.querySelector('.site-nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-  }
 
   /* --- Mobile menu --- */
   const hamburger = document.querySelector('.hamburger');
@@ -82,10 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
         showTestimonial(current);
       });
     });
-    setInterval(() => {
+    const autoAdvance = setInterval(() => {
       current = (current + 1) % testimonials.length;
       showTestimonial(current);
     }, 7000);
+    // Clean up interval if page unloads
+    window.addEventListener('pagehide', () => clearInterval(autoAdvance));
   }
 
   /* --- Scroll-triggered fade-up for elements with .reveal --- */
@@ -129,18 +126,105 @@ document.addEventListener('DOMContentLoaded', () => {
     else img.addEventListener('load', toWhiteLogo);
   });
 
-  /* --- Availability form: set min date to today --- */
-  const dateInputs = document.querySelectorAll('input[type="date"]');
-  const today = new Date().toISOString().split('T')[0];
-  dateInputs.forEach(input => { input.min = today; });
+  /* --- Connection-aware hero video: only skip on genuinely slow networks or explicit Data Saver --- */
+  const heroVideo = document.querySelector('video.hero-bg');
+  if (heroVideo) {
+    const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const slow = conn && (conn.saveData || /^(slow-2g|2g)$/i.test(conn.effectiveType || ''));
+    if (slow) {
+      // Keep the poster, drop the video sources so nothing downloads
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.preload = 'none';
+      heroVideo.querySelectorAll('source').forEach(s => s.remove());
+      try { heroVideo.load(); } catch (e) { /* noop */ }
+    } else {
+      // Nudge autoplay on mobile browsers that are strict about it
+      heroVideo.muted = true;
+      heroVideo.setAttribute('playsinline', '');
+      const tryPlay = () => {
+        const p = heroVideo.play();
+        if (p && typeof p.catch === 'function') p.catch(() => { /* poster remains */ });
+      };
+      if (heroVideo.readyState >= 2) tryPlay();
+      else heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+      // If the user interacts at all, retry (covers Low Power Mode on iOS)
+      document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    }
+  }
 
-  /* --- Guests dropdown auto-link to Landal booking --- */
-  const availabilityForm = document.getElementById('availability-form');
-  if (availabilityForm) {
-    availabilityForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      window.open('https://www.landal.co.uk/parks/whalesborough-resort/', '_blank');
-    });
+  /* --- Map facade: click to load the real Google Maps iframe --- */
+  document.querySelectorAll('.map-facade').forEach(wrap => {
+    const btn = wrap.querySelector('.map-facade-btn');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const src = wrap.dataset.embedSrc;
+      const title = wrap.dataset.embedTitle || 'Map';
+      if (!src) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = title;
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.allowFullscreen = true;
+      btn.remove();
+      wrap.appendChild(iframe);
+    }, { once: true });
+  });
+
+  /* --- Scroll-to-top button --- */
+  const topBtn = document.createElement('button');
+  topBtn.type = 'button';
+  topBtn.className = 'scroll-top-btn';
+  topBtn.setAttribute('aria-label', 'Scroll back to top');
+  topBtn.innerHTML = '↑';
+  document.body.appendChild(topBtn);
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* --- Single scroll listener for nav shadow + scroll-to-top --- */
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (nav) nav.classList.toggle('scrolled', y > 20);
+    topBtn.classList.toggle('visible', y > 800);
+  }, { passive: true });
+
+  /* --- Exit-intent modal (desktop only, once per session) --- */
+  const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+  const hasShown = sessionStorage.getItem('whalesborough-exit-shown');
+  if (isDesktop && !hasShown && !document.querySelector('.exit-modal-backdrop')) {
+    const backdrop = document.createElement('div');
+    backdrop.className = 'exit-modal-backdrop';
+    backdrop.innerHTML = `
+      <div class="exit-modal" role="dialog" aria-labelledby="exit-modal-title" aria-modal="true">
+        <button type="button" class="exit-modal-close" aria-label="Close">&times;</button>
+        <h2 id="exit-modal-title">Before you go…</h2>
+        <p>Cottages book up fastest in spring. Call us now or view our 2026 availability — we're here if you need a hand.</p>
+        <div class="exit-modal-actions">
+          <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">See 2026 Dates</a>
+          <a href="tel:01288361940" class="btn-ghost">Call 01288 361940</a>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(backdrop);
+
+    const closeModal = () => {
+      backdrop.classList.remove('open');
+      sessionStorage.setItem('whalesborough-exit-shown', '1');
+    };
+    backdrop.querySelector('.exit-modal-close').addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    const onMouseLeave = (e) => {
+      if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
+        if (sessionStorage.getItem('whalesborough-exit-shown')) return;
+        backdrop.classList.add('open');
+        sessionStorage.setItem('whalesborough-exit-shown', '1');
+        document.removeEventListener('mouseout', onMouseLeave);
+      }
+    };
+    document.addEventListener('mouseout', onMouseLeave);
   }
 
 });

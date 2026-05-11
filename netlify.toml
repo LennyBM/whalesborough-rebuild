@@ -1,0 +1,96 @@
+# Netlify configuration for Whalesborough Farm Resort & Spa
+
+[build]
+  publish = "."
+
+# Redirects — canonical URL enforcement and legacy URL support
+[[redirects]]
+  from = "http://whalesborough.co.uk/*"
+  to = "https://www.whalesborough.co.uk/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.whalesborough.co.uk/*"
+  to = "https://www.whalesborough.co.uk/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://whalesborough.co.uk/*"
+  to = "https://www.whalesborough.co.uk/:splat"
+  status = 301
+  force = true
+
+# Legacy URL redirects
+[[redirects]]
+  from = "/holiday-cottage-terms-conditions/"
+  to = "/terms-and-conditions/"
+  status = 301
+
+[[redirects]]
+  from = "/terms-of-use/"
+  to = "/terms-and-conditions/"
+  status = 301
+
+[[redirects]]
+  from = "/hitting-the-coast/"
+  to = "/exploring-cornwall/hitting-the-coast/"
+  status = 301
+
+[[redirects]]
+  from = "/days-with-your-dog/"
+  to = "/dog-friendly-breaks/"
+  status = 301
+
+[[redirects]]
+  from = "/swimming-pool/"
+  to = "/spa-and-treatments/"
+  status = 301
+
+[[redirects]]
+  from = "/why-buy-a-holiday-home/"
+  to = "/holiday-home-investment/"
+  status = 301
+
+[[redirects]]
+  from = "/stay-as-a-group/"
+  to = "/groups/"
+  status = 301
+
+[[redirects]]
+  from = "/our-cottages/nans-house/"
+  to = "/our-cottages/"
+  status = 301
+
+# Custom 404
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Cache headers — long TTL for versioned assets, short for HTML
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
