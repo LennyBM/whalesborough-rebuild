@@ -34,6 +34,11 @@
  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
  <meta property="og:locale" content="en_GB" />
  <meta property="og:image:alt" content="Contact Whalesborough Farm Resort & Spa | Bude, Cornwall" />
+ <meta property="og:image:secure_url" content="https://www.whalesborough.co.uk/assets/images/general/cottages-exterior.webp" />
+ <meta name="robots" content="index, follow" />
+ <meta name="author" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta name="geo.region" content="GB-CON" />
+ <meta name="geo.placename" content="Bude, Cornwall" />
  <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
  <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b" />
 
@@ -257,8 +262,8 @@
       <div class="contact-form-wrap">
        <p class="label" style="margin-bottom:0.75rem;">Send a Message</p>
        <h2 class="headline-md" style="font-style:italic;margin-bottom:2rem;">We'll be in touch shortly.</h2>
-       <form id="contact-form" name="whalesborough-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-us/?success=1" aria-label="Contact form">
-        <input type="hidden" name="form-name" value="whalesborough-enquiry" />
+       <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" aria-label="Contact form">
+        <input type="hidden" name="form-name" value="contact" />
         <!-- Honeypot — hidden from humans, catches bots -->
         <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
          <label>Don&rsquo;t fill this in if you&rsquo;re human: <input name="bot-field" /></label>
@@ -319,6 +324,7 @@
          <p style="font-size:0.825rem;">Please fill in all required fields before sending.</p>
         </div>
        </form>
+       <div role="alert" aria-live="polite" id="contact-status"></div>
       </div>
      </div>
 
@@ -413,7 +419,7 @@
    </div>
    <hr class="footer-divider" />
    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-    <p style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">© 2024 Whalesborough Farm Resort & Spa. All Rights Reserved.</p>
+    <p style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">© 2026 Whalesborough Farm Resort &amp; Spa. All Rights Reserved. Operated by Landal GreenParks UK Ltd. Registered in England &amp; Wales. Company No. [XXXXXXXX]</p>
     <div style="display:flex;gap:2rem;">
      <a href="../terms-of-use/index.html" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Terms</a>
      <a href="../privacy-policy/index.html" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Privacy</a>
