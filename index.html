@@ -44,8 +44,8 @@
   <link rel="stylesheet" href="assets/css/fonts.min.css?v=25e5e2b" />
 
  <!-- Styles -->
- <link rel="preload" as="style" href="assets/css/whalesborough.min.css?v=c252162" />
- <link rel="stylesheet" href="assets/css/whalesborough.min.css?v=c252162" />
+ <link rel="preload" as="style" href="assets/css/whalesborough.min.css?v=mobile-fix3" />
+ <link rel="stylesheet" href="assets/css/whalesborough.min.css?v=mobile-fix3" />
 
  <!-- LCP: preload hero poster frame so it paints before video metadata arrives -->
  <link rel="preload" as="image" href="assets/images/general/cottages-exterior.webp" type="image/webp" fetchpriority="high" />
@@ -450,17 +450,31 @@
    .dog-feature-img img { min-height: 340px; }
    .dog-feature-content { padding: 3rem 2rem; }
   }
-  @media (max-width: 768px) {
+  @media (min-width: 641px) and (max-width: 768px) {
    .estate-section { grid-template-columns: 1fr; gap: 2.5rem; }
    .arvor-section { grid-template-columns: 1fr; }
    .arvor-content { padding: 3.5rem 2rem; }
    .arvor-img { min-height: 320px; }
    .arvor-stats { gap: 1.75rem; }
-   .packages-grid { grid-template-columns: repeat(2, 1fr); }
+   .packages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
    .overlap-feature { grid-template-columns: 1fr; margin-bottom: 3rem; }
    .overlap-feature.reverse { grid-template-columns: 1fr; direction: ltr; }
    .overlap-text-card { margin-left: 0; margin-right: 0; padding: 2.5rem 1.75rem; }
    .dog-feature { grid-template-columns: 1fr; }
+  }
+  /* Phones: enforce single-column for every grid, override anything above */
+  @media (max-width: 640px) {
+   .estate-section { grid-template-columns: 1fr !important; gap: 2.5rem; }
+   .arvor-section { grid-template-columns: 1fr !important; }
+   .arvor-content { padding: 3rem 1.25rem !important; }
+   .packages-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 1rem; }
+   .package-card { padding: 1.5rem; min-width: 0; }
+   .cottages-grid { grid-template-columns: 1fr !important; }
+   .overlap-feature, .overlap-feature.reverse { grid-template-columns: 1fr !important; }
+   .dog-feature { grid-template-columns: 1fr !important; }
+   .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 1.5rem; }
+   .journeys-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+   body { overflow-x: hidden; }
   }
   @media (max-width: 640px) {
    .journeys-grid { grid-template-columns: repeat(2, 1fr); }
