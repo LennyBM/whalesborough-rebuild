@@ -38,7 +38,7 @@
  <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=ed32930" />
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=c252162" />
 
  <style>
   .legal-hero { background: var(--surface-low); padding: 7rem 0 4rem; border-bottom: 1px solid var(--surface-high); }
@@ -113,7 +113,7 @@
    <div class="container">
     <p class="label" style="margin-bottom:1rem;">Legal</p>
     <h1 class="headline-xl" style="font-style:italic;margin-bottom:0.75rem;">Accessibility Statement</h1>
-    <p style="font-size:0.875rem;color:var(--on-surface-variant);">Last updated: April 2026</p>
+    <p style="font-size:0.875rem;color:var(--on-surface-variant);">Last updated: <time datetime="2026-05-13">13 May 2026</time></p>
    </div>
   </section>
 
@@ -126,24 +126,29 @@
      <p>This accessibility statement applies to the website at <a href="https://www.whalesborough.co.uk">www.whalesborough.co.uk</a> and describes the current accessibility status of the site and our resort facilities.</p>
 
      <h2>Website Accessibility</h2>
-     <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standard. These guidelines explain how to make web content more accessible to people with disabilities. The following measures have been implemented on our website:</p>
+     <p>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA standard. We also work within the framework of the UK Equality Act 2010 and the European Accessibility Act 2025 (EAA), which both inform our ongoing accessibility programme. The following measures have been implemented on our website:</p>
      <ul>
       <li>All images include descriptive alternative text</li>
-      <li>The website can be navigated using a keyboard alone</li>
-      <li>Colour contrast ratios meet WCAG 2.1 Level AA requirements for text and interactive elements</li>
+      <li>The website can be navigated using a keyboard alone, with a visible focus indicator that meets WCAG 2.2 Focus Appearance requirements</li>
+      <li>Interactive target sizes meet the WCAG 2.2 Target Size (Minimum) success criterion</li>
+      <li>Colour contrast ratios meet WCAG 2.2 Level AA requirements for text and interactive elements</li>
       <li>Navigation landmarks and ARIA labels are used to assist screen reader users</li>
       <li>Form fields include visible labels and descriptive instructions</li>
       <li>Pages include meaningful page titles and logical heading structure</li>
+      <li>Help (telephone number and email) is presented in a consistent location across the site, meeting WCAG 2.2 Consistent Help</li>
       <li>Videos (where present) include captions</li>
       <li>The site is responsive and functional across all modern browsers and device sizes</li>
      </ul>
 
-     <h2>Known Accessibility Limitations</h2>
-     <p>While we strive for full accessibility, some limitations currently exist:</p>
+     <h2>Known Accessibility Gaps</h2>
+     <p>We are committed to being transparent about the areas where we do not yet fully meet WCAG 2.2 Level AA. Each item below is on our active remediation roadmap:</p>
      <ul>
-      <li>Some older PDF documents may not be fully accessible to screen reader users. We are working to provide accessible alternatives.</li>
-      <li>Third-party booking content (provided by Landal Green Parks) is outside our direct control and may have its own accessibility limitations. Please contact Landal directly if you experience difficulties.</li>
-      <li>Embedded maps (Google Maps) may not be fully navigable by keyboard. The physical address and what3words reference are always available as a text alternative on our Finding Us page.</li>
+      <li><strong>Per-field form errors</strong> — our enquiry forms currently surface a single combined error summary rather than per-field inline errors with programmatic association. Improved field-level error messaging is in progress.</li>
+      <li><strong>Body font size on legacy pages</strong> — a small number of legacy content pages still use a base font size below our 16px target. These pages are being migrated to the current type scale.</li>
+      <li><strong>Older PDF documents</strong> may not be fully tagged for screen reader users. Accessible HTML alternatives are being prepared.</li>
+      <li><strong>Third-party booking content</strong> provided by Landal GreenParks is outside our direct control and may have its own accessibility limitations. Please contact Landal directly, or call us on 01288 361940 and we will assist with your booking.</li>
+      <li><strong>Embedded Google Maps</strong> may not be fully navigable by keyboard. The full postal address and what3words reference are always provided as a text alternative on our Finding Us page.</li>
+      <li><strong>Motion preferences</strong> — a small number of decorative scroll animations on legacy templates do not yet honour <code>prefers-reduced-motion</code>. These are being audited.</li>
      </ul>
 
      <h2>Resort Accessibility — Physical Facilities</h2>
@@ -187,7 +192,7 @@
 
      <h2>Enforcement</h2>
      <p>If you are not satisfied with our response to an accessibility complaint, you can contact the Equality Advisory and Support Service (EASS): <a href="https://www.equalityadvisoryservice.com" target="_blank" rel="noopener noreferrer">www.equalityadvisoryservice.com</a>.</p>
-     <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 in Great Britain. However, as a private sector organisation, Whalesborough Farm Resort & Spa voluntarily commits to meeting these standards as best practice.</p>
+     <p>As a service provider operating in the United Kingdom we have duties under the Equality Act 2010 to make reasonable adjustments for disabled people. We also align our practice with the European Accessibility Act 2025 (Directive (EU) 2019/882), and voluntarily aim to meet the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 standard, even though as a private-sector organisation we are not within its direct scope.</p>
 
     </div>
    </div>
@@ -243,7 +248,7 @@
   </div>
  </footer>
 
- <script src="/assets/js/main.js?v=41dc886" defer></script>
+ <script src="/assets/js/main.js?v=c252162" defer></script>
  <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
 
  <!-- Sticky mobile booking bar -->

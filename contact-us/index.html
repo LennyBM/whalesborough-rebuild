@@ -41,7 +41,7 @@
  <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=ed32930" />
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=c252162" />
 
  <script type="application/ld+json">
  {
@@ -114,6 +114,23 @@
   .map-embed { width: 100%; height: 320px; background: var(--surface-high); display: flex; align-items: center; justify-content: center; margin-top: 2rem; overflow: hidden; }
   .map-embed iframe { width: 100%; height: 100%; border: none; display: block; }
 
+  .field-error { display: block; min-height: 1em; font-family: var(--font-body); font-size: 0.75rem; color: var(--primary); margin-top: 0.35rem; line-height: 1.4; }
+  .field-error:empty { display: none; }
+  .trust-line { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; color: var(--on-surface-variant); margin-bottom: 1.25rem; }
+  .trust-line span + span::before { content: ' · '; color: var(--outline-variant); margin: 0 0.35rem; }
+  .or-call-line { font-family: var(--font-body); font-size: 0.8125rem; color: var(--on-surface-variant); text-align: center; margin-top: 1rem; line-height: 1.65; }
+  .or-call-line a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+  .contact-faq { margin-bottom: 3.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(194,200,195,0.25); }
+  .contact-faq h2 { font-family: var(--font-headline); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--on-surface); margin: 0.75rem 0 1.75rem; }
+  .faq-item { border-bottom: 1px solid rgba(194,200,195,0.3); padding: 0; }
+  .faq-item:first-of-type { border-top: 1px solid rgba(194,200,195,0.3); }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 1.25rem 0; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: var(--on-surface); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-family: var(--font-headline); font-size: 1.5rem; font-weight: 300; color: var(--secondary); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item .faq-body { padding: 0 0 1.25rem; font-size: 0.875rem; color: var(--on-surface-variant); line-height: 1.75; }
+
   .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--surface-high); margin-top: 5rem; }
   .quick-link-card { background: var(--surface-low); padding: 2.5rem 2rem; transition: background 0.2s; }
   .quick-link-card:hover { background: var(--surface-high); }
@@ -135,6 +152,20 @@
   "itemListElement": [
    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.whalesborough.co.uk/"},
    {"@type":"ListItem","position":2,"name":"Contact Us","item":"https://www.whalesborough.co.uk/contact-us/"}
+  ]
+ }
+ </script>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {"@type":"Question","name":"What are check-in and check-out times?","acceptedAnswer":{"@type":"Answer","text":"Cottage check-in is from 4pm; check-out by 10am. Arvor Suite check-in is from 3pm; check-out by 11am. Early or late options can sometimes be arranged — please call 01288 361940."}},
+   {"@type":"Question","name":"Are dogs welcome at The Weir restaurant?","acceptedAnswer":{"@type":"Answer","text":"Yes — well-behaved dogs are welcome in the bar area and on the terrace at The Weir Restaurant. The main dining room is for guests without dogs. Water bowls are provided throughout."}},
+   {"@type":"Question","name":"Can I book multiple cottages together?","acceptedAnswer":{"@type":"Answer","text":"Yes. For 3 or more cottages, group bookings, or full estate buyouts, please call us on 01288 361940 and we'll handle the arrangements directly to ensure the best rate and adjoining properties where possible."}},
+   {"@type":"Question","name":"Can you arrange something special for an occasion?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — birthdays, anniversaries, proposals, honeymoons. We can arrange flowers, champagne, hampers, in-cottage spa treatments, private dining and more. Mention your occasion in your enquiry or call ahead."}},
+   {"@type":"Question","name":"Is the resort accessible?","acceptedAnswer":{"@type":"Answer","text":"Selected cottages and Arvor Suites are step-free with accessible bathrooms. The W Club Spa, The Weir Restaurant and reception are all step-free. Please mention any specific access needs when booking and we'll match you to the right property."}}
   ]
  }
  </script>
@@ -261,8 +292,35 @@
      <!-- Form column -->
      <div class="reveal" style="transition-delay:0.15s;">
       <div class="contact-form-wrap">
+
+       <div class="contact-faq" aria-label="Common questions">
+        <p class="label">Before You Ask</p>
+        <h2>Common questions</h2>
+        <details class="faq-item">
+         <summary>What are check-in and check-out times?</summary>
+         <div class="faq-body">Cottage check-in is from 4pm; check-out by 10am. Arvor Suite check-in is from 3pm; check-out by 11am. Early or late options can sometimes be arranged — please call <a href="tel:01288361940">01288 361940</a>.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Are dogs welcome at The Weir restaurant?</summary>
+         <div class="faq-body">Yes — well-behaved dogs are welcome in the bar area and on the terrace at The Weir Restaurant. The main dining room is for guests without dogs. Water bowls are provided throughout.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Can I book multiple cottages together?</summary>
+         <div class="faq-body">Yes. For 3 or more cottages, group bookings, or full estate buyouts, please call us on <a href="tel:01288361940">01288 361940</a> and we'll handle the arrangements directly to ensure the best rate and adjoining properties where possible.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Can you arrange something special for an occasion?</summary>
+         <div class="faq-body">Absolutely — birthdays, anniversaries, proposals, honeymoons. We can arrange flowers, champagne, hampers, in-cottage spa treatments, private dining and more. Mention your occasion in your enquiry or call ahead.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Is the resort accessible?</summary>
+         <div class="faq-body">Selected cottages and Arvor Suites are step-free with accessible bathrooms. The W Club Spa, The Weir Restaurant and reception are all step-free. Please mention any specific access needs when booking and we'll match you to the right property. See our <a href="/accessibility/">accessibility statement</a>.</div>
+        </details>
+       </div>
+
        <p class="label" style="margin-bottom:0.75rem;">Send a Message</p>
-       <h2 class="headline-md" style="font-style:italic;margin-bottom:2rem;">We'll be in touch shortly.</h2>
+       <h2 class="headline-md" style="font-style:italic;margin-bottom:1rem;">We'll be in touch shortly.</h2>
+       <p class="trust-line"><span>Mon–Sun reply within 1 business day</span><span>4.9★ Tripadvisor</span><span>Cornwall Tourism Gold 2024/25</span></p>
        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" aria-label="Contact form">
         <input type="hidden" name="form-name" value="contact" />
         <!-- Honeypot — hidden from humans, catches bots -->
@@ -272,24 +330,28 @@
         <div class="form-row">
          <div class="contact-form-group">
           <label for="first-name">First Name *</label>
-          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required aria-required="true" placeholder="Jane" />
+          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required aria-required="true" placeholder="Jane" aria-describedby="first-name-error" />
+          <span class="field-error" id="first-name-error" aria-live="polite"></span>
          </div>
          <div class="contact-form-group">
           <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required aria-required="true" placeholder="Smith" />
+          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required aria-required="true" placeholder="Smith" aria-describedby="last-name-error" />
+          <span class="field-error" id="last-name-error" aria-live="polite"></span>
          </div>
         </div>
         <div class="contact-form-group">
          <label for="email">Email Address *</label>
-         <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" placeholder="jane@example.com" />
+         <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-required="true" placeholder="jane@example.com" aria-describedby="email-error" />
+         <span class="field-error" id="email-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group">
          <label for="phone">Telephone Number <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
-         <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" inputmode="tel" />
+         <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" inputmode="tel" aria-describedby="phone-error" />
+         <span class="field-error" id="phone-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group">
          <label for="enquiry-type">Enquiry Type</label>
-         <select id="enquiry-type" name="enquiry_type" aria-label="Enquiry type">
+         <select id="enquiry-type" name="enquiry_type" aria-label="Enquiry type" aria-describedby="enquiry-type-error">
           <option value="">Please select…</option>
           <option value="cottage-booking">Cottage Booking</option>
           <option value="arvor-suites">Arvor Suites</option>
@@ -299,10 +361,12 @@
           <option value="holiday-home">Holiday Home Ownership</option>
           <option value="other">Other</option>
          </select>
+         <span class="field-error" id="enquiry-type-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group">
          <label for="message">Your Message *</label>
-         <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Please tell us about your enquiry, preferred dates, number of guests, and any questions we can help with…"></textarea>
+         <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Please tell us about your enquiry, preferred dates, number of guests, and any questions we can help with…" aria-describedby="message-error"></textarea>
+         <span class="field-error" id="message-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group" style="margin-bottom:0;">
          <label style="display:flex;align-items:flex-start;gap:0.75rem;cursor:pointer;text-transform:none;letter-spacing:0;font-size:0.75rem;color:var(--on-surface-variant);">
@@ -317,7 +381,8 @@
          </label>
         </div>
         <button type="submit" class="btn-primary" style="margin-top:2.5rem;width:100%;padding:1.25rem;font-size:0.7rem;">Send Enquiry</button>
-        <p style="font-size:0.7rem;color:var(--on-surface-variant);text-align:center;margin-top:0.875rem;line-height:1.6;">We aim to reply within one business day &middot; Your details are kept private</p>
+        <p class="or-call-line">Or call <a href="tel:01288361940">01288 361940</a> · Mon–Sun 9am–5pm</p>
+        <p style="font-size:0.7rem;color:var(--on-surface-variant);text-align:center;margin-top:0.5rem;line-height:1.6;">We aim to reply within one business day &middot; Your details are kept private</p>
         <div id="form-success" role="alert" aria-live="polite" style="display:none;margin-top:1.5rem;padding:1.25rem;background:rgba(74,100,87,0.08);color:var(--secondary);">
          <p style="font-family:var(--font-headline);font-style:italic;font-size:1.1rem;margin-bottom:0.25rem;">Thank you — message received.</p>
          <p style="font-size:0.825rem;">We'll be in touch within one business day.</p>
@@ -434,7 +499,7 @@
   </div>
  </footer>
 
- <script src="/assets/js/main.js?v=41dc886" defer></script>
+ <script src="/assets/js/main.js?v=c252162" defer></script>
  <script>
   // Form submits natively to Netlify (action="/contact-us/?success=1").
   // Show the success banner when the user lands back on the page with ?success=1

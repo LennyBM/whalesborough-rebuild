@@ -39,7 +39,7 @@
  <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=ed32930" />
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=c252162" />
 
  <style>
   .legal-hero { background: var(--surface-low); padding: 7rem 0 4rem; border-bottom: 1px solid var(--surface-high); }
@@ -113,7 +113,7 @@
    <div class="container">
     <p class="label" style="margin-bottom:1rem;">Legal</p>
     <h1 class="headline-xl" style="font-style:italic;margin-bottom:0.75rem;">Cookie Policy</h1>
-    <p style="font-size:0.875rem;color:var(--on-surface-variant);">Last updated: April 2026</p>
+    <p style="font-size:0.875rem;color:var(--on-surface-variant);">Last updated: <time datetime="2026-05-13">13 May 2026</time></p>
     <nav class="legal-toc" aria-label="On this page">
      <p class="legal-toc-label">On this page</p>
      <ol>
@@ -135,7 +135,7 @@
     <div class="legal-body">
 
      <h2 id="what-are-cookies">What Are Cookies</h2>
-     <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work, or work more efficiently, and to provide information to the owners of the site. This Cookie Policy explains how Whalesborough Farm Resort & Spa ("we", "us", "our") uses cookies and similar technologies on our website at <a href="https://www.whalesborough.co.uk">www.whalesborough.co.uk</a>.</p>
+     <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work, or work more efficiently, and to provide information to the owners of the site. This Cookie Policy explains how Whalesborough Farm Resort &amp; Spa ("we", "us", "our") uses cookies and similar technologies on our website at <a href="https://www.whalesborough.co.uk">www.whalesborough.co.uk</a>, and is published in accordance with the UK GDPR, the Privacy and Electronic Communications Regulations (PECR), and the Data (Use and Access) Act 2025.</p>
 
      <h2 id="who-we-are">Who We Are</h2>
      <p>Whalesborough Farm Resort & Spa is operated from Whalesborough Farm, Marhamchurch, Bude, Cornwall, <abbr title="Postcode — Whalesborough Farm, Marhamchurch, Bude, Cornwall">EX23 0JD</abbr>. If you have any questions about this Cookie Policy, please contact us at <a href="mailto:info@whalesborough.co.uk">info@whalesborough.co.uk</a> or by calling 01288 361940.</p>
@@ -143,34 +143,47 @@
      <h2 id="the-cookies-we-use">The Cookies We Use</h2>
      <p>We use the following categories of cookies on our website:</p>
 
-     <table class="cookie-table" aria-label="Cookie types and purposes">
+     <p>The table below itemises every cookie set by this website, together with its provider, purpose, duration, and category.</p>
+
+     <table class="cookie-table" aria-label="Itemised list of cookies set by this website">
+      <caption style="text-align:left;font-size:0.75rem;color:var(--secondary);padding-bottom:0.75rem;">Cookies in use on www.whalesborough.co.uk</caption>
       <thead>
        <tr>
-        <th scope="col">Category</th>
+        <th scope="col">Name</th>
+        <th scope="col">Provider</th>
         <th scope="col">Purpose</th>
         <th scope="col">Duration</th>
+        <th scope="col">Category</th>
        </tr>
       </thead>
       <tbody>
        <tr>
-        <td><strong>Strictly Necessary</strong></td>
-        <td>These cookies are essential for the website to function. They enable core features such as page navigation, security, and access to secure areas. The website cannot function properly without these cookies.</td>
-        <td>Session</td>
+        <td><code>wb_consent_v2</code></td>
+        <td>Whalesborough (first-party)</td>
+        <td>Stores your cookie consent choices so we do not re-prompt on every visit.</td>
+        <td>12 months</td>
+        <td>Strictly necessary</td>
        </tr>
        <tr>
-        <td><strong>Performance & Analytics</strong></td>
-        <td>These cookies collect anonymous information about how visitors use our website, including which pages are visited most often and whether users receive error messages. We use this data to improve how the website works. All information collected is aggregated and anonymous.</td>
-        <td>Up to 2 years</td>
+        <td><code>_ga</code></td>
+        <td>Google Analytics 4</td>
+        <td>Distinguishes unique visitors for aggregated traffic measurement.</td>
+        <td>2 years</td>
+        <td>Analytics</td>
        </tr>
        <tr>
-        <td><strong>Functional</strong></td>
-        <td>These cookies allow the website to remember choices you make (such as your preferred language or region) and provide enhanced, more personalised features. They may be set by us or by third-party providers whose services we have added to our pages.</td>
-        <td>Up to 1 year</td>
+        <td><code>_ga_*</code></td>
+        <td>Google Analytics 4</td>
+        <td>Persists session state for the GA4 property (one cookie per property ID).</td>
+        <td>2 years</td>
+        <td>Analytics</td>
        </tr>
        <tr>
-        <td><strong>Targeting / Marketing</strong></td>
-        <td>These cookies may be set through our site by our advertising partners. They may be used to build a profile of your interests and show you relevant adverts on other sites. They do not store personal information directly, but are based on uniquely identifying your browser and internet device.</td>
-        <td>Up to 2 years</td>
+        <td><code>NID</code></td>
+        <td>Google Maps</td>
+        <td>Set by Google when you interact with the embedded map on our Finding Us page; stores user preferences.</td>
+        <td>6 months</td>
+        <td>Functional</td>
        </tr>
       </tbody>
      </table>
@@ -178,10 +191,9 @@
      <h2 id="third-party-cookies">Third-Party Cookies</h2>
      <p>Some cookies on our website are set by third-party services. These include:</p>
      <ul>
-      <li><strong>Google Analytics</strong> — used to analyse website traffic and user behaviour in an aggregated and anonymised manner.</li>
+      <li><strong>Google Analytics 4</strong> — used to analyse website traffic and user behaviour in an aggregated and anonymised manner. Only set after analytics consent.</li>
       <li><strong>Google Maps</strong> — embedded maps on our Finding Us page may set cookies when you interact with the map.</li>
-      <li><strong>Landal Green Parks</strong> — our booking partner may set cookies when you follow links from our site to the booking engine at landal.co.uk.</li>
-      <li><strong>WhatsApp</strong> — the WhatsApp chat button may set functional cookies related to the messaging service.</li>
+      <li><strong>Landal GreenParks</strong> — our booking partner may set cookies when you follow links from our site to the booking engine at landal.co.uk.</li>
      </ul>
      <p>We do not control these third-party cookies and they are governed by the respective privacy policies of those organisations.</p>
 
@@ -262,7 +274,7 @@
   </div>
  </footer>
 
- <script src="/assets/js/main.js?v=41dc886" defer></script>
+ <script src="/assets/js/main.js?v=c252162" defer></script>
  <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
 
  <!-- Sticky mobile booking bar -->

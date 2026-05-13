@@ -41,7 +41,7 @@
  <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=ed32930">
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=c252162">
 
  <script type="application/ld+json">
  {
@@ -401,6 +401,14 @@
 
  <!-- Hero -->
  <main id="main-content">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+   <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.25rem;margin:0;font-size:.8rem;color:var(--on-surface-variant);max-width:1200px;margin:0 auto;">
+    <li><a href="/" style="color:var(--primary);text-decoration:none;">Home</a></li>
+    <li aria-hidden="true">/</li>
+    <li aria-current="page">Local Area</li>
+   </ol>
+  </nav>
+
  <section class="area-hero" aria-label="Local area guide hero">
   <div class="area-hero-bg">
    <img src="/assets/images/general/bude-canal.webp" alt="Bude Canal — North Cornwall near Whalesborough Farm Resort" fetchpriority="high" decoding="sync" width="1800" height="1000">
@@ -1010,6 +1018,7 @@
       <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="background:white;color:var(--primary);padding:1.125rem 2.5rem;font-size:0.6875rem;" data-track="book-click">Check Availability</a>
       <a href="/our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.35);padding:1.125rem 2.5rem;font-size:0.6875rem;">Browse Cottages</a>
      </div>
+     <p class="trust-microcopy" style="margin-top:1rem;font-size:0.75rem;color:var(--on-surface-variant);letter-spacing:0.04em;">Cornwall Tourism Gold 2024/25 &nbsp;·&nbsp; 4.9★ Tripadvisor &nbsp;·&nbsp; Reply within 1 business day</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
      <a href="/dog-friendly-breaks/" style="background:rgba(255,255,255,0.1);padding:1.75rem;text-decoration:none;display:block;border:1px solid rgba(255,255,255,0.1);">
@@ -1076,7 +1085,7 @@
   </div>
  </footer>
 
- <script src="/assets/js/main.js?v=41dc886"></script>
+ <script src="/assets/js/main.js?v=c252162"></script>
  <script>
   // Filter guide cards
   const chips = document.querySelectorAll('.guide-chip');
