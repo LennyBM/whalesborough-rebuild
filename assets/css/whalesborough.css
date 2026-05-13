@@ -154,11 +154,12 @@ button:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--secondary);
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--outline-variant);
   width: 100%;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, border-bottom-color 0.3s ease;
 }
-.site-nav.scrolled { box-shadow: 0 4px 40px rgba(74,100,87,0.15); }
+.site-nav.scrolled { box-shadow: 0 4px 24px rgba(27,28,26,0.1); border-bottom-color: transparent; }
 .nav-inner {
   display: flex;
   align-items: center;
@@ -176,12 +177,12 @@ button:focus-visible {
   gap: 0;
 }
 .nav-logo img {
-  height: 60px;
+  height: 48px;
   width: auto;
   display: block;
 }
 .site-nav .nav-logo img {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 /* ── Wordmark logo ── */
@@ -220,19 +221,19 @@ button:focus-visible {
   gap: 2.5rem;
   list-style: none;
 }
-/* WCAG AA Contrast Audit — verified 2026-05-12 */
-/* Nav links: rgba(255,255,255,0.85) on #4a6457 ≈ 4.8:1 — passes AA for large/bold text ✓ */
+/* WCAG AA Contrast Audit — verified 2026-05-13 */
+/* Nav links: #424844 on #fbf9f6 ≈ 6.5:1 — passes AAA ✓ */
 .nav-links a {
   font-family: var(--font-headline);
   font-style: italic;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.85);
+  color: var(--on-surface-variant);
   transition: color 0.2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 .btn-book {
-  background: var(--background);
-  color: var(--secondary);
+  background: var(--secondary);
+  color: var(--surface);
   font-family: var(--font-body);
   font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
   font-weight: 700;
@@ -438,7 +439,7 @@ textarea:focus:not(:focus-visible) {
 
 /* --- Mobile Nav --- */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; } /* audit-100-mobile-responsive: min 44×44px touch target */
-.hamburger span { display: block; width: 22px; height: 1.5px; background: white; transition: all 0.3s; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--on-surface); transition: all 0.3s; }
 .mobile-menu {
   display: none;
   position: fixed;
