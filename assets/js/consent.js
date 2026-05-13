@@ -1,7 +1,10 @@
 /**
- * Whalesborough Cookie Consent — GDPR compliant
+ * Whalesborough Cookie Consent — GDPR / ICO compliant
  * Equal prominence Accept / Reject per CNIL/ICO guidance.
- * Preference stored in localStorage; no cookies set by this script.
+ * Preference stored in localStorage under wb_consent_v1 (no cookies set by this script).
+ *
+ * ⚠️ CLIENT ACTION REQUIRED: Replace GA_ID ('G-XXXXXXXXXX') with the real
+ *    Google Analytics 4 Measurement ID before going live. Search for GA_ID below.
  */
 (function () {
   'use strict';
@@ -27,6 +30,10 @@
     });
   }
 
+  // Always expose hasGrantedConsent on window.wb regardless of banner state
+  window.wb = window.wb || {};
+  window.wb.hasGrantedConsent = hasGrantedConsent;
+
   if (stored) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', wireReopenLinks);
@@ -42,18 +49,20 @@
   banner.setAttribute('role', 'dialog');
   banner.setAttribute('aria-live', 'polite');
   banner.setAttribute('aria-label', 'Cookie consent');
+  banner.setAttribute('aria-describedby', 'wb-consent-desc');
+  banner.setAttribute('data-nosnippet', ''); // prevent search engines indexing cookie text
   banner.innerHTML =
     '<div class="wb-consent-inner">' +
       '<div class="wb-consent-text">' +
         '<strong>Cookies &amp; Privacy</strong>' +
-        '<p>We use Google Analytics to understand how people use our site, and Google Fonts to display it. ' +
+        '<p id="wb-consent-desc">We use Google Analytics to understand how people use our site, and Google Fonts to display it. ' +
         'Nothing personal is stored without your permission. ' +
         '<a href="/cookie-policy/" class="wb-consent-link">Cookie Policy</a>' +
         '</p>' +
       '</div>' +
       '<div class="wb-consent-actions">' +
-        '<button id="wb-reject" class="wb-btn wb-btn-reject">Reject</button>' +
-        '<button id="wb-accept" class="wb-btn wb-btn-accept">Accept</button>' +
+        '<button id="wb-reject" class="wb-btn wb-btn-reject" tabindex="0">Reject</button>' +
+        '<button id="wb-accept" class="wb-btn wb-btn-accept" tabindex="0">Accept</button>' +
       '</div>' +
     '</div>';
 
@@ -146,10 +155,37 @@
     });
     localStorage.setItem(STORAGE_KEY, record);
     banner.classList.remove('wb-visible');
+    // Release focus-trap
+    document.removeEventListener('keydown', trapFocus);
     setTimeout(function () {
       if (banner.parentNode) banner.parentNode.removeChild(banner);
     }, 400);
     if (choice === 'granted') loadGA4();
+    // Notify other scripts of consent change
+    try {
+      document.dispatchEvent(new CustomEvent('wb:consent-changed', { detail: { consent: choice } }));
+    } catch (e) { /* IE fallback — no-op */ }
+  }
+
+  // Focus-trap: keep keyboard focus inside the banner while it is visible
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    var rejectBtn = document.getElementById('wb-reject');
+    var acceptBtn = document.getElementById('wb-accept');
+    if (!rejectBtn || !acceptBtn) return;
+    if (e.shiftKey) {
+      // Shift+Tab: wrap from Reject back to Accept
+      if (document.activeElement === rejectBtn) {
+        e.preventDefault();
+        acceptBtn.focus();
+      }
+    } else {
+      // Tab: wrap from Accept back to Reject
+      if (document.activeElement === acceptBtn) {
+        e.preventDefault();
+        rejectBtn.focus();
+      }
+    }
   }
 
   // Fire GA4 on return visits if consent was previously granted
@@ -163,6 +199,10 @@
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         banner.classList.add('wb-visible');
+        // Move focus into the banner and engage focus-trap
+        var rejectBtn = document.getElementById('wb-reject');
+        if (rejectBtn) rejectBtn.focus();
+        document.addEventListener('keydown', trapFocus);
       });
     });
     document.getElementById('wb-accept').addEventListener('click', function () { dismiss('granted'); });

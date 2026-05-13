@@ -3,6 +3,9 @@
 [build]
   publish = "."
 
+[build.environment]
+  NODE_VERSION = "20"
+
 # Redirects — canonical URL enforcement and legacy URL support
 [[redirects]]
   from = "http://whalesborough.co.uk/*"
@@ -23,6 +26,7 @@
   force = true
 
 # Legacy URL redirects
+# NOTE: /terms-and-conditions/ directory confirmed present in repo root.
 [[redirects]]
   from = "/holiday-cottage-terms-conditions/"
   to = "/terms-and-conditions/"
@@ -63,6 +67,18 @@
   to = "/our-cottages/"
   status = 301
 
+# Redirect bare logo-preview.html to homepage (dev file, not for public)
+[[redirects]]
+  from = "/logo-preview.html"
+  to = "/"
+  status = 301
+
+# Trailing-slash normalisation for blog
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
 # Passthrough for pitch page (static file must bypass catch-all 404)
 [[redirects]]
   from = "/pitch"
@@ -81,6 +97,9 @@
   status = 404
 
 # Cache headers — long TTL for versioned assets, short for HTML
+# NOTE: The _headers file also sets Cache-Control rules. Per Netlify's resolution order,
+# _headers file rules take precedence over [[headers]] blocks defined here.
+# The rules below are kept as a fallback / documentation reference.
 [[headers]]
   for = "/assets/css/*"
   [headers.values]

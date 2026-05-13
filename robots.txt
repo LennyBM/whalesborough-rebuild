@@ -7,6 +7,13 @@ Allow: /assets/images/
 # Block design-system preview files from indexing
 Disallow: /design-system/
 
+# Block client pitch page from public indexing
+Disallow: /pitch/
+
+# Block standalone utility / dev pages from indexing
+Disallow: /logo-preview.html
+Disallow: /offline.html
+
 # AI search crawlers — explicitly permitted for GEO (Generative Engine Optimisation)
 User-agent: GPTBot
 Allow: /

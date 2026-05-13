@@ -22,10 +22,22 @@
   # All fonts and assets are self-hosted so no external script/font/style sources needed.
   # 'unsafe-inline' required for inline <script> and <style> blocks in existing pages.
   # Landal (booking partner) and WhatsApp allowed for outbound navigation only (via links, not src).
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://maps.gstatic.com https://maps.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; frame-src https://www.google.com https://maps.googleapis.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://www.whalesborough.co.uk; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://maps.gstatic.com https://maps.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net; frame-src https://www.google.com https://maps.googleapis.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://www.whalesborough.co.uk https://netlify.com; upgrade-insecure-requests
 
   # Prevent IE/Edge compatibility mode
   X-UA-Compatible: IE=edge
+
+  # Cross-origin isolation headers
+  # same-origin: prevents cross-origin window references (security)
+  Cross-Origin-Opener-Policy: same-origin
+  # unsafe-none: don't lock down embeds — Google Maps iframes must load
+  Cross-Origin-Embedder-Policy: unsafe-none
+  # cross-origin: allows image CDN and third-party asset loading
+  Cross-Origin-Resource-Policy: cross-origin
+
+# HTML pages — allow indexing and following
+/*.html
+  X-Robots-Tag: index, follow
 
 # Long-lived cache for fingerprinted static assets (immutable = no revalidation)
 /assets/css/*
@@ -44,3 +56,9 @@
 # Service worker — never cache (must always fetch latest version)
 /sw.js
   Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: application/javascript
+
+# Web app manifest — short cache (1 day)
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json

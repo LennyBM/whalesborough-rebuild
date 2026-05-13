@@ -3,7 +3,17 @@
    Main JavaScript
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+// With type="module" the browser defers execution until the DOM is ready,
+// so DOMContentLoaded may already have fired by the time this script runs.
+// This pattern handles both cases safely.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+function init() {
+  'use strict';
 
   /* --- Unified scroll handler (nav shadow + scroll-to-top) --- */
   const nav = document.querySelector('.site-nav');
@@ -34,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const isFloat = target % 1 !== 0;
 
       const step = (now) => {
+        // INP: skip frame when tab is hidden to avoid wasted rAF work
+        if (document.visibilityState === 'hidden') {
+          requestAnimationFrame(step);
+          return;
+        }
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const ease = 1 - Math.pow(1 - progress, 3);
@@ -77,10 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         showTestimonial(current);
       });
     });
-    const autoAdvance = setInterval(() => {
+    let autoAdvance = setInterval(() => {
       current = (current + 1) % testimonials.length;
       showTestimonial(current);
     }, 7000);
+
+    // Pause auto-advance when tab is hidden, resume when visible (INP / battery)
+    document.addEventListener('visibilitychange', function onVisibilityChange() {
+      if (document.visibilityState === 'hidden') {
+        clearInterval(autoAdvance);
+      } else {
+        autoAdvance = setInterval(() => {
+          current = (current + 1) % testimonials.length;
+          showTestimonial(current);
+        }, 7000);
+      }
+    });
+
     // Clean up interval if page unloads
     window.addEventListener('pagehide', () => clearInterval(autoAdvance));
   }
@@ -172,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --- Scroll-to-top button --- */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const topBtn = document.createElement('button');
   topBtn.type = 'button';
   topBtn.className = 'scroll-top-btn';
@@ -179,15 +208,37 @@ document.addEventListener('DOMContentLoaded', () => {
   topBtn.innerHTML = '↑';
   document.body.appendChild(topBtn);
   topBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'instant' : 'smooth' });
   });
 
   /* --- Single scroll listener for nav shadow + scroll-to-top --- */
+  // Use rAF ticking to avoid layout thrashing on every scroll event (INP)
+  let scrollTicking = false;
   window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (nav) nav.classList.toggle('scrolled', y > 20);
-    topBtn.classList.toggle('visible', y > 800);
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (nav) nav.classList.toggle('scrolled', y > 20);
+        topBtn.classList.toggle('visible', y > 800);
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
   }, { passive: true });
+
+  /* --- Analytics utility (consent-safe — gtag only fires after consent.js loads it) --- */
+  window.wbTrack = function(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  };
+
+  // Wire up any elements with data-track attributes
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      window.wbTrack(el.dataset.track, { location: el.closest('section')?.id || 'unknown' });
+    });
+  });
 
   /* --- Exit-intent modal (desktop only, once per session) --- */
   const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
@@ -227,4 +278,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mouseout', onMouseLeave);
   }
 
-});
+} // end init()
