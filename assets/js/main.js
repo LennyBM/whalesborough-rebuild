@@ -211,6 +211,48 @@ function init() {
     });
   });
 
+  // Auto-track tel:, mailto:, and outbound links (consent-gated via wbTrack)
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      window.wbTrack('phone_click', { number: a.getAttribute('href').replace('tel:', '') });
+    });
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      window.wbTrack('email_click', { address: a.getAttribute('href').replace('mailto:', '') });
+    });
+  });
+  document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+    try {
+      var url = new URL(a.href);
+      if (url.host !== location.host) {
+        a.addEventListener('click', function() {
+          window.wbTrack('outbound_click', { host: url.host, path: url.pathname });
+        });
+      }
+    } catch (e) { /* malformed href */ }
+  });
+
+  // Form submit + loading-state for any data-netlify form
+  document.querySelectorAll('form[data-netlify="true"]').forEach(function(form) {
+    var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    var originalLabel = submitBtn ? submitBtn.textContent : '';
+    form.addEventListener('submit', function() {
+      window.wbTrack('form_submit', { form: form.getAttribute('name') || 'unknown' });
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.textContent = 'Sending…';
+        // Reset after 8s in case of failure so user can retry
+        setTimeout(function() {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute('aria-busy');
+          submitBtn.textContent = originalLabel;
+        }, 8000);
+      }
+    });
+  });
+
   /* --- Exit-intent modal (desktop only, once per session) --- */
   const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
   const hasShown = sessionStorage.getItem('whalesborough-exit-shown');

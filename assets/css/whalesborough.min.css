@@ -25,7 +25,22 @@
   --surface-container:        var(--surface-mid);
   --surface-container-high:   var(--surface-high);
   --surface-container-highest: var(--surface-highest);
+
+  /* --- Motion tokens (audit-100-motion-system) --- */
+  --ease-out:        cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-in-out:     cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast:   180ms;
+  --duration-base:   280ms;
+  --duration-slow:   450ms;
 }
+
+/* Sticky-header anchor offset (WCAG 2.4.11 Focus Not Obscured) */
+html { scroll-padding-top: 6rem; }
+:target { scroll-margin-top: 6rem; }
+
+/* --- Touch-target minimum (WCAG 2.5.8) for inline footer + nav links --- */
+.site-footer a, .footer-links a, .site-nav a { display: inline-block; min-height: 24px; }
+.mobile-close { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
 
 /* -----------------------------------------------------------
    FONT-LOADING — SIZE-ADJUST FALLBACK (@font-face f-mods)
@@ -102,8 +117,12 @@ h1, h2, h3, h4 {
 .text-sm { font-size: 0.875rem; line-height: 1.7; color: var(--on-surface-variant); }
 
 /* --- Layout --- */
-.container { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
-.container-sm { max-width: 900px; margin: 0 auto; padding: 0 3rem; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 1.25rem; }
+.container-sm { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 768px) {
+  .container { padding: 0 3rem; }
+  .container-sm { padding: 0 3rem; }
+}
 /* audit-100-cls-prevention: content-visibility defers rendering of off-screen sections, improving CLS + INP */
 .section { padding: 8rem 0; content-visibility: auto; contain-intrinsic-size: 0 500px; }
 .section-sm { padding: 4rem 0; }
@@ -326,19 +345,25 @@ button:focus-visible {
 /* --- Form Elements --- */
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 input[type="date"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
 select,
 textarea {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--outline-variant);
+  border-bottom: 1px solid var(--on-surface-variant);
   padding: 0.75rem 0;
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  /* WCAG 1.4.4 — 16px prevents iOS zoom-on-focus on mobile; smaller on desktop is fine */
+  font-size: 16px;
   color: var(--on-surface);
   width: 100%;
   outline: none;
   transition: border-color 0.2s;
+  min-height: 44px;
   -webkit-appearance: none;
 }
 input:focus, select:focus, textarea:focus { border-bottom-color: var(--primary); }

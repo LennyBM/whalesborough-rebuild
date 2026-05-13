@@ -106,31 +106,21 @@
   to = "/404.html"
   status = 404
 
-# Cache headers — long TTL for versioned assets, short for HTML
-# NOTE: The _headers file also sets Cache-Control rules. Per Netlify's resolution order,
-# _headers file rules take precedence over [[headers]] blocks defined here.
-# The rules below are kept as a fallback / documentation reference.
-[[headers]]
-  for = "/assets/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# Cache headers — see _headers file for the authoritative rules.
+# Per Netlify's resolution order, _headers takes precedence over [[headers]] blocks.
+# Kept minimal here so there's a single source of truth.
 
-[[headers]]
-  for = "/assets/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# Block staging deploys (deploy-previews and branch builds) from indexing
+[context.deploy-preview]
+  [context.deploy-preview.environment]
+    HUGO_ENV = "staging"
 
-[[headers]]
-  for = "/assets/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[context.deploy-preview.headers]]
+  for = "/*"
+  [context.deploy-preview.headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
-[[headers]]
-  for = "/assets/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+[[context.branch-deploy.headers]]
+  for = "/*"
+  [context.branch-deploy.headers.values]
+    X-Robots-Tag = "noindex, nofollow"

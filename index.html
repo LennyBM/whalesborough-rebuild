@@ -10,7 +10,7 @@
  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
  <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
  <meta name="format-detection" content="telephone=no" />
  <title>Whalesborough Farm Resort & Spa | Luxury Holidays in Cornwall</title>
  <meta name="description" content="Award-winning luxury self-catering cottages and Arvor Suites on a 428-acre estate in North Cornwall. The W Club Spa, The Weir Restaurant, working farm, and dog-friendly breaks near Bude." />
@@ -50,8 +50,6 @@
 
  <!-- LCP: preload hero poster frame so it paints before video metadata arrives -->
  <link rel="preload" as="image" href="assets/images/general/cottages-exterior.webp" type="image/webp" fetchpriority="high" />
- <!-- Hint the browser to start fetching the hero video early -->
- <link rel="preload" as="video" href="assets/video/hero.webm" type="video/webm" />
 
  <!-- Schema.org -->
  <script type="application/ld+json">
@@ -1142,6 +1140,43 @@
    </div>
   </section>
 
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface);" aria-labelledby="home-faq-heading">
+   <div class="container-sm">
+    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+     <p class="label" style="margin-bottom:1.5rem;">Frequently Asked</p>
+     <h2 id="home-faq-heading" class="headline-lg" style="font-style:italic;">Questions &amp; answers.</h2>
+    </div>
+    <div class="faq-list">
+     <details class="faq-item">
+      <summary>What is Whalesborough Farm Resort &amp; Spa?</summary>
+      <p>Whalesborough Farm Resort &amp; Spa is a five-star luxury self-catering resort set on a 428-acre working farm near Bude in North Cornwall. It comprises 26 award-winning dog-friendly cottages, 22 Arvor Suite self-catering suites, The W Club Spa (indoor pool, sauna, steam room, Technogym gym, and Gaia treatments), The Weir Restaurant (farm-to-fork lakeside dining), and an organic market garden &mdash; all held within one privately owned Cornish estate.</p>
+     </details>
+     <details class="faq-item">
+      <summary>Where is Whalesborough Farm Resort?</summary>
+      <p>Whalesborough Farm Resort &amp; Spa is located at Whalesborough Farm, Marhamchurch, Bude, Cornwall, EX23 0JD. It is approximately 3 miles from Bude town centre and close to Widemouth Bay on the North Cornwall coast.</p>
+     </details>
+     <details class="faq-item">
+      <summary>Are dogs allowed at Whalesborough Farm Resort?</summary>
+      <p>Yes. All 26 cottages at Whalesborough are dog-friendly at no extra charge. Each cottage has an enclosed private garden, and the resort offers 428 acres of walking trails, a heated dog wash station, and a luxury pooch welcome pack on arrival. Up to 2 dogs are welcomed per cottage.</p>
+     </details>
+     <details class="faq-item">
+      <summary>What is included with a cottage stay at Whalesborough?</summary>
+      <p>Every cottage stay includes complimentary full access to The W Club Spa &mdash; featuring the indoor heated swimming pool (29&ndash;30&deg;C), sauna, steam room, and Technogym fitness suite. The outdoor pool (17m &times; 8m, 26&deg;C) is also available in summer. Guests also have access to the working farm, organic market garden, farm animals, children's play areas, and all 428 acres of estate grounds.</p>
+     </details>
+     <details class="faq-item">
+      <summary>How many cottages does Whalesborough have?</summary>
+      <p>Whalesborough has 26 luxury self-catering cottages ranging from intimate 2-person retreats to large family properties sleeping 10 or more. All are VisitEngland 5-Star rated, all are dog-friendly, and all include free access to The W Club Spa. There are also 22 Arvor Suite self-catering suites for couples and wellness breaks.</p>
+     </details>
+     <details class="faq-item">
+      <summary>How do I book a stay at Whalesborough Farm Resort?</summary>
+      <p>Cottages can be booked online through Landal at <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer">landal.co.uk/parks/whalesborough-resort</a> or by calling <a href="tel:01288361940">01288 361940</a>. Arvor Suite packages are booked directly by calling 01288 361940. Packages start from &pound;175 per person per night for Arvor Suites, with cottage pricing varying by property and season.</p>
+     </details>
+    </div>
+    <p style="text-align:center;margin-top:3rem;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);">Still have questions? <a href="contact-us/index.html" style="color:var(--primary);font-weight:600;">Get in touch</a> &mdash; we reply within one business day.</p>
+   </div>
+  </section>
+
   <!-- ============ NEWSLETTER ============ -->
   <section class="section" style="background:var(--surface-low);" aria-label="Newsletter signup">
    <div class="container-sm" style="text-align:center;">
@@ -1149,8 +1184,10 @@
      <p class="label" style="margin-bottom:1.5rem;">Stay Connected</p>
      <h2 class="headline-lg" style="font-style:italic;margin-bottom:1rem;">Stay for a while.</h2>
      <p class="body-md" style="max-width:480px;margin:0 auto 0.5rem;">Join our mailing list for seasonal offers, early access to new packages, estate updates and curated Cornish guides. No noise &mdash; only what matters.</p>
-     <form class="newsletter-form" aria-label="Newsletter subscription">
-      <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address" required autocomplete="email" name="newsletter_email"/>
+     <form class="newsletter-form" aria-label="Newsletter subscription" name="newsletter-home" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you/?source=newsletter">
+      <input type="hidden" name="form-name" value="newsletter-home" />
+      <p style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+      <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address" required autocomplete="email" name="email" inputmode="email"/>
       <button type="submit" class="btn-secondary">Subscribe</button>
      </form>
      <p style="font-size:0.7rem;color:var(--on-surface-variant);margin-top:1rem;">By subscribing you agree to our <a href="privacy-policy/index.html" style="color:var(--primary);">Privacy Policy</a>. Unsubscribe at any time.</p>

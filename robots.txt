@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/css/
-Disallow: /assets/js/
-Allow: /assets/images/
 
 # Block design-system preview files from indexing
 Disallow: /design-system/
