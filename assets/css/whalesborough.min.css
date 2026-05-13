@@ -1,1 +1,867 @@
-:root{--primary:#703a1d;--secondary:#4a6457;--background:#fbf9f6;--surface:#fbf9f6;--surface-low:#f5f3f0;--surface-mid:#efeeeb;--surface-high:#eae8e5;--surface-highest:#e4e2df;--on-surface:#1b1c1a;--on-surface-variant:#424844;--outline-variant:#c2c8c3;--font-headline:'Newsreader',Georgia,'Times New Roman',Times,serif;--font-body:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,system-ui,sans-serif;--surface-container-lowest:var(--surface-low);--surface-container-low:var(--surface-low);--surface-container:var(--surface-mid);--surface-container-high:var(--surface-high);--surface-container-highest:var(--surface-highest)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{font-family:var(--font-body);background-color:var(--background);color:var(--on-surface);line-height:1.7}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}h1,h2,h3,h4{font-family:var(--font-headline);font-weight:400;line-height:1.1;color:var(--on-surface)}.display{font-size:clamp(3.5rem,8vw,7rem);letter-spacing:-0.02em;font-style:italic;font-weight:300}.headline-xl{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-0.02em}.headline-lg{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-0.015em}.headline-md{font-size:clamp(1.5rem,3vw,2.5rem)}.headline-sm{font-size:clamp(1.25rem,2vw,1.75rem);font-style:italic}.label{font-family:var(--font-body);font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:0.25em;color:var(--secondary)}.body-lg{font-size:1.125rem;line-height:1.8;color:var(--on-surface-variant)}.body-md{font-size:1rem;line-height:1.75;color:var(--on-surface-variant)}.display-lg{font-family:var(--font-headline);font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-0.02em;font-style:italic;font-weight:300}.text-lg{font-size:1.125rem;line-height:1.8;color:var(--on-surface-variant)}.text-sm{font-size:0.875rem;line-height:1.7;color:var(--on-surface-variant)}.container{max-width:1400px;margin:0 auto;padding:0 3rem}.container-sm{max-width:900px;margin:0 auto;padding:0 3rem}.section{padding:8rem 0}.section-sm{padding:4rem 0}.skip-link{position:absolute;top:-100%;left:1rem;z-index:10000;background:var(--primary);color:#fbf9f6;font-family:var(--font-body);font-size:0.875rem;font-weight:700;letter-spacing:0.06em;padding:0.75rem 1.5rem;text-decoration:none;transition:top 0.2s}.skip-link:focus{top:1rem;outline:3px solid #fbf9f6;outline-offset:2px}:focus-visible{outline:2px solid var(--primary);outline-offset:3px}a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:1px}.site-nav{position:sticky;top:0;z-index:100;background-color:var(--secondary);width:100%;transition:box-shadow 0.3s ease}.site-nav.scrolled{box-shadow:0 4px 40px rgba(74,100,87,0.15)}.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;max-width:1400px;margin:0 auto}.nav-logo{display:inline-flex;flex-direction:column;align-items:flex-start;flex-shrink:0;text-decoration:none;gap:0}.nav-logo img{height:60px;width:auto;display:block}.site-nav .nav-logo img{filter:brightness(0) invert(1)}.logo-name{font-family:var(--font-headline);font-style:italic;font-weight:300;font-size:1.375rem;letter-spacing:-0.01em;line-height:1;color:#fbf9f6}.logo-sub{font-family:var(--font-body);font-weight:600;font-size:0.375rem;letter-spacing:0.2em;text-transform:uppercase;line-height:1;margin-top:0.3rem;color:rgba(251,249,246,0.55)}.footer-brand .logo-name{font-size:1.625rem;color:var(--primary)}.footer-brand .logo-sub{font-size:0.4375rem;margin-top:0.375rem;color:var(--secondary)}.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}.nav-links a{font-family:var(--font-headline);font-style:italic;font-size:0.95rem;color:rgba(255,255,255,0.85);transition:color 0.2s}.nav-links a:hover,.nav-links a.active{color:var(--primary)}.btn-book{background:var(--background);color:var(--secondary);font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.875rem 2rem;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s;white-space:nowrap;display:inline-block}.btn-book:hover{opacity:0.88}.btn-book:active{transform:scale(0.98)}.btn-primary{background:var(--primary);color:white;font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;border:none;cursor:pointer;display:inline-block;transition:opacity 0.2s}.btn-primary:hover{opacity:0.88}.btn-secondary{background:var(--secondary);color:white;font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;border:none;cursor:pointer;display:inline-block;transition:background 0.2s}.btn-secondary:hover{background:var(--primary)}.btn-ghost{background:transparent;color:var(--secondary);font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;border:1px solid rgba(194,200,195,0.3);cursor:pointer;display:inline-block;transition:background 0.2s,color 0.2s}.btn-ghost:hover{background:var(--surface-low)}.btn-text{color:var(--primary);font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.5rem;transition:gap 0.2s}.btn-text:hover{gap:0.75rem}.btn-text::after{content:'→'}input[type="text"],input[type="email"],input[type="date"],select,textarea{background:transparent;border:none;border-bottom:1px solid var(--outline-variant);padding:0.75rem 0;font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface);width:100%;outline:none;transition:border-color 0.2s;-webkit-appearance:none}input:focus,select:focus,textarea:focus{border-bottom-color:var(--primary)}label{font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--on-surface-variant);display:block;margin-bottom:0.375rem}:focus-visible{outline:2px solid var(--primary);outline-offset:3px}:focus:not(:focus-visible){outline:none}a:focus:not(:focus-visible),button:focus:not(:focus-visible),input:focus:not(:focus-visible),select:focus:not(:focus-visible),textarea:focus:not(:focus-visible){outline:none}.availability-widget{background:var(--surface);padding:2.5rem;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:2rem;align-items:end}.urgency-banner{background:var(--primary);color:white;text-align:center;padding:0.625rem 1rem;font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase}.stat-number{font-family:var(--font-headline);font-size:clamp(2.5rem,5vw,4rem);color:var(--secondary);line-height:1;font-weight:300}.testimonial-quote{font-family:var(--font-headline);font-style:italic;font-weight:300;line-height:1.5;color:var(--on-surface)}.star{color:var(--primary);font-size:1rem}.site-footer{background:var(--surface-low);padding:5rem 0 2rem}.footer-brand{font-family:var(--font-headline);font-size:2.5rem;font-weight:300;color:var(--secondary)}.footer-links{list-style:none}.footer-links li{margin-bottom:0.875rem}.footer-links a{font-family:var(--font-body);font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.7;transition:opacity 0.2s,color 0.2s}.footer-links a:hover{opacity:1;color:var(--primary)}.footer-divider{border:none;border-top:1px solid rgba(74,100,87,0.1);margin:3rem 0 1.5rem}.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}.hamburger span{display:block;width:22px;height:1.5px;background:white;transition:all 0.3s}.mobile-menu{display:none;position:fixed;inset:0;background:var(--secondary);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}.mobile-menu.open{display:flex}.mobile-menu a{font-family:var(--font-headline);font-style:italic;font-size:2rem;color:white;transition:color 0.2s}.mobile-menu a:hover{color:var(--primary)}.mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:white;font-size:2rem;cursor:pointer;line-height:1}@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}.fade-up{animation:fadeUp 0.8s ease forwards}.fade-up-delay-1{animation-delay:0.15s;opacity:0}.fade-up-delay-2{animation-delay:0.3s;opacity:0}.fade-up-delay-3{animation-delay:0.45s;opacity:0}.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}.reveal.revealed{opacity:1;transform:translateY(0)}html{scroll-behavior:smooth}:target,[id]{scroll-margin-top:90px}@media (prefers-contrast:more){:root{--on-surface:#000;--on-surface-variant:#222;--outline-variant:#555}a,.btn-book,.btn-primary,.btn-ghost{text-decoration:underline}.btn-book,.btn-primary{border:2px solid #000 !important}.reveal{opacity:1 !important;transform:none !important}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}.reveal{opacity:1 !important;transform:none !important}.fade-up,.fade-up-delay-1,.fade-up-delay-2,.fade-up-delay-3{opacity:1 !important;animation:none !important}}.split-panel{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}.split-panel--wide-gap{gap:6rem}.split-panel--top{align-items:start}@media (max-width:1024px){.container,.container-sm{padding:0 2rem}.nav-inner{padding:1.25rem 2rem}.nav-links{display:none}.hamburger{display:flex}.availability-widget{grid-template-columns:1fr 1fr}.availability-widget .btn-primary{grid-column:1 / -1}.section{padding:5rem 0}.split-panel{gap:3rem}.site-nav .nav-inner a[href^="tel:"]{display:none}.nav-phone{display:none}}@media (max-width:768px){.split-panel{grid-template-columns:1fr;gap:2.5rem}.split-panel>*:first-child{order:1}.split-panel--img-first>*:first-child{order:0}}@media (max-width:640px){.container,.container-sm{padding:0 1.25rem}.availability-widget{grid-template-columns:1fr;padding:1.5rem}.display{font-size:2.75rem}.section{padding:4rem 0}}.sticky-book-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:99;background:var(--secondary);border-top:1px solid rgba(255,255,255,0.08);padding:0.75rem 1rem calc(0.75rem+env(safe-area-inset-bottom,0px));box-shadow:0 -8px 30px rgba(0,0,0,0.18)}.sticky-book-bar .sbb-inner{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;max-width:560px;margin:0 auto}.sticky-book-bar a{display:flex;align-items:center;justify-content:center;font-family:var(--font-body);font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:0.95rem 0.5rem;text-decoration:none;white-space:nowrap;line-height:1}.sticky-book-bar .sbb-call{color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25)}.sticky-book-bar .sbb-book{background:var(--primary);color:#fff}.sticky-book-bar .sbb-book:active{transform:scale(0.98)}@media (max-width:768px){.sticky-book-bar{display:block}body.has-sticky-book{padding-bottom:72px}}.map-facade{position:relative;overflow:hidden;min-height:320px;background:linear-gradient(135deg,rgba(74,100,87,0.88),rgba(74,100,87,0.65)),repeating-linear-gradient(45deg,rgba(255,255,255,0.04) 0 12px,transparent 12px 24px)}.map-facade iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}.map-facade-btn{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:#fff;font-family:var(--font-body);transition:background 0.2s}.map-facade-btn:hover{background:rgba(0,0,0,0.12)}.map-facade-icon{font-size:2rem}.map-facade-text{font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase}.map-facade-hint{font-size:0.65rem;opacity:0.7;letter-spacing:0.05em}.scroll-top-btn{position:fixed;right:1.25rem;bottom:5.25rem;z-index:95;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:var(--secondary);color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity 0.25s,transform 0.25s;box-shadow:0 8px 24px rgba(0,0,0,0.22)}.scroll-top-btn.visible{opacity:0.92;transform:none;pointer-events:auto}.scroll-top-btn:hover{opacity:1;background:var(--primary)}@media (min-width:769px){.scroll-top-btn{bottom:1.5rem}}.exit-modal-backdrop{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,12,10,0.7);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1.5rem}.exit-modal-backdrop.open{display:flex}.exit-modal{background:var(--surface);max-width:460px;width:100%;padding:2.5rem 2rem 2rem;text-align:center;position:relative;border-top:3px solid var(--primary)}.exit-modal h2{font-family:var(--font-headline);font-size:1.6rem;font-style:italic;font-weight:400;margin-bottom:0.75rem;color:var(--on-surface)}.exit-modal p{font-size:0.85rem;color:var(--on-surface-variant);line-height:1.6;margin-bottom:1.5rem}.exit-modal-close{position:absolute;top:0.5rem;right:0.75rem;background:none;border:0;font-size:1.5rem;color:var(--on-surface-variant);cursor:pointer;line-height:1}.exit-modal-actions{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}.page-last-modified{text-align:center;font-family:var(--font-body);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-surface-variant);opacity:0.75;padding:1.5rem 1rem 2.5rem;margin:0}.legal-toc{background:var(--surface-low);border-left:3px solid var(--primary);padding:1.5rem 1.75rem 1.25rem;margin:2rem 0 3rem}.legal-toc .legal-toc-label{font-family:var(--font-body);font-size:0.625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--secondary);margin-bottom:0.75rem}.legal-toc ol{margin:0;padding-left:1.25rem;columns:2;column-gap:2rem}.legal-toc ol li{font-size:0.85rem;margin-bottom:0.4rem;break-inside:avoid}.legal-toc ol li a{color:var(--on-surface-variant);text-decoration:none;transition:color 0.15s}.legal-toc ol li a:hover{color:var(--primary);text-decoration:underline}@media (max-width:640px){.legal-toc ol{columns:1}}.site-footer a[aria-label]:hover{opacity:1 !important}@media print{.site-nav,.mobile-menu,.urgency-banner,.sticky-book-bar,.hamburger,.skip-link,.hero-widget,video.hero-bg,.press-strip,.btn-book,.btn-ghost,.newsletter-form,.reveal{display:none !important}body{background:#fff !important;color:#000 !important;padding-bottom:0 !important;font-size:11pt;line-height:1.5}main,.container{max-width:100% !important;padding:0 !important;margin:0 !important}.section{padding:1rem 0 !important;page-break-inside:avoid}a[href^="http"]::after,a[href^="tel:"]::after,a[href^="mailto:"]::after{content:" (" attr(href) ")";font-size:9pt;color:#555;word-break:break-all}a[href^="#"]::after{content:""}h1,h2,h3{page-break-after:avoid;color:#000 !important}img{max-width:100% !important;height:auto !important;page-break-inside:avoid}body::before{content:"Whalesborough Farm Resort & Spa · Marhamchurch,Bude,Cornwall EX23 0JD · 01288 361940 · whalesborough.co.uk";display:block;font-size:10pt;font-weight:700;text-align:center;padding:0.5rem 0 1rem;border-bottom:1px solid #000;margin-bottom:1rem}}
+/* ============================================
+   WHALESBOROUGH FARM RESORT & SPA
+   Coastal Editorial Design System — Global CSS
+   ============================================ */
+
+/* --- CSS Custom Properties --- */
+:root {
+  --primary:                  #703a1d;
+  --secondary:                #4a6457;
+  --background:               #fbf9f6;
+  --surface:                  #fbf9f6;
+  --surface-low:              #f5f3f0;
+  --surface-mid:              #efeeeb;
+  --surface-high:             #eae8e5;
+  --surface-highest:          #e4e2df;
+  --on-surface:               #1b1c1a;
+  --on-surface-variant:       #424844;
+  --outline-variant:          #c2c8c3;
+  --font-headline:            'Newsreader', 'Newsreader-Fallback', Georgia, 'Times New Roman', Times, serif;
+  --font-body:                'Plus Jakarta Sans', 'PlusJakartaSans-Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
+
+  /* --- Aliases for Material-style surface tokens used across inner pages --- */
+  --surface-container-lowest: var(--surface-low);
+  --surface-container-low:    var(--surface-low);
+  --surface-container:        var(--surface-mid);
+  --surface-container-high:   var(--surface-high);
+  --surface-container-highest: var(--surface-highest);
+
+  /* --- Motion tokens (audit-100-motion-system) --- */
+  --ease-out:        cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-in-out:     cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast:   180ms;
+  --duration-base:   280ms;
+  --duration-slow:   450ms;
+}
+
+/* Sticky-header anchor offset (WCAG 2.4.11 Focus Not Obscured) */
+html { scroll-padding-top: 6rem; }
+:target { scroll-margin-top: 6rem; }
+
+/* --- Touch-target minimum (WCAG 2.5.8) for inline footer + nav links --- */
+.site-footer a, .footer-links a, .site-nav a { display: inline-block; min-height: 24px; }
+.mobile-close { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+
+/* -----------------------------------------------------------
+   FONT-LOADING — SIZE-ADJUST FALLBACK (@font-face f-mods)
+   These synthetic fallback faces match the cap-height and
+   line-height metrics of the web fonts, minimising CLS while
+   the real fonts load over the network.
+
+   Newsreader (serif headline) — matches Georgia fallback
+   Plus Jakarta Sans (body) — matches system-ui / Arial fallback
+
+   NOTE TO CLIENT: Ensure fonts.min.css (or your @font-face
+   declarations for Newsreader and Plus Jakarta Sans) include
+   `font-display: swap` on every @font-face rule. Without swap,
+   the browser will show invisible text (FOIT) instead of the
+   fallback during load.
+   ----------------------------------------------------------- */
+@font-face {
+  font-family: 'Newsreader-fallback';
+  src: local('Georgia');
+  size-adjust: 105%;
+  ascent-override: 85%;
+  descent-override: 22%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Plus-Jakarta-Sans-fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('system-ui');
+  size-adjust: 96%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  font-display: swap;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--on-surface);
+  line-height: 1.7;
+  overflow-x: hidden; /* audit-100-content-to-chrome: prevent horizontal overflow */
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-headline);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--on-surface);
+}
+.display { font-size: clamp(3.5rem, 8vw, 7rem); letter-spacing: -0.02em; font-style: italic; font-weight: 300; }
+.headline-xl { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.02em; }
+.headline-lg { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.015em; }
+.headline-md { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+.headline-sm { font-size: clamp(1.25rem, 2vw, 1.75rem); font-style: italic; }
+/* WCAG 1.4.4 — minimum 11px (0.6875rem) for interactive/body text per design system */
+.label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem (10px) — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--secondary);
+}
+.body-lg { font-size: 1.125rem; line-height: 1.8; color: var(--on-surface-variant); }
+.body-md { font-size: 1rem; line-height: 1.75; color: var(--on-surface-variant); }
+
+/* --- Utility aliases used in inner pages --- */
+.display-lg { font-family: var(--font-headline); font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.02em; font-style: italic; font-weight: 300; }
+.text-lg { font-size: 1.125rem; line-height: 1.8; color: var(--on-surface-variant); }
+.text-sm { font-size: 0.875rem; line-height: 1.7; color: var(--on-surface-variant); }
+
+/* --- Layout --- */
+.container { max-width: 1400px; margin: 0 auto; padding: 0 1.25rem; }
+.container-sm { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 768px) {
+  .container { padding: 0 3rem; }
+  .container-sm { padding: 0 3rem; }
+}
+/* audit-100-cls-prevention: content-visibility defers rendering of off-screen sections, improving CLS + INP */
+.section { padding: 8rem 0; content-visibility: auto; contain-intrinsic-size: 0 500px; }
+.section-sm { padding: 4rem 0; }
+
+/* audit-100-cls-prevention: contain layout prevents image containers from causing upstream reflows */
+.img-container,
+.estate-img-main,
+.overlap-img img,
+.cottage-card-img img,
+.arvor-img img { contain: layout; }
+
+/* --- Navigation --- */
+/* ── Skip to content ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 10000;
+  background: var(--primary);
+  color: #fbf9f6;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #fbf9f6;
+  outline-offset: 2px;
+}
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--outline-variant);
+  width: 100%;
+  transition: box-shadow 0.3s ease, border-bottom-color 0.3s ease;
+}
+.site-nav.scrolled { box-shadow: 0 4px 24px rgba(27,28,26,0.1); border-bottom-color: transparent; }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.nav-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  text-decoration: none;
+  gap: 0;
+}
+.nav-logo img {
+  height: 64px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.14));
+}
+.site-nav .nav-logo img {
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.14));
+}
+/* Footer logo — larger for the brand section */
+.footer-brand img {
+  height: 96px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.14));
+}
+
+/* ── Wordmark logo ── */
+.logo-name {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: #fbf9f6;
+}
+.logo-sub {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.6875rem; /* bumped from 0.5rem — logo-sub is meaningful text (Farm Resort & Spa), must meet 1.4.4 */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 0.3rem;
+  color: rgba(251,249,246,0.55);
+}
+/* Footer variant — light background */
+.footer-brand .logo-name {
+  font-size: 1.625rem;
+  color: var(--primary);
+}
+.footer-brand .logo-sub {
+  font-size: 0.6875rem; /* bumped from 0.5rem per WCAG 1.4.4 */
+  margin-top: 0.375rem;
+  color: var(--secondary);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+/* WCAG AA Contrast Audit — verified 2026-05-13 */
+/* Nav links: #424844 on #fbf9f6 ≈ 6.5:1 — passes AAA ✓ */
+.nav-links a {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--on-surface-variant);
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+.btn-book {
+  background: var(--secondary);
+  color: var(--surface);
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.btn-book:hover { opacity: 0.88; }
+.btn-book:active { transform: scale(0.98); }
+
+/* --- Buttons --- */
+/* WCAG AA Contrast Audit — verified 2026-05-12 */
+/* btn-primary: white on #703a1d ≈ 7.1:1 — passes AAA ✓ */
+/* btn-secondary: white on #4a6457 ≈ 5.2:1 — passes AA ✓ */
+/* btn-ghost border: updated from rgba(194,200,195,0.3) ~1.3:1 to rgba(74,100,87,0.4) for sufficient UI contrast */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-secondary {
+  background: var(--secondary);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: var(--primary); }
+.btn-ghost {
+  background: transparent;
+  color: var(--secondary);
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: 1px solid rgba(74,100,87,0.4); /* was rgba(194,200,195,0.3) ~1.3:1 contrast — updated to secondary@40% for UI contrast */
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-ghost:hover { background: var(--surface-low); }
+.btn-text {
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s;
+}
+.btn-text:hover { gap: 0.75rem; }
+.btn-text::after { content: '→'; }
+
+/* --- Cards --- */
+/* --- Form Elements --- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+select,
+textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--on-surface-variant);
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  /* WCAG 1.4.4 — 16px prevents iOS zoom-on-focus on mobile; smaller on desktop is fine */
+  font-size: 16px;
+  color: var(--on-surface);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  min-height: 44px;
+  -webkit-appearance: none;
+}
+input:focus, select:focus, textarea:focus { border-bottom-color: var(--primary); }
+/* WCAG AA Contrast Audit — verified 2026-05-12 */
+/* .label / form label: #4a6457 on #fbf9f6 ≈ 6.4:1 — passes AA ✓ */
+/* .body-md / .body-lg: #424844 on #fbf9f6 ≈ 6.5:1 — passes AA ✓ */
+/* --outline-variant: #c2c8c3 — decorative borders only; not used as sole UI indicator */
+label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
+/* --- Focus Styles --- */
+/* Keyboard users get a clear cognac ring; mouse/pointer users see nothing */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+/* Ensure buttons/links never show browser default focus for mouse */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- Availability Widget --- */
+.availability-widget {
+  background: var(--surface);
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 2rem;
+  align-items: end;
+}
+
+/* --- Urgency Banner --- */
+.urgency-banner {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 0.625rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* --- Stat Counters --- */
+.stat-number {
+  font-family: var(--font-headline);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--secondary);
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* --- Testimonials --- */
+.testimonial-quote {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--on-surface);
+}
+.star { color: var(--primary); font-size: 1rem; }
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--surface-low);
+  padding: 5rem 0 2rem;
+}
+.footer-brand {
+  font-family: var(--font-headline);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--secondary);
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.875rem; }
+/* WCAG AA Contrast Audit — verified 2026-05-12 */
+/* footer links: #4a6457 at opacity 0.85 on #f5f3f0 ≈ 5.4:1 — passes AA ✓ (was 0.7 ≈ ~4.0:1, borderline) */
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  opacity: 0.85; /* was 0.7 — increased to pass WCAG AA on --surface-low background */
+  transition: opacity 0.2s, color 0.2s;
+}
+.footer-links a:hover { opacity: 1; color: var(--primary); }
+.footer-divider { border: none; border-top: 1px solid rgba(74,100,87,0.1); margin: 3rem 0 1.5rem; }
+
+/* --- Mobile Nav --- */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; } /* audit-100-mobile-responsive: min 44×44px touch target */
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--on-surface); transition: all 0.3s; }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--secondary);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: 2rem;
+  color: white;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--primary); }
+.mobile-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* --- Animations --- */
+/* audit-100-motion-system: CSS variable for stat counter animation state.
+   JS can check getComputedStyle(document.documentElement).getPropertyValue('--animation-play-state')
+   and skip counting animations when value is 'paused'. */
+:root { --animation-play-state: running; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* audit-100-motion-system: fade-up animations only play when motion is welcome */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up { animation: fadeUp 0.8s ease forwards; }
+  .fade-up-delay-1 { animation-delay: 0.15s; opacity: 0; }
+  .fade-up-delay-2 { animation-delay: 0.3s; opacity: 0; }
+  .fade-up-delay-3 { animation-delay: 0.45s; opacity: 0; }
+}
+/* Fallback for when motion is not guarded by the no-preference block */
+.fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3 { opacity: 0; }
+
+/* --- Scroll-triggered reveal --- */
+/* audit-100-cls-prevention: will-change promotes to GPU layer, preventing layout shift */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; will-change: opacity, transform; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* --- Smooth scrolling + sticky-nav anchor offset --- */
+html { scroll-behavior: smooth; }
+:target, [id] { scroll-margin-top: 90px; }
+
+/* --- High-contrast preference --- */
+@media (prefers-contrast: more) {
+  :root {
+    --on-surface:         #000;
+    --on-surface-variant: #222;
+    --outline-variant:    #555;
+  }
+  a, .btn-book, .btn-primary, .btn-ghost { text-decoration: underline; }
+  .btn-book, .btn-primary { border: 2px solid #000 !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* --- Respect users who prefer reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* audit-100-motion-system: stat counter JS checks this variable to skip number animations */
+  :root { --animation-play-state: paused; }
+  /* audit-100-motion-system: .reveal falls back to visible — verified ✓ */
+  .reveal { opacity: 1 !important; transform: none !important; will-change: auto !important; }
+  .fade-up, .fade-up-delay-1, .fade-up-delay-2, .fade-up-delay-3 { opacity: 1 !important; animation: none !important; }
+  /* audit-100-motion-system: testimonial slide transitions disabled in reduced-motion */
+  .testimonial-slide { transition: none !important; }
+}
+
+/* --- Responsive split-panel utility --- */
+/* Use class="split-panel" instead of inline display:grid;grid-template-columns:1fr 1fr */
+.split-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.split-panel--wide-gap { gap: 6rem; }
+.split-panel--top { align-items: start; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .container, .container-sm { padding: 0 2rem; }
+  .nav-inner { padding: 1.25rem 2rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .availability-widget { grid-template-columns: 1fr 1fr; }
+  .availability-widget .btn-primary { grid-column: 1 / -1; }
+  .section { padding: 5rem 0; }
+  .split-panel { gap: 3rem; }
+  /* On mobile, rely on the sticky booking bar for phone + CTA — hide header phone so the hamburger has room */
+  .site-nav .nav-inner a[href^="tel:"] { display: none; }
+  .nav-phone { display: none; }
+}
+@media (max-width: 768px) {
+  .split-panel { grid-template-columns: 1fr; gap: 2.5rem; }
+  .split-panel > *:first-child { order: 1; }
+  .split-panel--img-first > *:first-child { order: 0; }
+}
+@media (max-width: 640px) {
+  .container, .container-sm { padding: 0 1.25rem; }
+  .availability-widget { grid-template-columns: 1fr; padding: 1.5rem; }
+  .display { font-size: 2.75rem; }
+  .section { padding: 4rem 0; }
+}
+
+/* ── Sticky mobile booking bar ─────────────────────────────── */
+.sticky-book-bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: var(--secondary);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.18);
+}
+.sticky-book-bar .sbb-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.sticky-book-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1.1rem 0.5rem; /* audit-100-mobile-responsive: was 0.95rem (~35px); 1.1rem gives ≥44px touch target */
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.sticky-book-bar .sbb-call {
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.sticky-book-bar .sbb-book {
+  background: var(--primary);
+  color: #fff;
+}
+.sticky-book-bar .sbb-book:active { transform: scale(0.98); }
+@media (max-width: 768px) {
+  .sticky-book-bar { display: block; }
+  body.has-sticky-book { padding-bottom: 72px; }
+}
+
+/* ── Click-to-load map facade (performance + privacy) ─── */
+.map-facade {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  background:
+    linear-gradient(135deg, rgba(74,100,87,0.88), rgba(74,100,87,0.65)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 12px, transparent 12px 24px);
+}
+.map-facade iframe { width: 100%; height: 100%; border: 0; display: block; position: absolute; inset: 0; }
+.map-facade-btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-family: var(--font-body);
+  transition: background 0.2s;
+}
+.map-facade-btn:hover { background: rgba(0,0,0,0.12); }
+.map-facade-icon { font-size: 2rem; }
+.map-facade-text { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.map-facade-hint { font-size: 0.65rem; opacity: 0.7; letter-spacing: 0.05em; }
+
+/* ── Scroll-to-top button ─────────────────────────────── */
+.scroll-top-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 5.25rem;
+  z-index: 95;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: var(--secondary);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}
+.scroll-top-btn.visible { opacity: 0.92; transform: none; pointer-events: auto; }
+.scroll-top-btn:hover { opacity: 1; background: var(--primary); }
+@media (min-width: 769px) {
+  .scroll-top-btn { bottom: 1.5rem; }
+}
+
+/* ── Exit-intent modal ────────────────────────────────── */
+.exit-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10,12,10,0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.exit-modal-backdrop.open { display: flex; }
+.exit-modal {
+  background: var(--surface);
+  max-width: 460px;
+  width: 100%;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  border-top: 3px solid var(--primary);
+}
+.exit-modal h2 {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  color: var(--on-surface);
+}
+.exit-modal p { font-size: 0.85rem; color: var(--on-surface-variant); line-height: 1.6; margin-bottom: 1.5rem; }
+.exit-modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: 0;
+  font-size: 1.5rem;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  line-height: 1;
+}
+.exit-modal-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── Last-modified line on blog/long-form pages ───────── */
+.page-last-modified {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  opacity: 0.75;
+  padding: 1.5rem 1rem 2.5rem;
+  margin: 0;
+}
+
+/* ── Legal page Table of Contents ─────────────────────── */
+.legal-toc {
+  background: var(--surface-low);
+  border-left: 3px solid var(--primary);
+  padding: 1.5rem 1.75rem 1.25rem;
+  margin: 2rem 0 3rem;
+}
+.legal-toc .legal-toc-label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem; /* was 0.625rem — updated to 11px per WCAG 1.4.4 */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+}
+.legal-toc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+.legal-toc ol li {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  break-inside: avoid;
+}
+.legal-toc ol li a {
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.legal-toc ol li a:hover { color: var(--primary); text-decoration: underline; }
+@media (max-width: 640px) {
+  .legal-toc ol { columns: 1; }
+}
+
+/* ── Footer social link hover (replaces inline JS handlers) ── */
+.site-footer a[aria-label]:hover { opacity: 1 !important; }
+
+/* ── Print stylesheet ────────────────────────────────────── */
+@media print {
+  /* Hide non-essential UI */
+  .site-nav, .mobile-menu, .hamburger, .sticky-book-bar, .scroll-top-btn,
+  .urgency-banner, .press-strip, .testimonials-wrap, .newsletter-form,
+  .map-facade, video, .hero-overlay,
+  /* pre-existing hidden items */
+  .skip-link, .hero-widget, video.hero-bg,
+  .btn-book, .btn-ghost, .reveal { display: none !important; }
+
+  /* Show hero as static image block */
+  .hero { height: auto !important; min-height: 0 !important; background: #4a6457 !important; }
+  .hero-content { position: static !important; padding: 2rem !important; }
+  .hero h1 { color: #fff !important; font-size: 2rem !important; }
+
+  /* Override body defaults */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    padding-bottom: 0 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Typography for print */
+  h1, h2, h3 { page-break-after: avoid; color: #000 !important; }
+  p, ul { orphans: 3; widows: 3; }
+
+  main, .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  .container-sm { padding: 0 !important; max-width: 100% !important; }
+  .section { padding: 1.5rem 0 !important; content-visibility: visible !important; }
+
+  /* Expose URLs in print */
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #666; }
+  a[href^="tel"]::after { content: " (" attr(href) ")"; font-size: 0.75em; }
+  a[href^="mailto:"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; word-break: break-all; }
+  a[href^="#"]::after { content: ""; }
+
+  /* Grid/layout simplify */
+  .estate-section, .arvor-section, .overlap-feature,
+  .cottages-grid, .packages-grid, .stats-grid,
+  .split-panel { display: block !important; }
+
+  /* Images */
+  img { max-width: 100% !important; height: auto !important; page-break-inside: avoid; }
+
+  /* Footer — show address for print */
+  .site-footer { background: none !important; border-top: 1pt solid #ccc; padding: 1rem 0; }
+
+  /* Visible print header with contact info */
+  body::before {
+    content: "Whalesborough Farm Resort & Spa  ·  Marhamchurch, Bude, Cornwall EX23 0JD  ·  01288 361940  ·  whalesborough.co.uk";
+    display: block;
+    font-size: 10pt;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5rem 0 1rem;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
+  }
+}

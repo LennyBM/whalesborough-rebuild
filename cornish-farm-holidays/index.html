@@ -4,13 +4,11 @@
  <meta name="referrer" content="strict-origin-when-cross-origin" />
  <meta charset="UTF-8">
  <meta name="theme-color" content="#4a6457" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
  <meta name="color-scheme" content="light" />
  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c0a" />
- <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
  <meta name="format-detection" content="telephone=no" />
  <title>Cornish Farm Holidays | Working Farm Estate, Bude, North Cornwall | Whalesborough</title>
  <meta name="description" content="Farm holidays in Cornwall at Whalesborough Farm Resort — a real working 428-acre estate near Bude. Family farm breaks with spa, restaurant, outdoor pools, farm animals, coastal walks. Five-star self-catering cottages.">
@@ -22,9 +20,11 @@
  <meta property="og:description" content="Real working farm, five-star cottages, spa, outdoor pools, paddock-to-plate restaurant. Cornish farm holidays for families, multi-gen groups, and anyone who wants space to breathe." />
  <meta property="og:type" content="website" />
  <meta property="og:url" content="https://www.whalesborough.co.uk/cornish-farm-holidays/" />
- <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/farm-animals.webp" />
- <meta property="og:image:width" content="1800" />
- <meta property="og:image:height" content="1200" />
+ <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
+ <meta property="og:image:secure_url" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
+ <meta property="og:image:width" content="1137" />
+ <meta property="og:image:height" content="722" />
+  <meta property="og:image:type" content="image/jpeg" />
  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
  <meta property="og:locale" content="en_GB" />
  <meta property="og:image:alt" content="Cornish Farm Holidays — Whalesborough Farm Resort, Bude, North Cornwall" />
@@ -32,10 +32,12 @@
  <meta name="twitter:site" content="@whalesborough" />
  <meta name="twitter:title" content="Cornish Farm Holidays — Whalesborough Farm Resort, Bude, North Cornwall" />
  <meta name="twitter:description" content="Real working farm, five-star cottages, spa, outdoor pools, paddock-to-plate restaurant. Cornish farm holidays for families, multi-gen groups, and anyone who wants space to breathe." />
- <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/general/farm-animals.webp" />
+ <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
  <meta name="twitter:image:alt" content="Cornish Farm Holidays — Whalesborough Farm Resort, Bude, North Cornwall" />
- <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b">
+ <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=c252162">
 
  <script type="application/ld+json">
  {
@@ -237,7 +239,7 @@
  <link rel="preconnect" href="https://www.landal.co.uk" crossorigin />
  <link rel="dns-prefetch" href="https://www.landal.co.uk" />
  <link rel="manifest" href="/manifest.webmanifest" />
- <link rel="apple-touch-icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
 <body class="has-sticky-book">
  <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -246,40 +248,48 @@
   Family farm breaks from £450 per night — <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" style="color:white;text-decoration:underline;text-underline-offset:3px;" data-track="book-click">check availability</a>
  </div>
 
- <nav class="site-nav" role="navigation" aria-label="Main navigation">
+ <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
-   <a href="../" class="nav-logo"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+   <a href="/" class="nav-logo"><img src="/assets/images/logo/whalesborough-logo.png" alt="Whalesborough Farm Resort &amp; Spa" width="100" height="64" /></a>
    <ul class="nav-links" role="list">
-    <li><a href="../our-cottages/">Cottages</a></li>
-    <li><a href="../arvor-suites/">Arvor Suites</a></li>
-    <li><a href="../spa-and-treatments/">Spa</a></li>
-    <li><a href="../weir-restaurant/">Dining</a></li>
-    <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
-    <li><a href="../exploring-cornwall/index.html">Explore</a></li>
-    <li><a href="../holiday-home-investment/index.html">Investment</a></li>
+    <li><a href="/our-cottages/">Cottages</a></li>
+    <li><a href="/arvor-suites/">Arvor Suites</a></li>
+    <li><a href="/spa-and-treatments/">Spa</a></li>
+    <li><a href="/weir-restaurant/">Dining</a></li>
+    <li><a href="/dog-friendly-breaks/">Dog Friendly</a></li>
+    <li><a href="/exploring-cornwall/">Explore</a></li>
+    <li><a href="/holiday-home-ownership/">Ownership</a></li>
    </ul>
-   <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Book with Landal</a>
+   <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Check Availability</a>
    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
  </nav>
 
  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <button class="mobile-close" aria-label="Close menu">×</button>
-  <a href="../our-cottages/">Cottages</a>
-  <a href="../arvor-suites/">Arvor Suites</a>
-  <a href="../spa-and-treatments/">Spa</a>
-  <a href="../weir-restaurant/">Dining</a>
-  <a href="../dog-friendly-breaks/">Dog Friendly</a>
-  <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
-  <a href="../holiday-home-investment/index.html">Holiday Home Investment</a>
-  <a href="../contact-us/">Contact</a>
-  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Book with Landal</a>
+  <a href="/our-cottages/">Cottages</a>
+  <a href="/arvor-suites/">Arvor Suites</a>
+  <a href="/spa-and-treatments/">Spa</a>
+  <a href="/weir-restaurant/">Dining</a>
+  <a href="/dog-friendly-breaks/">Dog Friendly</a>
+  <a href="/exploring-cornwall/">Explore Cornwall</a>
+  <a href="/holiday-home-ownership/">Holiday Home Ownership</a>
+  <a href="/contact-us/">Contact</a>
+  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Check Availability</a>
  </div>
 
  <!-- Hero -->
  <section id="main-content" class="" aria-label="Cornish farm holidays at Whalesborough">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+   <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.25rem;margin:0;font-size:.8rem;color:var(--on-surface-variant);max-width:1200px;margin:0 auto;">
+    <li><a href="/" style="color:var(--primary);text-decoration:none;">Home</a></li>
+    <li aria-hidden="true">/</li>
+    <li aria-current="page">Cornish Farm Holidays</li>
+   </ol>
+  </nav>
+
   <div class="farm-hero-bg">
-   <img src="../assets/images/landal-reference/facilities/farm-animals.webp" alt="Whalesborough Farm — working farm estate in North Cornwall near Bude" fetchpriority="high" decoding="sync" width="1800" height="1200">
+   <img src="/assets/images/landal-reference/facilities/farm-animals.webp" alt="Whalesborough Farm — working farm estate in North Cornwall near Bude" fetchpriority="high" decoding="sync" width="1800" height="1200">
   </div>
   <div class="farm-hero-overlay"></div>
   <div style="position:relative;z-index:2;width:100%;padding:0 0 6rem;">
@@ -292,7 +302,7 @@
      Whalesborough is 428 acres of real Cornish farmland. Working fields. Actual animals. Estate-grown food in the restaurant. And twenty-six five-star cottages in the farm buildings that have been here for centuries.
     </p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;">
-     <a href="../our-cottages/" class="btn-book" style="padding:1.125rem 2.5rem;">Find Your Cottage</a>
+     <a href="/our-cottages/" class="btn-book" style="padding:1.125rem 2.5rem;">Find Your Cottage</a>
      <a href="#the-farm" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.3);padding:1.125rem 2.5rem;">About The Farm</a>
     </div>
    </div>
@@ -441,10 +451,10 @@
      <p class="label" style="margin-bottom:0.75rem;">Best for Farm Holidays</p>
      <h2 class="headline-lg" id="cottages-heading" style="font-style:italic;">Cottages for groups and families</h2>
     </div>
-    <a href="../our-cottages/" class="btn-text">View all 26 cottages</a>
+    <a href="/our-cottages/" class="btn-text">View all 26 cottages</a>
    </div>
    <div class="cottage-row reveal">
-    <a href="../our-cottages/the-farmhouse/" class="cottage-tile">
+    <a href="/our-cottages/the-farmhouse/" class="cottage-tile">
      <div class="cottage-tile-img">
       <div style="width:100%;height:100%;background-image:url('../assets/images/cottages/the-farmhouse.webp');background-size:cover;background-position:center;"></div>
      </div>
@@ -455,7 +465,7 @@
       <span class="btn-text" style="margin-top:1rem;display:inline-block;font-size:0.5625rem;">View Cottage</span>
      </div>
     </a>
-    <a href="../our-cottages/trelowen/" class="cottage-tile">
+    <a href="/our-cottages/trelowen/" class="cottage-tile">
      <div class="cottage-tile-img">
       <div style="width:100%;height:100%;background-image:url('../assets/images/cottages/trelowen.webp');background-size:cover;background-position:center;"></div>
      </div>
@@ -489,12 +499,12 @@
       Coffee and cake are always available. Groups can book the restaurant for private events. Children are welcome.
      </p>
      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="../weir-restaurant/" class="btn-primary" style="padding:1.125rem 2.5rem;font-size:0.6875rem;">Explore The Weir</a>
+      <a href="/weir-restaurant/" class="btn-primary" style="padding:1.125rem 2.5rem;font-size:0.6875rem;">Explore The Weir</a>
       <a href="tel:01288361940" class="btn-ghost" style="padding:1.125rem 2.5rem;font-size:0.6875rem;">Call to Book</a>
      </div>
     </div>
     <div>
-     <img src="../assets/images/restaurant/weir-restaurant-exterior.webp" alt="The Weir Restaurant at Whalesborough — paddock-to-plate Cornish farm dining" loading="lazy" width="800" height="700" style="width:100%;height:540px;object-fit:cover;display:block;" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px">
+     <img src="/assets/images/restaurant/weir-restaurant-exterior.webp" alt="The Weir Restaurant at Whalesborough — paddock-to-plate Cornish farm dining" loading="lazy" width="800" height="700" style="width:100%;height:540px;object-fit:cover;display:block;" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px">
     </div>
    </div>
   </div>
@@ -533,7 +543,7 @@
      </div>
     </div>
     <div>
-     <img src="../assets/images/landal-reference/hero/resort-overview-03.webp" alt="Whalesborough Farm Resort estate — 428 acres of working Cornish farmland near Bude" loading="lazy" width="900" height="700" style="width:100%;height:520px;object-fit:cover;display:block;" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px">
+     <img src="/assets/images/landal-reference/hero/resort-overview-03.webp" alt="Whalesborough Farm Resort estate — 428 acres of working Cornish farmland near Bude" loading="lazy" width="900" height="700" style="width:100%;height:520px;object-fit:cover;display:block;" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px">
     </div>
    </div>
   </div>
@@ -552,53 +562,54 @@
     </p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
      <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="background:white;color:var(--primary);padding:1.125rem 2.75rem;font-size:0.6875rem;" data-track="book-click">Check Availability</a>
-     <a href="../our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.4);padding:1.125rem 2.75rem;font-size:0.6875rem;">Browse All Cottages</a>
+     <a href="/our-cottages/" class="btn-ghost" style="color:white;border-color:rgba(255,255,255,0.4);padding:1.125rem 2.75rem;font-size:0.6875rem;">Browse All Cottages</a>
     </div>
+     <p class="trust-microcopy" style="margin-top:1rem;font-size:0.75rem;color:var(--on-surface-variant);letter-spacing:0.04em;">Cornwall Tourism Gold 2024/25 &nbsp;·&nbsp; 4.9★ Tripadvisor &nbsp;·&nbsp; Reply within 1 business day</p>
    </div>
   </div>
  </section>
 
  <!-- Footer -->
- <footer class="site-footer" role="contentinfo">
+ <footer class="site-footer">
   <div class="container">
    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:4rem;">
     <div>
-     <div class="footer-brand"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></div>
+     <div class="footer-brand"><img src="/assets/images/logo/whalesborough-logo.png" alt="Whalesborough Farm Resort &amp; Spa" width="100" height="64" /></div>
      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:1rem;line-height:1.8;max-width:300px;">Whalesborough Farm, Marhamchurch, Bude, Cornwall <abbr title="Postcode — Whalesborough Farm, Marhamchurch, Bude, Cornwall">EX23 0JD</abbr></p>
      <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--on-surface-variant);margin-top:0.5rem;"><a href="tel:01288361940">01288 361940</a></p>
     </div>
     <div>
      <p class="label" style="margin-bottom:1.5rem;">Stay</p>
      <ul class="footer-links">
-      <li><a href="../our-cottages/">Our Cottages</a></li>
-      <li><a href="../arvor-suites/">Arvor Suites</a></li>
-      <li><a href="../dog-friendly-breaks/">Dog Friendly</a></li>
+      <li><a href="/our-cottages/">Our Cottages</a></li>
+      <li><a href="/arvor-suites/">Arvor Suites</a></li>
+      <li><a href="/dog-friendly-breaks/">Dog Friendly</a></li>
      </ul>
     </div>
     <div>
      <p class="label" style="margin-bottom:1.5rem;">Experience</p>
      <ul class="footer-links">
-      <li><a href="../spa-and-treatments/">Spa</a></li>
-      <li><a href="../weir-restaurant/">The Weir</a></li>
-      <li><a href="../green-sustainability-credentials/">Sustainability</a></li>
-      <li><a href="../our-awards/">Awards</a></li>
+      <li><a href="/spa-and-treatments/">Spa</a></li>
+      <li><a href="/weir-restaurant/">The Weir</a></li>
+      <li><a href="/green-sustainability-credentials/">Sustainability</a></li>
+      <li><a href="/our-awards/">Awards</a></li>
      </ul>
     </div>
     <div>
      <p class="label" style="margin-bottom:1.5rem;">Explore</p>
      <ul class="footer-links">
-      <li><a href="../sustainable-luxury/">Sustainable Luxury</a></li>
-      <li><a href="../cornish-farm-holidays/">Farm Holidays</a></li>
-      <li><a href="../contact-us/">Contact Us</a></li>
+      <li><a href="/sustainable-luxury/">Sustainable Luxury</a></li>
+      <li><a href="/cornish-farm-holidays/">Farm Holidays</a></li>
+      <li><a href="/contact-us/">Contact Us</a></li>
      </ul>
     </div>
    </div>
    <hr class="footer-divider">
-   <p style="font-family:var(--font-body);font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--on-surface-variant);opacity:0.5;">© 2026 Whalesborough Farm Resort & Spa. Managed by Landal GreenParks.</p>
+   <p style="font-family:var(--font-body);font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--on-surface-variant);opacity:0.5;">© 2026 Whalesborough Farm Resort & Spa. All Rights Reserved. Operated by UKGP Whalesborough Limited. Registered in England & Wales. Company No. 14536788</p>
   </div>
  </footer>
 
- <script src="../assets/js/main.js?v=25e5e2b"></script>
+ <script src="/assets/js/main.js?v=c252162"></script>
  <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
 
  <!-- Sticky mobile booking bar -->

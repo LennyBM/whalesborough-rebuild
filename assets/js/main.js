@@ -3,7 +3,17 @@
    Main JavaScript
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+// With type="module" the browser defers execution until the DOM is ready,
+// so DOMContentLoaded may already have fired by the time this script runs.
+// This pattern handles both cases safely.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+function init() {
+  'use strict';
 
   /* --- Unified scroll handler (nav shadow + scroll-to-top) --- */
   const nav = document.querySelector('.site-nav');
@@ -34,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const isFloat = target % 1 !== 0;
 
       const step = (now) => {
+        // INP: skip frame when tab is hidden to avoid wasted rAF work
+        if (document.visibilityState === 'hidden') {
+          requestAnimationFrame(step);
+          return;
+        }
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const ease = 1 - Math.pow(1 - progress, 3);
@@ -77,10 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         showTestimonial(current);
       });
     });
-    const autoAdvance = setInterval(() => {
+    let autoAdvance = setInterval(() => {
       current = (current + 1) % testimonials.length;
       showTestimonial(current);
     }, 7000);
+
+    // Pause auto-advance when tab is hidden, resume when visible (INP / battery)
+    document.addEventListener('visibilitychange', function onVisibilityChange() {
+      if (document.visibilityState === 'hidden') {
+        clearInterval(autoAdvance);
+      } else {
+        autoAdvance = setInterval(() => {
+          current = (current + 1) % testimonials.length;
+          showTestimonial(current);
+        }, 7000);
+      }
+    });
+
     // Clean up interval if page unloads
     window.addEventListener('pagehide', () => clearInterval(autoAdvance));
   }
@@ -96,35 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(r => revealObserver.observe(r));
-
-  /* --- Render nav logo as white marks on transparent background for dark nav --- */
-  document.querySelectorAll('.nav-logo img').forEach(img => {
-    const toWhiteLogo = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      ctx.drawImage(img, 0, 0);
-      try {
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const d = imageData.data;
-        for (let i = 0; i < d.length; i += 4) {
-          const minC = Math.min(d[i], d[i + 1], d[i + 2]);
-          if (minC > 230) {
-            d[i + 3] = 0; // near-white background → transparent
-          } else {
-            // Logo marks → white, with soft anti-aliased edge
-            d[i] = d[i + 1] = d[i + 2] = 255;
-            d[i + 3] = minC > 180 ? Math.round((230 - minC) / 50 * 255) : 255;
-          }
-        }
-        ctx.putImageData(imageData, 0, 0);
-        img.src = canvas.toDataURL('image/png');
-      } catch (e) { /* cross-origin — leave as-is */ }
-    };
-    if (img.complete && img.naturalWidth) toWhiteLogo();
-    else img.addEventListener('load', toWhiteLogo);
-  });
 
   /* --- Connection-aware hero video: only skip on genuinely slow networks or explicit Data Saver --- */
   const heroVideo = document.querySelector('video.hero-bg');
@@ -172,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --- Scroll-to-top button --- */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const topBtn = document.createElement('button');
   topBtn.type = 'button';
   topBtn.className = 'scroll-top-btn';
@@ -179,15 +179,79 @@ document.addEventListener('DOMContentLoaded', () => {
   topBtn.innerHTML = '↑';
   document.body.appendChild(topBtn);
   topBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'instant' : 'smooth' });
   });
 
   /* --- Single scroll listener for nav shadow + scroll-to-top --- */
+  // Use rAF ticking to avoid layout thrashing on every scroll event (INP)
+  let scrollTicking = false;
   window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (nav) nav.classList.toggle('scrolled', y > 20);
-    topBtn.classList.toggle('visible', y > 800);
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (nav) nav.classList.toggle('scrolled', y > 20);
+        topBtn.classList.toggle('visible', y > 800);
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
   }, { passive: true });
+
+  /* --- Analytics utility (consent-safe — gtag only fires after consent.js loads it) --- */
+  window.wbTrack = function(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  };
+
+  // Wire up any elements with data-track attributes
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      window.wbTrack(el.dataset.track, { location: el.closest('section')?.id || 'unknown' });
+    });
+  });
+
+  // Auto-track tel:, mailto:, and outbound links (consent-gated via wbTrack)
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      window.wbTrack('phone_click', { number: a.getAttribute('href').replace('tel:', '') });
+    });
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      window.wbTrack('email_click', { address: a.getAttribute('href').replace('mailto:', '') });
+    });
+  });
+  document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+    try {
+      var url = new URL(a.href);
+      if (url.host !== location.host) {
+        a.addEventListener('click', function() {
+          window.wbTrack('outbound_click', { host: url.host, path: url.pathname });
+        });
+      }
+    } catch (e) { /* malformed href */ }
+  });
+
+  // Form submit + loading-state for any data-netlify form
+  document.querySelectorAll('form[data-netlify="true"]').forEach(function(form) {
+    var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    var originalLabel = submitBtn ? submitBtn.textContent : '';
+    form.addEventListener('submit', function() {
+      window.wbTrack('form_submit', { form: form.getAttribute('name') || 'unknown' });
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.textContent = 'Sending…';
+        // Reset after 8s in case of failure so user can retry
+        setTimeout(function() {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute('aria-busy');
+          submitBtn.textContent = originalLabel;
+        }, 8000);
+      }
+    });
+  });
 
   /* --- Exit-intent modal (desktop only, once per session) --- */
   const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
@@ -227,4 +291,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mouseout', onMouseLeave);
   }
 
-});
+} // end init()

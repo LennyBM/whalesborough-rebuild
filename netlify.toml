@@ -3,6 +3,9 @@
 [build]
   publish = "."
 
+[build.environment]
+  NODE_VERSION = "20"
+
 # Redirects — canonical URL enforcement and legacy URL support
 [[redirects]]
   from = "http://whalesborough.co.uk/*"
@@ -23,6 +26,7 @@
   force = true
 
 # Legacy URL redirects
+# NOTE: /terms-and-conditions/ directory confirmed present in repo root.
 [[redirects]]
   from = "/holiday-cottage-terms-conditions/"
   to = "/terms-and-conditions/"
@@ -50,7 +54,17 @@
 
 [[redirects]]
   from = "/why-buy-a-holiday-home/"
-  to = "/holiday-home-investment/"
+  to = "/holiday-home-ownership/"
+  status = 301
+
+[[redirects]]
+  from = "/holiday-home-investment/"
+  to = "/holiday-home-ownership/"
+  status = 301
+
+[[redirects]]
+  from = "/holiday-home-investment"
+  to = "/holiday-home-ownership/"
   status = 301
 
 [[redirects]]
@@ -61,6 +75,18 @@
 [[redirects]]
   from = "/our-cottages/nans-house/"
   to = "/our-cottages/"
+  status = 301
+
+# Redirect bare logo-preview.html to homepage (dev file, not for public)
+[[redirects]]
+  from = "/logo-preview.html"
+  to = "/"
+  status = 301
+
+# Trailing-slash normalisation for blog
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
   status = 301
 
 # Passthrough for pitch page (static file must bypass catch-all 404)
@@ -80,28 +106,21 @@
   to = "/404.html"
   status = 404
 
-# Cache headers — long TTL for versioned assets, short for HTML
-[[headers]]
-  for = "/assets/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# Cache headers — see _headers file for the authoritative rules.
+# Per Netlify's resolution order, _headers takes precedence over [[headers]] blocks.
+# Kept minimal here so there's a single source of truth.
 
-[[headers]]
-  for = "/assets/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+# Block staging deploys (deploy-previews and branch builds) from indexing
+[context.deploy-preview]
+  [context.deploy-preview.environment]
+    HUGO_ENV = "staging"
 
-[[headers]]
-  for = "/assets/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[context.deploy-preview.headers]]
+  for = "/*"
+  [context.deploy-preview.headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
-[[headers]]
-  for = "/assets/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+[[context.branch-deploy.headers]]
+  for = "/*"
+  [context.branch-deploy.headers.values]
+    X-Robots-Tag = "noindex, nofollow"

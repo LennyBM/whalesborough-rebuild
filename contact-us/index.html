@@ -3,14 +3,12 @@
 <head>
  <meta name="referrer" content="strict-origin-when-cross-origin" />
  <meta charset="UTF-8" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
  <meta name="theme-color" content="#4a6457" />
  <meta name="color-scheme" content="light" />
  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c0a" />
- <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="shortcut icon" href="/assets/images/logo/Resort-Spa.webp" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
  <meta name="format-detection" content="telephone=no" />
  <title>Contact Whalesborough Farm Resort & Spa | Marhamchurch, Bude, Cornwall EX23 0JD</title>
  <meta name="description" content="Contact Whalesborough Farm Resort & Spa. Call reception on 01288 361940, send an enquiry, or find us at Whalesborough Farm, Marhamchurch, Bude, Cornwall EX23 0JD." />
@@ -22,20 +20,28 @@
  <meta property="og:description" content="Get in touch with Whalesborough Farm Resort & Spa. Call 01288 361940 or send us a message. We'd love to help you plan your stay." />
  <meta property="og:type" content="website" />
  <meta property="og:url" content="https://www.whalesborough.co.uk/contact-us/" />
- <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/cottages-exterior.webp" />
+ <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
  <meta name="twitter:card" content="summary_large_image" />
  <meta name="twitter:site" content="@whalesborough" />
  <meta name="twitter:title" content="Contact Whalesborough Farm Resort & Spa | Bude, Cornwall" />
  <meta name="twitter:description" content="Get in touch with Whalesborough Farm Resort & Spa. Call 01288 361940 or send us a message. We'd love to help you plan your stay." />
- <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/general/cottages-exterior.webp" />
+ <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
  <meta name="twitter:image:alt" content="Contact Whalesborough Farm Resort & Spa | Bude, Cornwall" />
- <meta property="og:image:width" content="1800" />
- <meta property="og:image:height" content="1200" />
+ <meta property="og:image:width" content="1137" />
+ <meta property="og:image:height" content="722" />
+  <meta property="og:image:type" content="image/jpeg" />
  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
  <meta property="og:locale" content="en_GB" />
  <meta property="og:image:alt" content="Contact Whalesborough Farm Resort & Spa | Bude, Cornwall" />
- <link rel="stylesheet" href="../assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="../assets/css/whalesborough.min.css?v=25e5e2b" />
+ <meta property="og:image:secure_url" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+ <meta name="author" content="Whalesborough Farm Resort &amp; Spa" />
+ <meta name="geo.region" content="GB-CON" />
+ <meta name="geo.placename" content="Bude, Cornwall" />
+ <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=c252162" />
 
  <script type="application/ld+json">
  {
@@ -108,6 +114,23 @@
   .map-embed { width: 100%; height: 320px; background: var(--surface-high); display: flex; align-items: center; justify-content: center; margin-top: 2rem; overflow: hidden; }
   .map-embed iframe { width: 100%; height: 100%; border: none; display: block; }
 
+  .field-error { display: block; min-height: 1em; font-family: var(--font-body); font-size: 0.75rem; color: var(--primary); margin-top: 0.35rem; line-height: 1.4; }
+  .field-error:empty { display: none; }
+  .trust-line { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; color: var(--on-surface-variant); margin-bottom: 1.25rem; }
+  .trust-line span + span::before { content: ' · '; color: var(--outline-variant); margin: 0 0.35rem; }
+  .or-call-line { font-family: var(--font-body); font-size: 0.8125rem; color: var(--on-surface-variant); text-align: center; margin-top: 1rem; line-height: 1.65; }
+  .or-call-line a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+  .contact-faq { margin-bottom: 3.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(194,200,195,0.25); }
+  .contact-faq h2 { font-family: var(--font-headline); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 2.5vw, 2rem); color: var(--on-surface); margin: 0.75rem 0 1.75rem; }
+  .faq-item { border-bottom: 1px solid rgba(194,200,195,0.3); padding: 0; }
+  .faq-item:first-of-type { border-top: 1px solid rgba(194,200,195,0.3); }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 1.25rem 0; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: var(--on-surface); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-family: var(--font-headline); font-size: 1.5rem; font-weight: 300; color: var(--secondary); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item .faq-body { padding: 0 0 1.25rem; font-size: 0.875rem; color: var(--on-surface-variant); line-height: 1.75; }
+
   .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--surface-high); margin-top: 5rem; }
   .quick-link-card { background: var(--surface-low); padding: 2.5rem 2rem; transition: background 0.2s; }
   .quick-link-card:hover { background: var(--surface-high); }
@@ -132,10 +155,24 @@
   ]
  }
  </script>
+
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {"@type":"Question","name":"What are check-in and check-out times?","acceptedAnswer":{"@type":"Answer","text":"Cottage check-in is from 4pm; check-out by 10am. Arvor Suite check-in is from 3pm; check-out by 11am. Early or late options can sometimes be arranged — please call 01288 361940."}},
+   {"@type":"Question","name":"Are dogs welcome at The Weir restaurant?","acceptedAnswer":{"@type":"Answer","text":"Yes — well-behaved dogs are welcome in the bar area and on the terrace at The Weir Restaurant. The main dining room is for guests without dogs. Water bowls are provided throughout."}},
+   {"@type":"Question","name":"Can I book multiple cottages together?","acceptedAnswer":{"@type":"Answer","text":"Yes. For 3 or more cottages, group bookings, or full estate buyouts, please call us on 01288 361940 and we'll handle the arrangements directly to ensure the best rate and adjoining properties where possible."}},
+   {"@type":"Question","name":"Can you arrange something special for an occasion?","acceptedAnswer":{"@type":"Answer","text":"Absolutely — birthdays, anniversaries, proposals, honeymoons. We can arrange flowers, champagne, hampers, in-cottage spa treatments, private dining and more. Mention your occasion in your enquiry or call ahead."}},
+   {"@type":"Question","name":"Is the resort accessible?","acceptedAnswer":{"@type":"Answer","text":"Selected cottages and Arvor Suites are step-free with accessible bathrooms. The W Club Spa, The Weir Restaurant and reception are all step-free. Please mention any specific access needs when booking and we'll match you to the right property."}}
+  ]
+ }
+ </script>
  <link rel="preconnect" href="https://www.landal.co.uk" crossorigin />
  <link rel="dns-prefetch" href="https://www.landal.co.uk" />
  <link rel="manifest" href="/manifest.webmanifest" />
- <link rel="apple-touch-icon" href="/assets/images/logo/Resort-Spa.webp" />
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
 <body class="has-sticky-book">
  <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -144,21 +181,21 @@
   Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Reception: 01288 361940 &nbsp;|&nbsp; Mon–Sun, 9am–5pm
  </div>
 
- <nav class="site-nav" role="navigation" aria-label="Main navigation">
+ <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
-   <a href="../index.html" class="nav-logo" aria-label="Whalesborough — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
+   <a href="/" class="nav-logo" aria-label="Whalesborough — Home"><img src="/assets/images/logo/whalesborough-logo.png" alt="Whalesborough Farm Resort &amp; Spa" width="100" height="64" /></a>
    <ul class="nav-links" role="list">
-    <li><a href="../our-cottages/index.html">Cottages</a></li>
-    <li><a href="../arvor-suites/index.html">Arvor Suites</a></li>
-    <li><a href="../spa-and-treatments/index.html">Spa</a></li>
-    <li><a href="../weir-restaurant/index.html">Dining</a></li>
-    <li><a href="../dog-friendly-breaks/index.html">Dog Friendly</a></li>
-    <li><a href="../exploring-cornwall/index.html">Explore</a></li>
-    <li><a href="../holiday-home-investment/index.html">Investment</a></li>
+    <li><a href="/our-cottages/">Cottages</a></li>
+    <li><a href="/arvor-suites/">Arvor Suites</a></li>
+    <li><a href="/spa-and-treatments/">Spa</a></li>
+    <li><a href="/weir-restaurant/">Dining</a></li>
+    <li><a href="/dog-friendly-breaks/">Dog Friendly</a></li>
+    <li><a href="/exploring-cornwall/">Explore</a></li>
+    <li><a href="/holiday-home-ownership/">Ownership</a></li>
    </ul>
    <div style="display:flex;align-items:center;gap:1.5rem;">
     <a href="tel:01288361940" style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;color:rgba(255,255,255,0.7);">01288 361940</a>
-    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Book with Landal</a>
+    <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">Check Availability</a>
     <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
    </div>
   </div>
@@ -166,15 +203,15 @@
 
  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
   <button class="mobile-close" aria-label="Close menu">&times;</button>
-  <a href="../our-cottages/index.html">Cottages</a>
-  <a href="../arvor-suites/index.html">Arvor Suites</a>
-  <a href="../spa-and-treatments/index.html">Spa</a>
-  <a href="../weir-restaurant/index.html">Dining</a>
-  <a href="../dog-friendly-breaks/index.html">Dog Friendly</a>
-  <a href="../exploring-cornwall/index.html">Explore Cornwall</a>
-  <a href="../holiday-home-investment/index.html">Holiday Home Investment</a>
-  <a href="../contact-us/index.html" class="active" aria-current="page">Contact</a>
-  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Book with Landal</a>
+  <a href="/our-cottages/">Cottages</a>
+  <a href="/arvor-suites/">Arvor Suites</a>
+  <a href="/spa-and-treatments/">Spa</a>
+  <a href="/weir-restaurant/">Dining</a>
+  <a href="/dog-friendly-breaks/">Dog Friendly</a>
+  <a href="/exploring-cornwall/">Explore Cornwall</a>
+  <a href="/holiday-home-ownership/">Holiday Home Ownership</a>
+  <a href="/contact-us/" class="active" aria-current="page">Contact</a>
+  <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book" style="margin-top:1rem;" data-track="book-click">Check Availability</a>
  </div>
 
  <main id="main-content">
@@ -255,10 +292,37 @@
      <!-- Form column -->
      <div class="reveal" style="transition-delay:0.15s;">
       <div class="contact-form-wrap">
+
+       <div class="contact-faq" aria-label="Common questions">
+        <p class="label">Before You Ask</p>
+        <h2>Common questions</h2>
+        <details class="faq-item">
+         <summary>What are check-in and check-out times?</summary>
+         <div class="faq-body">Cottage check-in is from 4pm; check-out by 10am. Arvor Suite check-in is from 3pm; check-out by 11am. Early or late options can sometimes be arranged — please call <a href="tel:01288361940">01288 361940</a>.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Are dogs welcome at The Weir restaurant?</summary>
+         <div class="faq-body">Yes — well-behaved dogs are welcome in the bar area and on the terrace at The Weir Restaurant. The main dining room is for guests without dogs. Water bowls are provided throughout.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Can I book multiple cottages together?</summary>
+         <div class="faq-body">Yes. For 3 or more cottages, group bookings, or full estate buyouts, please call us on <a href="tel:01288361940">01288 361940</a> and we'll handle the arrangements directly to ensure the best rate and adjoining properties where possible.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Can you arrange something special for an occasion?</summary>
+         <div class="faq-body">Absolutely — birthdays, anniversaries, proposals, honeymoons. We can arrange flowers, champagne, hampers, in-cottage spa treatments, private dining and more. Mention your occasion in your enquiry or call ahead.</div>
+        </details>
+        <details class="faq-item">
+         <summary>Is the resort accessible?</summary>
+         <div class="faq-body">Selected cottages and Arvor Suites are step-free with accessible bathrooms. The W Club Spa, The Weir Restaurant and reception are all step-free. Please mention any specific access needs when booking and we'll match you to the right property. See our <a href="/accessibility/">accessibility statement</a>.</div>
+        </details>
+       </div>
+
        <p class="label" style="margin-bottom:0.75rem;">Send a Message</p>
-       <h2 class="headline-md" style="font-style:italic;margin-bottom:2rem;">We'll be in touch shortly.</h2>
-       <form id="contact-form" name="whalesborough-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-us/?success=1" aria-label="Contact form">
-        <input type="hidden" name="form-name" value="whalesborough-enquiry" />
+       <h2 class="headline-md" style="font-style:italic;margin-bottom:1rem;">We'll be in touch shortly.</h2>
+       <p class="trust-line"><span>Mon–Sun reply within 1 business day</span><span>4.9★ Tripadvisor</span><span>Cornwall Tourism Gold 2024/25</span></p>
+       <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" aria-label="Contact form">
+        <input type="hidden" name="form-name" value="contact" />
         <!-- Honeypot — hidden from humans, catches bots -->
         <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
          <label>Don&rsquo;t fill this in if you&rsquo;re human: <input name="bot-field" /></label>
@@ -266,42 +330,48 @@
         <div class="form-row">
          <div class="contact-form-group">
           <label for="first-name">First Name *</label>
-          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required aria-required="true" placeholder="Jane" />
+          <input type="text" id="first-name" name="first_name" autocomplete="given-name" required aria-required="true" placeholder="Jane" aria-describedby="first-name-error" />
+          <span class="field-error" id="first-name-error" aria-live="polite"></span>
          </div>
          <div class="contact-form-group">
           <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required aria-required="true" placeholder="Smith" />
+          <input type="text" id="last-name" name="last_name" autocomplete="family-name" required aria-required="true" placeholder="Smith" aria-describedby="last-name-error" />
+          <span class="field-error" id="last-name-error" aria-live="polite"></span>
          </div>
         </div>
         <div class="contact-form-group">
          <label for="email">Email Address *</label>
-         <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" placeholder="jane@example.com" />
+         <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-required="true" placeholder="jane@example.com" aria-describedby="email-error" />
+         <span class="field-error" id="email-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group">
-         <label for="phone">Telephone Number</label>
-         <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" inputmode="tel" />
+         <label for="phone">Telephone Number <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+         <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" inputmode="tel" aria-describedby="phone-error" />
+         <span class="field-error" id="phone-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group">
          <label for="enquiry-type">Enquiry Type</label>
-         <select id="enquiry-type" name="enquiry_type" aria-label="Enquiry type">
+         <select id="enquiry-type" name="enquiry_type" aria-label="Enquiry type" aria-describedby="enquiry-type-error">
           <option value="">Please select…</option>
           <option value="cottage-booking">Cottage Booking</option>
           <option value="arvor-suites">Arvor Suites</option>
           <option value="spa-treatments">Spa & Treatments</option>
           <option value="weir-restaurant">The Weir Restaurant</option>
           <option value="group-booking">Group Booking</option>
-          <option value="holiday-home">Holiday Home Investment</option>
+          <option value="holiday-home">Holiday Home Ownership</option>
           <option value="other">Other</option>
          </select>
+         <span class="field-error" id="enquiry-type-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group">
          <label for="message">Your Message *</label>
-         <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Please tell us about your enquiry, preferred dates, number of guests, and any questions we can help with…"></textarea>
+         <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Please tell us about your enquiry, preferred dates, number of guests, and any questions we can help with…" aria-describedby="message-error"></textarea>
+         <span class="field-error" id="message-error" aria-live="polite"></span>
         </div>
         <div class="contact-form-group" style="margin-bottom:0;">
          <label style="display:flex;align-items:flex-start;gap:0.75rem;cursor:pointer;text-transform:none;letter-spacing:0;font-size:0.75rem;color:var(--on-surface-variant);">
           <input type="checkbox" id="privacy-consent" name="privacy_consent" required aria-required="true" style="width:20px;height:20px;min-width:20px;min-height:20px;border:1px solid var(--outline-variant);border-bottom:1px solid var(--outline-variant);padding:0;margin-top:0;flex-shrink:0;cursor:pointer;" />
-          I agree to the <a href="../privacy-policy/index.html" style="color:var(--primary);">Privacy Policy</a> and consent to Whalesborough Farm Resort & Spa contacting me regarding my enquiry. *
+          I agree to the <a href="/privacy-policy/" style="color:var(--primary);">Privacy Policy</a> and consent to Whalesborough Farm Resort & Spa contacting me regarding my enquiry. *
          </label>
         </div>
         <div style="margin-top:0.75rem;">
@@ -311,6 +381,8 @@
          </label>
         </div>
         <button type="submit" class="btn-primary" style="margin-top:2.5rem;width:100%;padding:1.25rem;font-size:0.7rem;">Send Enquiry</button>
+        <p class="or-call-line">Or call <a href="tel:01288361940">01288 361940</a> · Mon–Sun 9am–5pm</p>
+        <p style="font-size:0.7rem;color:var(--on-surface-variant);text-align:center;margin-top:0.5rem;line-height:1.6;">We aim to reply within one business day &middot; Your details are kept private</p>
         <div id="form-success" role="alert" aria-live="polite" style="display:none;margin-top:1.5rem;padding:1.25rem;background:rgba(74,100,87,0.08);color:var(--secondary);">
          <p style="font-family:var(--font-headline);font-style:italic;font-size:1.1rem;margin-bottom:0.25rem;">Thank you — message received.</p>
          <p style="font-size:0.825rem;">We'll be in touch within one business day.</p>
@@ -319,6 +391,7 @@
          <p style="font-size:0.825rem;">Please fill in all required fields before sending.</p>
         </div>
        </form>
+       <div role="alert" aria-live="polite" id="contact-status"></div>
       </div>
      </div>
 
@@ -326,19 +399,19 @@
 
     <!-- Quick links -->
     <div class="quick-links" style="margin-top:5rem;">
-     <a href="../our-cottages/index.html" class="quick-link-card reveal" style="display:block;">
+     <a href="/our-cottages/" class="quick-link-card reveal" style="display:block;">
       <p class="label" style="color:var(--secondary);margin-bottom:0.75rem;">Browse</p>
       <h3 class="headline-sm">Our 26 Cottages</h3>
       <p style="font-size:0.825rem;color:var(--on-surface-variant);margin-top:0.5rem;line-height:1.6;">From a Grade II listed 14th-century farmhouse to brand-new contemporary lodges. All dog-friendly.</p>
       <span class="btn-text" style="margin-top:1rem;display:inline-flex;">View cottages</span>
      </a>
-     <a href="../arvor-suites/index.html" class="quick-link-card reveal" style="display:block;transition-delay:0.1s;">
+     <a href="/arvor-suites/" class="quick-link-card reveal" style="display:block;transition-delay:0.1s;">
       <p class="label" style="color:var(--secondary);margin-bottom:0.75rem;">Discover</p>
       <h3 class="headline-sm">The Arvor Suites</h3>
       <p style="font-size:0.825rem;color:var(--on-surface-variant);margin-top:0.5rem;line-height:1.6;">22 new self-catering suites with 7 curated wellness packages. From £175 per person per night.</p>
       <span class="btn-text" style="margin-top:1rem;display:inline-flex;">Explore Arvor</span>
      </a>
-     <a href="../finding-us/index.html" class="quick-link-card reveal" style="display:block;transition-delay:0.2s;">
+     <a href="/finding-us/" class="quick-link-card reveal" style="display:block;transition-delay:0.2s;">
       <p class="label" style="color:var(--secondary);margin-bottom:0.75rem;">Navigate</p>
       <h3 class="headline-sm">Finding Us</h3>
       <p style="font-size:0.825rem;color:var(--on-surface-variant);margin-top:0.5rem;line-height:1.6;">Whalesborough Farm, Marhamchurch, Bude, Cornwall <abbr title="Postcode — Whalesborough Farm, Marhamchurch, Bude, Cornwall">EX23 0JD</abbr>. Full directions and a map.</p>
@@ -356,11 +429,13 @@
      <p class="label" style="color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Stay Connected</p>
      <h2 class="headline-lg" style="font-style:italic;color:white;margin-bottom:1rem;">Stay for a while.</h2>
      <p style="color:rgba(255,255,255,0.7);font-size:1rem;line-height:1.8;max-width:440px;margin:0 auto 0.5rem;">Join our list for seasonal offers, early access to new packages, and curated Cornish guides. No noise — only what matters.</p>
-     <form class="newsletter-form" aria-label="Newsletter subscription" style="display:flex;gap:1rem;max-width:480px;margin:2rem auto 0;">
-      <input type="email" placeholder="Your email address" aria-label="Email address" required style="background:rgba(255,255,255,0.1);border-bottom-color:rgba(255,255,255,0.3);color:white;" name="newsletter_email"/>
+     <form class="newsletter-form" aria-label="Newsletter subscription" style="display:flex;gap:1rem;max-width:480px;margin:2rem auto 0;" name="newsletter" method="POST" action="/thank-you/" netlify data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="newsletter" />
+      <div style="display:none"><input name="bot-field" /></div>
+      <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address" required autocomplete="email" style="background:rgba(255,255,255,0.1);border-bottom-color:rgba(255,255,255,0.3);color:white;" name="newsletter_email"/>
       <button type="submit" class="btn-book" style="white-space:nowrap;">Subscribe</button>
      </form>
-     <p style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:1rem;">By subscribing you agree to our <a href="../privacy-policy/index.html" style="color:rgba(255,255,255,0.7);">Privacy Policy</a>.</p>
+     <p style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:1rem;">By subscribing you agree to our <a href="/privacy-policy/" style="color:rgba(255,255,255,0.7);">Privacy Policy</a>.</p>
     </div>
    </div>
   </section>
@@ -371,7 +446,7 @@
   <div class="container">
    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem;">
     <div>
-     <div class="footer-brand" style="margin-bottom:1.25rem;"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></div>
+     <div class="footer-brand" style="margin-bottom:1.25rem;"><img src="/assets/images/logo/whalesborough-logo.png" alt="Whalesborough Farm Resort &amp; Spa" width="149" height="96" /></div>
      <p style="font-size:0.85rem;color:var(--secondary);opacity:0.75;line-height:1.8;max-width:340px;margin-bottom:1.5rem;">A destination for those who seek the extraordinary. North Cornwall — 428 acres of luxury, sustainability, and genuine connection with place.</p>
      <p style="font-size:0.8rem;color:var(--secondary);font-weight:600;">Whalesborough Farm, Marhamchurch<br>Bude <abbr title="Postcode — Whalesborough Farm, Marhamchurch, Bude, Cornwall">EX23 0JD</abbr>, Cornwall</p>
      <p style="margin-top:0.75rem;"><a href="tel:01288361940" style="color:var(--primary);font-weight:600;font-size:0.8rem;">01288 361940</a></p>
@@ -379,52 +454,52 @@
     <div>
      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.625rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--secondary);margin-bottom:1.5rem;">Stay</h3>
      <ul class="footer-links">
-      <li><a href="../our-cottages/index.html">All Cottages</a></li>
-      <li><a href="../arvor-suites/index.html">Arvor Suites</a></li>
-      <li><a href="../dog-friendly-breaks/index.html">Dog Friendly</a></li>
-      <li><a href="../our-cottages/index.html">Family Breaks</a></li>
-      <li><a href="../couples-breaks/index.html">Couples Breaks</a></li>
-      <li><a href="../holiday-treats/index.html">Holiday Treats</a></li>
+      <li><a href="/our-cottages/">All Cottages</a></li>
+      <li><a href="/arvor-suites/">Arvor Suites</a></li>
+      <li><a href="/dog-friendly-breaks/">Dog Friendly</a></li>
+      <li><a href="/our-cottages/">Family Breaks</a></li>
+      <li><a href="/couples-breaks/">Couples Breaks</a></li>
+      <li><a href="/holiday-treats/">Holiday Treats</a></li>
      </ul>
     </div>
     <div>
      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.625rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--secondary);margin-bottom:1.5rem;">Explore</h3>
      <ul class="footer-links">
-      <li><a href="../spa-and-treatments/index.html">Spa & Wellness</a></li>
-      <li><a href="../weir-restaurant/index.html">The Weir Restaurant</a></li>
-      <li><a href="../facilities-for-kids/index.html">Facilities for Kids</a></li>
-      <li><a href="../outdoor-activities/index.html">Outdoor Activities</a></li>
-      <li><a href="../exploring-cornwall/index.html">Exploring Cornwall</a></li>
+      <li><a href="/spa-and-treatments/">Spa & Wellness</a></li>
+      <li><a href="/weir-restaurant/">The Weir Restaurant</a></li>
+      <li><a href="/facilities-for-kids/">Facilities for Kids</a></li>
+      <li><a href="/outdoor-activities/">Outdoor Activities</a></li>
+      <li><a href="/exploring-cornwall/">Exploring Cornwall</a></li>
      </ul>
     </div>
     <div>
      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.625rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--secondary);margin-bottom:1.5rem;">Information</h3>
      <ul class="footer-links">
-      <li><a href="../green-sustainability-credentials/index.html">Sustainability</a></li>
-      <li><a href="../our-awards/index.html">Awards</a></li>
-      <li><a href="../contact-us/index.html">Contact Us</a></li>
-      <li><a href="../finding-us/index.html">Finding Us</a></li>
-      <li><a href="../holiday-cottage-terms-conditions/index.html">Booking T&Cs</a></li>
-      <li><a href="../privacy-policy/index.html">Privacy Policy</a></li>
-      <li><a href="../cookie-policy/index.html">Cookie Policy</a></li>
-      <li><a href="../accessibility/index.html">Accessibility</a></li><li><a href="#" data-cookie-settings>Cookie Settings</a></li>
+      <li><a href="/green-sustainability-credentials/">Sustainability</a></li>
+      <li><a href="/our-awards/">Awards</a></li>
+      <li><a href="/contact-us/">Contact Us</a></li>
+      <li><a href="/finding-us/">Finding Us</a></li>
+      <li><a href="/holiday-cottage-terms-conditions/">Booking T&Cs</a></li>
+      <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="/cookie-policy/">Cookie Policy</a></li>
+      <li><a href="/accessibility/">Accessibility</a></li><li><a href="#" data-cookie-settings>Cookie Settings</a></li>
      </ul>
     </div>
    </div>
    <hr class="footer-divider" />
    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-    <p style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">© 2024 Whalesborough Farm Resort & Spa. All Rights Reserved.</p>
+    <p style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">© 2026 Whalesborough Farm Resort &amp; Spa. All Rights Reserved. Operated by UKGP Whalesborough Limited. Registered in England &amp; Wales. Company No. 14536788</p>
     <div style="display:flex;gap:2rem;">
-     <a href="../terms-of-use/index.html" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Terms</a>
-     <a href="../privacy-policy/index.html" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Privacy</a>
-     <a href="../cookie-policy/index.html" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Cookies</a>
-     <a href="../accessibility/index.html" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Accessibility</a>
+     <a href="/terms-of-use/" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Terms</a>
+     <a href="/privacy-policy/" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Privacy</a>
+     <a href="/cookie-policy/" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Cookies</a>
+     <a href="/accessibility/" style="font-size:0.625rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);opacity:0.5;">Accessibility</a>
     </div>
    </div>
   </div>
  </footer>
 
- <script src="../assets/js/main.js?v=25e5e2b" defer></script>
+ <script src="/assets/js/main.js?v=c252162" defer></script>
  <script>
   // Form submits natively to Netlify (action="/contact-us/?success=1").
   // Show the success banner when the user lands back on the page with ?success=1

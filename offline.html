@@ -1,30 +1,171 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-GB">
 <head>
  <meta charset="UTF-8" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
  <meta name="theme-color" content="#4a6457" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+ <meta name="format-detection" content="telephone=no" />
  <title>Offline · Whalesborough Farm Resort &amp; Spa</title>
  <meta name="robots" content="noindex" />
- <link rel="icon" type="image/webp" href="/assets/images/logo/Resort-Spa.webp" />
- <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=25e5e2b" />
+ <!-- Inline all CSS — this page must render without any network requests -->
  <style>
-  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 2rem; background: var(--surface); }
-  .offline-wrap { max-width: 520px; }
-  .offline-mark { font-family: 'Newsreader', serif; font-style: italic; font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
-  .offline-wrap h1 { font-family: 'Newsreader', serif; font-size: 2.25rem; margin-bottom: 1rem; line-height: 1.2; }
-  .offline-wrap p { color: var(--on-surface-variant); line-height: 1.7; margin-bottom: 2rem; }
-  .offline-wrap a { display: inline-block; margin: 0.25rem; }
- </style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+   --primary: #703a1d;
+   --secondary: #4a6457;
+   --surface: #fbf9f6;
+   --surface-low: #f5f3f0;
+   --on-surface: #1a1a18;
+   --on-surface-variant: #5a5a56;
+   --font-headline: 'Newsreader', Georgia, 'Times New Roman', serif;
+   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+  body {
+   font-family: var(--font-body);
+   background: var(--surface);
+   color: var(--on-surface);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100svh;
+   min-height: 100vh;
+   padding: 2rem;
+   text-align: center;
+  }
+  .offline-wrap { max-width: 540px; width: 100%; }
+  .offline-mark {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-weight: 300;
+   font-size: clamp(1.5rem, 5vw, 2.5rem);
+   color: var(--secondary);
+   margin-bottom: 2rem;
+   letter-spacing: .01em;
+  }
+  .offline-icon {
+   display: block;
+   width: 56px;
+   height: 56px;
+   margin: 0 auto 1.75rem;
+   color: var(--secondary);
+  }
+  h1 {
+   font-family: var(--font-headline);
+   font-size: clamp(2rem, 5vw, 3rem);
+   font-weight: 300;
+   font-style: italic;
+   line-height: 1.15;
+   color: var(--on-surface);
+   margin-bottom: 1.25rem;
+  }
+  .lead {
+   font-size: 1rem;
+   color: var(--on-surface-variant);
+   line-height: 1.8;
+   margin-bottom: 2.5rem;
+  }
+  .offline-contact {
+   background: var(--surface-low);
+   border-top: 2px solid #e0ddd8;
+   padding: 1.5rem 2rem;
+   margin-bottom: 2.5rem;
+  }
+  .offline-contact p {
+   font-size: .8125rem;
+   font-weight: 600;
+   letter-spacing: .08em;
+   text-transform: uppercase;
+   color: var(--on-surface-variant);
+   margin-bottom: .5rem;
+  }
+  .offline-contact a {
+   font-family: var(--font-headline);
+   font-style: italic;
+   font-size: 1.5rem;
+   color: var(--primary);
+   text-decoration: none;
+  }
+  .offline-address {
+   font-size: .8125rem;
+   color: var(--on-surface-variant);
+   line-height: 1.7;
+   margin-top: .75rem;
+  }
+  .btn-actions {
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+   flex-wrap: wrap;
+  }
+  .btn-primary {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-family: var(--font-body);
+   font-size: .8125rem;
+   font-weight: 700;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+   text-decoration: none;
+   background: var(--primary);
+   color: #fff;
+   padding: .9rem 2rem;
+   border: none;
+   cursor: pointer;
+   transition: opacity .2s;
+  }
+  .btn-primary:hover { opacity: .85; }
+  .btn-ghost {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-family: var(--font-body);
+   font-size: .8125rem;
+   font-weight: 700;
+   letter-spacing: .1em;
+   text-transform: uppercase;
+   text-decoration: none;
+   background: transparent;
+   color: var(--on-surface-variant);
+   padding: .9rem 2rem;
+   border: 1.5px solid #d0cdc8;
+   cursor: pointer;
+   transition: border-color .2s, color .2s;
+  }
+  .btn-ghost:hover { border-color: var(--secondary); color: var(--secondary); }
+ </style>    <link rel="manifest" href="/manifest.webmanifest" />
 </head>
 <body>
- <main class="offline-wrap">
+ <main class="offline-wrap" id="main-content">
   <div class="offline-mark">Whalesborough</div>
+
+  <svg class="offline-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M1 1l22 22"/>
+   <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+   <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+   <path d="M10.71 5.05A16 16 0 0 1 22.56 9"/>
+   <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+   <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+   <line x1="12" y1="20" x2="12.01" y2="20"/>
+  </svg>
+
   <h1>You're offline.</h1>
-  <p>The Cornish signal has taken a breather. Your connection will return shortly — try reloading this page, or call us directly.</p>
-  <a href="tel:01288361940" class="btn-book">Call 01288 361940</a>
-  <a href="/" class="btn-ghost">Retry</a>
+  <p class="lead">The Cornish signal has taken a breather. Your connection will return shortly — try reloading this page, or call the resort directly and we'll be happy to help.</p>
+
+  <div class="offline-contact">
+   <p>Call us directly</p>
+   <a href="tel:01288361940">01288 361940</a>
+   <p class="offline-address">Whalesborough Farm, Marhamchurch, Bude, Cornwall EX23 0JD</p>
+  </div>
+
+  <div class="btn-actions">
+   <button class="btn-primary" onclick="window.location.reload()">Try Again</button>
+   <a href="/" class="btn-ghost">Go to Homepage</a>
+  </div>
  </main>
 </body>
 </html>

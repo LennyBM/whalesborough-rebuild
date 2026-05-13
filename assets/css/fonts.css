@@ -1,12 +1,11 @@
-/* Self-hosted fonts — no external CDN requests */
+/* Self-hosted fonts — no external CDN requests, WOFF2 only (TTF dropped, universal support since 2017) */
 
 @font-face {
   font-family: 'Newsreader';
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url('../fonts/newsreader-italic-300.woff2') format('woff2'),
-       url('../fonts/newsreader-italic-300.ttf') format('truetype');
+  src: url('../fonts/newsreader-italic-300.woff2') format('woff2');
 }
 
 @font-face {
@@ -14,8 +13,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/newsreader-italic-400.woff2') format('woff2'),
-       url('../fonts/newsreader-italic-400.ttf') format('truetype');
+  src: url('../fonts/newsreader-italic-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -23,8 +21,7 @@
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: url('../fonts/newsreader-italic-500.woff2') format('woff2'),
-       url('../fonts/newsreader-italic-500.ttf') format('truetype');
+  src: url('../fonts/newsreader-italic-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -32,8 +29,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('../fonts/newsreader-300.woff2') format('woff2'),
-       url('../fonts/newsreader-300.ttf') format('truetype');
+  src: url('../fonts/newsreader-300.woff2') format('woff2');
 }
 
 @font-face {
@@ -41,8 +37,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/newsreader-400.woff2') format('woff2'),
-       url('../fonts/newsreader-400.ttf') format('truetype');
+  src: url('../fonts/newsreader-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -50,8 +45,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../fonts/newsreader-500.woff2') format('woff2'),
-       url('../fonts/newsreader-500.ttf') format('truetype');
+  src: url('../fonts/newsreader-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -59,8 +53,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('../fonts/plus-jakarta-sans-300.woff2') format('woff2'),
-       url('../fonts/plus-jakarta-sans-300.ttf') format('truetype');
+  src: url('../fonts/plus-jakarta-sans-300.woff2') format('woff2');
 }
 
 @font-face {
@@ -68,8 +61,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/plus-jakarta-sans-400.woff2') format('woff2'),
-       url('../fonts/plus-jakarta-sans-400.ttf') format('truetype');
+  src: url('../fonts/plus-jakarta-sans-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -77,8 +69,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../fonts/plus-jakarta-sans-500.woff2') format('woff2'),
-       url('../fonts/plus-jakarta-sans-500.ttf') format('truetype');
+  src: url('../fonts/plus-jakarta-sans-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -86,8 +77,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../fonts/plus-jakarta-sans-600.woff2') format('woff2'),
-       url('../fonts/plus-jakarta-sans-600.ttf') format('truetype');
+  src: url('../fonts/plus-jakarta-sans-600.woff2') format('woff2');
 }
 
 @font-face {
@@ -95,6 +85,24 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../fonts/plus-jakarta-sans-700.woff2') format('woff2'),
-       url('../fonts/plus-jakarta-sans-700.ttf') format('truetype');
+  src: url('../fonts/plus-jakarta-sans-700.woff2') format('woff2');
+}
+
+/* Size-adjusted system fallbacks — prevent CLS during font swap (WCAG 1.4.10, Core Web Vitals) */
+@font-face {
+  font-family: 'Newsreader-Fallback';
+  src: local('Georgia');
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'PlusJakartaSans-Fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 88%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
