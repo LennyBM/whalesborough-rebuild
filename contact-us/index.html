@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
  <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -29,6 +29,7 @@
  <meta name="twitter:image:alt" content="Contact Whalesborough Farm Resort & Spa | Bude, Cornwall" />
  <meta property="og:image:width" content="1800" />
  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:type" content="image/webp" />
  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
  <meta property="og:locale" content="en_GB" />
  <meta property="og:image:alt" content="Contact Whalesborough Farm Resort & Spa | Bude, Cornwall" />
@@ -149,7 +150,7 @@
   Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Reception: 01288 361940 &nbsp;|&nbsp; Mon–Sun, 9am–5pm
  </div>
 
- <nav class="site-nav" role="navigation" aria-label="Main navigation">
+ <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
    <a href="/" class="nav-logo" aria-label="Whalesborough — Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
    <ul class="nav-links" role="list">
@@ -283,7 +284,7 @@
          <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" placeholder="jane@example.com" />
         </div>
         <div class="contact-form-group">
-         <label for="phone">Telephone Number</label>
+         <label for="phone">Telephone Number <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07700 000000" inputmode="tel" />
         </div>
         <div class="contact-form-group">
@@ -316,6 +317,7 @@
          </label>
         </div>
         <button type="submit" class="btn-primary" style="margin-top:2.5rem;width:100%;padding:1.25rem;font-size:0.7rem;">Send Enquiry</button>
+        <p style="font-size:0.7rem;color:var(--on-surface-variant);text-align:center;margin-top:0.875rem;line-height:1.6;">We aim to reply within one business day &middot; Your details are kept private</p>
         <div id="form-success" role="alert" aria-live="polite" style="display:none;margin-top:1.5rem;padding:1.25rem;background:rgba(74,100,87,0.08);color:var(--secondary);">
          <p style="font-family:var(--font-headline);font-style:italic;font-size:1.1rem;margin-bottom:0.25rem;">Thank you — message received.</p>
          <p style="font-size:0.825rem;">We'll be in touch within one business day.</p>
@@ -365,7 +367,7 @@
      <form class="newsletter-form" aria-label="Newsletter subscription" style="display:flex;gap:1rem;max-width:480px;margin:2rem auto 0;" name="newsletter" method="POST" action="/thank-you/" netlify data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="newsletter" />
       <div style="display:none"><input name="bot-field" /></div>
-      <input type="email" placeholder="Your email address" aria-label="Email address" required style="background:rgba(255,255,255,0.1);border-bottom-color:rgba(255,255,255,0.3);color:white;" name="newsletter_email"/>
+      <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address" required autocomplete="email" style="background:rgba(255,255,255,0.1);border-bottom-color:rgba(255,255,255,0.3);color:white;" name="newsletter_email"/>
       <button type="submit" class="btn-book" style="white-space:nowrap;">Subscribe</button>
      </form>
      <p style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:1rem;">By subscribing you agree to our <a href="/privacy-policy/" style="color:rgba(255,255,255,0.7);">Privacy Policy</a>.</p>

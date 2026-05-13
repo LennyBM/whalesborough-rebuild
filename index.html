@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
  <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -24,6 +24,7 @@
  <meta property="og:type" content="website" />
  <meta property="og:url" content="https://www.whalesborough.co.uk/" />
  <meta property="og:image" content="https://www.whalesborough.co.uk/assets/images/general/cottages-exterior.webp" />
+ <meta property="og:image:secure_url" content="https://www.whalesborough.co.uk/assets/images/general/cottages-exterior.webp" />
  <meta name="twitter:card" content="summary_large_image" />
  <meta name="twitter:site" content="@whalesborough" />
  <meta name="twitter:title" content="Whalesborough Farm Resort & Spa | Luxury Holidays in Cornwall" />
@@ -32,6 +33,7 @@
  <meta name="twitter:image:alt" content="Whalesborough Farm Resort & Spa | Luxury Holidays in Cornwall" />
  <meta property="og:image:width" content="1800" />
  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:type" content="image/webp" />
  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
  <meta property="og:locale" content="en_GB" />
  <meta property="og:image:alt" content="Whalesborough Farm Resort & Spa | Luxury Holidays in Cornwall" />
@@ -47,7 +49,7 @@
  <link rel="stylesheet" href="assets/css/whalesborough.min.css?v=25e5e2b" />
 
  <!-- LCP: preload hero poster frame so it paints before video metadata arrives -->
- <link rel="preload" as="image" href="assets/images/general/cottages-exterior.webp" fetchpriority="high" />
+ <link rel="preload" as="image" href="assets/images/general/cottages-exterior.webp" type="image/webp" fetchpriority="high" />
  <!-- Hint the browser to start fetching the hero video early -->
  <link rel="preload" as="video" href="assets/video/hero.webm" type="video/webm" />
 
@@ -461,7 +463,7 @@
  </div>
 
  <!-- ============ NAVIGATION ============ -->
- <nav class="site-nav" role="navigation" aria-label="Main navigation">
+ <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
    <a href="index.html" class="nav-logo" aria-label="Whalesborough Farm Resort & Spa â€” Home"><span class="logo-name">Whalesborough</span><span class="logo-sub">Farm Resort &amp; Spa</span></a>
    <ul class="nav-links" role="list">
@@ -1126,7 +1128,7 @@
      <h2 class="headline-lg" style="font-style:italic;margin-bottom:1rem;">Stay for a while.</h2>
      <p class="body-md" style="max-width:480px;margin:0 auto 0.5rem;">Join our mailing list for seasonal offers, early access to new packages, estate updates and curated Cornish guides. No noise â€” only what matters.</p>
      <form class="newsletter-form" aria-label="Newsletter subscription">
-      <input type="email" placeholder="Your email address" aria-label="Email address" required name="newsletter_email"/>
+      <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address" required autocomplete="email" name="newsletter_email"/>
       <button type="submit" class="btn-secondary">Subscribe</button>
      </form>
      <p style="font-size:0.7rem;color:var(--on-surface-variant);margin-top:1rem;">By subscribing you agree to our <a href="privacy-policy/index.html" style="color:var(--primary);">Privacy Policy</a>. Unsubscribe at any time.</p>
