@@ -180,15 +180,17 @@ button:focus-visible {
   height: 64px;
   width: auto;
   display: block;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.14));
 }
 .site-nav .nav-logo img {
-  filter: none;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.14));
 }
 /* Footer logo — larger for the brand section */
 .footer-brand img {
   height: 96px;
   width: auto;
   display: block;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.14));
 }
 
 /* ── Wordmark logo ── */
