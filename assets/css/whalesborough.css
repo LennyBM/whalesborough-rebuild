@@ -16,8 +16,8 @@
   --on-surface:               #1b1c1a;
   --on-surface-variant:       #424844;
   --outline-variant:          #c2c8c3;
-  --font-headline:            'Newsreader', Georgia, 'Times New Roman', Times, serif;
-  --font-body:                'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-headline:            'Newsreader', 'Newsreader-Fallback', Georgia, 'Times New Roman', Times, serif;
+  --font-body:                'Plus Jakarta Sans', 'PlusJakartaSans-Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
 
   /* --- Aliases for Material-style surface tokens used across inner pages --- */
   --surface-container-lowest: var(--surface-low);
@@ -197,7 +197,7 @@ button:focus-visible {
 .logo-sub {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.5rem; /* was 0.375rem (6px) — decorative; minimum 0.5rem per WCAG; add aria-hidden="true" in HTML */
+  font-size: 0.6875rem; /* bumped from 0.5rem — logo-sub is meaningful text (Farm Resort & Spa), must meet 1.4.4 */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   line-height: 1;
@@ -210,7 +210,7 @@ button:focus-visible {
   color: var(--primary);
 }
 .footer-brand .logo-sub {
-  font-size: 0.5rem; /* was 0.4375rem — minimum 0.5rem per WCAG 1.4.4 */
+  font-size: 0.6875rem; /* bumped from 0.5rem per WCAG 1.4.4 */
   margin-top: 0.375rem;
   color: var(--secondary);
 }
@@ -591,7 +591,7 @@ html { scroll-behavior: smooth; }
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
