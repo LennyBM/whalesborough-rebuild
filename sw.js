@@ -2,7 +2,7 @@
    Minimal offline-first shell. Caches critical assets on install and
    falls back to /offline.html when the network fails. */
 
-const CACHE = 'whalesborough-v3';
+const CACHE = 'whalesborough-v4';
 const CORE = [
   '/',
   '/offline.html',

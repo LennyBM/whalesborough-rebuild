@@ -125,35 +125,6 @@ function init() {
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(r => revealObserver.observe(r));
 
-  /* --- Render nav logo as white marks on transparent background for dark nav --- */
-  document.querySelectorAll('.nav-logo img').forEach(img => {
-    const toWhiteLogo = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      ctx.drawImage(img, 0, 0);
-      try {
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const d = imageData.data;
-        for (let i = 0; i < d.length; i += 4) {
-          const minC = Math.min(d[i], d[i + 1], d[i + 2]);
-          if (minC > 230) {
-            d[i + 3] = 0; // near-white background → transparent
-          } else {
-            // Logo marks → white, with soft anti-aliased edge
-            d[i] = d[i + 1] = d[i + 2] = 255;
-            d[i + 3] = minC > 180 ? Math.round((230 - minC) / 50 * 255) : 255;
-          }
-        }
-        ctx.putImageData(imageData, 0, 0);
-        img.src = canvas.toDataURL('image/png');
-      } catch (e) { /* cross-origin — leave as-is */ }
-    };
-    if (img.complete && img.naturalWidth) toWhiteLogo();
-    else img.addEventListener('load', toWhiteLogo);
-  });
-
   /* --- Connection-aware hero video: only skip on genuinely slow networks or explicit Data Saver --- */
   const heroVideo = document.querySelector('video.hero-bg');
   if (heroVideo) {
