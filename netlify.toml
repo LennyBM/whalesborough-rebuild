@@ -54,7 +54,17 @@
 
 [[redirects]]
   from = "/why-buy-a-holiday-home/"
-  to = "/holiday-home-investment/"
+  to = "/holiday-home-ownership/"
+  status = 301
+
+[[redirects]]
+  from = "/holiday-home-investment/"
+  to = "/holiday-home-ownership/"
+  status = 301
+
+[[redirects]]
+  from = "/holiday-home-investment"
+  to = "/holiday-home-ownership/"
   status = 301
 
 [[redirects]]
