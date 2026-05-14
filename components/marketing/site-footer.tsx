@@ -91,7 +91,7 @@ export function SiteFooter() {
               Whalesborough
             </p>
             <p className="mt-4 max-w-sm text-body-sm text-on-surface-variant">
-              A 450-acre working estate on the Cornish coast. Holiday cottages,
+              A 500-acre working estate on the Cornish coast. Holiday cottages,
               spa, restaurant and lodges — designed for slow returns.
             </p>
 

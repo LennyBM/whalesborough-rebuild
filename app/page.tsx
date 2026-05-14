@@ -18,7 +18,7 @@ export default function Home() {
             <span className="italic">Cornish coast</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
-            Four hundred and fifty acres of pasture, woodland and clifftop above
+            Five hundred acres of pasture, woodland and clifftop above
             Widemouth Bay. Holiday cottages, the W Club Spa, The Weir Restaurant
             and a small number of lodges to call your own.
           </p>
@@ -80,7 +80,7 @@ export default function Home() {
             <p className="eyebrow">5★ Gold VisitEngland</p>
             <p className="eyebrow">NPS 83.3 — Cornwall #1</p>
             <p className="eyebrow">Feefo 4.5 / 5</p>
-            <p className="eyebrow">450 acres · 30+ units</p>
+            <p className="eyebrow">500 acres · 30+ units</p>
           </div>
         </div>
       </section>

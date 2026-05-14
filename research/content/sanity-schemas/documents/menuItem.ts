@@ -4,7 +4,7 @@
  */
 
 import { defineField, defineType } from "sanity";
-import { OliveIcon } from "@sanity/icons";
+import { DocumentTextIcon as DishIcon } from "@sanity/icons";
 
 export const UK_ALLERGENS_14 = [
   { title: "Celery", value: "celery" },
@@ -27,7 +27,7 @@ export const menuItem = defineType({
   name: "menuItem",
   title: "Menu item",
   type: "document",
-  icon: OliveIcon,
+  icon: DishIcon,
   fields: [
     defineField({
       name: "name",

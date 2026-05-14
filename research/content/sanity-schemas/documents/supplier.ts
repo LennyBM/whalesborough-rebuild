@@ -4,13 +4,13 @@
  */
 
 import { defineField, defineType } from "sanity";
-import { LeaveIcon } from "@sanity/icons";
+import { BasketIcon } from "@sanity/icons";
 
 export const supplier = defineType({
   name: "supplier",
   title: "Supplier / producer",
   type: "document",
-  icon: LeaveIcon,
+  icon: BasketIcon,
   fields: [
     defineField({
       name: "name",

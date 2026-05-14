@@ -13,7 +13,7 @@ export const lodgeModel = defineType({
   name: "lodgeModel",
   title: "Lodge model (for sale)",
   type: "document",
-  icon: BulbOutlineIcon,
+  icon: ModelIcon,
   groups: [
     { name: "identity", title: "Identity" },
     { name: "spec", title: "Specification" },

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Whalesborough Farm Resort & Spa",
   },
   description:
-    "A 450-acre working estate on the Cornish coast. Holiday cottages, lodges, the W Club Spa and The Weir Restaurant. 5★ Gold VisitEngland.",
+    "A 500-acre working estate on the Cornish coast. Holiday cottages, lodges, the W Club Spa and The Weir Restaurant. 5★ Gold VisitEngland.",
   keywords: [
     "Whalesborough",
     "Cornwall holiday cottages",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Whalesborough Farm Resort & Spa",
     title: "Whalesborough Farm Resort & Spa — Cornish coast luxury",
     description:
-      "A 450-acre working estate on the Cornish coast. Holiday cottages, lodges, spa and restaurant.",
+      "A 500-acre working estate on the Cornish coast. Holiday cottages, lodges, spa and restaurant.",
     images: [
       {
         url: "/og-image.jpg",
