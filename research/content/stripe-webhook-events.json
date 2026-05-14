@@ -1,0 +1,334 @@
+{
+  "_doc": "Whalesborough Stripe webhook subscription matrix. Configure these events on the production and staging endpoints. Each event lists its handler responsibilities, expected processing time SLO, downstream side-effects, and idempotency key shape. Created: 2026-05-14.",
+  "endpoints": [
+    {
+      "environment": "production",
+      "url": "https://api.whalesborough.com/webhooks/stripe",
+      "api_version": "2026-04-30.acacia",
+      "signing_secret_env": "STRIPE_WEBHOOK_SECRET_LIVE",
+      "tolerance_seconds": 300,
+      "retries_accepted": true
+    },
+    {
+      "environment": "staging",
+      "url": "https://api.staging.whalesborough.com/webhooks/stripe",
+      "api_version": "2026-04-30.acacia",
+      "signing_secret_env": "STRIPE_WEBHOOK_SECRET_TEST",
+      "tolerance_seconds": 300,
+      "retries_accepted": true
+    }
+  ],
+  "events": [
+    {
+      "event": "payment_intent.succeeded",
+      "priority": "critical",
+      "slo_p95_ms": 500,
+      "handler": "handlers/paymentIntentSucceeded.ts",
+      "responsibilities": [
+        "Look up payments row by metadata.booking_id OR metadata.order_id",
+        "Mark payments row PAID with stripe_charge_id and balance_transaction_id",
+        "If revenue_stream=stay -> confirm booking, write to bookings_confirmed, trigger Resend booking-confirmation email",
+        "If revenue_stream=spa -> confirm slot in spa_bookings, trigger spa-confirmation email + add to therapist roster",
+        "If revenue_stream=dine -> confirm event ticket OR group deposit; if event, generate QR-code ticket via Resend",
+        "If revenue_stream=shop -> create order in orders table with status='paid', enqueue picking task",
+        "If revenue_stream=membership -> entitle facility access (see invoice.payment_succeeded for renewals)",
+        "If revenue_stream=lodge_sale -> notify owner-experience team via Slack, mark reservation_agreement signed pending solicitor",
+        "If revenue_stream=gift_card -> mint code via gift-card service, schedule recipient email at send_at",
+        "Accrue Acorns to circle_accounts only on fulfilment-confirmation event, NOT here (fraud guard per loyalty-spec)"
+      ],
+      "side_effects": ["resend.email", "slack.notification", "inngest.event"],
+      "idempotency": "event.id stored in webhook_events with unique constraint"
+    },
+    {
+      "event": "payment_intent.payment_failed",
+      "priority": "high",
+      "slo_p95_ms": 1000,
+      "handler": "handlers/paymentIntentFailed.ts",
+      "responsibilities": [
+        "Mark payments row FAILED with last_payment_error JSON",
+        "Release inventory holds (SAGA rollback)",
+        "If unit was held for accommodation, release the date-range hold",
+        "If spa slot was held, release",
+        "Email guest with friendly retry CTA + restored cart link",
+        "If Klarna decline, suppress Klarna option for this customer for 24h via redis cache key 'klarna:suppress:{customer_id}'",
+        "If 3DS challenge failed, increment failed_3ds_counter; at 3 fails block customer for 1h",
+        "Emit metric payment.failed{reason, revenue_stream} for Plausible/Grafana"
+      ],
+      "side_effects": ["resend.email", "redis.set", "metrics"]
+    },
+    {
+      "event": "payment_intent.requires_capture",
+      "priority": "high",
+      "slo_p95_ms": 1000,
+      "handler": "handlers/paymentIntentRequiresCapture.ts",
+      "responsibilities": [
+        "SAGA hook: verify all line-item reservations are still valid in DB",
+        "If valid -> call stripe.paymentIntents.capture",
+        "If any reservation expired -> call stripe.paymentIntents.cancel, then refund any pre-captured amounts, email guest apology + 5% next-time voucher"
+      ],
+      "side_effects": ["stripe.paymentIntents.capture/cancel", "resend.email"]
+    },
+    {
+      "event": "payment_intent.canceled",
+      "priority": "medium",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/paymentIntentCanceled.ts",
+      "responsibilities": [
+        "Mark payments row CANCELED",
+        "Release all associated holds in DB",
+        "If guest initiated, send confirmation email; if system-initiated, suppress email"
+      ]
+    },
+    {
+      "event": "charge.refunded",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/chargeRefunded.ts",
+      "responsibilities": [
+        "Update payments row with refund_amount, refund_reason, refunded_at",
+        "If partial refund, flag partial_refund=true",
+        "Reverse Acorns earned on the refunded portion (pro-rated for partial)",
+        "Email guest refund confirmation + bank statement explanation",
+        "If add-on retail goods involved, mark order_lines as refunded",
+        "Update Xero ledger via reconciliation cron (not real-time)"
+      ],
+      "side_effects": ["resend.email", "acorn_transactions.insert (reversal)"]
+    },
+    {
+      "event": "charge.dispute.created",
+      "priority": "critical",
+      "slo_p95_ms": 500,
+      "handler": "handlers/chargeDisputeCreated.ts",
+      "responsibilities": [
+        "Insert dispute row in disputes table",
+        "Alert duty manager via Slack #finance immediately",
+        "If guest is currently on-property, alert front-of-house manager via app push",
+        "Auto-attach evidence package to Stripe dispute: 3DS authentication record JSON, signed booking confirmation PDF, in-stay activity logs, communication log",
+        "Set customers.metadata.risk_review_required=true",
+        "Suppress future scheduled fulfilment (subscription renewals, scheduled gift card sends) for the customer pending resolution",
+        "Engineering Sentry warning if dispute rate exceeds 0.5% of last 30 days transactions"
+      ],
+      "side_effects": ["slack.alert", "stripe.disputes.update", "sentry.warn"]
+    },
+    {
+      "event": "charge.dispute.closed",
+      "priority": "high",
+      "slo_p95_ms": 2000,
+      "handler": "handlers/chargeDisputeClosed.ts",
+      "responsibilities": [
+        "Update dispute row with outcome (won/lost) and stripe-side fee/loss amount",
+        "If won, restore customer risk_review_required=false",
+        "If lost, retain risk flag, debit P&L 'disputes lost' in Xero",
+        "Notify finance via email summary"
+      ]
+    },
+    {
+      "event": "customer.subscription.created",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/subscriptionCreated.ts",
+      "responsibilities": [
+        "Insert w_club_memberships or lakeside_locals_memberships row",
+        "Set minimum_term_ends = start + 3 months (W Club)",
+        "Send welcome email with member ID + Wallet pass link",
+        "Issue Apple/Google Wallet pass via PassKit service",
+        "Update circle_accounts: upgrade tier if applicable (Wellness -> min Friend, Signature -> min Member per loyalty-spec §6)",
+        "Add to Klaviyo segment 'w_club_active'"
+      ],
+      "side_effects": ["resend.email", "passkit.create", "klaviyo.subscribe"]
+    },
+    {
+      "event": "customer.subscription.updated",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/subscriptionUpdated.ts",
+      "responsibilities": [
+        "Detect tier change (upgrade/downgrade): compare prior items array to new",
+        "On upgrade: entitle new tier features immediately, email confirmation",
+        "On downgrade scheduled: leave entitlements until current_period_end",
+        "Detect pause vs resume: pause_collection.behavior present/absent",
+        "On pause: gate facility access via app, start freeze fee billing",
+        "On resume: restore access, stop freeze fee billing",
+        "Detect cancel_at: scheduled cancellation, send retention offer email",
+        "Detect default_payment_method change: confirmation email"
+      ]
+    },
+    {
+      "event": "customer.subscription.deleted",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/subscriptionDeleted.ts",
+      "responsibilities": [
+        "Mark membership row status='cancelled', cancelled_at=now",
+        "Revoke facility entitlements at current_period_end (if not already)",
+        "Do NOT remove Acorn balance (separate from membership)",
+        "Send farewell email with reactivation CTA (60-day window with 50% off rejoining fee)",
+        "Update circle_accounts: do not downgrade tier (12-month rolling holds)",
+        "Remove from Klaviyo 'w_club_active' segment, add to 'w_club_lapsed' segment"
+      ]
+    },
+    {
+      "event": "customer.subscription.paused",
+      "priority": "medium",
+      "slo_p95_ms": 2000,
+      "handler": "handlers/subscriptionPaused.ts",
+      "responsibilities": [
+        "Update membership row: status='paused', pause_until from pause_collection.resumes_at",
+        "Gate facility entitlements",
+        "Start freeze maintenance fee billing (separate invoice items per paused month)",
+        "Send pause confirmation email"
+      ]
+    },
+    {
+      "event": "customer.subscription.resumed",
+      "priority": "medium",
+      "slo_p95_ms": 2000,
+      "handler": "handlers/subscriptionResumed.ts",
+      "responsibilities": [
+        "Update membership row: status='active', clear pause_until",
+        "Restore entitlements",
+        "Stop freeze fee billing",
+        "Send welcome-back email"
+      ]
+    },
+    {
+      "event": "customer.subscription.trial_will_end",
+      "priority": "low",
+      "slo_p95_ms": 3000,
+      "handler": "handlers/subscriptionTrialWillEnd.ts",
+      "responsibilities": [
+        "Send 3-day-warning email with cancel-or-keep CTA",
+        "Useful for any future trial use; not used at v1 launch"
+      ]
+    },
+    {
+      "event": "invoice.payment_succeeded",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/invoicePaymentSucceeded.ts",
+      "responsibilities": [
+        "Mark invoice row PAID",
+        "If subscription renewal, extend current_period_end, increment cycles_completed",
+        "Accrue Acorns on the renewal payment (recurring revenue earns at 1x base rate)",
+        "Send receipt email",
+        "If first invoice with joining fee, separate the joining_fee line in receipt copy"
+      ]
+    },
+    {
+      "event": "invoice.payment_failed",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/invoicePaymentFailed.ts",
+      "responsibilities": [
+        "Insert dunning event in dunning_log",
+        "Smart Retries auto-handled by Stripe (day 1, 3, 7)",
+        "On each fail, send escalating email + SMS to member",
+        "After final fail (status -> unpaid), 7-day grace then revoke entitlements",
+        "Slack alert to retention team for any high-tier (Signature, Founder) failure"
+      ]
+    },
+    {
+      "event": "invoice.upcoming",
+      "priority": "low",
+      "slo_p95_ms": 5000,
+      "handler": "handlers/invoiceUpcoming.ts",
+      "responsibilities": [
+        "Send renewal reminder email 7 days before billing",
+        "Show upcoming amount and any usage/add-on changes",
+        "For annual W Club, email 30 days + 7 days + 1 day"
+      ]
+    },
+    {
+      "event": "checkout.session.completed",
+      "priority": "high",
+      "slo_p95_ms": 1500,
+      "handler": "handlers/checkoutSessionCompleted.ts",
+      "responsibilities": [
+        "Used only for gift-card recipient flow where receiver redeems via Checkout",
+        "Confirm gift_cards row redemption activity, decrement balance",
+        "Email recipient with booking link"
+      ],
+      "note": "Main checkout uses Payment Element + manual PaymentIntent flow, not Checkout. This event handles only the gift-card-redemption Checkout sub-flow."
+    },
+    {
+      "event": "setup_intent.succeeded",
+      "priority": "medium",
+      "slo_p95_ms": 2000,
+      "handler": "handlers/setupIntentSucceeded.ts",
+      "responsibilities": [
+        "Save payment_method id to saved_payment_methods table",
+        "Update Stripe Customer with default_payment_method if first saved",
+        "Email confirmation 'Card ending **** saved to your account'",
+        "Useful for one-tap rebook and W Club auto-renewal"
+      ]
+    },
+    {
+      "event": "radar.early_fraud_warning.created",
+      "priority": "critical",
+      "slo_p95_ms": 500,
+      "handler": "handlers/radarEarlyFraudWarning.ts",
+      "responsibilities": [
+        "Flag customer for manual review by finance manager",
+        "Suppress any future scheduled fulfilment (gift card sends, hamper dispatches) for this customer",
+        "Pause any active subscription via pause_collection",
+        "If charge has not yet shipped (retail), cancel order and refund proactively to avoid chargeback",
+        "Slack alert to #finance + email finance manager"
+      ]
+    },
+    {
+      "event": "payout.failed",
+      "priority": "critical",
+      "slo_p95_ms": 500,
+      "handler": "handlers/payoutFailed.ts",
+      "responsibilities": [
+        "Slack alert to #finance",
+        "Email finance manager",
+        "Investigate cause via Stripe dashboard",
+        "Typically bank rejection or account closure — manual escalation"
+      ]
+    }
+  ],
+  "non_subscribed_events_explicitly_documented": [
+    {
+      "event": "balance.available",
+      "reason": "Not needed — payout schedule handles cash automation"
+    },
+    {
+      "event": "customer.created/updated/deleted",
+      "reason": "Not needed — we manage Customer creation server-side and propagate changes directly to Stripe via customers.update; the reverse direction is not used"
+    },
+    {
+      "event": "product.* / price.*",
+      "reason": "Not needed — products and prices are managed via bootstrap script, not edited in dashboard ad-hoc"
+    },
+    {
+      "event": "issuing.*",
+      "reason": "Not used — we don't issue Stripe-issued cards"
+    },
+    {
+      "event": "treasury.*",
+      "reason": "Not used — UK doesn't offer Treasury at this scale yet"
+    },
+    {
+      "event": "terminal.*",
+      "reason": "Future v2 if Stripe Terminal adopted for in-resort POS — not v1"
+    }
+  ],
+  "monitoring": {
+    "webhook_lag_alert": {
+      "metric": "stripe_webhook_processing_lag_seconds_p95",
+      "threshold": 30,
+      "alert_to": "engineering"
+    },
+    "webhook_failure_alert": {
+      "metric": "stripe_webhook_handler_error_count_5m",
+      "threshold": 5,
+      "alert_to": "engineering+sentry"
+    },
+    "webhook_signature_failure_alert": {
+      "metric": "stripe_webhook_signature_invalid_count_5m",
+      "threshold": 1,
+      "alert_to": "security+sentry-critical"
+    }
+  }
+}

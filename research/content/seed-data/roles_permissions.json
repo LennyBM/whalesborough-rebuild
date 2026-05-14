@@ -1,0 +1,287 @@
+{
+  "permissions": [
+    { "code": "dashboard.view", "name": "View dashboard", "category": "core" },
+    { "code": "guests.view", "name": "View guest records", "category": "guests" },
+    { "code": "guests.edit", "name": "Edit guest records", "category": "guests" },
+    { "code": "guests.delete", "name": "Delete guest records (soft delete)", "category": "guests" },
+    { "code": "guests.merge", "name": "Merge duplicate guest records", "category": "guests" },
+    { "code": "guests.export", "name": "Export guest data", "category": "guests" },
+    { "code": "guest_pii.view", "name": "View guest personal data (full)", "category": "guests" },
+    { "code": "bookings.view", "name": "View bookings", "category": "bookings" },
+    { "code": "bookings.create", "name": "Create new booking", "category": "bookings" },
+    { "code": "bookings.edit", "name": "Edit booking", "category": "bookings" },
+    { "code": "bookings.cancel", "name": "Cancel booking", "category": "bookings" },
+    { "code": "bookings.refund", "name": "Issue refund", "category": "bookings" },
+    { "code": "bookings.override_block", "name": "Override block / overbook", "category": "bookings" },
+    { "code": "rates.view", "name": "View rates", "category": "revenue" },
+    { "code": "rates.edit", "name": "Edit standard rates", "category": "revenue" },
+    { "code": "rates.dynamic", "name": "Edit dynamic pricing rules", "category": "revenue" },
+    { "code": "promos.create", "name": "Create promotions and discounts", "category": "revenue" },
+    { "code": "promos.approve", "name": "Approve promotions over threshold", "category": "revenue" },
+    { "code": "properties.view", "name": "View property records", "category": "properties" },
+    { "code": "properties.edit", "name": "Edit property records", "category": "properties" },
+    { "code": "properties.block", "name": "Block a unit for maintenance", "category": "properties" },
+    { "code": "housekeeping.view", "name": "View housekeeping schedule", "category": "operations" },
+    { "code": "housekeeping.edit", "name": "Edit housekeeping schedule and task assignment", "category": "operations" },
+    { "code": "housekeeping.complete", "name": "Mark housekeeping task complete", "category": "operations" },
+    { "code": "maintenance.view", "name": "View maintenance tickets", "category": "operations" },
+    { "code": "maintenance.create", "name": "Create maintenance ticket", "category": "operations" },
+    { "code": "maintenance.assign", "name": "Assign maintenance ticket", "category": "operations" },
+    { "code": "maintenance.resolve", "name": "Resolve maintenance ticket", "category": "operations" },
+    { "code": "spa.bookings.view", "name": "View spa bookings", "category": "spa" },
+    { "code": "spa.bookings.create", "name": "Create spa booking", "category": "spa" },
+    { "code": "spa.bookings.edit", "name": "Edit spa booking", "category": "spa" },
+    { "code": "spa.bookings.cancel", "name": "Cancel spa booking", "category": "spa" },
+    { "code": "spa.therapist_schedule.view", "name": "View therapist rota", "category": "spa" },
+    { "code": "spa.therapist_schedule.edit", "name": "Edit therapist rota", "category": "spa" },
+    { "code": "spa.treatments.view", "name": "View treatment catalogue", "category": "spa" },
+    { "code": "spa.treatments.edit", "name": "Edit treatment catalogue", "category": "spa" },
+    { "code": "spa.packages.view", "name": "View spa packages", "category": "spa" },
+    { "code": "spa.packages.edit", "name": "Edit spa packages", "category": "spa" },
+    { "code": "spa.consultation.view", "name": "View pre-treatment health consultations", "category": "spa" },
+    { "code": "spa.consultation.edit", "name": "Edit pre-treatment health consultations", "category": "spa" },
+    { "code": "restaurant.bookings.view", "name": "View restaurant bookings", "category": "restaurant" },
+    { "code": "restaurant.bookings.create", "name": "Create restaurant booking", "category": "restaurant" },
+    { "code": "restaurant.bookings.edit", "name": "Edit restaurant booking", "category": "restaurant" },
+    { "code": "restaurant.bookings.cancel", "name": "Cancel restaurant booking", "category": "restaurant" },
+    { "code": "restaurant.floorplan.edit", "name": "Edit floor-plan and section capacity", "category": "restaurant" },
+    { "code": "menus.view", "name": "View menus", "category": "restaurant" },
+    { "code": "menus.edit", "name": "Edit menu items and prices", "category": "restaurant" },
+    { "code": "allergen_log.view", "name": "View allergen and dietary log", "category": "restaurant" },
+    { "code": "allergen_log.edit", "name": "Edit allergen and dietary flags", "category": "restaurant" },
+    { "code": "experiences.view", "name": "View experiences catalogue", "category": "experiences" },
+    { "code": "experiences.create", "name": "Create new experience", "category": "experiences" },
+    { "code": "experiences.edit", "name": "Edit experience", "category": "experiences" },
+    { "code": "experiences.schedule", "name": "Manage experience schedule", "category": "experiences" },
+    { "code": "experiences.attendees", "name": "Manage attendee list and check-in", "category": "experiences" },
+    { "code": "experiences.cancel_session", "name": "Cancel session and notify guests", "category": "experiences" },
+    { "code": "loyalty.view", "name": "View loyalty balances and tiers", "category": "loyalty" },
+    { "code": "loyalty.adjust", "name": "Manually adjust Acorn balance", "category": "loyalty" },
+    { "code": "loyalty.tier_hold", "name": "Apply tier hold (concierge function)", "category": "loyalty" },
+    { "code": "loyalty.referral_audit", "name": "Audit referral activity", "category": "loyalty" },
+    { "code": "memberships.view", "name": "View memberships", "category": "memberships" },
+    { "code": "memberships.create", "name": "Create membership signup", "category": "memberships" },
+    { "code": "memberships.edit", "name": "Edit membership", "category": "memberships" },
+    { "code": "memberships.cancel", "name": "Cancel membership", "category": "memberships" },
+    { "code": "memberships.freeze", "name": "Freeze membership", "category": "memberships" },
+    { "code": "vouchers.view", "name": "View gift vouchers", "category": "commerce" },
+    { "code": "vouchers.issue", "name": "Issue gift voucher", "category": "commerce" },
+    { "code": "vouchers.redeem", "name": "Redeem gift voucher", "category": "commerce" },
+    { "code": "vouchers.refund", "name": "Refund gift voucher", "category": "commerce" },
+    { "code": "retail.view", "name": "View retail catalogue", "category": "commerce" },
+    { "code": "retail.edit", "name": "Edit retail catalogue", "category": "commerce" },
+    { "code": "retail.stock", "name": "Edit stock counts", "category": "commerce" },
+    { "code": "leads.view", "name": "View sales leads", "category": "lodges" },
+    { "code": "leads.edit", "name": "Edit sales leads", "category": "lodges" },
+    { "code": "leads.score", "name": "View lead score model", "category": "lodges" },
+    { "code": "leads.assign", "name": "Assign leads to reps", "category": "lodges" },
+    { "code": "lodges.inventory.view", "name": "View lodge inventory", "category": "lodges" },
+    { "code": "lodges.inventory.edit", "name": "Edit lodge inventory", "category": "lodges" },
+    { "code": "lodges.plot.release", "name": "Release lodge plot for sale", "category": "lodges" },
+    { "code": "lodges.reservation.create", "name": "Create lodge reservation", "category": "lodges" },
+    { "code": "lodges.reservation.cancel", "name": "Cancel lodge reservation", "category": "lodges" },
+    { "code": "lodges.aml.review", "name": "Review AML decisions", "category": "lodges" },
+    { "code": "lodges.copy.publish", "name": "Publish lodge-sales copy", "category": "lodges" },
+    { "code": "lodges.copy.legal_approve", "name": "Apply FCA legal-approval flag", "category": "lodges" },
+    { "code": "build_milestones.view", "name": "View build milestones", "category": "lodges" },
+    { "code": "build_milestones.edit", "name": "Edit build milestones", "category": "lodges" },
+    { "code": "snagging.view", "name": "View snagging tickets", "category": "lodges" },
+    { "code": "snagging.resolve", "name": "Resolve snagging ticket", "category": "lodges" },
+    { "code": "rental_pool.view", "name": "View rental performance", "category": "lodges" },
+    { "code": "rental_pool.edit", "name": "Edit rental pool enrolment", "category": "lodges" },
+    { "code": "finance.view", "name": "View finance reports", "category": "finance" },
+    { "code": "finance.export", "name": "Export finance data", "category": "finance" },
+    { "code": "finance.refunds.approve", "name": "Approve refunds over threshold", "category": "finance" },
+    { "code": "cms.view", "name": "View CMS content", "category": "cms" },
+    { "code": "cms.edit", "name": "Edit CMS content", "category": "cms" },
+    { "code": "cms.publish", "name": "Publish CMS content", "category": "cms" },
+    { "code": "marketing.view", "name": "View marketing reports", "category": "marketing" },
+    { "code": "marketing.campaigns", "name": "Create and edit marketing campaigns", "category": "marketing" },
+    { "code": "marketing.consent.view", "name": "View consent records", "category": "marketing" },
+    { "code": "users.view", "name": "View staff users", "category": "admin" },
+    { "code": "users.invite", "name": "Invite staff user", "category": "admin" },
+    { "code": "users.edit", "name": "Edit staff user", "category": "admin" },
+    { "code": "users.deactivate", "name": "Deactivate staff user", "category": "admin" },
+    { "code": "roles.view", "name": "View roles and permissions", "category": "admin" },
+    { "code": "roles.edit", "name": "Edit roles and permissions", "category": "admin" },
+    { "code": "audit_log.view", "name": "View audit log", "category": "admin" },
+    { "code": "settings.view", "name": "View system settings", "category": "admin" },
+    { "code": "settings.edit", "name": "Edit system settings", "category": "admin" },
+    { "code": "integrations.view", "name": "View integrations", "category": "admin" },
+    { "code": "integrations.edit", "name": "Edit integrations", "category": "admin" },
+    { "code": "sar.handle", "name": "Handle subject access requests and erasure", "category": "admin" }
+  ],
+  "roles": [
+    {
+      "slug": "super-admin",
+      "name": "Super Admin",
+      "description": "Unrestricted access to every system. Reserved for the CTO and a single nominated technical owner.",
+      "permissions": "ALL",
+      "max_count": 2
+    },
+    {
+      "slug": "estate-director",
+      "name": "Estate Director",
+      "description": "Group-wide read across every system, write on operational and strategic data. Cannot edit roles or settings.",
+      "permissions": [
+        "dashboard.view", "guests.view", "guests.edit", "bookings.view", "bookings.create", "bookings.edit", "bookings.cancel", "bookings.refund",
+        "rates.view", "rates.edit", "rates.dynamic", "promos.create", "promos.approve",
+        "properties.view", "properties.edit", "properties.block",
+        "housekeeping.view", "housekeeping.edit", "maintenance.view", "maintenance.create", "maintenance.assign", "maintenance.resolve",
+        "spa.bookings.view", "spa.bookings.edit", "spa.therapist_schedule.view", "spa.treatments.view", "spa.packages.view",
+        "restaurant.bookings.view", "restaurant.bookings.edit", "restaurant.floorplan.edit", "menus.view", "allergen_log.view",
+        "experiences.view", "experiences.create", "experiences.edit", "experiences.schedule",
+        "loyalty.view", "loyalty.adjust", "loyalty.tier_hold", "memberships.view", "memberships.edit",
+        "vouchers.view", "vouchers.issue", "retail.view",
+        "leads.view", "leads.edit", "leads.assign",
+        "lodges.inventory.view", "lodges.inventory.edit", "lodges.plot.release", "build_milestones.view", "rental_pool.view",
+        "finance.view", "finance.refunds.approve", "cms.view", "cms.edit", "cms.publish",
+        "marketing.view", "marketing.campaigns", "marketing.consent.view",
+        "users.view", "audit_log.view"
+      ]
+    },
+    {
+      "slug": "sales-manager",
+      "name": "Sales Manager (Lodge Sales)",
+      "description": "Heads the lodge sales team. Full pipeline management and lead assignment.",
+      "permissions": [
+        "dashboard.view", "guests.view", "leads.view", "leads.edit", "leads.score", "leads.assign",
+        "lodges.inventory.view", "lodges.inventory.edit", "lodges.plot.release",
+        "lodges.reservation.create", "lodges.reservation.cancel",
+        "lodges.aml.review", "lodges.copy.publish", "build_milestones.view", "build_milestones.edit",
+        "snagging.view", "rental_pool.view", "rental_pool.edit",
+        "marketing.view", "marketing.campaigns", "audit_log.view", "cms.view"
+      ]
+    },
+    {
+      "slug": "sales-rep",
+      "name": "Sales Rep (Lodge Sales)",
+      "description": "Front-line lodge sales executive. Works own pipeline, no bulk-edit privileges.",
+      "permissions": [
+        "dashboard.view", "guests.view", "leads.view", "leads.edit", "leads.score",
+        "lodges.inventory.view", "lodges.reservation.create",
+        "build_milestones.view", "snagging.view",
+        "marketing.view", "cms.view"
+      ]
+    },
+    {
+      "slug": "reception",
+      "name": "Reception / Front of House",
+      "description": "Day-to-day booking, check-in, payment and concierge at the main reception.",
+      "permissions": [
+        "dashboard.view", "guests.view", "guests.edit", "guests.merge",
+        "bookings.view", "bookings.create", "bookings.edit", "bookings.cancel", "bookings.refund",
+        "rates.view", "promos.create",
+        "properties.view", "properties.block",
+        "housekeeping.view", "maintenance.view", "maintenance.create",
+        "spa.bookings.view", "spa.bookings.create", "spa.bookings.edit",
+        "restaurant.bookings.view", "restaurant.bookings.create", "restaurant.bookings.edit",
+        "experiences.view", "experiences.attendees",
+        "loyalty.view", "loyalty.adjust",
+        "memberships.view", "memberships.create", "memberships.edit",
+        "vouchers.view", "vouchers.issue", "vouchers.redeem"
+      ]
+    },
+    {
+      "slug": "housekeeping-supervisor",
+      "name": "Housekeeping Supervisor",
+      "description": "Manages the housekeeping rota, task assignment and stock.",
+      "permissions": [
+        "dashboard.view", "bookings.view", "properties.view", "properties.block",
+        "housekeeping.view", "housekeeping.edit", "housekeeping.complete",
+        "maintenance.view", "maintenance.create", "maintenance.assign", "retail.stock"
+      ]
+    },
+    {
+      "slug": "housekeeper",
+      "name": "Housekeeper",
+      "description": "Receives task list on tablet, marks completion, flags maintenance issues.",
+      "permissions": [
+        "housekeeping.view", "housekeeping.complete", "maintenance.create"
+      ]
+    },
+    {
+      "slug": "maintenance",
+      "name": "Maintenance / Site Engineer",
+      "description": "Picks up maintenance tickets, resolves and updates status.",
+      "permissions": [
+        "dashboard.view", "properties.view",
+        "maintenance.view", "maintenance.create", "maintenance.assign", "maintenance.resolve",
+        "snagging.view", "snagging.resolve", "build_milestones.view"
+      ]
+    },
+    {
+      "slug": "spa-manager",
+      "name": "Spa Manager",
+      "description": "Manages the W Club spa — bookings, therapist rota, treatment menu, memberships.",
+      "permissions": [
+        "dashboard.view", "guests.view", "guests.edit",
+        "spa.bookings.view", "spa.bookings.create", "spa.bookings.edit", "spa.bookings.cancel",
+        "spa.therapist_schedule.view", "spa.therapist_schedule.edit",
+        "spa.treatments.view", "spa.treatments.edit",
+        "spa.packages.view", "spa.packages.edit",
+        "spa.consultation.view", "spa.consultation.edit",
+        "memberships.view", "memberships.create", "memberships.edit", "memberships.cancel", "memberships.freeze",
+        "experiences.view", "experiences.edit", "experiences.schedule",
+        "loyalty.view", "vouchers.view", "vouchers.issue", "vouchers.redeem",
+        "retail.view", "retail.edit", "marketing.view", "cms.view"
+      ]
+    },
+    {
+      "slug": "spa-therapist",
+      "name": "Spa Therapist",
+      "description": "Treats guests. Sees own schedule and pre-treatment consultations.",
+      "permissions": [
+        "spa.bookings.view", "spa.therapist_schedule.view",
+        "spa.consultation.view", "spa.consultation.edit",
+        "spa.treatments.view"
+      ]
+    },
+    {
+      "slug": "restaurant-manager",
+      "name": "Restaurant Manager",
+      "description": "Manages The Weir — bookings, covers, allergen log, menus.",
+      "permissions": [
+        "dashboard.view", "guests.view", "guests.edit",
+        "restaurant.bookings.view", "restaurant.bookings.create", "restaurant.bookings.edit", "restaurant.bookings.cancel",
+        "restaurant.floorplan.edit",
+        "menus.view", "menus.edit",
+        "allergen_log.view", "allergen_log.edit",
+        "experiences.view", "experiences.edit",
+        "loyalty.view", "loyalty.adjust", "vouchers.view", "vouchers.issue", "vouchers.redeem",
+        "memberships.view", "memberships.create",
+        "marketing.view", "cms.view"
+      ]
+    },
+    {
+      "slug": "chef",
+      "name": "Chef / Kitchen",
+      "description": "Receives allergen-flagged bookings, edits menu items, manages dietary log.",
+      "permissions": [
+        "restaurant.bookings.view", "menus.view", "menus.edit",
+        "allergen_log.view", "allergen_log.edit"
+      ]
+    },
+    {
+      "slug": "marketing",
+      "name": "Marketing / CMS Editor",
+      "description": "Manages content, campaigns and consent reporting.",
+      "permissions": [
+        "dashboard.view", "cms.view", "cms.edit", "cms.publish",
+        "marketing.view", "marketing.campaigns", "marketing.consent.view",
+        "experiences.view"
+      ]
+    },
+    {
+      "slug": "finance",
+      "name": "Finance",
+      "description": "Sees finance reports and approves refunds over the front-of-house threshold.",
+      "permissions": [
+        "dashboard.view", "bookings.view", "bookings.refund",
+        "finance.view", "finance.export", "finance.refunds.approve",
+        "vouchers.view", "vouchers.refund",
+        "rental_pool.view", "audit_log.view"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "code": "rituals",
+    "slug": "gaia-rituals",
+    "name": "Gaia Rituals",
+    "order_index": 1,
+    "description": "The signature line. Multi-stage journeys built around three Gaia oil blends — Calming, Awakening and Balancing — plus longer ceremonial work.",
+    "best_for": "Guests who want a full experience, not a single technique.",
+    "house_brand": "Gaia Natural Skincare",
+    "status": "active"
+  },
+  {
+    "code": "facials",
+    "slug": "facials",
+    "name": "Facials",
+    "order_index": 2,
+    "description": "Considered skin work. Plant actives, jade wands, lifting massage, lymphatic drainage.",
+    "best_for": "Skin that wants attention without surgery, needles or downtime.",
+    "house_brand": "Gaia Natural Skincare",
+    "status": "active"
+  },
+  {
+    "code": "body-massage",
+    "slug": "body-and-massage",
+    "name": "Body & Massage",
+    "order_index": 3,
+    "description": "Honest, technical bodywork. Salt, hot stone, Indian head, bespoke pressure.",
+    "best_for": "Tension, travel ache, training fatigue, a long week.",
+    "house_brand": "Gaia Natural Skincare",
+    "status": "active"
+  },
+  {
+    "code": "hands-feet",
+    "slug": "hands-and-feet",
+    "name": "Hands & Feet",
+    "order_index": 4,
+    "description": "Quiet, polished, properly done.",
+    "best_for": "A short window, a wedding morning, a Friday afternoon.",
+    "house_brand": "Gaia Natural Skincare",
+    "status": "active"
+  },
+  {
+    "code": "teen-junior",
+    "slug": "teen-and-junior",
+    "name": "Teen & Junior",
+    "order_index": 5,
+    "description": "Age-appropriate treatments for guests aged 13 to 16. Adult accompaniment required.",
+    "best_for": "Birthday treats, mother-and-daughter rituals, family stays.",
+    "house_brand": "Gaia Natural Skincare",
+    "status": "active"
+  }
+]

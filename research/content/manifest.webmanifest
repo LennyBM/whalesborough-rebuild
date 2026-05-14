@@ -1,0 +1,222 @@
+{
+  "name": "Whalesborough Farm Resort & Spa",
+  "short_name": "Whalesborough",
+  "description": "Cornwall's 5-star coastal retreat — book lodges, spa, dining and estate experiences.",
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
+  "theme_color": "#4a6457",
+  "background_color": "#fbf9f6",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["travel", "lifestyle", "shopping"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "handle_links": "preferred",
+  "scope_extensions": [
+    { "origin": "https://book.whalesborough.com" },
+    { "origin": "https://owners.whalesborough.com" }
+  ],
+  "icons": [
+    {
+      "src": "/icons/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-180-apple-touch.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/monochrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "monochrome"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/home-wide.webp",
+      "sizes": "1920x1080",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Whalesborough home — cottages, spa, dining"
+    },
+    {
+      "src": "/screenshots/stay-wide.webp",
+      "sizes": "1920x1080",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Find your stay — 30 cottages and Arvor Suites"
+    },
+    {
+      "src": "/screenshots/spa-wide.webp",
+      "sizes": "1920x1080",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "The W Club — Rituals and Journeys"
+    },
+    {
+      "src": "/screenshots/home-narrow.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Whalesborough home"
+    },
+    {
+      "src": "/screenshots/stay-narrow.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Find your stay"
+    },
+    {
+      "src": "/screenshots/spa-narrow.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Book a spa treatment"
+    },
+    {
+      "src": "/screenshots/dine-narrow.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Reserve a table at The Weir"
+    },
+    {
+      "src": "/screenshots/map-narrow.webp",
+      "sizes": "1080x1920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Estate map with live status"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check availability",
+      "short_name": "Stay",
+      "description": "Find a cottage or Arvor Suite for your dates",
+      "url": "/stay/availability?source=shortcut",
+      "icons": [
+        { "src": "/icons/shortcut-stay-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Book a spa treatment",
+      "short_name": "Spa",
+      "description": "The W Club rituals and journeys",
+      "url": "/spa/book?source=shortcut",
+      "icons": [
+        { "src": "/icons/shortcut-spa-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Reserve a table",
+      "short_name": "Dine",
+      "description": "The Weir — breakfast, lunch, events",
+      "url": "/dine/reserve?source=shortcut",
+      "icons": [
+        { "src": "/icons/shortcut-dine-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Estate map",
+      "short_name": "Map",
+      "description": "450-acre estate with live status",
+      "url": "/estate/map?source=shortcut",
+      "icons": [
+        { "src": "/icons/shortcut-map-192.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share/journal",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "note",
+      "url": "url",
+      "files": [
+        {
+          "name": "photos",
+          "accept": ["image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"]
+        }
+      ]
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+whalesborough",
+      "url": "/deep-link?ref=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/share/journal",
+      "accept": {
+        "image/jpeg": [".jpg", ".jpeg"],
+        "image/png": [".png"],
+        "image/heic": [".heic"]
+      },
+      "icons": [
+        { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "related_applications": [],
+  "permissions_policy": {
+    "geolocation": ["self"],
+    "camera": ["self"],
+    "bluetooth": ["self"],
+    "notifications": ["self"]
+  }
+}

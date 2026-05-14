@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color tokens (mirrored from tailwind config for global reference) */
+    --color-primary: #703a1d;
+    --color-primary-hover: #5e3018;
+    --color-primary-pressed: #4d2613;
+    --color-primary-disabled: #b69783;
+    --color-on-primary: #ffffff;
+
+    --color-secondary: #4a6457;
+    --color-secondary-hover: #3e564a;
+    --color-secondary-pressed: #324839;
+    --color-on-secondary: #ffffff;
+
+    --color-background: #fbf9f6;
+    --color-surface: #fbf9f6;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f5f3f0;
+    --color-surface-container: #efeeeb;
+    --color-surface-container-high: #eae8e5;
+    --color-surface-container-highest: #e4e2df;
+
+    --color-on-surface: #1b1c1a;
+    --color-on-surface-variant: #424844;
+    --color-on-surface-muted: #6b7370;
+    --color-on-surface-disabled: #a8aeaa;
+
+    --color-outline: #c2c8c3;
+    --color-outline-variant: rgba(194, 200, 195, 0.15);
+
+    --color-success: #4a6e4f;
+    --color-warning: #a86b2a;
+    --color-error: #8a3324;
+    --color-info: #3e5562;
+
+    --color-accent-gold: #b89968;
+    --color-accent-bone: #ece5d6;
+
+    --color-overlay-glass: rgba(251, 249, 246, 0.05);
+    --color-overlay-scrim: rgba(27, 28, 26, 0.6);
+    --color-overlay-image-tint: rgba(74, 100, 87, 0.2);
+
+    /* Motion tokens */
+    --motion-duration-instant: 100ms;
+    --motion-duration-fast: 200ms;
+    --motion-duration-base: 400ms;
+    --motion-duration-slow: 700ms;
+    --motion-duration-deliberate: 1200ms;
+    --motion-duration-theatrical: 2000ms;
+
+    --motion-ease-out-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-ease-in-luxury: cubic-bezier(0.7, 0, 0.84, 0);
+    --motion-ease-in-out-silk: cubic-bezier(0.65, 0, 0.35, 1);
+    --motion-ease-organic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Reset & defaults */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-color: transparent;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-weight: 400;
+  }
+
+  /* Prevent iOS zoom on focus by enforcing 16px minimum on form fields */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  @media (min-width: 768px) {
+    input, textarea, select {
+      font-size: inherit;
+    }
+  }
+
+  /* Focus ring — sage tinted, not browser-default blue */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Respect reduced-motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+  }
+}
+
+@layer utilities {
+  /* Editorial heading utility — Newsreader display with negative tracking */
+  .heading-editorial {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* Eyebrow label utility — uppercase tracked */
+  .eyebrow {
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Glass surface utility — sparing use only */
+  .glass {
+    background-color: var(--color-overlay-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}

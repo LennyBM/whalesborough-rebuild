@@ -1,0 +1,743 @@
+{
+  "_doc": "Whalesborough Stripe Products bootstrap payload. Each object is a Stripe API request body for POST /v1/products. Idempotent on metadata.internal_sku (the create script must lookup existing and call products.update if found). Field 'tax_code' must be one of the codes listed in stripe-config.md §2.3. Created: 2026-05-14.",
+  "products": [
+    {
+      "name": "WB / Stay / Lodge / trelowen-01",
+      "description": "Trelowen 1 — Premium lakeside lodge, 2 bedroom, sleeps 4, hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "url": "https://whalesborough.com/stay/lodges/trelowen/trelowen-01",
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "trelowen",
+        "internal_sku": "trelowen-01",
+        "occupancy_max": "4",
+        "bedrooms": "2",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / trelowen-02",
+      "description": "Trelowen 2 — Premium lakeside lodge, 2 bedroom, sleeps 4, hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "url": "https://whalesborough.com/stay/lodges/trelowen/trelowen-02",
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "trelowen",
+        "internal_sku": "trelowen-02",
+        "occupancy_max": "4",
+        "bedrooms": "2",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / trelowen-03",
+      "description": "Trelowen 3 — Premium lakeside lodge, 2 bedroom, sleeps 4, hot tub",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "trelowen",
+        "internal_sku": "trelowen-03",
+        "occupancy_max": "4",
+        "bedrooms": "2",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / trelowen-04",
+      "description": "Trelowen 4 — Premium lakeside lodge, 2 bedroom, sleeps 4, hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "trelowen",
+        "internal_sku": "trelowen-04",
+        "occupancy_max": "4",
+        "bedrooms": "2",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / tevi-01",
+      "description": "Tevi 1 — Signature lakeside lodge, 3 bedroom, sleeps 6, private hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "tevi",
+        "internal_sku": "tevi-01",
+        "occupancy_max": "6",
+        "bedrooms": "3",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / tevi-02",
+      "description": "Tevi 2 — Signature lakeside lodge, 3 bedroom, sleeps 6, hot tub",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "tevi",
+        "internal_sku": "tevi-02",
+        "occupancy_max": "6",
+        "bedrooms": "3",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / tevi-03",
+      "description": "Tevi 3 — Signature lakeside lodge, 3 bedroom, sleeps 6, hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "tevi",
+        "internal_sku": "tevi-03",
+        "occupancy_max": "6",
+        "bedrooms": "3",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / tevi-04",
+      "description": "Tevi 4 — Signature lakeside lodge, 3 bedroom, sleeps 6, hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "tevi",
+        "internal_sku": "tevi-04",
+        "occupancy_max": "6",
+        "bedrooms": "3",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / tevi-05",
+      "description": "Tevi 5 — Signature lakeside lodge, 3 bedroom, sleeps 6, hot tub",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "tevi",
+        "internal_sku": "tevi-05",
+        "occupancy_max": "6",
+        "bedrooms": "3",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / tevi-06",
+      "description": "Tevi 6 — Signature lakeside lodge, 3 bedroom, sleeps 6, hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "tevi",
+        "internal_sku": "tevi-06",
+        "occupancy_max": "6",
+        "bedrooms": "3",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / gwelva-01",
+      "description": "Gwelva 1 — Premier hilltop lodge, 4 bedroom, sleeps 8, double hot tub, sauna",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "gwelva",
+        "internal_sku": "gwelva-01",
+        "occupancy_max": "8",
+        "bedrooms": "4",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / gwelva-02",
+      "description": "Gwelva 2 — Premier hilltop lodge, 4 bedroom, sleeps 8, double hot tub, sauna",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "gwelva",
+        "internal_sku": "gwelva-02",
+        "occupancy_max": "8",
+        "bedrooms": "4",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / gwelva-03",
+      "description": "Gwelva 3 — Premier hilltop lodge, 4 bedroom, sleeps 8, hot tub",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "gwelva",
+        "internal_sku": "gwelva-03",
+        "occupancy_max": "8",
+        "bedrooms": "4",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "name": "WB / Stay / Lodge / gwelva-04",
+      "description": "Gwelva 4 — Premier hilltop lodge, 4 bedroom, sleeps 8, double hot tub, dog-friendly",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "lodge",
+        "tier": "gwelva",
+        "internal_sku": "gwelva-04",
+        "occupancy_max": "8",
+        "bedrooms": "4",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Cottage / orchard-01",
+      "description": "Orchard Cottage 1 — Restored estate cottage, 2 bedroom, sleeps 4, wood-burner",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "cottage",
+        "tier": "orchard",
+        "internal_sku": "orchard-01",
+        "occupancy_max": "4",
+        "bedrooms": "2",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Cottage / orchard-02",
+      "description": "Orchard Cottage 2 — Restored estate cottage, 2 bedroom, sleeps 4, wood-burner",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "cottage",
+        "tier": "orchard",
+        "internal_sku": "orchard-02",
+        "occupancy_max": "4",
+        "bedrooms": "2",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Cottage / orchard-03",
+      "description": "Orchard Cottage 3 — Restored estate cottage, 1 bedroom, sleeps 2",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "cottage",
+        "tier": "orchard",
+        "internal_sku": "orchard-03",
+        "occupancy_max": "2",
+        "bedrooms": "1",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "name": "WB / Stay / Cottage / orchard-04",
+      "description": "Orchard Cottage 4 — Restored estate cottage, 1 bedroom, sleeps 2",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "cottage",
+        "tier": "orchard",
+        "internal_sku": "orchard-04",
+        "occupancy_max": "2",
+        "bedrooms": "1",
+        "dog_friendly": "true"
+      }
+    },
+    {
+      "name": "WB / Stay / Hotel / weir-room-01",
+      "description": "The Weir Room 01 — Hotel double, garden view",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "hotel_room",
+        "tier": "weir",
+        "internal_sku": "weir-room-01",
+        "occupancy_max": "2",
+        "bedrooms": "1",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "name": "WB / Stay / Hotel / weir-room-02",
+      "description": "The Weir Room 02 — Hotel king, garden view",
+      "tax_code": "txcd_30060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "stay",
+        "category": "hotel_room",
+        "tier": "weir",
+        "internal_sku": "weir-room-02",
+        "occupancy_max": "2",
+        "bedrooms": "1",
+        "dog_friendly": "false"
+      }
+    },
+    {
+      "_note": "Remaining accommodation Products follow the same pattern. Truncated for brevity; the bootstrap script iterates the units.json file. Add bespoke-01 and bespoke-02 last (highest-value, two-bedroom-plus).",
+      "_total_accommodation_products": 34
+    },
+    {
+      "name": "WB / Spa / Ritual / estate-restorative-60",
+      "description": "Estate Restorative — signature 60-min full-body ritual, four-handed option available",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "spa",
+        "category": "ritual",
+        "duration_min": "60",
+        "internal_sku": "estate-restorative-60"
+      }
+    },
+    {
+      "name": "WB / Spa / Ritual / estate-restorative-90",
+      "description": "Estate Restorative — extended 90-min full-body ritual",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "spa",
+        "category": "ritual",
+        "duration_min": "90",
+        "internal_sku": "estate-restorative-90"
+      }
+    },
+    {
+      "name": "WB / Spa / Facial / gaia-awakening-60",
+      "description": "Gaia Awakening Facial — 60-min brightening ritual",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "spa",
+        "category": "facial",
+        "duration_min": "60",
+        "internal_sku": "gaia-awakening-60"
+      }
+    },
+    {
+      "name": "WB / Spa / Package / spa-day-for-two",
+      "description": "Spa Day for Two — full day spa access plus 60-min treatment each, lunch in The W Club",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "spa",
+        "category": "package",
+        "internal_sku": "spa-day-for-two",
+        "contains": "spa_day_access,60min_treatment_x2,lunch_x2"
+      }
+    },
+    {
+      "_note": "30 treatments + 14 packages total. Full list in spa-treatments.md and spa-packages.md, iterated by bootstrap.",
+      "_total_spa_products": 44
+    },
+    {
+      "name": "WB / Membership / WClub / pool-gym",
+      "description": "W Club — Pool & Gym membership. Pool, gym, sauna, steam.",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club",
+        "tier": "pool_gym",
+        "internal_sku": "w-club-pool-gym"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / wellness",
+      "description": "W Club — Wellness membership. P&G plus weekly class, treatment discount, retail discount.",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club",
+        "tier": "wellness",
+        "internal_sku": "w-club-wellness"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / signature",
+      "description": "W Club — Signature membership. All Wellness plus monthly 60-min treatment, unlimited classes.",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club",
+        "tier": "signature",
+        "internal_sku": "w-club-signature"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / founder",
+      "description": "W Club — Founder lifetime membership. Inaugural cohort, capped at 100.",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club",
+        "tier": "founder",
+        "internal_sku": "w-club-founder",
+        "capped_at": "100"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / family-addon-partner",
+      "description": "W Club Family — partner add-on",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club_family",
+        "internal_sku": "w-club-family-partner"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / family-addon-child",
+      "description": "W Club Family — child 12-17 add-on",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club_family",
+        "internal_sku": "w-club-family-child"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / joining-fee-pool-gym",
+      "description": "W Club Pool & Gym joining fee",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club_joining_fee",
+        "tier": "pool_gym",
+        "internal_sku": "w-club-joining-pg"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / joining-fee-wellness",
+      "description": "W Club Wellness joining fee",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club_joining_fee",
+        "tier": "wellness",
+        "internal_sku": "w-club-joining-wellness"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / joining-fee-signature",
+      "description": "W Club Signature joining fee",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club_joining_fee",
+        "tier": "signature",
+        "internal_sku": "w-club-joining-signature"
+      }
+    },
+    {
+      "name": "WB / Membership / WClub / freeze-maintenance",
+      "description": "W Club freeze maintenance fee (per month)",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "w_club_freeze_fee",
+        "internal_sku": "w-club-freeze-fee"
+      }
+    },
+    {
+      "name": "WB / Membership / LakesideLocals / annual",
+      "description": "Lakeside Locals — annual restaurant membership, £35/year",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "membership",
+        "product_line": "lakeside_locals",
+        "internal_sku": "lakeside-locals-annual"
+      }
+    },
+    {
+      "name": "WB / Dine / Deposit / group-deposit",
+      "description": "Restaurant group booking deposit (8+ covers) — £25 per cover, applied to final bill",
+      "tax_code": "txcd_40060001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "dine",
+        "category": "deposit",
+        "internal_sku": "restaurant-group-deposit"
+      }
+    },
+    {
+      "name": "WB / Dine / Event / supper-club-template",
+      "description": "Template product — one Product per dated supper club event, created nightly from events schedule.",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "dine",
+        "category": "event",
+        "internal_sku": "supper-club-template"
+      }
+    },
+    {
+      "name": "WB / LodgeSale / ReservationDeposit",
+      "description": "Reservation deposit — Whalesborough lodge purchase, refundable per Reservation Agreement v1",
+      "tax_code": "txcd_99999999",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "lodge_sale",
+        "category": "reservation_deposit",
+        "internal_sku": "lodge-reservation-deposit",
+        "refundable": "true",
+        "linked_to": "reservation_agreement_v1"
+      }
+    },
+    {
+      "name": "WB / Shop / EstateMade / honey-single-hive",
+      "description": "Single-hive honey from the Whalesborough apiary",
+      "tax_code": "txcd_40050001",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "estate_made",
+        "subcategory": "apiary",
+        "internal_sku": "honey-single-hive",
+        "fulfilment_type": "estate_dispatch",
+        "weight_g": "340"
+      }
+    },
+    {
+      "name": "WB / Shop / EstateMade / honey-gift-box-3",
+      "description": "Whalesborough single-hive honey gift box of three",
+      "tax_code": "txcd_40050001",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "estate_made",
+        "subcategory": "apiary",
+        "internal_sku": "honey-gift-box-3",
+        "fulfilment_type": "estate_dispatch"
+      }
+    },
+    {
+      "name": "WB / Shop / EstateMade / gin-bottle-70cl",
+      "description": "Whalesborough Distillery Gin — 70cl. Adult signature on delivery (18+).",
+      "tax_code": "txcd_40060003",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "estate_made",
+        "subcategory": "distillery",
+        "internal_sku": "gin-bottle-70cl",
+        "fulfilment_type": "estate_dispatch_adult_signature",
+        "age_gate": "18",
+        "weight_g": "1200"
+      }
+    },
+    {
+      "name": "WB / Shop / Provisions / cream-tea-kit-2",
+      "description": "Cream tea kit for two — scones, jam, clotted cream, tea",
+      "tax_code": "txcd_40050001",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "provisions",
+        "internal_sku": "cream-tea-kit-2",
+        "fulfilment_type": "perishable_chilled",
+        "perishable": "true"
+      }
+    },
+    {
+      "name": "WB / Shop / Provisions / hamper-mini",
+      "description": "Mini Whalesborough hamper — three estate-made items",
+      "tax_code": "txcd_99999999",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "hamper",
+        "internal_sku": "hamper-mini",
+        "fulfilment_type": "made_to_order",
+        "lead_time_days": "3"
+      }
+    },
+    {
+      "name": "WB / Shop / Provisions / hamper-classic",
+      "description": "Classic Whalesborough hamper — selection of estate-made and curated items",
+      "tax_code": "txcd_99999999",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "hamper",
+        "internal_sku": "hamper-classic",
+        "fulfilment_type": "made_to_order",
+        "lead_time_days": "3"
+      }
+    },
+    {
+      "name": "WB / Shop / Provisions / hamper-ultra",
+      "description": "Ultra Whalesborough hamper — premium curation including gin, hand-cured charcuterie",
+      "tax_code": "txcd_99999999",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "hamper",
+        "internal_sku": "hamper-ultra",
+        "fulfilment_type": "made_to_order",
+        "lead_time_days": "5",
+        "contains_alcohol": "true"
+      }
+    },
+    {
+      "name": "WB / Shop / WClubRetail / gaia-skincare-balancing-serum",
+      "description": "Gaia Skincare — Balancing serum, 30ml",
+      "tax_code": "txcd_99999999",
+      "shippable": true,
+      "metadata": {
+        "revenue_stream": "shop",
+        "category": "spa_retail",
+        "internal_sku": "gaia-balancing-serum-30ml",
+        "fulfilment_type": "estate_dispatch"
+      }
+    },
+    {
+      "_note": "Retail SKU list truncated. Bootstrap iterates products.json from CMS. Final estimate 220-260 retail SKUs at v1.",
+      "_total_retail_products_estimate": 240
+    },
+    {
+      "name": "WB / Activity / Tour / tractor-tour",
+      "description": "Whalesborough Tractor & Estate Tour — 90 min, family-friendly",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "activity",
+        "category": "tour",
+        "internal_sku": "tractor-tour"
+      }
+    },
+    {
+      "name": "WB / Activity / Tour / alpaca-feeding",
+      "description": "Alpaca feeding experience — 45 min, all ages",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "activity",
+        "category": "tour",
+        "internal_sku": "alpaca-feeding"
+      }
+    },
+    {
+      "name": "WB / Activity / Fishing / guided-slot",
+      "description": "Guided fishing slot on the Whalesborough lakes — 3 hours, gear included",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "activity",
+        "category": "fishing",
+        "internal_sku": "guided-fishing-slot"
+      }
+    },
+    {
+      "name": "WB / Gift / Monetary",
+      "description": "Whalesborough monetary gift card (Multi-Purpose Voucher). VAT recognised at redemption. Expiry 36 months.",
+      "tax_code": "txcd_10000000",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "gift_card",
+        "category": "monetary",
+        "voucher_type": "MPV",
+        "internal_sku": "gift-card-monetary"
+      }
+    },
+    {
+      "name": "WB / Gift / Experience / spa-day-for-two",
+      "description": "Spa Day for Two voucher — Single-Purpose Voucher, VAT charged at sale, 36-month expiry",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "gift_card",
+        "category": "experience",
+        "voucher_type": "SPV",
+        "internal_sku": "voucher-spa-day-for-two"
+      }
+    },
+    {
+      "name": "WB / Gift / Experience / hot-tub-weekend",
+      "description": "Hot Tub Lodge Weekend voucher (2 nights, midweek, shoulder) — MPV scope, VAT at redemption",
+      "tax_code": "txcd_10000000",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "gift_card",
+        "category": "experience",
+        "voucher_type": "MPV",
+        "internal_sku": "voucher-hot-tub-weekend"
+      }
+    },
+    {
+      "name": "WB / Gift / Experience / cream-tea-alpaca",
+      "description": "Cream Tea + Alpaca Feed voucher (2 adults, 2 children) — MPV scope (mixed VAT)",
+      "tax_code": "txcd_10000000",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "gift_card",
+        "category": "experience",
+        "voucher_type": "MPV",
+        "internal_sku": "voucher-cream-tea-alpaca"
+      }
+    },
+    {
+      "name": "WB / Gift / Experience / tasting-menu-for-two",
+      "description": "Tasting Menu Evening for Two (incl. wine pairing) — SPV, 20% VAT at sale",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "gift_card",
+        "category": "experience",
+        "voucher_type": "SPV",
+        "internal_sku": "voucher-tasting-menu-for-two"
+      }
+    },
+    {
+      "name": "WB / Gift / Experience / signature-treatment-lunch",
+      "description": "Signature Treatment & Lunch voucher — SPV, 20% VAT at sale",
+      "tax_code": "txcd_20030001",
+      "shippable": false,
+      "metadata": {
+        "revenue_stream": "gift_card",
+        "category": "experience",
+        "voucher_type": "SPV",
+        "internal_sku": "voucher-signature-treatment-lunch"
+      }
+    }
+  ]
+}

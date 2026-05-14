@@ -1,0 +1,1092 @@
+{
+  "$schema": "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+  "_meta": {
+    "version": "1.0.0",
+    "generated": "2026-05-14",
+    "project": "Whalesborough Farm Resort & Spa",
+    "domain": "https://whalesborough.com",
+    "language": "en-GB",
+    "note": "Parameterised JSON-LD templates. Variables in {{handlebars}} are runtime-injected. Drop into <Script type=\"application/ld+json\"> server-side in Next.js."
+  },
+  "_constants": {
+    "organisationId": "https://whalesborough.com/#organization",
+    "resortId": "https://whalesborough.com/#resort",
+    "websiteId": "https://whalesborough.com/#website",
+    "spaId": "https://whalesborough.com/spa#health-business",
+    "restaurantId": "https://whalesborough.com/dine#restaurant",
+    "estateId": "https://whalesborough.com/estate#destination",
+    "legalName": "Whalesborough Farm Resort & Spa",
+    "shortName": "Whalesborough",
+    "logoUrl": "https://whalesborough.com/brand/logo.svg",
+    "logoSquare": "https://whalesborough.com/brand/logo-300.png",
+    "defaultOgImage": "https://whalesborough.com/og/default-1200x630.jpg",
+    "sameAs": [
+      "https://www.facebook.com/whalesboroughresort",
+      "https://www.instagram.com/whalesboroughresort",
+      "https://www.tripadvisor.co.uk/Hotel_Review-g315934-Whalesborough.html",
+      "https://g.page/whalesborough-farm-resort",
+      "https://www.feefo.com/reviews/whalesborough-farm-resort-spa"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marhamchurch",
+      "addressLocality": "Bude",
+      "addressRegion": "Cornwall",
+      "postalCode": "EX23 0JD",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7833,
+      "longitude": -4.5333
+    },
+    "telephone": "+44-1288-361301",
+    "email": "stay@whalesborough.com",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay, Klarna",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "847",
+      "reviewCount": "847"
+    }
+  },
+
+  "shared.organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://whalesborough.com/#organization",
+    "name": "Whalesborough Farm Resort & Spa",
+    "alternateName": "Whalesborough",
+    "url": "https://whalesborough.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://whalesborough.com/brand/logo-300.png",
+      "width": 300,
+      "height": 300
+    },
+    "image": "https://whalesborough.com/og/default-1200x630.jpg",
+    "description": "A five-star gold working Cornish farm, spa, restaurant and 30+ self-catering cottages and Arvor Suites on a 450-acre coastal estate above Widemouth Bay.",
+    "foundingDate": "1985",
+    "telephone": "+44-1288-361301",
+    "email": "stay@whalesborough.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marhamchurch",
+      "addressLocality": "Bude",
+      "addressRegion": "Cornwall",
+      "postalCode": "EX23 0JD",
+      "addressCountry": "GB"
+    },
+    "sameAs": [
+      "https://www.facebook.com/whalesboroughresort",
+      "https://www.instagram.com/whalesboroughresort",
+      "https://www.tripadvisor.co.uk/Hotel_Review-g315934-Whalesborough.html",
+      "https://g.page/whalesborough-farm-resort",
+      "https://www.feefo.com/reviews/whalesborough-farm-resort-spa"
+    ]
+  },
+
+  "shared.website_with_searchaction": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://whalesborough.com/#website",
+    "url": "https://whalesborough.com",
+    "name": "Whalesborough Farm Resort & Spa",
+    "description": "Five-star gold Cornish farm resort, spa and restaurant on a 450-acre coastal estate above Widemouth Bay.",
+    "publisher": { "@id": "https://whalesborough.com/#organization" },
+    "inLanguage": "en-GB",
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://whalesborough.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://whalesborough.com/stay/availability?from={check_in_date}&to={check_out_date}",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "query-input": [
+          "required name=check_in_date",
+          "required name=check_out_date"
+        ]
+      }
+    ]
+  },
+
+  "homepage.resort": {
+    "@context": "https://schema.org",
+    "@type": ["Resort", "LodgingBusiness"],
+    "@id": "https://whalesborough.com/#resort",
+    "name": "Whalesborough Farm Resort & Spa",
+    "url": "https://whalesborough.com",
+    "image": [
+      "https://whalesborough.com/og/homepage-aerial-1200x630.jpg",
+      "https://whalesborough.com/hero/estate-drone-1920.jpg"
+    ],
+    "logo": "https://whalesborough.com/brand/logo-300.png",
+    "description": "Five hundred acres of Cornish coast above Widemouth Bay. Twenty-seven cottages, twenty-two Arvor Suites, a spa, a farm-to-fork restaurant and a working farm. Five-star gold, dog-friendly, and run on our own wind turbine.",
+    "telephone": "+44-1288-361301",
+    "email": "stay@whalesborough.com",
+    "priceRange": "££££",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay, Klarna",
+    "checkinTime": "16:00",
+    "checkoutTime": "10:00",
+    "petsAllowed": true,
+    "smokingAllowed": false,
+    "numberOfRooms": 49,
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "author": {
+        "@type": "Organization",
+        "name": "VisitEngland",
+        "url": "https://www.visitengland.com"
+      },
+      "description": "Five Star Gold Award — VisitEngland Quality Scheme"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marhamchurch",
+      "addressLocality": "Bude",
+      "addressRegion": "Cornwall",
+      "postalCode": "EX23 0JD",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7833,
+      "longitude": -4.5333
+    },
+    "hasMap": "https://www.google.com/maps/place/Whalesborough+Farm+Resort/",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "bestRating": "5",
+      "ratingCount": "847"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Indoor heated pool (29°C)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Outdoor pool (May–September)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Spa & treatment rooms", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Sauna & steam room", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Gym & fitness studio", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Farm-to-fork restaurant", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Working farm with animals", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Dog-friendly throughout", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "EV charging on site", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "On-site wind turbine (renewable energy)", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true }
+    ],
+    "containsPlace": [
+      { "@id": "https://whalesborough.com/spa#health-business" },
+      { "@id": "https://whalesborough.com/dine#restaurant" },
+      { "@id": "https://whalesborough.com/estate#destination" }
+    ],
+    "parentOrganization": { "@id": "https://whalesborough.com/#organization" },
+    "sameAs": [
+      "https://www.facebook.com/whalesboroughresort",
+      "https://www.instagram.com/whalesboroughresort",
+      "https://www.tripadvisor.co.uk/Hotel_Review-g315934-Whalesborough.html",
+      "https://g.page/whalesborough-farm-resort"
+    ]
+  },
+
+  "shared.breadcrumb": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://whalesborough.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{level1.name}}",
+        "item": "https://whalesborough.com/{{level1.slug}}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{level2.name}}",
+        "item": "https://whalesborough.com/{{level1.slug}}/{{level2.slug}}"
+      }
+    ]
+  },
+
+  "stay.cottage": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Accommodation", "Product", "VacationRental"],
+        "@id": "https://whalesborough.com/stay/cottages/{{cottage.slug}}#accommodation",
+        "name": "{{cottage.name}}",
+        "url": "https://whalesborough.com/stay/cottages/{{cottage.slug}}",
+        "description": "{{cottage.bluf}}",
+        "image": "{{cottage.heroImage}}",
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "maxValue": "{{cottage.sleeps}}",
+          "unitCode": "C62"
+        },
+        "numberOfBedrooms": "{{cottage.bedrooms}}",
+        "numberOfBathroomsTotal": "{{cottage.bathrooms}}",
+        "petsAllowed": "{{cottage.petsAllowed}}",
+        "smokingAllowed": false,
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": "{{cottage.floorSizeM2}}",
+          "unitCode": "MTK"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Hot tub", "value": "{{cottage.hotTub}}" },
+          { "@type": "LocationFeatureSpecification", "name": "Woodburner", "value": "{{cottage.woodburner}}" },
+          { "@type": "LocationFeatureSpecification", "name": "Sonos sound system", "value": "{{cottage.sonos}}" },
+          { "@type": "LocationFeatureSpecification", "name": "Private garden", "value": "{{cottage.privateGarden}}" },
+          { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Pet-friendly", "value": "{{cottage.petsAllowed}}" }
+        ],
+        "containedInPlace": { "@id": "https://whalesborough.com/#resort" },
+        "brand": { "@id": "https://whalesborough.com/#organization" },
+        "category": "{{cottage.category}}",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "{{cottage.rating}}",
+          "bestRating": "5",
+          "ratingCount": "{{cottage.reviewCount}}"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "GBP",
+          "lowPrice": "{{cottage.adrLow}}",
+          "highPrice": "{{cottage.adrHigh}}",
+          "offerCount": "{{cottage.offerCount}}",
+          "availability": "https://schema.org/InStock",
+          "url": "https://whalesborough.com/stay/cottages/{{cottage.slug}}#book",
+          "seller": { "@id": "https://whalesborough.com/#organization" },
+          "priceValidUntil": "2026-12-31"
+        }
+      }
+    ]
+  },
+
+  "stay.arvor_suite": {
+    "@context": "https://schema.org",
+    "@type": ["Accommodation", "Product", "HotelRoom"],
+    "@id": "https://whalesborough.com/stay/arvor-suites/{{suite.slug}}#accommodation",
+    "name": "{{suite.name}}",
+    "url": "https://whalesborough.com/stay/arvor-suites/{{suite.slug}}",
+    "description": "{{suite.bluf}}",
+    "image": "{{suite.heroImage}}",
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "maxValue": "{{suite.sleeps}}"
+    },
+    "numberOfBedrooms": "{{suite.bedrooms}}",
+    "bed": {
+      "@type": "BedDetails",
+      "typeOfBed": "{{suite.bedType}}"
+    },
+    "petsAllowed": "{{suite.petsAllowed}}",
+    "smokingAllowed": false,
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": "{{suite.floorSizeM2}}",
+      "unitCode": "MTK"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Induction kitchen", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Step-free access", "value": "{{suite.stepFree}}" },
+      { "@type": "LocationFeatureSpecification", "name": "Walk-in shower", "value": "{{suite.walkInShower}}" }
+    ],
+    "containedInPlace": { "@id": "https://whalesborough.com/#resort" },
+    "brand": { "@id": "https://whalesborough.com/#organization" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "GBP",
+      "lowPrice": "{{suite.adrLow}}",
+      "highPrice": "{{suite.adrHigh}}",
+      "availability": "https://schema.org/InStock",
+      "url": "https://whalesborough.com/stay/arvor-suites/{{suite.slug}}#book"
+    }
+  },
+
+  "stay.cottages_collection": {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://whalesborough.com/stay/cottages#collection",
+    "url": "https://whalesborough.com/stay/cottages",
+    "name": "Cottages & Lodges at Whalesborough",
+    "description": "Twenty-seven self-catering cottages and lodges across 450 acres of working Cornish farm — sleeps two to ten, hot tubs, woodburners, dog-friendly throughout.",
+    "isPartOf": { "@id": "https://whalesborough.com/#website" },
+    "about": { "@id": "https://whalesborough.com/#resort" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 27,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://whalesborough.com/stay/cottages/whalesborough-farmhouse",
+          "name": "Whalesborough Farmhouse"
+        }
+      ]
+    }
+  },
+
+  "spa.health_business": {
+    "@context": "https://schema.org",
+    "@type": ["HealthAndBeautyBusiness", "DaySpa"],
+    "@id": "https://whalesborough.com/spa#health-business",
+    "name": "The W Club Spa",
+    "url": "https://whalesborough.com/spa",
+    "image": "https://whalesborough.com/og/spa-1200x630.jpg",
+    "description": "The W Club — a botanical day spa on a 450-acre working Cornish farm. Gaia Natural Skincare rituals, indoor 29°C pool, sauna, steam room, gym. Adults only, no under-13s.",
+    "telephone": "+44-1288-361301",
+    "email": "wclub@whalesborough.com",
+    "priceRange": "£60–£250",
+    "currenciesAccepted": "GBP",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marhamchurch",
+      "addressLocality": "Bude",
+      "addressRegion": "Cornwall",
+      "postalCode": "EX23 0JD",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7833,
+      "longitude": -4.5333
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
+    "publicAccess": false,
+    "containedInPlace": { "@id": "https://whalesborough.com/#resort" },
+    "parentOrganization": { "@id": "https://whalesborough.com/#organization" },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Indoor pool 29°C", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Sauna", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Steam room", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Gym & fitness studio", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Treatment rooms", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Adults only", "value": true }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "bestRating": "5",
+      "ratingCount": "312"
+    }
+  },
+
+  "spa.treatment_mte": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Service", "Product"],
+        "@id": "https://whalesborough.com/spa/treatments/{{treatment.slug}}#service",
+        "name": "{{treatment.name}}",
+        "url": "https://whalesborough.com/spa/treatments/{{treatment.slug}}",
+        "description": "{{treatment.bluf}}",
+        "image": "{{treatment.heroImage}}",
+        "category": "{{treatment.category}}",
+        "serviceType": "Spa treatment",
+        "provider": { "@id": "https://whalesborough.com/spa#health-business" },
+        "brand": {
+          "@type": "Brand",
+          "name": "Gaia Natural Skincare"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "The W Club, Whalesborough Farm Resort & Spa"
+        },
+        "termsOfService": "https://whalesborough.com/spa/etiquette",
+        "offers": {
+          "@type": "Offer",
+          "@id": "https://whalesborough.com/spa/treatments/{{treatment.slug}}#offer",
+          "url": "https://whalesborough.com/spa/treatments/{{treatment.slug}}#book",
+          "priceCurrency": "GBP",
+          "price": "{{treatment.priceWeekday}}",
+          "priceSpecification": [
+            {
+              "@type": "UnitPriceSpecification",
+              "price": "{{treatment.priceWeekday}}",
+              "priceCurrency": "GBP",
+              "name": "Weekday"
+            },
+            {
+              "@type": "UnitPriceSpecification",
+              "price": "{{treatment.priceWeekend}}",
+              "priceCurrency": "GBP",
+              "name": "Weekend"
+            }
+          ],
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://whalesborough.com/spa#health-business" },
+          "priceValidUntil": "2026-12-31"
+        },
+        "additionalProperty": {
+          "@type": "PropertyValue",
+          "name": "Duration",
+          "value": "{{treatment.durationMin}} minutes"
+        }
+      }
+    ]
+  },
+
+  "spa.spa_day_offer": {
+    "@context": "https://schema.org",
+    "@type": ["Product", "Offer"],
+    "@id": "https://whalesborough.com/spa/spa-days/{{package.slug}}#offer",
+    "name": "{{package.name}}",
+    "url": "https://whalesborough.com/spa/spa-days/{{package.slug}}",
+    "description": "{{package.bluf}}",
+    "image": "{{package.heroImage}}",
+    "category": "Spa day package",
+    "brand": { "@id": "https://whalesborough.com/spa#health-business" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "GBP",
+      "price": "{{package.price}}",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-01-01",
+      "priceValidUntil": "2026-12-31",
+      "seller": { "@id": "https://whalesborough.com/spa#health-business" }
+    }
+  },
+
+  "spa.practitioner": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://whalesborough.com/spa/practitioners/{{person.slug}}#person",
+    "name": "{{person.name}}",
+    "url": "https://whalesborough.com/spa/practitioners/{{person.slug}}",
+    "image": "{{person.headshot}}",
+    "jobTitle": "{{person.title}}",
+    "description": "{{person.bio}}",
+    "knowsAbout": "{{person.specialisms}}",
+    "worksFor": { "@id": "https://whalesborough.com/spa#health-business" }
+  },
+
+  "dine.restaurant": {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://whalesborough.com/dine#restaurant",
+    "name": "The Weir Restaurant",
+    "url": "https://whalesborough.com/dine",
+    "image": "https://whalesborough.com/og/weir-1200x630.jpg",
+    "description": "Lakeside farm-to-fork restaurant at Whalesborough Farm. Breakfast, lunch and supper club menus built from the estate's market garden, neighbouring farms and Cornish boats. Dog-friendly.",
+    "telephone": "+44-1288-361301",
+    "email": "weir@whalesborough.com",
+    "servesCuisine": ["British", "Cornish", "Farm-to-fork", "Coastal"],
+    "priceRange": "££",
+    "currenciesAccepted": "GBP",
+    "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay",
+    "acceptsReservations": true,
+    "menu": "https://whalesborough.com/dine/menus",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marhamchurch",
+      "addressLocality": "Bude",
+      "addressRegion": "Cornwall",
+      "postalCode": "EX23 0JD",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7833,
+      "longitude": -4.5333
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "21:30"
+      }
+    ],
+    "containedInPlace": { "@id": "https://whalesborough.com/#resort" },
+    "parentOrganization": { "@id": "https://whalesborough.com/#organization" },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Dog-friendly", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Outdoor seating", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Lakeside views", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Children welcome", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Wheelchair accessible", "value": true }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "bestRating": "5",
+      "ratingCount": "418"
+    },
+    "hasMenu": {
+      "@type": "Menu",
+      "@id": "https://whalesborough.com/dine/menus#menu",
+      "url": "https://whalesborough.com/dine/menus"
+    }
+  },
+
+  "dine.menu": {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "@id": "https://whalesborough.com/dine/menus/{{menu.type}}#menu",
+    "name": "{{menu.title}}",
+    "url": "https://whalesborough.com/dine/menus/{{menu.type}}",
+    "description": "{{menu.description}}",
+    "inLanguage": "en-GB",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "{{section.name}}",
+        "description": "{{section.description}}",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "{{item.name}}",
+            "description": "{{item.description}}",
+            "offers": {
+              "@type": "Offer",
+              "price": "{{item.price}}",
+              "priceCurrency": "GBP"
+            },
+            "suitableForDiet": "{{item.dietaryTags}}"
+          }
+        ]
+      }
+    ]
+  },
+
+  "dine.event": {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": "https://whalesborough.com/dine/events/{{event.slug}}#event",
+    "name": "{{event.name}}",
+    "url": "https://whalesborough.com/dine/events/{{event.slug}}",
+    "description": "{{event.bluf}}",
+    "image": "{{event.heroImage}}",
+    "startDate": "{{event.startISO}}",
+    "endDate": "{{event.endISO}}",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "The Weir Restaurant, Whalesborough Farm",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Marhamchurch",
+        "addressLocality": "Bude",
+        "addressRegion": "Cornwall",
+        "postalCode": "EX23 0JD",
+        "addressCountry": "GB"
+      }
+    },
+    "organizer": { "@id": "https://whalesborough.com/dine#restaurant" },
+    "performer": "{{event.performer}}",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://whalesborough.com/dine/events/{{event.slug}}#book",
+      "price": "{{event.price}}",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "{{event.bookingOpens}}"
+    }
+  },
+
+  "own.real_estate_listing": {
+    "@context": "https://schema.org",
+    "@type": ["Product", "RealEstateListing"],
+    "@id": "https://whalesborough.com/own/lodges/{{range}}/{{plot.slug}}#listing",
+    "name": "{{plot.name}}",
+    "url": "https://whalesborough.com/own/lodges/{{range}}/{{plot.slug}}",
+    "description": "{{plot.bluf}}",
+    "image": "{{plot.heroImage}}",
+    "category": "Holiday lodge residence — 125-year licence",
+    "brand": { "@id": "https://whalesborough.com/#organization" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "GBP",
+      "price": "{{plot.priceGuide}}",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "{{plot.priceGuide}}",
+        "priceCurrency": "GBP",
+        "valueAddedTaxIncluded": false
+      },
+      "availability": "{{plot.availability}}",
+      "businessFunction": "https://schema.org/Sell",
+      "eligibleRegion": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "seller": { "@id": "https://whalesborough.com/#organization" }
+    },
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Range", "value": "{{plot.range}}" },
+      { "@type": "PropertyValue", "name": "Licence", "value": "125 years" },
+      { "@type": "PropertyValue", "name": "Bedrooms", "value": "{{plot.bedrooms}}" },
+      { "@type": "PropertyValue", "name": "Construction", "value": "BS 3632 timber-frame" },
+      { "@type": "PropertyValue", "name": "Use class", "value": "Holiday use only — not a primary residence" }
+    ]
+  },
+
+  "own.rental_calculator_app": {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://whalesborough.com/own/rental-income/calculator#app",
+    "name": "Whalesborough Owner Rental Income Calculator",
+    "url": "https://whalesborough.com/own/rental-income/calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "description": "Illustrative tool showing potential historic gross rental income across the Whalesborough managed letting programme. Past performance is not a guide to future performance. Capital at risk. This is not a regulated investment.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    }
+  },
+
+  "own.howto_process": {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": "https://whalesborough.com/own/process#howto",
+    "name": "How to buy a residence at Whalesborough",
+    "description": "The five-step ownership pathway, from first viewing through reservation, legals and completion.",
+    "totalTime": "P60D",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Private viewing", "text": "Book a private estate viewing with the sales team." },
+      { "@type": "HowToStep", "position": 2, "name": "Plot selection", "text": "Choose your range, plot and specification." },
+      { "@type": "HowToStep", "position": 3, "name": "Reservation", "text": "Reserve your plot with a refundable holding deposit." },
+      { "@type": "HowToStep", "position": 4, "name": "Legals & licence", "text": "Your solicitor reviews the 125-year licence, site rules and onward costs." },
+      { "@type": "HowToStep", "position": 5, "name": "Completion & handover", "text": "Funds drawn, keys released, owner-services onboarding completed." }
+    ]
+  },
+
+  "estate.tourist_destination": {
+    "@context": "https://schema.org",
+    "@type": ["TouristDestination", "Place"],
+    "@id": "https://whalesborough.com/estate#destination",
+    "name": "Whalesborough Estate — 450 acres above Widemouth Bay",
+    "url": "https://whalesborough.com/estate",
+    "description": "A 450-acre working Cornish farm and rewilded estate at Marhamchurch — woodland, lakes, alpaca pastures, kitchen garden and a 60kW wind turbine, eight minutes from Widemouth Bay.",
+    "image": "https://whalesborough.com/og/estate-1200x630.jpg",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.7833,
+      "longitude": -4.5333
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Marhamchurch",
+      "addressLocality": "Bude",
+      "addressRegion": "Cornwall",
+      "postalCode": "EX23 0JD",
+      "addressCountry": "GB"
+    },
+    "touristType": ["Multi-generational families", "Couples", "Dog owners", "Conscious travellers", "Wellness travellers"],
+    "includesAttraction": [
+      { "@id": "https://whalesborough.com/spa#health-business" },
+      { "@id": "https://whalesborough.com/dine#restaurant" }
+    ],
+    "containsPlace": [
+      {
+        "@type": "Place",
+        "name": "South West Coast Path"
+      },
+      {
+        "@type": "Beach",
+        "name": "Widemouth Bay"
+      },
+      {
+        "@type": "BodyOfWater",
+        "name": "Bude Canal"
+      }
+    ]
+  },
+
+  "estate.trail": {
+    "@context": "https://schema.org",
+    "@type": ["Place", "TouristAttraction"],
+    "additionalType": "https://schema.org/Trail",
+    "@id": "https://whalesborough.com/estate/walks/{{walk.slug}}#trail",
+    "name": "{{walk.name}}",
+    "url": "https://whalesborough.com/estate/walks/{{walk.slug}}",
+    "description": "{{walk.bluf}}",
+    "image": "{{walk.heroImage}}",
+    "geo": { "@type": "GeoCoordinates", "latitude": 50.7833, "longitude": -4.5333 },
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Distance", "value": "{{walk.distanceKm}} km" },
+      { "@type": "PropertyValue", "name": "Duration", "value": "{{walk.durationMin}} min" },
+      { "@type": "PropertyValue", "name": "Difficulty", "value": "{{walk.difficulty}}" },
+      { "@type": "PropertyValue", "name": "Dog-friendly", "value": "{{walk.dogFriendly}}" }
+    ],
+    "containedInPlace": { "@id": "https://whalesborough.com/estate#destination" }
+  },
+
+  "estate.activity_event": {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": "https://whalesborough.com/estate/activities/{{activity.slug}}#event",
+    "name": "{{activity.name}}",
+    "url": "https://whalesborough.com/estate/activities/{{activity.slug}}",
+    "description": "{{activity.bluf}}",
+    "image": "{{activity.heroImage}}",
+    "startDate": "{{activity.startISO}}",
+    "endDate": "{{activity.endISO}}",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": { "@id": "https://whalesborough.com/estate#destination" },
+    "organizer": { "@id": "https://whalesborough.com/#organization" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://whalesborough.com/estate/activities/{{activity.slug}}#book",
+      "price": "{{activity.price}}",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+
+  "estate.poi": {
+    "@context": "https://schema.org",
+    "@type": ["TouristDestination", "Place"],
+    "@id": "https://whalesborough.com/estate/local-area/{{poi.slug}}#poi",
+    "name": "{{poi.name}}",
+    "url": "https://whalesborough.com/estate/local-area/{{poi.slug}}",
+    "description": "{{poi.bluf}}",
+    "image": "{{poi.heroImage}}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{poi.locality}}",
+      "addressRegion": "Cornwall",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{{poi.lat}}",
+      "longitude": "{{poi.lon}}"
+    },
+    "containedInPlace": { "@id": "https://whalesborough.com/estate#destination" }
+  },
+
+  "journal.article": {
+    "@context": "https://schema.org",
+    "@type": ["Article", "BlogPosting"],
+    "@id": "https://whalesborough.com/journal/{{post.slug}}#article",
+    "headline": "{{post.title}}",
+    "alternativeHeadline": "{{post.subtitle}}",
+    "description": "{{post.excerpt}}",
+    "url": "https://whalesborough.com/journal/{{post.slug}}",
+    "image": [
+      "{{post.image1200x630}}",
+      "{{post.image1200x675}}",
+      "{{post.image1080x1080}}"
+    ],
+    "datePublished": "{{post.publishedISO}}",
+    "dateModified": "{{post.modifiedISO}}",
+    "author": {
+      "@type": "Person",
+      "@id": "https://whalesborough.com/journal/author/{{author.slug}}#person",
+      "name": "{{author.name}}",
+      "url": "https://whalesborough.com/journal/author/{{author.slug}}"
+    },
+    "publisher": { "@id": "https://whalesborough.com/#organization" },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://whalesborough.com/journal/{{post.slug}}"
+    },
+    "articleSection": "{{post.category}}",
+    "keywords": "{{post.tags}}",
+    "wordCount": "{{post.wordCount}}",
+    "inLanguage": "en-GB"
+  },
+
+  "journal.blog_hub": {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://whalesborough.com/journal#blog",
+    "url": "https://whalesborough.com/journal",
+    "name": "The Whalesborough Journal",
+    "description": "Stories from a working Cornish farm — seasons, suppliers, the kitchen garden, the coast path, dog-friendly trails, the rituals of a slow weekend.",
+    "inLanguage": "en-GB",
+    "publisher": { "@id": "https://whalesborough.com/#organization" },
+    "image": "https://whalesborough.com/og/journal-1200x630.jpg"
+  },
+
+  "shared.faqpage": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://whalesborough.com/{{page.path}}#faqpage",
+    "url": "https://whalesborough.com/{{page.path}}",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{q.question}}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{q.answer}}"
+        }
+      }
+    ]
+  },
+
+  "shared.searchresultspage": {
+    "@context": "https://schema.org",
+    "@type": "SearchResultsPage",
+    "@id": "https://whalesborough.com/stay/availability#search-results",
+    "url": "https://whalesborough.com/stay/availability",
+    "name": "Available cottages and Arvor Suites",
+    "isPartOf": { "@id": "https://whalesborough.com/#website" }
+  },
+
+  "shared.web_application_compare": {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://whalesborough.com/stay/cottages/compare#app",
+    "name": "Whalesborough Cottage Comparison Tool",
+    "url": "https://whalesborough.com/stay/cottages/compare",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+  },
+
+  "shared.webpage": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://whalesborough.com/{{page.path}}#webpage",
+    "url": "https://whalesborough.com/{{page.path}}",
+    "name": "{{page.title}}",
+    "description": "{{page.description}}",
+    "isPartOf": { "@id": "https://whalesborough.com/#website" },
+    "about": { "@id": "https://whalesborough.com/#resort" },
+    "inLanguage": "en-GB",
+    "primaryImageOfPage": "{{page.heroImage}}"
+  },
+
+  "_route_index_pointer": "See seo-meta.md for the per-route mapping of which template applies to which page.",
+
+  "_unit_inventory": {
+    "cottages": [
+      { "slug": "barley-park", "name": "Barley Park", "sleeps": 2, "bedrooms": 1, "hotTub": false, "petsAllowed": true, "category": "Couples", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "beachcombers", "name": "Beachcombers", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "westcotts", "name": "Westcotts", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "venners", "name": "Venners", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "middle-hill", "name": "Middle Hill", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "little-main", "name": "Little Main", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "chapel-park", "name": "Chapel Park", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "woody-platt", "name": "Woody Platt", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "sand-parks", "name": "Sand Parks", "sleeps": 4, "bedrooms": 2, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 130, "adrHigh": 180 },
+      { "slug": "long-down-spa", "name": "Long Down Spa", "sleeps": 4, "bedrooms": 2, "hotTub": true, "petsAllowed": true, "category": "Spa cottage", "adrLow": 190, "adrHigh": 270 },
+      { "slug": "warrens-spa", "name": "Warrens Spa", "sleeps": 4, "bedrooms": 2, "hotTub": true, "petsAllowed": true, "category": "Spa cottage", "adrLow": 190, "adrHigh": 270 },
+      { "slug": "nettlecoombe-spa", "name": "Nettlecoombe Spa", "sleeps": 4, "bedrooms": 2, "hotTub": true, "petsAllowed": true, "category": "Spa cottage (accessible)", "adrLow": 190, "adrHigh": 270 },
+      { "slug": "jacks-house", "name": "Jack's House", "sleeps": 5, "bedrooms": 3, "hotTub": false, "petsAllowed": true, "category": "Cottage", "adrLow": 150, "adrHigh": 200 },
+      { "slug": "eagles-nest", "name": "Eagle's Nest", "sleeps": 6, "bedrooms": 3, "hotTub": false, "petsAllowed": false, "category": "Premium cottage", "adrLow": 170, "adrHigh": 230 },
+      { "slug": "trevelyan", "name": "Trevelyan", "sleeps": 6, "bedrooms": 3, "hotTub": false, "petsAllowed": true, "category": "Premium cottage", "adrLow": 170, "adrHigh": 230 },
+      { "slug": "sheeps-house", "name": "Sheep's House", "sleeps": 6, "bedrooms": 3, "hotTub": false, "petsAllowed": true, "category": "Premium cottage", "adrLow": 170, "adrHigh": 230 },
+      { "slug": "moleyns", "name": "Moleyns", "sleeps": 6, "bedrooms": 3, "hotTub": false, "petsAllowed": true, "category": "Premium cottage", "adrLow": 170, "adrHigh": 230 },
+      { "slug": "medlands", "name": "Medlands", "sleeps": 6, "bedrooms": 3, "hotTub": false, "petsAllowed": true, "category": "Premium cottage", "adrLow": 170, "adrHigh": 230 },
+      { "slug": "arundell", "name": "Arundell", "sleeps": 6, "bedrooms": 3, "hotTub": false, "petsAllowed": true, "category": "Premium cottage", "adrLow": 170, "adrHigh": 230 },
+      { "slug": "windy-hills-spa", "name": "Windy Hills Spa", "sleeps": 6, "bedrooms": 3, "hotTub": true, "petsAllowed": true, "category": "Spa cottage", "adrLow": 210, "adrHigh": 290 },
+      { "slug": "gwari-spa-barn-2-0", "name": "Gwari Spa Barn 2.0", "sleeps": 4, "bedrooms": 2, "hotTub": true, "petsAllowed": true, "category": "Spa cottage", "adrLow": 190, "adrHigh": 270 },
+      { "slug": "gwari-spa-barn-3-0", "name": "Gwari Spa Barn 3.0", "sleeps": 6, "bedrooms": 3, "hotTub": true, "petsAllowed": true, "category": "Spa cottage", "adrLow": 210, "adrHigh": 290 },
+      { "slug": "trelowen-2-0-spa", "name": "Trelowen 2.0 Spa", "sleeps": 4, "bedrooms": 2, "hotTub": true, "petsAllowed": true, "category": "Spa lodge", "adrLow": 200, "adrHigh": 280 },
+      { "slug": "trelowen-3-0-spa", "name": "Trelowen 3.0 Spa", "sleeps": 6, "bedrooms": 3, "hotTub": true, "petsAllowed": true, "category": "Spa lodge", "adrLow": 220, "adrHigh": 300 },
+      { "slug": "calf-house-spa", "name": "Calf House Spa", "sleeps": 8, "bedrooms": 4, "hotTub": true, "petsAllowed": true, "category": "Large spa cottage", "adrLow": 270, "adrHigh": 380 },
+      { "slug": "whalesborough-cottage", "name": "Whalesborough Cottage", "sleeps": 8, "bedrooms": 4, "hotTub": true, "petsAllowed": true, "category": "Signature", "adrLow": 290, "adrHigh": 400 },
+      { "slug": "whalesborough-farmhouse", "name": "Whalesborough Farmhouse", "sleeps": 8, "bedrooms": 4, "hotTub": true, "petsAllowed": true, "category": "Signature heritage", "adrLow": 290, "adrHigh": 420 },
+      { "slug": "kew-villa", "name": "Kew Villa", "sleeps": 8, "bedrooms": 4, "hotTub": true, "petsAllowed": true, "category": "Signature villa", "adrLow": 290, "adrHigh": 410 },
+      { "slug": "nans-house-spa", "name": "Nan's House Spa", "sleeps": 10, "bedrooms": 5, "hotTub": true, "petsAllowed": true, "category": "Signature group", "adrLow": 310, "adrHigh": 450 }
+    ],
+    "arvor_suites": [
+      { "slug": "studio-1-0", "name": "Arvor Studio 1.0", "sleeps": 2, "bedrooms": 1, "petsAllowed": true, "adrLow": 85, "adrHigh": 110 },
+      { "slug": "wetroom-studio-1-0", "name": "Arvor Wetroom Studio 1.0", "sleeps": 2, "bedrooms": 1, "petsAllowed": true, "stepFree": true, "walkInShower": true, "adrLow": 85, "adrHigh": 110 },
+      { "slug": "suite-1-0", "name": "Arvor Suite 1.0", "sleeps": 2, "bedrooms": 1, "petsAllowed": false, "adrLow": 100, "adrHigh": 130 },
+      { "slug": "duplex-2-0", "name": "Arvor Duplex 2.0", "sleeps": 4, "bedrooms": 2, "petsAllowed": true, "adrLow": 130, "adrHigh": 170 },
+      { "slug": "penthouse-2-0", "name": "Arvor Penthouse 2.0", "sleeps": 4, "bedrooms": 2, "petsAllowed": false, "adrLow": 150, "adrHigh": 185 }
+    ],
+    "spa_lodges": [
+      { "slug": "trelowen", "name": "Trelowen Spa Lodge" },
+      { "slug": "gwari", "name": "Gwari Spa Lodge" }
+    ],
+    "spa_treatments": [
+      { "slug": "gaia-calming-journey-60", "name": "The Gaia Calming Journey (60 min)", "category": "Rituals", "durationMin": 60, "priceWeekday": 90 },
+      { "slug": "gaia-calming-journey-90", "name": "The Gaia Calming Journey, Extended (90 min)", "category": "Rituals", "durationMin": 90, "priceWeekday": 110 },
+      { "slug": "gaia-awakening-journey-60", "name": "The Gaia Awakening Journey (60 min)", "category": "Rituals", "durationMin": 60, "priceWeekday": 90 },
+      { "slug": "gaia-awakening-journey-90", "name": "The Gaia Awakening Journey, Extended (90 min)", "category": "Rituals", "durationMin": 90, "priceWeekday": 110 },
+      { "slug": "gaia-balancing-journey-60", "name": "The Gaia Balancing Journey (60 min)", "category": "Rituals", "durationMin": 60, "priceWeekday": 90 },
+      { "slug": "gaia-balancing-journey-90", "name": "The Gaia Balancing Journey, Extended (90 min)", "category": "Rituals", "durationMin": 90, "priceWeekday": 110 },
+      { "slug": "gaia-affinity-wellness", "name": "Gaia Affinity Wellness Ritual", "category": "Rituals", "durationMin": 120, "priceWeekday": 165 },
+      { "slug": "mother-gaia", "name": "Mother Gaia Maternity Ritual", "category": "Rituals", "durationMin": 75, "priceWeekday": 105 },
+      { "slug": "gaia-raindrop-therapy", "name": "Gaia Raindrop Therapy", "category": "Rituals", "durationMin": 90, "priceWeekday": 125 },
+      { "slug": "gaia-total-holistic-ritual", "name": "Gaia Total Holistic Ritual", "category": "Rituals", "durationMin": 150, "priceWeekday": 195 },
+      { "slug": "gaia-crystal-therapy", "name": "Gaia Crystal Therapy", "category": "Rituals", "durationMin": 75, "priceWeekday": 110 },
+      { "slug": "equilibrium-crystal-facial", "name": "Equilibrium Crystal Facial", "category": "Facials", "durationMin": 75, "priceWeekday": 110 },
+      { "slug": "gaia-jade-facial-45", "name": "Gaia Jade Facial (45 min)", "category": "Facials", "durationMin": 45, "priceWeekday": 75 },
+      { "slug": "gaia-jade-facial-60", "name": "Gaia Jade Facial (60 min)", "category": "Facials", "durationMin": 60, "priceWeekday": 95 },
+      { "slug": "gaia-lifting-yoga-facial", "name": "Gaia Lifting Yoga Facial", "category": "Facials", "durationMin": 75, "priceWeekday": 110 },
+      { "slug": "w-salt-oil-scrub", "name": "The W Salt & Oil Scrub", "category": "Body & Massage", "durationMin": 45, "priceWeekday": 75 },
+      { "slug": "w-indian-head-massage", "name": "The W Indian Head Massage", "category": "Body & Massage", "durationMin": 30, "priceWeekday": 55 },
+      { "slug": "w-bespoke-massage-45", "name": "The W Bespoke Massage (45 min)", "category": "Body & Massage", "durationMin": 45, "priceWeekday": 70 },
+      { "slug": "w-bespoke-massage-60", "name": "The W Bespoke Massage (60 min)", "category": "Body & Massage", "durationMin": 60, "priceWeekday": 90 },
+      { "slug": "w-bespoke-massage-90", "name": "The W Bespoke Massage (90 min)", "category": "Body & Massage", "durationMin": 90, "priceWeekday": 130 },
+      { "slug": "w-hot-stone-massage-60", "name": "The W Hot Stone Massage (60 min)", "category": "Body & Massage", "durationMin": 60, "priceWeekday": 100 },
+      { "slug": "w-hot-stone-massage-90", "name": "The W Hot Stone Massage (90 min)", "category": "Body & Massage", "durationMin": 90, "priceWeekday": 140 },
+      { "slug": "serenity-at-the-w", "name": "Serenity at the W", "category": "Body & Massage", "durationMin": 120, "priceWeekday": 165 },
+      { "slug": "w-luxury-manicure", "name": "The W Luxury Manicure", "category": "Hands & Feet", "durationMin": 60, "priceWeekday": 50 },
+      { "slug": "w-luxury-pedicure", "name": "The W Luxury Pedicure", "category": "Hands & Feet", "durationMin": 75, "priceWeekday": 60 },
+      { "slug": "just-gel-hands", "name": "Just Gel — Hands", "category": "Hands & Feet", "durationMin": 45, "priceWeekday": 35 },
+      { "slug": "just-gel-toes", "name": "Just Gel — Toes", "category": "Hands & Feet", "durationMin": 45, "priceWeekday": 40 },
+      { "slug": "gel-polish-upgrade", "name": "Gel Polish Upgrade", "category": "Hands & Feet", "durationMin": 15, "priceWeekday": 15 },
+      { "slug": "gel-polish-removal", "name": "Gel Polish Removal", "category": "Hands & Feet", "durationMin": 30, "priceWeekday": 20 }
+    ],
+    "spa_treatment_categories": [
+      { "slug": "rituals", "name": "Gaia Rituals" },
+      { "slug": "facials", "name": "Facials" },
+      { "slug": "body-massage", "name": "Body & Massage" },
+      { "slug": "hands-feet", "name": "Hands & Feet" }
+    ],
+    "spa_day_packages": [
+      { "slug": "sunrise", "name": "Sunrise" },
+      { "slug": "sunset", "name": "Sunset" },
+      { "slug": "celebrate-at-the-w", "name": "Celebrate at the W" },
+      { "slug": "swim-spa-dine", "name": "Swim, Spa & Dine" },
+      { "slug": "sunday-slow-down", "name": "Sunday Slow Down" },
+      { "slug": "couples-retreat", "name": "Couples Retreat" },
+      { "slug": "hen-refined", "name": "Hen Refined" },
+      { "slug": "galentines-spa-sip-paint", "name": "Galentine's — Spa, Sip & Paint" },
+      { "slug": "mother-and-daughter", "name": "Mother & Daughter" },
+      { "slug": "maternity-babymoon", "name": "Maternity Babymoon Spa Day" },
+      { "slug": "members-day-out", "name": "Members' Day Out" },
+      { "slug": "quick-lunch-linger", "name": "Quick Lunch & Linger" },
+      { "slug": "founders-day", "name": "Founder's Day" },
+      { "slug": "september-reset", "name": "September Reset" }
+    ],
+    "arvor_packages": [
+      { "slug": "wild-and-refined", "name": "Wild & Refined" },
+      { "slug": "baby-moon", "name": "Baby Moon" },
+      { "slug": "fourth-trimester", "name": "Fourth Trimester" },
+      { "slug": "anniversary", "name": "Anniversary" },
+      { "slug": "long-weekend", "name": "Long Weekend" },
+      { "slug": "summer-stay", "name": "Summer Stay" },
+      { "slug": "midweek-escape", "name": "Midweek Escape" }
+    ],
+    "lodge_ranges": [
+      { "slug": "trelowen", "name": "Trelowen Exclusive Lodges", "priceFrom": 425000 },
+      { "slug": "tevi", "name": "Tevi Luxury Lodges", "priceFrom": 749950 },
+      { "slug": "gwelva", "name": "Gwelva Luxury Villas", "priceFrom": 600000 },
+      { "slug": "bespoke", "name": "Bespoke Lodges", "priceFrom": 399000 }
+    ],
+    "dine_events": [
+      { "slug": "grill-and-chill", "name": "Grill and Chill" },
+      { "slug": "supper-club", "name": "Supper Club" },
+      { "slug": "galentines-sip-spa-paint", "name": "Galentine's: Sip, Spa, Paint" },
+      { "slug": "easter-at-the-weir", "name": "Easter at The Weir" },
+      { "slug": "music-with-yazzy", "name": "Music with Yazzy" },
+      { "slug": "sunday-roast", "name": "Sunday Roast" }
+    ],
+    "menu_types": [
+      { "slug": "breakfast", "name": "Breakfast" },
+      { "slug": "lunch", "name": "Lunch" },
+      { "slug": "supper-club", "name": "Supper Club" },
+      { "slug": "sunday-roast", "name": "Sunday Roast" },
+      { "slug": "drinks", "name": "Drinks" },
+      { "slug": "kids", "name": "Kids' Menu" }
+    ],
+    "sustainability_spokes": [
+      { "slug": "wind-turbine", "name": "Our 60kW Wind Turbine" },
+      { "slug": "rewilding", "name": "Fifty Rewilded Acres" },
+      { "slug": "kitchen-garden", "name": "The Kitchen Garden" },
+      { "slug": "ev-charging", "name": "EV Charging" },
+      { "slug": "microplastics", "name": "Microplastic Protection" },
+      { "slug": "bees-and-pollinators", "name": "Bees & Pollinators" },
+      { "slug": "water-and-waste", "name": "Water & Waste" },
+      { "slug": "carbon-footprint", "name": "Our Carbon Footprint" }
+    ],
+    "holiday_types": [
+      { "slug": "family-holidays", "name": "Family Holidays" },
+      { "slug": "couples-breaks", "name": "Couples' Breaks" },
+      { "slug": "dog-friendly-holidays", "name": "Dog-Friendly Holidays" },
+      { "slug": "spa-breaks", "name": "Spa Breaks" },
+      { "slug": "multi-generational", "name": "Multi-Generational Holidays" },
+      { "slug": "accessible-holidays", "name": "Accessible Holidays" },
+      { "slug": "long-weekends", "name": "Long Weekends" },
+      { "slug": "off-season-escapes", "name": "Off-Season Escapes" }
+    ],
+    "personas": [
+      { "slug": "multi-generational-families", "name": "Multi-generational families" },
+      { "slug": "couples", "name": "Couples" },
+      { "slug": "dog-owners", "name": "Dog owners" },
+      { "slug": "wellness-travellers", "name": "Wellness travellers" },
+      { "slug": "extended-stays", "name": "Extended stays" },
+      { "slug": "celebrations", "name": "Celebration groups" }
+    ],
+    "size_bands": [
+      { "slug": "sleeps-2", "label": "Sleeps 2" },
+      { "slug": "sleeps-4", "label": "Sleeps 4" },
+      { "slug": "sleeps-5", "label": "Sleeps 5" },
+      { "slug": "sleeps-6", "label": "Sleeps 6" },
+      { "slug": "sleeps-8", "label": "Sleeps 8" },
+      { "slug": "sleeps-10", "label": "Sleeps 10" }
+    ],
+    "local_pois": [
+      { "slug": "widemouth-bay", "name": "Widemouth Bay" },
+      { "slug": "bude-summerleaze-beach", "name": "Summerleaze Beach, Bude" },
+      { "slug": "crooklets-beach", "name": "Crooklets Beach" },
+      { "slug": "bude-canal", "name": "Bude Canal" },
+      { "slug": "south-west-coast-path", "name": "South West Coast Path" },
+      { "slug": "tintagel-castle", "name": "Tintagel Castle" },
+      { "slug": "boscastle", "name": "Boscastle Harbour" },
+      { "slug": "clovelly", "name": "Clovelly" },
+      { "slug": "hartland-quay", "name": "Hartland Quay" },
+      { "slug": "stratton", "name": "Stratton Village" },
+      { "slug": "marhamchurch", "name": "Marhamchurch" },
+      { "slug": "compass-point", "name": "Compass Point" }
+    ]
+  },
+
+  "_robots_txt_recommendation": "User-agent: *\nAllow: /\nDisallow: /account/\nDisallow: /admin/\nDisallow: /owners/\nDisallow: /partners/\nDisallow: /api/\nDisallow: /*/booking/\nDisallow: /*?\nDisallow: /search\nDisallow: /own/brochure/download/\n\nUser-agent: GPTBot\nAllow: /\nDisallow: /account/\nDisallow: /admin/\nDisallow: /owners/\n\nUser-agent: ClaudeBot\nAllow: /\nDisallow: /account/\nDisallow: /admin/\nDisallow: /owners/\n\nUser-agent: PerplexityBot\nAllow: /\nDisallow: /account/\nDisallow: /admin/\nDisallow: /owners/\n\nUser-agent: Google-Extended\nAllow: /\nDisallow: /account/\nDisallow: /admin/\nDisallow: /owners/\n\nUser-agent: Applebot-Extended\nAllow: /\n\nSitemap: https://whalesborough.com/sitemap.xml\nSitemap: https://whalesborough.com/sitemap-stay.xml\nSitemap: https://whalesborough.com/sitemap-spa.xml\nSitemap: https://whalesborough.com/sitemap-dine.xml\nSitemap: https://whalesborough.com/sitemap-own.xml\nSitemap: https://whalesborough.com/sitemap-estate.xml\nSitemap: https://whalesborough.com/sitemap-journal.xml",
+
+  "_sitemap_index_recommendation": {
+    "url": "https://whalesborough.com/sitemap.xml",
+    "type": "sitemapindex",
+    "children": [
+      "https://whalesborough.com/sitemap-core.xml",
+      "https://whalesborough.com/sitemap-stay.xml",
+      "https://whalesborough.com/sitemap-spa.xml",
+      "https://whalesborough.com/sitemap-dine.xml",
+      "https://whalesborough.com/sitemap-own.xml",
+      "https://whalesborough.com/sitemap-estate.xml",
+      "https://whalesborough.com/sitemap-journal.xml",
+      "https://whalesborough.com/sitemap-legal.xml",
+      "https://whalesborough.com/sitemap-images.xml"
+    ],
+    "note": "Each child sitemap caps at 50,000 URLs and 50MB uncompressed per sitemaps.org. Per Google's segmentation guidance, partition by content type for granular indexation diagnostics."
+  }
+}

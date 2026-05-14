@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-05-14",
+  "generator": "Whalesborough Farm Resort & Spa — seed data manifest",
+  "currency": "GBP — all prices in pence (e.g. GBP 100 = 10000)",
+  "timestamp_format": "ISO 8601 24-hour where applicable",
+  "id_format": "lowercase kebab-case slugs",
+  "verify_flag_note": "Records carrying \"_verify\": true require client confirmation before production load.",
+  "files": [
+    {
+      "order": 1,
+      "file": "roles_permissions.json",
+      "purpose": "Master role definitions and permission codes — load first because every downstream record can reference roles.",
+      "dependencies": [],
+      "table_targets": ["roles", "permissions", "role_permissions"]
+    },
+    {
+      "order": 2,
+      "file": "amenities.json",
+      "purpose": "Master amenity codes referenced by properties.json.",
+      "dependencies": [],
+      "table_targets": ["amenities"]
+    },
+    {
+      "order": 3,
+      "file": "suppliers.json",
+      "purpose": "Supplier directory referenced by menus.json items.",
+      "dependencies": [],
+      "table_targets": ["suppliers"]
+    },
+    {
+      "order": 4,
+      "file": "spa_categories.json",
+      "purpose": "Spa treatment categories referenced by treatments.json.",
+      "dependencies": [],
+      "table_targets": ["spa_categories"]
+    },
+    {
+      "order": 5,
+      "file": "treatments.json",
+      "purpose": "30+ W Club spa treatments referenced by spa_packages.json and gift_voucher_products.json.",
+      "dependencies": ["spa_categories.json"],
+      "table_targets": ["treatments"]
+    },
+    {
+      "order": 6,
+      "file": "spa_packages.json",
+      "purpose": "14 spa-day packages referenced by gift_voucher_products.json.",
+      "dependencies": ["treatments.json"],
+      "table_targets": ["spa_packages"]
+    },
+    {
+      "order": 7,
+      "file": "membership_tiers.json",
+      "purpose": "W Club and Lakeside Locals membership tiers.",
+      "dependencies": [],
+      "table_targets": ["membership_tiers"]
+    },
+    {
+      "order": 8,
+      "file": "loyalty_tiers.json",
+      "purpose": "Whalesborough Circle loyalty tier ladder (Visitor through Founder).",
+      "dependencies": [],
+      "table_targets": ["loyalty_tiers"]
+    },
+    {
+      "order": 9,
+      "file": "properties.json",
+      "purpose": "All 34 bookable accommodation units across Arvor, Cottage and Signature levels.",
+      "dependencies": ["amenities.json"],
+      "table_targets": ["properties", "property_amenities"]
+    },
+    {
+      "order": 10,
+      "file": "menus.json",
+      "purpose": "The Weir restaurant menus (breakfast, lunch, drinks, kids, dogs) with full allergen tagging per UK Food Information Regs.",
+      "dependencies": ["suppliers.json"],
+      "table_targets": ["menus", "menu_items", "menu_modifiers", "menu_sides"]
+    },
+    {
+      "order": 11,
+      "file": "activities.json",
+      "purpose": "30+ included, paid and premium experiences.",
+      "dependencies": [],
+      "table_targets": ["experiences", "experience_schedules"]
+    },
+    {
+      "order": 12,
+      "file": "lodge_models.json",
+      "purpose": "4 lodge product tiers (Trelowen, Tevi, Gwelva, Bespoke). FCA_compliance_reviewed_at flag is false on every record — content cannot be published until legal sign-off.",
+      "dependencies": [],
+      "table_targets": ["lodge_models"]
+    },
+    {
+      "order": 13,
+      "file": "local_area_pois.json",
+      "purpose": "12 curated local-area POIs with dog rules, parking, opening hours.",
+      "dependencies": [],
+      "table_targets": ["local_pois"]
+    },
+    {
+      "order": 14,
+      "file": "gift_voucher_products.json",
+      "purpose": "7 monetary and 12 experience gift voucher products.",
+      "dependencies": ["spa_packages.json", "treatments.json"],
+      "table_targets": ["gift_voucher_products"]
+    }
+  ],
+  "load_order_summary": [
+    "1. Foundation: roles_permissions.json, amenities.json, suppliers.json, spa_categories.json, loyalty_tiers.json, membership_tiers.json",
+    "2. Catalogues: treatments.json, spa_packages.json, lodge_models.json, local_area_pois.json",
+    "3. Properties: properties.json (depends on amenities)",
+    "4. Restaurant: menus.json (depends on suppliers)",
+    "5. Activities: activities.json",
+    "6. Commerce: gift_voucher_products.json (depends on treatments and packages)"
+  ],
+  "post_load_actions": [
+    "Run materialised view refresh on mv_user_loyalty_state.",
+    "Run experience-session materialisation job (60-day window).",
+    "Run rate-load job to populate accommodation_rates per property per date.",
+    "Send migration letters to existing Try.be members and Lakeside Locals subscribers before public launch.",
+    "Trigger FCA legal-review queue for every record where _verify is true or FCA_compliance_reviewed_at is false."
+  ],
+  "compliance_gates": [
+    "Lodge models — FCA_compliance_reviewed_at = false on every record. No lodge sales copy ships until counsel sign-off recorded.",
+    "Membership pricing — Stripe products and prices must be live before membership_tiers.json signup flows can complete checkout.",
+    "Spa treatments — Pregnancy and cancer-safe flags must match therapist training certification.",
+    "Menus — Allergen matrix must align to UK Food Information Regulations 2014 and Natasha's Law (PPDS, 2021)."
+  ]
+}

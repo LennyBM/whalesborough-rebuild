@@ -1,0 +1,239 @@
+{
+  "venue": {
+    "name": "The Weir Restaurant",
+    "slug": "the-weir",
+    "tagline": "Coffee House. Bistro. Wildlife Centre.",
+    "phone": "01288 362234",
+    "email": "theweir@whalesborough.co.uk",
+    "currency": "GBP",
+    "address_locality": "Marhamchurch, Bude, Cornwall",
+    "compliance_reference": "UK Food Information Regulations 2014; Natasha's Law (PPDS, 2021); FSA Allergen Guidance May 2026"
+  },
+  "allergen_codes": [
+    "gluten-wheat",
+    "gluten-oats",
+    "gluten-barley",
+    "gluten-rye",
+    "crustaceans",
+    "egg",
+    "fish",
+    "peanut",
+    "soya",
+    "dairy",
+    "nuts",
+    "celery",
+    "mustard",
+    "sesame",
+    "sulphites",
+    "lupin",
+    "molluscs"
+  ],
+  "dietary_legend": {
+    "v": "Vegetarian",
+    "vg": "Vegan",
+    "gf": "Gluten-free or available gluten-free on request",
+    "df": "Dairy-free",
+    "n": "Contains nuts"
+  },
+  "menus": [
+    {
+      "code": "breakfast",
+      "slug": "breakfast",
+      "name": "Breakfast",
+      "tagline": "Eggs from down the lane. Sausages from up the hill.",
+      "available": "Monday to Saturday 09:00 to 11:30; Sunday 09:00 to 11:00",
+      "service_period": "morning",
+      "order_index": 1,
+      "items": [
+        { "slug": "bk-traditional", "name": "Traditional English Breakfast", "section": "Something Cooked", "price_pence": 1395, "dietary": [], "allergens": ["gluten-wheat", "egg", "dairy", "sulphites"], "is_signature": true, "suppliers": ["snout-and-trotter", "cornish-smoked-bacon", "neetfield-market-garden"] },
+        { "slug": "bk-small", "name": "Small English Breakfast", "section": "Something Cooked", "price_pence": 995, "dietary": [], "allergens": ["gluten-wheat", "egg", "dairy", "sulphites"], "is_signature": false, "suppliers": ["snout-and-trotter"] },
+        { "slug": "bk-vegetarian", "name": "Vegetarian Breakfast", "section": "Something Cooked", "price_pence": 975, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy", "soya"], "is_signature": false, "suppliers": ["neetfield-market-garden"] },
+        { "slug": "bk-vegan", "name": "Vegan Breakfast", "section": "Something Cooked", "price_pence": 975, "dietary": ["vg"], "allergens": ["gluten-wheat", "soya"], "is_signature": false, "suppliers": ["neetfield-market-garden"] },
+        { "slug": "bk-eggs-royale", "name": "Eggs Royale", "section": "Something Cooked", "price_pence": 1070, "dietary": [], "allergens": ["gluten-wheat", "egg", "fish", "dairy"], "is_signature": true, "suppliers": ["celtic-fish-game"] },
+        { "slug": "bk-bacon-roll", "name": "Cornish Smoked Bacon Sandwich", "section": "Something Cooked", "price_pence": 595, "dietary": [], "allergens": ["gluten-wheat", "dairy"], "is_signature": false },
+        { "slug": "bk-sausage-roll", "name": "Marhamchurch Sausage Sandwich", "section": "Something Cooked", "price_pence": 595, "dietary": [], "allergens": ["gluten-wheat", "dairy", "sulphites"], "is_signature": false, "suppliers": ["snout-and-trotter"] },
+        { "slug": "bk-granola", "name": "Homemade Granola", "section": "Lighter Starts", "price_pence": 725, "dietary": ["v", "n"], "allergens": ["gluten-oats", "nuts", "dairy"], "is_signature": false, "suppliers": ["whalesborough-honey", "trewithen-dairy"] },
+        { "slug": "bk-overnight-oats", "name": "Overnight Oats", "section": "Lighter Starts", "price_pence": 675, "dietary": ["v"], "allergens": ["gluten-oats", "dairy"], "is_signature": false, "suppliers": ["trewithen-dairy"] },
+        { "slug": "bk-toast-single", "name": "One Slice of Toast", "section": "Toast and Preserves", "price_pence": 130, "dietary": ["v"], "allergens": ["gluten-wheat", "dairy"], "is_signature": false },
+        { "slug": "bk-toast-double", "name": "Two Slices of Toast", "section": "Toast and Preserves", "price_pence": 210, "dietary": ["v"], "allergens": ["gluten-wheat", "dairy"], "is_signature": false },
+        { "slug": "bk-beans-toast", "name": "Baked Beans on Toast", "section": "Toast and Preserves", "price_pence": 425, "dietary": ["v"], "allergens": ["gluten-wheat", "dairy"], "is_signature": false },
+        { "slug": "bk-hot-cross-bun", "name": "Hot Cross Bun", "section": "Toast and Preserves", "price_pence": 320, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy"], "is_signature": false, "seasonal": true, "available_window": "Easter season only" }
+      ],
+      "modifiers": [
+        { "slug": "add-avocado", "name": "Add smashed avocado", "price_pence": 150 },
+        { "slug": "add-bacon", "name": "Add two rashers Cornish bacon", "price_pence": 295 },
+        { "slug": "add-egg", "name": "Add a free-range egg", "price_pence": 150 },
+        { "slug": "gf-bread", "name": "Swap to gluten-free bread", "price_pence": 0 }
+      ],
+      "notes": [
+        "Substitutions on cooked breakfast plates are not offered. Add-ons welcome.",
+        "Gluten-free bread available on request."
+      ]
+    },
+    {
+      "code": "lunch",
+      "slug": "lunch",
+      "name": "Lunch",
+      "tagline": "Lakeside, on the terrace, by the log fire.",
+      "available": "Daily 12:00 to 16:00",
+      "service_period": "midday",
+      "order_index": 2,
+      "items": [
+        { "slug": "ln-soup", "name": "Soup of the Day", "section": "To Start and Share", "price_pence": 695, "dietary": ["v"], "allergens": ["gluten-wheat", "dairy", "celery"], "suppliers": ["neetfield-market-garden"] },
+        { "slug": "ln-antipasti", "name": "Antipasti to Share", "section": "To Start and Share", "price_pence": 1595, "dietary": [], "allergens": ["gluten-wheat", "dairy", "sulphites"], "is_signature": true, "suppliers": ["whalesborough-cheese", "hoof-to-block", "neetfield-market-garden"] },
+        { "slug": "ln-ploughmans-sandwich", "name": "Whalesborough Ploughman's Sandwich", "section": "Sandwiches, Jackets and Panini", "price_pence": 1075, "dietary": [], "allergens": ["gluten-wheat", "dairy", "mustard", "sulphites"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "ln-mackerel-jacket", "name": "Smoked Mackerel Jacket", "section": "Sandwiches, Jackets and Panini", "price_pence": 1095, "dietary": ["gf"], "allergens": ["fish", "dairy", "mustard"], "suppliers": ["tregida-smokehouse"] },
+        { "slug": "ln-cheese-panini", "name": "Whalesborough Cheese Panini", "section": "Sandwiches, Jackets and Panini", "price_pence": 995, "dietary": ["v"], "allergens": ["gluten-wheat", "dairy", "mustard", "sulphites"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "ln-warren-burger", "name": "Warren's 6oz Steak Burger", "section": "Burgers and Grill", "price_pence": 1695, "dietary": [], "allergens": ["gluten-wheat", "egg", "dairy", "mustard"], "is_signature": true, "suppliers": ["phillip-warren-butchers", "whalesborough-cheese"] },
+        { "slug": "ln-moving-mountains", "name": "Moving Mountains Plant Burger", "section": "Burgers and Grill", "price_pence": 1575, "dietary": ["vg"], "allergens": ["gluten-wheat", "soya", "mustard"] },
+        { "slug": "ln-fish-chips", "name": "Fish and Chips", "section": "Plates from the Kitchen", "price_pence": 1595, "dietary": [], "allergens": ["gluten-wheat", "egg", "fish", "dairy", "mustard", "sulphites"], "is_signature": true, "suppliers": ["celtic-fish-game"] },
+        { "slug": "ln-macaroni", "name": "Whalesborough Macaroni Cheese", "section": "Plates from the Kitchen", "price_pence": 1275, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy", "mustard"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "ln-baked-ham", "name": "Cornish Baked Ham", "section": "Plates from the Kitchen", "price_pence": 1095, "dietary": ["gf"], "allergens": ["egg"], "suppliers": ["snout-and-trotter"] },
+        { "slug": "ln-goats-cheese-tart", "name": "Goats' Cheese Tart", "section": "Plates from the Kitchen", "price_pence": 1350, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy", "sulphites"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "ln-country-salad", "name": "Weir Country Salad", "section": "Salads", "price_pence": 995, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy", "mustard", "sulphites"], "suppliers": ["neetfield-market-garden"] },
+        { "slug": "ln-superfood-salad", "name": "Superfood Salad", "section": "Salads", "price_pence": 1095, "dietary": ["vg", "n"], "allergens": ["gluten-wheat", "nuts", "soya", "sesame"] },
+        { "slug": "ln-cream-tea", "name": "Cornish Cream Tea", "section": "Cream Teas", "price_pence": 875, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy"], "is_signature": true, "suppliers": ["trewithen-dairy"] }
+      ],
+      "modifiers": [
+        { "slug": "salad-chicken", "name": "Add grilled chicken", "price_pence": 295 },
+        { "slug": "salad-mackerel", "name": "Add Tregida smoked mackerel", "price_pence": 295 },
+        { "slug": "salad-salmon", "name": "Add smoked salmon", "price_pence": 295 },
+        { "slug": "salad-cheese", "name": "Add Whalesborough cheese (Miss Muffet & Smuggler)", "price_pence": 295 },
+        { "slug": "salad-ham-cheddar", "name": "Add Cornish ham and cheddar", "price_pence": 295 },
+        { "slug": "mac-bacon", "name": "Add smoked bacon to mac cheese", "price_pence": 175 }
+      ],
+      "sides": [
+        { "slug": "sd-roasties", "name": "Duck Fat Roast Potatoes", "price_pence": 525, "dietary": ["gf"], "allergens": [] },
+        { "slug": "sd-chips", "name": "Chunky Chips", "price_pence": 425, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "sd-dirty-fries", "name": "Dirty Fries", "price_pence": 495, "dietary": [], "allergens": ["dairy"] },
+        { "slug": "sd-coleslaw", "name": "Homemade Coleslaw", "price_pence": 265, "dietary": ["v", "gf"], "allergens": ["egg", "mustard"] },
+        { "slug": "sd-garlic-bread", "name": "Garlic Bread", "price_pence": 475, "dietary": ["v"], "allergens": ["gluten-wheat", "dairy"] },
+        { "slug": "sd-cowboy-beans", "name": "Cowboy Beans", "price_pence": 425, "dietary": ["vg"], "allergens": [] },
+        { "slug": "sd-chorizo", "name": "Chargrilled Chorizo", "price_pence": 295, "dietary": ["gf"], "allergens": [] },
+        { "slug": "sd-cheddar-mash", "name": "Cornish Cheddar Mash", "price_pence": 495, "dietary": ["v", "gf"], "allergens": ["dairy"] },
+        { "slug": "sd-veg", "name": "Chargrilled Vegetables", "price_pence": 395, "dietary": ["vg", "gf"], "allergens": [] }
+      ]
+    },
+    {
+      "code": "specials",
+      "slug": "specials",
+      "name": "Sample Set Menu and Specials",
+      "tagline": "What we are cooking this week.",
+      "available": "Summer Fridays and Saturdays 17:00 to 21:00. Pre-book by phone or in-app.",
+      "service_period": "evening",
+      "order_index": 3,
+      "items": [
+        { "slug": "sp-lamb-sausage", "name": "Farmer Dan's Lamb Sausage and Cornish Cheddar Mash", "section": "From the Parilla Grill", "price_pence": 1575, "dietary": [], "allergens": ["gluten-wheat", "dairy", "sulphites"], "is_signature": true, "suppliers": ["land-meets-sea", "whalesborough-cheese"] },
+        { "slug": "sp-chicken-skewer", "name": "Chimichurri Chicken, Chorizo and Pepper Skewer", "section": "From the Parilla Grill", "price_pence": 1950, "dietary": [], "allergens": ["egg", "mustard"] },
+        { "slug": "sp-harissa-salmon", "name": "Harissa Baked Salmon", "section": "From the Parilla Grill", "price_pence": 1875, "dietary": ["gf"], "allergens": ["fish"], "is_signature": true, "suppliers": ["celtic-fish-game"] },
+        { "slug": "sp-superfood", "name": "Superfood Bowl", "section": "From the Kitchen", "price_pence": 1295, "dietary": ["vg", "n"], "allergens": ["gluten-wheat", "nuts", "soya", "sesame", "sulphites"] },
+        { "slug": "sp-mac-evening", "name": "Macaroni Cheese", "section": "From the Kitchen", "price_pence": 1295, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy", "mustard"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "sp-goats-tart-evening", "name": "Goats' Cheese and Caramelised Onion Tart", "section": "From the Kitchen", "price_pence": 1350, "dietary": ["v", "n"], "allergens": ["gluten-wheat", "egg", "dairy", "nuts", "sulphites"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "sp-moving-mountains-evening", "name": "Moving Mountains Plant Burger", "section": "From the Kitchen", "price_pence": 1575, "dietary": ["vg"], "allergens": ["gluten-wheat", "soya", "mustard"] },
+        { "slug": "sp-sticky-toffee", "name": "Sticky Toffee Pudding", "section": "Sweet Things", "price_pence": 795, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy"], "is_signature": true, "suppliers": ["trewithen-dairy", "whalesborough-honey"] },
+        { "slug": "sp-cheeseboard", "name": "Whalesborough Cheeseboard", "section": "Sweet Things", "price_pence": 1095, "dietary": ["v"], "allergens": ["gluten-oats", "dairy", "mustard", "sulphites"], "is_signature": true, "suppliers": ["whalesborough-cheese"] },
+        { "slug": "sp-chocolate-pot", "name": "Dark Chocolate Pot with Cornish Sea Salt", "section": "Sweet Things", "price_pence": 795, "dietary": ["v"], "allergens": ["egg", "dairy", "soya"] },
+        { "slug": "sp-honey-pannacotta", "name": "Whalesborough Honey Panna Cotta", "section": "Sweet Things", "price_pence": 825, "dietary": ["v", "gf"], "allergens": ["dairy"], "suppliers": ["whalesborough-honey", "trewithen-dairy"] }
+      ],
+      "notes": [
+        "Specials change weekly based on what is ready at Neetfield Market Garden, what Hoof to Block has cut this week, and what is landing at Celtic Fish & Game.",
+        "Dinner service runs summer Fridays and Saturdays only. Pre-book by phone or through the app from launch.",
+        "Set-menu pricing — two courses GBP 28, three courses GBP 35."
+      ]
+    },
+    {
+      "code": "drinks",
+      "slug": "drinks",
+      "name": "Drinks",
+      "tagline": "Cornish coffee, Cornish cider, Cornish wine list.",
+      "available": "Served all day during opening hours.",
+      "service_period": "all-day",
+      "order_index": 4,
+      "items": [
+        { "slug": "dr-coffee-americano", "name": "Americano", "section": "Hot Drinks", "price_pence": 325, "dietary": ["vg", "gf"], "allergens": [], "suppliers": ["cornish-coffee"] },
+        { "slug": "dr-coffee-latte", "name": "Latte", "section": "Hot Drinks", "price_pence": 360, "dietary": ["v"], "allergens": ["dairy"], "suppliers": ["cornish-coffee", "trewithen-dairy"] },
+        { "slug": "dr-coffee-cappuccino", "name": "Cappuccino", "section": "Hot Drinks", "price_pence": 360, "dietary": ["v"], "allergens": ["dairy"], "suppliers": ["cornish-coffee", "trewithen-dairy"] },
+        { "slug": "dr-coffee-flat-white", "name": "Flat White", "section": "Hot Drinks", "price_pence": 365, "dietary": ["v"], "allergens": ["dairy"], "suppliers": ["cornish-coffee", "trewithen-dairy"] },
+        { "slug": "dr-coffee-mocha", "name": "Mocha", "section": "Hot Drinks", "price_pence": 395, "dietary": ["v"], "allergens": ["dairy", "soya"] },
+        { "slug": "dr-tea-pot", "name": "Pot of English Breakfast Tea", "section": "Hot Drinks", "price_pence": 295, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-herbal", "name": "Herbal Infusion", "section": "Hot Drinks", "price_pence": 295, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-hot-choc", "name": "Hot Chocolate", "section": "Hot Drinks", "price_pence": 395, "dietary": ["v"], "allergens": ["dairy", "soya"] },
+        { "slug": "dr-coke-sm", "name": "Coca-Cola (small)", "section": "Soft Drinks", "price_pence": 275, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-coke-lg", "name": "Coca-Cola (large)", "section": "Soft Drinks", "price_pence": 395, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-lemonade-sm", "name": "Lemonade (small)", "section": "Soft Drinks", "price_pence": 275, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-lemonade-lg", "name": "Lemonade (large)", "section": "Soft Drinks", "price_pence": 395, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-oj-sm", "name": "Orange Juice (small)", "section": "Soft Drinks", "price_pence": 275, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-oj-lg", "name": "Orange Juice (large)", "section": "Soft Drinks", "price_pence": 395, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-aj-sm", "name": "Apple Juice (small)", "section": "Soft Drinks", "price_pence": 275, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-aj-lg", "name": "Apple Juice (large)", "section": "Soft Drinks", "price_pence": 395, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-soda", "name": "Soda Water", "section": "Soft Drinks", "price_pence": 280, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-water-sm", "name": "Spring Water (small)", "section": "Soft Drinks", "price_pence": 230, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-water-lg", "name": "Spring Water (large)", "section": "Soft Drinks", "price_pence": 350, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-folk-tonic", "name": "Folkington's Tonic Water", "section": "Soft Drinks", "price_pence": 190, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-folk-light", "name": "Folkington's Light Tonic Water", "section": "Soft Drinks", "price_pence": 190, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-luscombe-lemon", "name": "Luscombe Sicilian Lemonade", "section": "Soft Drinks", "price_pence": 325, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-luscombe-rasp", "name": "Luscombe Raspberry Lemonade", "section": "Soft Drinks", "price_pence": 325, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-luscombe-ginger", "name": "Luscombe Ginger Beer", "section": "Soft Drinks", "price_pence": 325, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-cornish-elder", "name": "Cornish Orchards Sparkling Elderflower", "section": "Soft Drinks", "price_pence": 310, "dietary": ["vg", "gf"], "allergens": ["sulphites"], "suppliers": ["cornish-orchards"] },
+        { "slug": "dr-appletiser", "name": "Appletiser", "section": "Soft Drinks", "price_pence": 280, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-j2o", "name": "J2O", "section": "Soft Drinks", "price_pence": 285, "dietary": ["vg", "gf"], "allergens": [] },
+        { "slug": "dr-korev", "name": "Korev Lager (4.2% 500ml)", "section": "Beers and Ciders", "price_pence": 495, "dietary": ["vg"], "allergens": ["gluten-barley"], "abv": 4.2 },
+        { "slug": "dr-budweiser", "name": "Budweiser (4.8% 330ml)", "section": "Beers and Ciders", "price_pence": 410, "dietary": ["vg"], "allergens": ["gluten-barley"], "abv": 4.8 },
+        { "slug": "dr-san-miguel-0", "name": "San Miguel 0.0%", "section": "Beers and Ciders", "price_pence": 345, "dietary": ["vg"], "allergens": ["gluten-barley"], "abv": 0 },
+        { "slug": "dr-peroni-draught", "name": "Peroni Gluten-Free draught (5.1%)", "section": "Beers and Ciders", "price_pence": 420, "dietary": ["vg", "gf"], "allergens": [], "abv": 5.1 },
+        { "slug": "dr-cornish-cider", "name": "Cornish Orchards Cider", "section": "Beers and Ciders", "price_pence": 495, "dietary": ["vg"], "allergens": ["sulphites"], "suppliers": ["cornish-orchards"], "abv": 5 },
+        { "slug": "dr-jameson", "name": "Jameson Irish Whiskey (25ml)", "section": "Spirits", "price_pence": 320, "abv": 40, "allergens": [] },
+        { "slug": "dr-gordons", "name": "Gordon's Gin (25ml)", "section": "Spirits", "price_pence": 295, "abv": 37.5, "allergens": [] },
+        { "slug": "dr-smirnoff", "name": "Smirnoff Vodka (25ml)", "section": "Spirits", "price_pence": 295, "abv": 37.5, "allergens": [] },
+        { "slug": "dr-jack", "name": "Jack Daniel's (25ml)", "section": "Spirits", "price_pence": 310, "abv": 40, "allergens": [] },
+        { "slug": "dr-mixer", "name": "Mixer (Coca-Cola, lemonade or Folkington's tonic)", "section": "Spirits", "price_pence": 130, "allergens": [] },
+        { "slug": "dr-wine-list", "name": "Wine List by Olivers North Coast Wines", "section": "Wines", "price_pence": null, "dietary": [], "allergens": ["sulphites"], "suppliers": ["olivers-north-coast-wines"] }
+      ]
+    },
+    {
+      "code": "kids",
+      "slug": "kids",
+      "name": "Kids",
+      "tagline": "For under-12s. Served all day.",
+      "available": "All day. Includes a juice or milk.",
+      "service_period": "all-day",
+      "order_index": 5,
+      "items": [
+        { "slug": "kd-chicken-goujons", "name": "Chicken Goujons and Fries", "section": "Kids Mains", "price_pence": 720, "dietary": [], "allergens": ["gluten-wheat", "egg"] },
+        { "slug": "kd-veg-nuggets", "name": "Vegetable Nuggets and Fries", "section": "Kids Mains", "price_pence": 720, "dietary": ["v"], "allergens": ["gluten-wheat"] },
+        { "slug": "kd-burger", "name": "Beef Burger and Fries", "section": "Kids Mains", "price_pence": 720, "dietary": [], "allergens": ["gluten-wheat", "egg", "dairy"], "suppliers": ["phillip-warren-butchers"] },
+        { "slug": "kd-fish-fingers", "name": "Fish Fingers and Fries", "section": "Kids Mains", "price_pence": 720, "dietary": [], "allergens": ["gluten-wheat", "fish"] },
+        { "slug": "kd-macaroni", "name": "Macaroni Cheese", "section": "Kids Mains", "price_pence": 720, "dietary": ["v"], "allergens": ["gluten-wheat", "egg", "dairy", "mustard"], "suppliers": ["whalesborough-cheese"] },
+        { "slug": "kd-mini-roast", "name": "Mini Sunday Roast", "section": "Kids Mains", "price_pence": 850, "dietary": [], "allergens": ["gluten-wheat", "dairy", "egg", "sulphites", "celery"], "available_window": "Sundays only" },
+        { "slug": "kd-fruit-shoot", "name": "Fruit Shoot", "section": "Kids Drinks", "price_pence": 190, "allergens": [] },
+        { "slug": "kd-cordial", "name": "Blackcurrant or Orange Cordial", "section": "Kids Drinks", "price_pence": 90, "allergens": [] },
+        { "slug": "kd-milk", "name": "Glass of Milk", "section": "Kids Drinks", "price_pence": 150, "allergens": ["dairy"] },
+        { "slug": "kd-crusha", "name": "Crusha Flavoured Milk", "section": "Kids Drinks", "price_pence": 260, "allergens": ["dairy"] },
+        { "slug": "kd-cawston", "name": "Cawston Press Fruit Water", "section": "Kids Drinks", "price_pence": 170, "allergens": [] }
+      ],
+      "notes": [
+        "High chairs and child seats available at no charge.",
+        "Smaller portions of selected adult dishes available on request — ask your server."
+      ]
+    },
+    {
+      "code": "dogs",
+      "slug": "for-the-dogs",
+      "name": "For the Dogs",
+      "tagline": "Three things on the menu for the dog who came in with you.",
+      "available": "Served any time the kitchen is open.",
+      "service_period": "all-day",
+      "order_index": 6,
+      "policy": "Dogs are welcome inside the restaurant and out on the terrace. Water bowls at the door.",
+      "items": [
+        { "slug": "dg-sausage", "name": "Plain Sausage", "section": "Dog Treats", "price_pence": 200, "allergens": ["sulphites"], "suppliers": ["snout-and-trotter"] },
+        { "slug": "dg-biscuit", "name": "Whalesborough Dog Biscuit", "section": "Dog Treats", "price_pence": 150, "allergens": ["gluten-oats"] },
+        { "slug": "dg-puppuccino", "name": "Puppuccino", "section": "Dog Treats", "price_pence": 100, "allergens": ["dairy"] }
+      ],
+      "notes": [
+        "Dogs must stay on a lead inside the restaurant.",
+        "Please let your server know if your dog has any allergies before treating them."
+      ]
+    }
+  ]
+}

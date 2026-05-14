@@ -1,0 +1,575 @@
+{
+  "_doc": "Whalesborough Stripe Prices bootstrap payload. Each object is a request body for POST /v1/prices. Idempotent on metadata.internal_price_key (the bootstrap script lookups existing). All amounts are in GBP minor units (pence). tax_behavior is 'inclusive' on all consumer-facing Prices per UK convention. Accommodation Prices are NOT pre-created — they are minted per booking from unit base rates × dates × occupancy. Created: 2026-05-14.",
+  "prices": [
+    {
+      "_section": "spa_treatments_weekday_weekend",
+      "product_lookup": "internal_sku=estate-restorative-60",
+      "currency": "gbp",
+      "unit_amount": 14000,
+      "tax_behavior": "inclusive",
+      "nickname": "Estate Restorative 60 — Weekday",
+      "metadata": {
+        "day_band": "weekday",
+        "internal_price_key": "spa-estate-restorative-60-wd"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=estate-restorative-60",
+      "currency": "gbp",
+      "unit_amount": 16500,
+      "tax_behavior": "inclusive",
+      "nickname": "Estate Restorative 60 — Weekend",
+      "metadata": {
+        "day_band": "weekend",
+        "internal_price_key": "spa-estate-restorative-60-we"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=estate-restorative-90",
+      "currency": "gbp",
+      "unit_amount": 19500,
+      "tax_behavior": "inclusive",
+      "nickname": "Estate Restorative 90 — Weekday",
+      "metadata": {
+        "day_band": "weekday",
+        "internal_price_key": "spa-estate-restorative-90-wd"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=estate-restorative-90",
+      "currency": "gbp",
+      "unit_amount": 22500,
+      "tax_behavior": "inclusive",
+      "nickname": "Estate Restorative 90 — Weekend",
+      "metadata": {
+        "day_band": "weekend",
+        "internal_price_key": "spa-estate-restorative-90-we"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gaia-awakening-60",
+      "currency": "gbp",
+      "unit_amount": 13500,
+      "tax_behavior": "inclusive",
+      "nickname": "Gaia Awakening Facial 60 — Weekday",
+      "metadata": {
+        "day_band": "weekday",
+        "internal_price_key": "spa-gaia-awakening-60-wd"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gaia-awakening-60",
+      "currency": "gbp",
+      "unit_amount": 16000,
+      "tax_behavior": "inclusive",
+      "nickname": "Gaia Awakening Facial 60 — Weekend",
+      "metadata": {
+        "day_band": "weekend",
+        "internal_price_key": "spa-gaia-awakening-60-we"
+      }
+    },
+    {
+      "_note": "30 treatments × 2 day-bands = 60 Prices total in spa-treatments group. Truncated for brevity. Bootstrap iterates spa-treatments.md.",
+      "_total_spa_treatment_prices": 60
+    },
+    {
+      "_section": "spa_packages_single_price",
+      "product_lookup": "internal_sku=spa-day-for-two",
+      "currency": "gbp",
+      "unit_amount": 32500,
+      "tax_behavior": "inclusive",
+      "nickname": "Spa Day for Two — All-inclusive",
+      "metadata": {
+        "internal_price_key": "spa-pkg-day-for-two"
+      }
+    },
+    {
+      "_note": "14 packages total. Truncated.",
+      "_total_spa_package_prices": 14
+    },
+    {
+      "_section": "w_club_memberships",
+      "product_lookup": "internal_sku=w-club-pool-gym",
+      "currency": "gbp",
+      "unit_amount": 8500,
+      "tax_behavior": "inclusive",
+      "recurring": {
+        "interval": "month",
+        "interval_count": 1,
+        "usage_type": "licensed"
+      },
+      "nickname": "W Club Pool & Gym — Monthly",
+      "metadata": {
+        "cadence": "monthly",
+        "internal_price_key": "w-club-pg-monthly"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-pool-gym",
+      "currency": "gbp",
+      "unit_amount": 91800,
+      "tax_behavior": "inclusive",
+      "recurring": {
+        "interval": "year",
+        "interval_count": 1,
+        "usage_type": "licensed"
+      },
+      "nickname": "W Club Pool & Gym — Annual",
+      "metadata": {
+        "cadence": "annual",
+        "annual_discount_pct": "10",
+        "internal_price_key": "w-club-pg-annual"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-wellness",
+      "currency": "gbp",
+      "unit_amount": 12500,
+      "tax_behavior": "inclusive",
+      "recurring": {
+        "interval": "month",
+        "interval_count": 1,
+        "usage_type": "licensed"
+      },
+      "nickname": "W Club Wellness — Monthly",
+      "metadata": {
+        "cadence": "monthly",
+        "internal_price_key": "w-club-wellness-monthly"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-wellness",
+      "currency": "gbp",
+      "unit_amount": 135000,
+      "tax_behavior": "inclusive",
+      "recurring": {
+        "interval": "year",
+        "interval_count": 1,
+        "usage_type": "licensed"
+      },
+      "nickname": "W Club Wellness — Annual",
+      "metadata": {
+        "cadence": "annual",
+        "annual_discount_pct": "10",
+        "internal_price_key": "w-club-wellness-annual"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-signature",
+      "currency": "gbp",
+      "unit_amount": 22500,
+      "tax_behavior": "inclusive",
+      "recurring": {
+        "interval": "month",
+        "interval_count": 1,
+        "usage_type": "licensed"
+      },
+      "nickname": "W Club Signature — Monthly",
+      "metadata": {
+        "cadence": "monthly",
+        "internal_price_key": "w-club-signature-monthly"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-signature",
+      "currency": "gbp",
+      "unit_amount": 243000,
+      "tax_behavior": "inclusive",
+      "recurring": {
+        "interval": "year",
+        "interval_count": 1,
+        "usage_type": "licensed"
+      },
+      "nickname": "W Club Signature — Annual",
+      "metadata": {
+        "cadence": "annual",
+        "annual_discount_pct": "10",
+        "internal_price_key": "w-club-signature-annual"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-founder",
+      "currency": "gbp",
+      "unit_amount": 450000,
+      "tax_behavior": "inclusive",
+      "nickname": "W Club Founder — 5-Year One-off",
+      "metadata": {
+        "founder_variant": "5yr",
+        "internal_price_key": "w-club-founder-5yr"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-founder",
+      "currency": "gbp",
+      "unit_amount": 1500000,
+      "tax_behavior": "inclusive",
+      "nickname": "W Club Founder — Lifetime One-off",
+      "metadata": {
+        "founder_variant": "lifetime",
+        "internal_price_key": "w-club-founder-lifetime"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-family-partner",
+      "currency": "gbp",
+      "unit_amount": 5000,
+      "tax_behavior": "inclusive",
+      "recurring": { "interval": "month", "usage_type": "licensed" },
+      "nickname": "W Club Family — Partner Add-on Monthly",
+      "metadata": {
+        "internal_price_key": "w-club-family-partner-monthly"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-family-child",
+      "currency": "gbp",
+      "unit_amount": 1500,
+      "tax_behavior": "inclusive",
+      "recurring": { "interval": "month", "usage_type": "licensed" },
+      "nickname": "W Club Family — Child 12-17 Add-on Monthly",
+      "metadata": {
+        "internal_price_key": "w-club-family-child-monthly"
+      }
+    },
+    {
+      "_section": "w_club_joining_fees_one_off",
+      "product_lookup": "internal_sku=w-club-joining-pg",
+      "currency": "gbp",
+      "unit_amount": 7500,
+      "tax_behavior": "inclusive",
+      "nickname": "W Club Pool & Gym — Joining Fee",
+      "metadata": {
+        "internal_price_key": "w-club-joining-pg-fee"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-joining-wellness",
+      "currency": "gbp",
+      "unit_amount": 15000,
+      "tax_behavior": "inclusive",
+      "nickname": "W Club Wellness — Joining Fee",
+      "metadata": {
+        "internal_price_key": "w-club-joining-wellness-fee"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-joining-signature",
+      "currency": "gbp",
+      "unit_amount": 25000,
+      "tax_behavior": "inclusive",
+      "nickname": "W Club Signature — Joining Fee",
+      "metadata": {
+        "internal_price_key": "w-club-joining-signature-fee"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=w-club-freeze-fee",
+      "currency": "gbp",
+      "unit_amount": 1500,
+      "tax_behavior": "inclusive",
+      "recurring": { "interval": "month", "usage_type": "licensed" },
+      "nickname": "W Club Freeze Maintenance Fee — Monthly",
+      "metadata": {
+        "internal_price_key": "w-club-freeze-monthly"
+      }
+    },
+    {
+      "_section": "lakeside_locals",
+      "product_lookup": "internal_sku=lakeside-locals-annual",
+      "currency": "gbp",
+      "unit_amount": 3500,
+      "tax_behavior": "inclusive",
+      "recurring": { "interval": "year", "usage_type": "licensed" },
+      "nickname": "Lakeside Locals — Annual Membership",
+      "metadata": {
+        "internal_price_key": "lakeside-locals-annual"
+      }
+    },
+    {
+      "_section": "restaurant_deposits_and_events",
+      "product_lookup": "internal_sku=restaurant-group-deposit",
+      "currency": "gbp",
+      "custom_unit_amount": { "enabled": true, "minimum": 2500, "maximum": 10000, "preset": 2500 },
+      "tax_behavior": "inclusive",
+      "nickname": "Restaurant Group Deposit — £25 per cover preset",
+      "metadata": {
+        "internal_price_key": "restaurant-group-deposit-custom"
+      }
+    },
+    {
+      "_note": "Event tickets minted per-event by bootstrap from events.json. Pattern: prod_event_{slug} + price one-off with the listed event price."
+    },
+    {
+      "_section": "lodge_reservation_deposit",
+      "product_lookup": "internal_sku=lodge-reservation-deposit",
+      "currency": "gbp",
+      "unit_amount": 500000,
+      "tax_behavior": "exempt",
+      "nickname": "Lodge Reservation Deposit — Fixed £5,000",
+      "metadata": {
+        "internal_price_key": "lodge-reservation-deposit-5000",
+        "refundable": "true"
+      }
+    },
+    {
+      "_section": "retail_estate_made",
+      "product_lookup": "internal_sku=honey-single-hive",
+      "currency": "gbp",
+      "unit_amount": 1200,
+      "tax_behavior": "inclusive",
+      "nickname": "Honey Single Hive — 340g jar",
+      "metadata": {
+        "variant_label": "340g jar",
+        "internal_price_key": "honey-single-hive-340g"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=honey-gift-box-3",
+      "currency": "gbp",
+      "unit_amount": 3200,
+      "tax_behavior": "inclusive",
+      "nickname": "Honey Gift Box of 3",
+      "metadata": {
+        "variant_label": "gift box of 3",
+        "internal_price_key": "honey-gift-box-3"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gin-bottle-70cl",
+      "currency": "gbp",
+      "unit_amount": 4500,
+      "tax_behavior": "inclusive",
+      "nickname": "Whalesborough Gin 70cl",
+      "metadata": {
+        "variant_label": "70cl bottle",
+        "internal_price_key": "gin-70cl"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=cream-tea-kit-2",
+      "currency": "gbp",
+      "unit_amount": 2800,
+      "tax_behavior": "inclusive",
+      "nickname": "Cream Tea Kit for 2",
+      "metadata": {
+        "internal_price_key": "cream-tea-kit-2"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=hamper-mini",
+      "currency": "gbp",
+      "unit_amount": 3500,
+      "tax_behavior": "inclusive",
+      "nickname": "Mini Hamper",
+      "metadata": {
+        "internal_price_key": "hamper-mini"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=hamper-classic",
+      "currency": "gbp",
+      "unit_amount": 7500,
+      "tax_behavior": "inclusive",
+      "nickname": "Classic Hamper",
+      "metadata": {
+        "internal_price_key": "hamper-classic"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=hamper-ultra",
+      "currency": "gbp",
+      "unit_amount": 15000,
+      "tax_behavior": "inclusive",
+      "nickname": "Ultra Hamper",
+      "metadata": {
+        "internal_price_key": "hamper-ultra"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gaia-balancing-serum-30ml",
+      "currency": "gbp",
+      "unit_amount": 6800,
+      "tax_behavior": "inclusive",
+      "nickname": "Gaia Balancing Serum 30ml",
+      "metadata": {
+        "internal_price_key": "gaia-balancing-serum-30ml"
+      }
+    },
+    {
+      "_section": "activities",
+      "product_lookup": "internal_sku=tractor-tour",
+      "currency": "gbp",
+      "unit_amount": 1500,
+      "tax_behavior": "inclusive",
+      "nickname": "Tractor Tour — Adult",
+      "metadata": {
+        "variant_label": "adult",
+        "internal_price_key": "tractor-tour-adult"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=tractor-tour",
+      "currency": "gbp",
+      "unit_amount": 800,
+      "tax_behavior": "inclusive",
+      "nickname": "Tractor Tour — Child",
+      "metadata": {
+        "variant_label": "child",
+        "internal_price_key": "tractor-tour-child"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=alpaca-feeding",
+      "currency": "gbp",
+      "unit_amount": 1200,
+      "tax_behavior": "inclusive",
+      "nickname": "Alpaca Feeding — per person",
+      "metadata": {
+        "internal_price_key": "alpaca-feeding-person"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=guided-fishing-slot",
+      "currency": "gbp",
+      "unit_amount": 6500,
+      "tax_behavior": "inclusive",
+      "nickname": "Guided Fishing Slot — 3hr",
+      "metadata": {
+        "internal_price_key": "guided-fishing-slot-3hr"
+      }
+    },
+    {
+      "_section": "gift_cards_monetary_MPV",
+      "product_lookup": "internal_sku=gift-card-monetary",
+      "currency": "gbp",
+      "unit_amount": 2500,
+      "tax_behavior": "exempt",
+      "nickname": "Gift Card £25",
+      "metadata": {
+        "denomination": "25",
+        "voucher_type": "MPV",
+        "internal_price_key": "gift-card-25"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gift-card-monetary",
+      "currency": "gbp",
+      "unit_amount": 5000,
+      "tax_behavior": "exempt",
+      "nickname": "Gift Card £50",
+      "metadata": {
+        "denomination": "50",
+        "voucher_type": "MPV",
+        "internal_price_key": "gift-card-50"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gift-card-monetary",
+      "currency": "gbp",
+      "unit_amount": 10000,
+      "tax_behavior": "exempt",
+      "nickname": "Gift Card £100",
+      "metadata": {
+        "denomination": "100",
+        "voucher_type": "MPV",
+        "internal_price_key": "gift-card-100"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gift-card-monetary",
+      "currency": "gbp",
+      "unit_amount": 25000,
+      "tax_behavior": "exempt",
+      "nickname": "Gift Card £250",
+      "metadata": {
+        "denomination": "250",
+        "voucher_type": "MPV",
+        "internal_price_key": "gift-card-250"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gift-card-monetary",
+      "currency": "gbp",
+      "unit_amount": 50000,
+      "tax_behavior": "exempt",
+      "nickname": "Gift Card £500",
+      "metadata": {
+        "denomination": "500",
+        "voucher_type": "MPV",
+        "internal_price_key": "gift-card-500"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=gift-card-monetary",
+      "currency": "gbp",
+      "custom_unit_amount": { "enabled": true, "minimum": 2500, "maximum": 500000, "preset": 5000 },
+      "tax_behavior": "exempt",
+      "nickname": "Gift Card — Custom Amount",
+      "metadata": {
+        "denomination": "custom",
+        "voucher_type": "MPV",
+        "internal_price_key": "gift-card-custom"
+      }
+    },
+    {
+      "_section": "experience_vouchers_SPV_and_MPV",
+      "product_lookup": "internal_sku=voucher-spa-day-for-two",
+      "currency": "gbp",
+      "unit_amount": 32500,
+      "tax_behavior": "inclusive",
+      "nickname": "Voucher — Spa Day for Two",
+      "metadata": {
+        "voucher_type": "SPV",
+        "internal_price_key": "voucher-spa-day-for-two"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=voucher-hot-tub-weekend",
+      "currency": "gbp",
+      "unit_amount": 49500,
+      "tax_behavior": "exempt",
+      "nickname": "Voucher — Hot Tub Lodge Weekend",
+      "metadata": {
+        "voucher_type": "MPV",
+        "internal_price_key": "voucher-hot-tub-weekend"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=voucher-cream-tea-alpaca",
+      "currency": "gbp",
+      "unit_amount": 8500,
+      "tax_behavior": "exempt",
+      "nickname": "Voucher — Cream Tea & Alpaca Feed",
+      "metadata": {
+        "voucher_type": "MPV",
+        "internal_price_key": "voucher-cream-tea-alpaca"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=voucher-tasting-menu-for-two",
+      "currency": "gbp",
+      "unit_amount": 22500,
+      "tax_behavior": "inclusive",
+      "nickname": "Voucher — Tasting Menu Evening for Two",
+      "metadata": {
+        "voucher_type": "SPV",
+        "internal_price_key": "voucher-tasting-menu-for-two"
+      }
+    },
+    {
+      "product_lookup": "internal_sku=voucher-signature-treatment-lunch",
+      "currency": "gbp",
+      "unit_amount": 17500,
+      "tax_behavior": "inclusive",
+      "nickname": "Voucher — Signature Treatment & Lunch",
+      "metadata": {
+        "voucher_type": "SPV",
+        "internal_price_key": "voucher-signature-treatment-lunch"
+      }
+    },
+    {
+      "_section": "accommodation_dynamic_note",
+      "_note": "Accommodation Prices are NOT pre-created. The booking engine mints a one-shot Price per booking using stripe.prices.create with unit_amount_decimal (supports sub-pence precision when needed for night-rate × VAT calcs), currency 'gbp', tax_behavior 'inclusive', product set to the unit Product id, and metadata { arrival, nights, guests, dogs, rate_plan_code, internal_price_key='dynamic-{unit}-{arrival}-{nights}' }. The Price is then attached to the PaymentIntent line item and is NOT reused across bookings."
+    }
+  ]
+}

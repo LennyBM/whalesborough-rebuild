@@ -1,0 +1,230 @@
+[
+  {
+    "slug": "widemouth-bay",
+    "name": "Widemouth Bay",
+    "category": "beach",
+    "distance_miles": 4,
+    "drive_minutes": 10,
+    "what3words": "shed.silly.passenger",
+    "address_locality": "Widemouth, Cornwall",
+    "dog_rules": {
+      "summer": "Restricted 09:00-18:00 between Easter and 30 September on the main beach. Black Rock end remains year-round dog-friendly.",
+      "winter": "Dogs welcome any time"
+    },
+    "parking": "Large pay-and-display car park at the north and south ends; free off-season",
+    "family_suitability": "Excellent — wide flat beach, lifeguarded section in summer, surf school on site",
+    "opening_hours": "Beach access at all times; lifeguard cover Easter-October",
+    "hero_image_alt": "Wide flat surf beach with cliffs at the north end",
+    "best_for": ["family", "surf", "sunset"],
+    "editorial": "The closest beach to the estate and the one most guests visit first. Big skies, surf school for beginners, lifeguarded in summer."
+  },
+  {
+    "slug": "black-rock",
+    "name": "Black Rock Beach",
+    "category": "beach",
+    "distance_miles": 5,
+    "drive_minutes": 12,
+    "what3words": "drift.hours.unlawful",
+    "address_locality": "Widemouth south end, Cornwall",
+    "dog_rules": {
+      "summer": "Dog-friendly year-round, all hours",
+      "winter": "Dog-friendly year-round, all hours"
+    },
+    "parking": "Limited free roadside parking",
+    "family_suitability": "Good — pebbles and rock pools at low tide; not a swimming beach",
+    "opening_hours": "Beach access at all times",
+    "hero_image_alt": "Rocky cove at the south end of Widemouth Bay",
+    "best_for": ["dog-walk", "rock-pools", "year-round"],
+    "editorial": "The estate's go-to year-round dog beach. Rock pools at low tide and a cliff-top walk back."
+  },
+  {
+    "slug": "sandymouth",
+    "name": "Sandymouth Beach",
+    "category": "beach",
+    "distance_miles": 7,
+    "drive_minutes": 15,
+    "what3words": "wakes.feast.amazingly",
+    "address_locality": "Stibb, Cornwall",
+    "dog_rules": {
+      "summer": "Year-round dog-friendly",
+      "winter": "Year-round dog-friendly"
+    },
+    "parking": "National Trust car park, pay-and-display (free for NT members)",
+    "family_suitability": "Excellent — sandy at low tide, rock pools, NT cafe",
+    "opening_hours": "Beach access at all times; cafe Easter-October",
+    "hero_image_alt": "Sandymouth beach at low tide with cliffs",
+    "best_for": ["family", "dog-walk", "rock-pools"],
+    "editorial": "National Trust beach — wide sand at low tide, cliffs above, a small cafe in the summer. Year-round dog access."
+  },
+  {
+    "slug": "bude-canal",
+    "name": "Bude Canal Towpath",
+    "category": "walk",
+    "distance_miles": 3,
+    "drive_minutes": 8,
+    "what3words": "scrub.lifted.tide",
+    "address_locality": "Bude, Cornwall",
+    "dog_rules": {
+      "summer": "Dogs welcome on lead near the sea-lock; off-lead permitted on quieter towpath sections",
+      "winter": "As summer"
+    },
+    "parking": "Crescent and Falcon Yard pay-and-display car parks",
+    "family_suitability": "Excellent — flat, pram and wheelchair friendly, cafe and SUP hire on site",
+    "opening_hours": "Always accessible",
+    "hero_image_alt": "Flat canal towpath leading inland from the Bude sea-lock",
+    "best_for": ["family", "accessibility", "dog-walk"],
+    "editorial": "The historic Bude Canal — the only sea-lock canal in England. Two miles of flat towpath, SUP hire from the canal head, a good ice cream van."
+  },
+  {
+    "slug": "summerleaze-beach",
+    "name": "Summerleaze Beach",
+    "category": "beach",
+    "distance_miles": 3,
+    "drive_minutes": 8,
+    "what3words": "bluffs.curiosity.wished",
+    "address_locality": "Bude, Cornwall",
+    "dog_rules": {
+      "summer": "Banned 09:00-18:00 from Easter to 30 September",
+      "winter": "Dogs welcome any time"
+    },
+    "parking": "Pay-and-display in front of the beach",
+    "family_suitability": "Excellent — wide sand, Bude sea pool at the north end, lifeguarded",
+    "opening_hours": "Always accessible; sea-pool lifeguarded April-October",
+    "hero_image_alt": "Wide sandy beach with the Bude sea pool at the cliff base",
+    "best_for": ["family", "sea-pool", "lifeguarded"],
+    "editorial": "The town beach — wide sand, the famous tidal sea pool at the north end, an ice cream queue worth joining. Dogs allowed outside the summer ban window."
+  },
+  {
+    "slug": "tintagel-castle",
+    "name": "Tintagel Castle",
+    "category": "heritage",
+    "distance_miles": 24,
+    "drive_minutes": 40,
+    "what3words": "feast.smoothing.imperial",
+    "address_locality": "Tintagel, Cornwall",
+    "dog_rules": {
+      "summer": "Dogs on a lead welcome across the site",
+      "winter": "As summer"
+    },
+    "parking": "Pay-and-display in the village; long walk down to the site",
+    "family_suitability": "Moderate — long descent and the new bridge requires comfortable shoes; small children may struggle with the steps",
+    "opening_hours": "Daily 10:00-17:00 (English Heritage)",
+    "hero_image_alt": "Tintagel castle ruins and footbridge at the headland",
+    "best_for": ["heritage", "all-weather"],
+    "editorial": "English Heritage Arthurian site — the new bridge across the chasm is the photograph. Allow a full half-day."
+  },
+  {
+    "slug": "boscastle-harbour",
+    "name": "Boscastle Harbour",
+    "category": "village",
+    "distance_miles": 19,
+    "drive_minutes": 32,
+    "what3words": "remarked.rubble.gentle",
+    "address_locality": "Boscastle, Cornwall",
+    "dog_rules": {
+      "summer": "Dogs welcome along the harbour wall and SWCP",
+      "winter": "As summer"
+    },
+    "parking": "Pay-and-display at the harbour mouth",
+    "family_suitability": "Excellent — flat harbour walk, dog-friendly pubs, Museum of Witchcraft and Magic",
+    "opening_hours": "Always accessible",
+    "hero_image_alt": "Boscastle harbour mouth with stone breakwaters",
+    "best_for": ["family", "heritage", "all-weather"],
+    "editorial": "Old smugglers' harbour — narrow entrance, stone-faced cottages, the Cobweb Inn for the post-walk pint. The Museum of Witchcraft and Magic is the wet-day option."
+  },
+  {
+    "slug": "museum-of-witchcraft",
+    "name": "Museum of Witchcraft and Magic",
+    "category": "heritage",
+    "distance_miles": 19,
+    "drive_minutes": 32,
+    "what3words": "remarked.rubble.gentle",
+    "address_locality": "Boscastle, Cornwall",
+    "dog_rules": {
+      "summer": "No dogs except assistance dogs",
+      "winter": "Same — assistance dogs only"
+    },
+    "parking": "Harbour pay-and-display car park",
+    "family_suitability": "Good — best for ages 10+; some exhibits not for young children",
+    "opening_hours": "Daily 10:30-18:00 April-October; closes November-March",
+    "hero_image_alt": "Stone-faced museum building on Boscastle quayside",
+    "best_for": ["heritage", "rainy-day", "older-children"],
+    "editorial": "World's largest collection of folk magic and witchcraft objects — the wet-day reason to visit Boscastle."
+  },
+  {
+    "slug": "bude-castle",
+    "name": "Bude Castle Heritage Centre",
+    "category": "heritage",
+    "distance_miles": 3,
+    "drive_minutes": 8,
+    "what3words": "spice.amusing.exposing",
+    "address_locality": "Bude, Cornwall",
+    "dog_rules": {
+      "summer": "Dogs on a lead welcome in grounds; not inside the heritage centre",
+      "winter": "As summer"
+    },
+    "parking": "Crescent pay-and-display",
+    "family_suitability": "Excellent — free admission, small museum, garden cafe, family-friendly exhibits",
+    "opening_hours": "Daily 10:00-16:00; cafe closes 17:00",
+    "hero_image_alt": "Bude Castle building beside the canal",
+    "best_for": ["family", "rainy-day", "free"],
+    "editorial": "Free local-history museum next to the canal head — half an hour of stories about Sir Goldsworthy Gurney, Bude's nineteenth-century inventor."
+  },
+  {
+    "slug": "crackington-haven",
+    "name": "Crackington Haven",
+    "category": "beach",
+    "distance_miles": 12,
+    "drive_minutes": 22,
+    "what3words": "skipping.unstuck.bedrooms",
+    "address_locality": "Crackington Haven, Cornwall",
+    "dog_rules": {
+      "summer": "Banned 09:00-18:00 Easter to 30 September",
+      "winter": "Dogs welcome year-round"
+    },
+    "parking": "Small pay-and-display next to the beach",
+    "family_suitability": "Good — short walk to the sand, pub above, rock pools",
+    "opening_hours": "Always accessible",
+    "hero_image_alt": "Cove framed by tall striped cliffs at Crackington",
+    "best_for": ["family", "rock-pools", "geology"],
+    "editorial": "A small cove framed by the highest cliffs on the south-west coast. The Coombe Barton Inn above is dog-friendly all year."
+  },
+  {
+    "slug": "duckpool",
+    "name": "Duckpool Beach",
+    "category": "beach",
+    "distance_miles": 8,
+    "drive_minutes": 18,
+    "what3words": "trifled.shimmered.cliffs",
+    "address_locality": "Coombe Valley, Cornwall",
+    "dog_rules": {
+      "summer": "Dogs welcome year-round",
+      "winter": "Dogs welcome year-round"
+    },
+    "parking": "Small free car park at the head of the lane",
+    "family_suitability": "Moderate — pebbles, rock pools at low tide, no facilities",
+    "opening_hours": "Always accessible",
+    "hero_image_alt": "Pebble cove and stream at Duckpool",
+    "best_for": ["dog-walk", "year-round", "quiet"],
+    "editorial": "Quiet pebble cove with a freshwater stream running across the beach. The pebble surface keeps the summer crowds in Widemouth."
+  },
+  {
+    "slug": "tamar-lakes",
+    "name": "Tamar Lakes",
+    "category": "walk",
+    "distance_miles": 14,
+    "drive_minutes": 25,
+    "what3words": "headache.snowfall.skimming",
+    "address_locality": "Bradworthy, Devon",
+    "dog_rules": {
+      "summer": "Dogs welcome on lead",
+      "winter": "As summer"
+    },
+    "parking": "Free at the Upper Tamar Lake car park",
+    "family_suitability": "Excellent — flat 2-mile loop, cafe, kayak hire, sailing club",
+    "opening_hours": "Always accessible; cafe and kayak hire 09:30-17:00 in season",
+    "hero_image_alt": "Tamar Lake reservoir with paddleboarders",
+    "best_for": ["family", "water-sports", "dog-walk"],
+    "editorial": "Twin reservoirs straddling the Devon-Cornwall border. The Upper Lake is open for SUP, sailing and family kayak hire. The Lower Lake is a nature reserve."
+  }
+]
