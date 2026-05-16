@@ -1,0 +1,29 @@
+{
+  "name": "Whalesborough Farm Resort & Spa",
+  "short_name": "Whalesborough",
+  "description": "Luxury eco-conscious countryside resort in North Cornwall. Book stays, spa treatments, and dining.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4a6457",
+  "background_color": "#fbf9f6",
+  "orientation": "portrait-primary",
+  "categories": ["travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

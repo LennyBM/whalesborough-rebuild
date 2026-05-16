@@ -43,14 +43,26 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "imagedelivery.net",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+      {
+        protocol: "https",
+        hostname: "whalesboroughliving.co.uk",
+        pathname: "/**",
       },
     ],
   },
@@ -59,6 +71,50 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: "/accommodation",
+        destination: "/stay",
+        permanent: true,
+      },
+      {
+        source: "/accommodation/:path*",
+        destination: "/stay/:path*",
+        permanent: true,
+      },
+      {
+        source: "/wellness",
+        destination: "/spa",
+        permanent: true,
+      },
+      {
+        source: "/wellness/:path*",
+        destination: "/spa/:path*",
+        permanent: true,
+      },
+      {
+        source: "/restaurant",
+        destination: "/dine",
+        permanent: true,
+      },
+      {
+        source: "/restaurant/:path*",
+        destination: "/dine/:path*",
+        permanent: true,
+      },
+      {
+        source: "/ownership",
+        destination: "/own",
+        permanent: true,
+      },
+      {
+        source: "/ownership/:path*",
+        destination: "/own/:path*",
+        permanent: true,
       },
     ];
   },
