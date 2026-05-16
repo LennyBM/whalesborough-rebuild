@@ -1,10 +1,23 @@
 import { serve } from "inngest/next";
 
-import { inngest, functions } from "@/lib/inngest/client";
+import { inngest } from "@/lib/inngest/client";
+import {
+  bookingConfirmed,
+  lodgeLeadCreated,
+  newsletterSubscribed,
+  preArrival,
+  postStayReview,
+} from "@/lib/inngest/functions";
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
-  functions,
+  functions: [
+    bookingConfirmed,
+    lodgeLeadCreated,
+    newsletterSubscribed,
+    preArrival,
+    postStayReview,
+  ],
   signingKey: process.env.INNGEST_SIGNING_KEY,
 });
 

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 import { Button, LinkArrow } from "@/components/ui/button";
@@ -16,9 +15,60 @@ import {
 } from "@/components/ui/select";
 
 export default function Page() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
+  const [collection, setCollection] = useState("");
 
-  if (submitted) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+    setFieldErrors({});
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const firstName = formData.get("firstName") as string;
+    const lastName = formData.get("lastName") as string;
+
+    const payload = {
+      name: `${firstName} ${lastName}`.trim(),
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      collection: collection || "tevi",
+      type: "viewing" as const,
+      message: formData.get("message") as string || undefined,
+    };
+
+    try {
+      const res = await fetch("/api/lodge-leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+        setCollection("");
+      } else if (res.status === 400) {
+        setStatus("error");
+        setFieldErrors(data.details || {});
+        setErrorMessage(data.error || "Please check your details and try again.");
+      } else {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMessage("Unable to send your request. Please check your connection and try again.");
+    }
+  }
+
+  if (status === "success") {
     return (
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40 text-center">
@@ -105,11 +155,14 @@ export default function Page() {
             <div>
               <form
                 className="space-y-8 bg-background p-8 lg:p-10"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                }}
+                onSubmit={handleSubmit}
               >
+                {status === "error" && errorMessage && (
+                  <div className="rounded-md bg-red-50 p-4 text-body-sm text-red-800">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First name</Label>
@@ -132,6 +185,9 @@ export default function Page() {
                     />
                   </div>
                 </div>
+                {fieldErrors.name && (
+                  <p className="text-caption text-red-600">{fieldErrors.name[0]}</p>
+                )}
 
                 <div className="space-y-2">
                   <Label htmlFor="email">Email address</Label>
@@ -143,6 +199,9 @@ export default function Page() {
                     required
                     autoComplete="email"
                   />
+                  {fieldErrors.email && (
+                    <p className="text-caption text-red-600">{fieldErrors.email[0]}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -155,6 +214,9 @@ export default function Page() {
                     required
                     autoComplete="tel"
                   />
+                  {fieldErrors.phone && (
+                    <p className="text-caption text-red-600">{fieldErrors.phone[0]}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -169,7 +231,7 @@ export default function Page() {
 
                 <div className="space-y-2">
                   <Label htmlFor="collection">Collections of interest</Label>
-                  <Select name="collection">
+                  <Select name="collection" value={collection} onValueChange={setCollection}>
                     <SelectTrigger id="collection">
                       <SelectValue placeholder="Which lodges interest you?" />
                     </SelectTrigger>
@@ -178,9 +240,11 @@ export default function Page() {
                       <SelectItem value="gwelva">Gwelva Luxury Villas</SelectItem>
                       <SelectItem value="trelowen">Trelowen Exclusive Lodges</SelectItem>
                       <SelectItem value="bespoke">Bespoke Lodges</SelectItem>
-                      <SelectItem value="all">All collections</SelectItem>
                     </SelectContent>
                   </Select>
+                  {fieldErrors.collection && (
+                    <p className="text-caption text-red-600">{fieldErrors.collection[0]}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -192,8 +256,8 @@ export default function Page() {
                   />
                 </div>
 
-                <Button type="submit" variant="primary" size="lg" className="w-full">
-                  Request viewing
+                <Button type="submit" variant="primary" size="lg" className="w-full" disabled={status === "loading"}>
+                  {status === "loading" ? "Sending..." : "Request viewing"}
                 </Button>
 
                 <p className="text-body-sm text-on-surface-muted">

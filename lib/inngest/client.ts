@@ -1,19 +1,60 @@
 import { EventSchemas, Inngest } from "inngest";
 
 /**
- * Inngest client — background job orchestration.
- *
- * Wave 2 will register typed events:
- *  - booking/created
- *  - booking/payment-succeeded
- *  - booking/check-in
- *  - lead/captured
- *  - viewing/booked
- *  - spa/reminder
+ * Inngest client — background job orchestration for Whalesborough.
  */
 type Events = {
   "ping/test": {
     data: { message: string };
+  };
+  "booking/confirmed": {
+    data: {
+      bookingId: string;
+      guestEmail: string;
+      guestName: string;
+      checkInDate: string;
+      checkOutDate: string;
+      accommodationType: string;
+      totalAmount: number;
+    };
+  };
+  "booking/pre-arrival": {
+    data: {
+      bookingId: string;
+      guestEmail: string;
+      guestName: string;
+      checkInDate: string;
+      checkOutDate: string;
+      accommodationType: string;
+    };
+  };
+  "booking/post-stay-review": {
+    data: {
+      bookingId: string;
+      guestEmail: string;
+      guestName: string;
+      checkInDate: string;
+      checkOutDate: string;
+      accommodationType: string;
+    };
+  };
+  "lead/lodge-created": {
+    data: {
+      leadId: string;
+      email: string;
+      name: string;
+      phone: string;
+      type: "enquiry" | "viewing" | "callback";
+      lodgeInterest: string;
+      message?: string;
+    };
+  };
+  "newsletter/subscribed": {
+    data: {
+      email: string;
+      name?: string;
+      source: string;
+    };
   };
 };
 
@@ -23,6 +64,3 @@ export const inngest = new Inngest({
   schemas: new EventSchemas().fromRecord<Events>(),
   eventKey: process.env.INNGEST_EVENT_KEY,
 });
-
-/** All Inngest functions exported here are registered with the serve handler. */
-export const functions: ReturnType<typeof inngest.createFunction>[] = [];
