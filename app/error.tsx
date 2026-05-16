@@ -12,7 +12,7 @@ export default function Error({
   reset: () => void;
 }) {
   React.useEffect(() => {
-    // Wave 2: Sentry.captureException(error) — wired via global error boundary
+    // Wave 2: Sentry.captureException(error)
     if (process.env.NODE_ENV !== "production") {
       console.error(error);
     }
@@ -25,8 +25,9 @@ export default function Error({
         A moment of friction.
       </h1>
       <p className="mt-6 max-w-xl text-body-lg text-on-surface-variant">
-        Our apologies — something didn't behave as expected. We've been
-        notified. Try again, or get in touch and we'll sort it out for you.
+        Our apologies — something didn&apos;t behave as expected. We&apos;ve
+        been notified and are looking into it. Please try again, or return home
+        and start fresh.
       </p>
       {error.digest ? (
         <p className="mt-2 text-caption text-on-surface-muted">
@@ -34,11 +35,11 @@ export default function Error({
         </p>
       ) : null}
       <div className="mt-12 flex flex-wrap gap-4">
-        <Button onClick={reset} variant="primary">
+        <Button onClick={reset} variant="secondary">
           Try again
         </Button>
-        <Button asChild variant="tertiary">
-          <a href="/contact">Contact us</a>
+        <Button asChild variant="ghost">
+          <a href="/">Return home</a>
         </Button>
       </div>
     </div>
