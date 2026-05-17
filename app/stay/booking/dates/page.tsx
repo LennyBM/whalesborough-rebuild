@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Minus, Plus, ChevronLeft, ChevronRight } from "lucide-react";
 
 /* ─── Constants ─── */
@@ -249,7 +250,9 @@ function NumberStepper({
 
 /* ─── Main Page ─── */
 export default function BookingDatesPage() {
-  const today = "2026-05-17";
+  const router = useRouter();
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
   const [startDate, setStartDate] = useState<string | null>(null);
   const [endDate, setEndDate] = useState<string | null>(null);
@@ -260,8 +263,8 @@ export default function BookingDatesPage() {
   const [infants, setInfants] = useState(0);
   const [dogs, setDogs] = useState(0);
 
-  // Calendar navigation: start at July 2026
-  const [calendarStart, setCalendarStart] = useState({ year: 2026, month: 6 });
+  // Calendar navigation: start at current month
+  const [calendarStart, setCalendarStart] = useState({ year: now.getFullYear(), month: now.getMonth() });
 
   const secondMonth = useMemo(() => {
     let m = calendarStart.month + 1;
@@ -276,7 +279,7 @@ export default function BookingDatesPage() {
       let y = prev.year;
       if (m < 0) { m = 11; y--; }
       // Don't go before current month
-      if (y < 2026 || (y === 2026 && m < 4)) return prev;
+      if (y < now.getFullYear() || (y === now.getFullYear() && m < now.getMonth())) return prev;
       return { year: y, month: m };
     });
   }
@@ -324,6 +327,7 @@ export default function BookingDatesPage() {
   return (
     <article className="bg-background min-h-screen">
       <header className="mx-auto max-w-5xl px-6 pt-24 lg:px-12 lg:pt-32">
+        <BackButton label="Cancel" href="/stay" />
         <BookingStepper current={1} />
         <p className="eyebrow text-on-surface-muted">Step 1 of 5</p>
         <h1 className="heading-editorial mt-4 text-on-surface" style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}>
@@ -448,11 +452,15 @@ export default function BookingDatesPage() {
           </p>
 
           {/* Search button */}
-          <Link href="/stay/booking/select">
-            <Button variant="primary" size="lg" className="w-full sm:w-auto">
-              Search available properties
-            </Button>
-          </Link>
+          <Button
+            variant="primary"
+            size="lg"
+            className="w-full sm:w-auto"
+            disabled={!startDate || !endDate}
+            onClick={() => router.push("/stay/booking/select")}
+          >
+            Search available properties
+          </Button>
         </div>
       </section>
     </article>

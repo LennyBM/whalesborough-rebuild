@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button, LinkArrow } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -43,6 +44,7 @@ export default function BookingPage() {
       {/* Hero */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
+          <BackButton label="Back to Spa" href="/spa" />
           <p className="eyebrow text-on-surface-muted">The W Club</p>
           <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
             Book a <span className="italic">treatment</span>.

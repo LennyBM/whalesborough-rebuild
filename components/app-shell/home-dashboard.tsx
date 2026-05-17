@@ -12,6 +12,7 @@ import {
   Calendar,
   ChevronRight,
 } from "lucide-react"
+import { properties as allProperties } from "@/lib/data/properties"
 
 function getGreeting(): string {
   const hour = new Date().getHours()
@@ -27,13 +28,7 @@ const quickActions = [
   { label: "Explore Estate", icon: Map, href: "/estate" },
 ]
 
-const properties = [
-  { name: "The Farmhouse", image: "/images/properties/the-farmhouse.webp", sleeps: 10, price: 295 },
-  { name: "Eagle's Nest", image: "/images/properties/eagles-nest.webp", sleeps: 6, price: 225 },
-  { name: "Trelowen", image: "/images/properties/trelowen.webp", sleeps: 4, price: 175 },
-  { name: "Nettlecoombe", image: "/images/properties/nettlecoombe.webp", sleeps: 2, price: 155 },
-  { name: "Gwari Spa Barn", image: "/images/properties/gwari-spa-barn.webp", sleeps: 8, price: 265 },
-]
+const properties = allProperties.slice(0, 5)
 
 const fadeUp = {
   hidden: { opacity: 0, y: 12 },

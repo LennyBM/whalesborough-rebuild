@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { BackButton } from "@/components/app-shell/back-button";
 import { LinkArrow } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function CottagesPage() {
       {/* Editorial Header */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-40">
+          <BackButton label="Back to Stay" href="/stay" />
           <p className="eyebrow text-on-surface-muted">
             Accommodation
           </p>

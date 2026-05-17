@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { BackButton } from "@/components/app-shell/back-button";
 import { LinkArrow } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -96,6 +97,7 @@ export default function ArvorSuitesPage() {
       {/* Editorial Intro */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+          <BackButton label="Back to Stay" href="/stay" />
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <div>
               <p className="eyebrow text-on-surface-muted">

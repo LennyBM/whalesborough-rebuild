@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -82,6 +83,7 @@ export default function Page() {
       {/* Hero */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-40">
+          <BackButton label="Back to Own" href="/own" />
           <p className="font-display text-sm uppercase tracking-widest text-on-surface-muted">
             Limited availability
           </p>

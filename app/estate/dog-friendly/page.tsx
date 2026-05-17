@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { BackButton } from "@/components/app-shell/back-button";
 import { LinkArrow } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -94,6 +95,7 @@ export default function Page() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20" />
         </div>
         <div className="relative mx-auto max-w-content px-6 pb-24 pt-48 lg:px-12 lg:pb-36 lg:pt-64">
+          <BackButton label="Back to Estate" href="/estate" />
           <p className="eyebrow text-on-surface-muted">
             The Estate
           </p>

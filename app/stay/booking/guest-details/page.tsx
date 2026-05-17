@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -60,6 +61,8 @@ function generateArrivalSlots() {
 }
 
 export default function BookingGuestDetailsPage() {
+  const router = useRouter();
+  const [validationError, setValidationError] = useState<string | null>(null);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -404,12 +407,25 @@ export default function BookingGuestDetailsPage() {
 
           {/* ─── Submit ─── */}
           <div className="pt-4 space-y-4">
+            {validationError && (
+              <p className="text-sm text-red-600 font-body">{validationError}</p>
+            )}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link href="/stay/booking/payment">
-                <Button variant="primary" size="lg" type="button">
-                  Continue to payment
-                </Button>
-              </Link>
+              <Button
+                variant="primary"
+                size="lg"
+                type="button"
+                onClick={() => {
+                  if (!form.firstName.trim() || !form.lastName.trim() || !form.email.trim()) {
+                    setValidationError("Please complete all required fields");
+                    return;
+                  }
+                  setValidationError(null);
+                  router.push("/stay/booking/payment");
+                }}
+              >
+                Continue to payment
+              </Button>
               <Link href="/stay/booking/add-ons">
                 <Button variant="ghost" size="sm" type="button">
                   &larr; Back

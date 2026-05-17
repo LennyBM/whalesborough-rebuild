@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { BackButton } from "@/components/app-shell/back-button";
 import { LinkArrow } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -135,6 +136,7 @@ export default function TreatmentsPage() {
       {/* Hero */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
+          <BackButton label="Back to Spa" href="/spa" />
           <p className="eyebrow text-on-surface-muted">
             The W Club · Treatments
           </p>

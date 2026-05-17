@@ -15,6 +15,7 @@ const properties = [
   {
     name: "The Farmhouse",
     slug: "the-farmhouse",
+    type: "Cottages",
     sleeps: 12,
     beds: 5,
     price: 320,
@@ -24,6 +25,7 @@ const properties = [
   {
     name: "Eagles Nest",
     slug: "eagles-nest",
+    type: "Cottages",
     sleeps: 6,
     beds: 3,
     price: 195,
@@ -33,6 +35,7 @@ const properties = [
   {
     name: "Gwari Spa Barn",
     slug: "gwari-spa-barn",
+    type: "Spa Lodges",
     sleeps: 4,
     beds: 2,
     price: 285,
@@ -42,6 +45,7 @@ const properties = [
   {
     name: "Arvor Suite",
     slug: "arvor-suite",
+    type: "Suites",
     sleeps: 2,
     beds: 1,
     price: 150,
@@ -51,6 +55,7 @@ const properties = [
   {
     name: "Trelowen",
     slug: "trelowen",
+    type: "Cottages",
     sleeps: 4,
     beds: 2,
     price: 165,
@@ -60,6 +65,7 @@ const properties = [
   {
     name: "Nettlecoombe",
     slug: "nettlecoombe",
+    type: "Cottages",
     sleeps: 6,
     beds: 3,
     price: 185,
@@ -69,6 +75,7 @@ const properties = [
   {
     name: "Medlands",
     slug: "medlands",
+    type: "Cottages",
     sleeps: 4,
     beds: 2,
     price: 155,
@@ -78,6 +85,7 @@ const properties = [
   {
     name: "Barley Park",
     slug: "barley-park",
+    type: "Cottages",
     sleeps: 5,
     beds: 2,
     price: 175,
@@ -88,6 +96,11 @@ const properties = [
 
 export default function StayPage() {
   const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredProperties =
+    activeFilter === "All"
+      ? properties
+      : properties.filter((p) => p.type === activeFilter);
 
   return (
     <div className="min-h-screen bg-background pb-24">
@@ -117,6 +130,7 @@ export default function StayPage() {
           <button
             key={filter.label}
             onClick={() => setActiveFilter(filter.label)}
+            aria-pressed={activeFilter === filter.label}
             className={`shrink-0 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               activeFilter === filter.label
                 ? "bg-secondary text-white"
@@ -161,7 +175,7 @@ export default function StayPage() {
 
       {/* Property list */}
       <div className="mt-2 flex flex-col gap-3 px-4">
-        {properties.map((property) => (
+        {filteredProperties.map((property) => (
           <Link
             key={property.slug}
             href={`/stay/${property.slug}`}
@@ -202,7 +216,7 @@ export default function StayPage() {
       {/* View all link */}
       <div className="mt-6 px-4 text-center">
         <Link
-          href="/stay/all"
+          href="/stay/cottages"
           className="inline-flex items-center gap-1 text-sm font-semibold text-primary"
         >
           View all properties

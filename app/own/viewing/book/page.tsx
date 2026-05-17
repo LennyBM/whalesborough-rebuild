@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -95,6 +96,7 @@ export default function Page() {
           {/* Hero */}
           <section className="bg-background">
             <div className="mx-auto max-w-content px-6 pt-24 pb-16 lg:px-12 lg:pt-40 lg:pb-24">
+              <BackButton label="Back to Own" href="/own" />
               <p className="font-body text-sm uppercase tracking-widest text-on-surface-muted">
                 Lodge Ownership
               </p>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -52,6 +53,7 @@ export default function Page() {
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+        <BackButton label="Back to Dine" href="/dine" />
         <AnimatePresence mode="wait">
           {!submitted ? (
             <motion.div

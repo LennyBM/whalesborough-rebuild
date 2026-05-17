@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import {
   Users,
   BedDouble,
@@ -351,6 +352,7 @@ export default function BookingSelectPage() {
     <article className="bg-background min-h-screen">
       {/* Header */}
       <header className="mx-auto max-w-7xl px-6 pt-24 lg:px-12 lg:pt-32">
+        <BackButton label="Back" href="/stay/booking/dates" />
         <BookingStepper current={2} />
 
         <p className="eyebrow text-on-surface-muted">Step 2 of 5</p>
@@ -364,6 +366,11 @@ export default function BookingSelectPage() {
 
       {/* Main content */}
       <section className="mx-auto max-w-7xl px-6 pb-32 pt-10 lg:px-12">
+        {/* Demo note */}
+        <div className="mb-6 bg-surface-container-low px-4 py-3 text-sm font-body text-on-surface-muted">
+          Showing sample availability for demo
+        </div>
+
         <FilterBar filters={filters} setFilters={setFilters} />
 
         {/* Results count */}

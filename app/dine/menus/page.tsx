@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { BackButton } from "@/components/app-shell/back-button";
 import { LinkArrow } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -79,6 +80,7 @@ export default function Page() {
       {/* Hero */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
+          <BackButton label="Back to Dine" href="/dine" />
           <p className="eyebrow text-on-surface-muted">The Weir · Menus</p>
           <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg max-w-4xl text-on-surface">
             Menus that follow the{" "}

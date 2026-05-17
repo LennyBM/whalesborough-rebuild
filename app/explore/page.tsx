@@ -78,6 +78,7 @@ export default function ExplorePage() {
               onClick={() =>
                 setActiveCategory(activeCategory === cat.slug ? null : cat.slug)
               }
+              aria-pressed={activeCategory === cat.slug}
               className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 activeCategory === cat.slug
                   ? "bg-secondary text-white"
@@ -89,6 +90,18 @@ export default function ExplorePage() {
           ))}
         </div>
       </div>
+
+      {/* Active category indicator */}
+      {activeCategory && (
+        <div className="px-5 pb-4">
+          <p className="text-xs font-medium text-on-surface-muted">
+            Showing:{" "}
+            <span className="text-on-surface">
+              {categories.find((c) => c.slug === activeCategory)?.label}
+            </span>
+          </p>
+        </div>
+      )}
 
       {/* Featured Section */}
       <section className="px-5 pb-6">

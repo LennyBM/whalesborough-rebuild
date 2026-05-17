@@ -51,7 +51,7 @@ const supportLinks = [
   {
     label: "Help & FAQs",
     icon: HelpCircle,
-    href: "#",
+    href: "/contact",
   },
   {
     label: "Cancellation Policy",
@@ -79,7 +79,7 @@ export default function AccountPage() {
             href="#"
             className="mt-3 font-body text-sm font-medium text-primary underline underline-offset-2"
           >
-            Edit profile
+            Edit profile (Coming soon)
           </Link>
         </section>
 
@@ -97,13 +97,13 @@ export default function AccountPage() {
             </p>
             <div className="mt-4 flex gap-4">
               <Link
-                href="#"
+                href="/account/bookings"
                 className="font-body text-sm font-medium text-primary underline underline-offset-2"
               >
                 View booking
               </Link>
               <Link
-                href="#"
+                href="/stay/booking/dates"
                 className="font-body text-sm font-medium text-secondary underline underline-offset-2"
               >
                 Book again
@@ -186,6 +186,7 @@ export default function AccountPage() {
         {/* Sign Out */}
         <button
           type="button"
+          onClick={() => alert("Signed out")}
           className="flex w-full items-center justify-center gap-2 rounded-2xl border border-on-surface/10 px-5 py-4 font-body text-sm text-on-surface-variant transition-colors hover:bg-surface-container-low"
         >
           <LogOut className="h-4 w-4" />

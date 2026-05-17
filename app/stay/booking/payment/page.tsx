@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock, ShieldCheck } from "lucide-react";
@@ -137,6 +139,16 @@ function OrderSummary() {
 }
 
 export default function BookingPaymentPage() {
+  const router = useRouter();
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  function handlePay() {
+    setIsProcessing(true);
+    setTimeout(() => {
+      router.push("/stay/booking/confirmation/demo");
+    }, 1500);
+  }
+
   return (
     <article className="bg-background min-h-screen">
       <header className="mx-auto max-w-5xl px-6 pt-24 lg:px-12 lg:pt-32">
@@ -144,6 +156,12 @@ export default function BookingPaymentPage() {
       </header>
 
       <section className="mx-auto max-w-5xl px-6 pb-32 pt-4 lg:px-12">
+        {/* Demo banner */}
+        <div className="mb-8 bg-amber-50 border border-amber-200 px-4 py-3 text-sm font-body text-amber-800">
+          <span aria-hidden="true" className="mr-1.5">&#128274;</span>
+          Demo mode — no payment will be taken
+        </div>
+
         <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
           {/* LEFT: Payment form */}
           <div className="space-y-10">
@@ -215,12 +233,16 @@ export default function BookingPaymentPage() {
 
             {/* Pay button */}
             <div>
-              <Link href="/stay/booking/confirmation/demo">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto">
-                  <Lock className="h-4 w-4" aria-hidden="true" />
-                  Pay £1,395
-                </Button>
-              </Link>
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={handlePay}
+                disabled={isProcessing}
+              >
+                <Lock className="h-4 w-4" aria-hidden="true" />
+                {isProcessing ? "Processing..." : "Pay £1,395"}
+              </Button>
             </div>
 
             {/* Trust signals */}
