@@ -1,20 +1,38 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 
 import { LinkArrow } from "@/components/ui/button";
+import AccommodationGrid from "./accommodation-grid";
 
 export const metadata: Metadata = {
   title: "Stay at Whalesborough | Holiday Cottages & Spa Lodges, Bude Cornwall",
   description:
     "Twenty-seven 5★ Gold cottages, twenty-two Arvor Suites and spa lodges with private hot tubs. Dog-friendly accommodation on 500 acres above Widemouth Bay.",
+  openGraph: {
+    title: "Stay at Whalesborough | Luxury Cornish Accommodation",
+    description:
+      "Heritage cottages, contemporary suites and spa lodges on 500 acres above Widemouth Bay.",
+    images: [{ url: "/images/hero/cottages-hero.webp", width: 1920, height: 1080 }],
+  },
 };
 
 export default function StayPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
+      {/* ─── Hero ─── */}
+      <section className="relative bg-background overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/cottages-hero.webp"
+            alt="Whalesborough heritage cottages nestled in the Cornish landscape"
+            width={1920}
+            height={1080}
+            priority
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20" />
+        </div>
+        <div className="relative mx-auto max-w-content px-6 pb-24 pt-48 lg:px-12 lg:pb-36 lg:pt-64">
           <p className="eyebrow text-on-surface-muted">
             Accommodation · Bude, Cornwall
           </p>
@@ -29,51 +47,20 @@ export default function StayPage() {
             optional, sea air guaranteed.
           </p>
           <div className="mt-10">
-            <LinkArrow href="/stay/availability">
-              Check availability
-            </LinkArrow>
+            <LinkArrow href="/stay/booking">Check availability</LinkArrow>
           </div>
         </div>
       </section>
 
-      {/* Accommodation Types */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">Three ways to stay</p>
-          <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
-            Find your place on the estate
-          </h2>
-          <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-            <AccommodationCard
-              href="/stay/cottages"
-              title="Heritage Cottages"
-              count="27 properties"
-              description="Grade II farmhouses, stone barns and coastal retreats — each individually designed with enclosed gardens and luxury interiors. Seven with private hot tubs."
-            />
-            <AccommodationCard
-              href="/stay/arvor-suites"
-              title="Arvor Suites"
-              count="22 suites"
-              description="Contemporary open-plan suites with floor-to-ceiling glazing, overlooking the estate lakes. Ideal for couples seeking spa access and low-maintenance luxury."
-            />
-            <AccommodationCard
-              href="/stay/spa-lodges"
-              title="Spa Lodges"
-              count="Trelowen · Gwari · Managed"
-              description="Architect-designed lodges with private hot tubs, underfloor heating and direct spa access. Two and three-bedroom layouts for families and groups."
-            />
-          </div>
-        </div>
-      </section>
+      {/* ─── Accommodation Categories (client component for animations) ─── */}
+      <AccommodationGrid />
 
-      {/* Value Propositions */}
+      {/* ─── Value Propositions ─── */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
             <div>
-              <p className="eyebrow text-on-surface-muted">
-                Why guests return
-              </p>
+              <p className="eyebrow text-on-surface-muted">Why guests return</p>
               <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
                 The details that define a{" "}
                 <span className="italic">Whalesborough</span> stay
@@ -108,19 +95,19 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Editorial Feature */}
+      {/* ─── Editorial Feature ─── */}
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              {/* Image placeholder */}
-              <div className="aspect-[3/4] bg-surface-container-high relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-display text-display-sm italic text-secondary-fg/40">
-                    Estate
-                  </p>
-                </div>
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/images/cottages/whalesborough-cottage.webp"
+                  alt="Whalesborough Cottage surrounded by estate gardens"
+                  width={640}
+                  height={854}
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
             <div className="lg:col-span-6 lg:col-start-7">
@@ -151,7 +138,7 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Trust Signals */}
+      {/* ─── Trust Signals ─── */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-16 lg:px-12">
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-on-surface-muted">
@@ -163,7 +150,7 @@ export default function StayPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* ─── Final CTA ─── */}
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32 text-center">
           <p className="eyebrow text-on-surface-muted">Ready to book</p>
@@ -175,9 +162,7 @@ export default function StayPage() {
             arrivals, with seven-night stays our most popular rhythm.
           </p>
           <div className="mt-10 flex justify-center">
-            <LinkArrow href="/stay/availability">
-              Check availability
-            </LinkArrow>
+            <LinkArrow href="/stay/booking">Check availability</LinkArrow>
           </div>
         </div>
       </section>
@@ -185,39 +170,7 @@ export default function StayPage() {
   );
 }
 
-function AccommodationCard({
-  href,
-  title,
-  count,
-  description,
-}: {
-  href: string;
-  title: string;
-  count: string;
-  description: string;
-}) {
-  return (
-    <Link href={href} className="group block">
-      {/* Image placeholder */}
-      <div className="aspect-[4/3] bg-surface-container-high relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="font-display text-display-sm italic text-secondary-fg/40">
-            {title}
-          </p>
-        </div>
-      </div>
-      <p className="eyebrow mt-6 text-on-surface-muted">{count}</p>
-      <h3 className="heading-editorial mt-2 text-h3 text-on-surface group-hover:text-primary transition-colors duration-fast ease-out-luxury">
-        {title}
-      </h3>
-      <p className="mt-3 text-body-sm text-on-surface-variant">{description}</p>
-      <div className="mt-4">
-        <LinkArrow href={href}>Explore</LinkArrow>
-      </div>
-    </Link>
-  );
-}
+/* ─── Server Sub-components ─── */
 
 function ValueProp({ label, detail }: { label: string; detail: string }) {
   return (
