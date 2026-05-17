@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 import {
   Wifi,
   Key,
@@ -13,7 +14,49 @@ import {
   ChevronRight,
   CheckCircle2,
   Navigation,
+  CalendarDays,
 } from "lucide-react"
+
+function CountdownCard() {
+  const daysUntil = 26
+  const totalDays = 60 // booking made ~60 days ahead
+  const progress = ((totalDays - daysUntil) / totalDays) * 100
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="rounded-2xl bg-primary/5 border border-primary/10 p-4"
+    >
+      <div className="flex items-center gap-3">
+        <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+          <CalendarDays className="h-5 w-5 text-primary" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="font-display text-lg italic text-on-surface">
+            {daysUntil} days until your stay
+          </p>
+          <p className="font-body text-xs text-on-surface-muted mt-0.5">
+            The Farmhouse · 12 Jul 2026
+          </p>
+        </div>
+      </div>
+      <div className="mt-3 h-2 bg-primary/10 rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-primary rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: `${progress}%` }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        />
+      </div>
+      <div className="flex justify-between mt-1.5">
+        <span className="font-body text-[10px] text-on-surface-muted">Booked</span>
+        <span className="font-body text-[10px] text-on-surface-muted">Check-in</span>
+      </div>
+    </motion.div>
+  )
+}
 
 export default function MyStayPage() {
   const [showWifiPassword, setShowWifiPassword] = useState(false)
@@ -23,6 +66,9 @@ export default function MyStayPage() {
       <div className="mx-auto max-w-lg px-4 py-6 space-y-4">
         {/* Page title */}
         <h1 className="font-display text-2xl text-on-surface">My Stay</h1>
+
+        {/* Countdown */}
+        <CountdownCard />
 
         {/* Stay header card */}
         <div className="rounded-2xl bg-surface-container-low p-4 shadow-sm">

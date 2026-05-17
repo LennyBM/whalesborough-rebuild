@@ -1,8 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   BedDouble,
   Sparkles,
@@ -11,6 +12,7 @@ import {
   Bell,
   Calendar,
   ChevronRight,
+  ChevronDown,
 } from "lucide-react"
 import { properties as allProperties } from "@/lib/data/properties"
 import { AnimatedNumber } from "@/components/ui/animated-number"
@@ -40,11 +42,29 @@ const fadeUp = {
   }),
 }
 
+const notifications = [
+  { id: 1, icon: Calendar, text: "Your booking is in 26 days", color: "text-primary" },
+  { id: 2, icon: Sparkles, text: "New: Summer spa packages available", color: "text-secondary" },
+  { id: 3, icon: UtensilsCrossed, text: "The Weir: Book Sunday lunch", color: "text-primary" },
+]
+
 export function HomeDashboard() {
+  const [showNotifications, setShowNotifications] = useState(false)
+
   return (
     <div className="min-h-screen bg-background pb-24">
+      {/* Pull-down hint */}
+      <motion.div
+        className="flex justify-center pt-10 pb-0"
+        initial={{ opacity: 0, y: -4 }}
+        animate={{ opacity: 0.4, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        <ChevronDown className="h-4 w-4 text-on-surface-muted animate-bounce" />
+      </motion.div>
+
       {/* Header */}
-      <header className="flex items-center justify-between px-4 pt-14 pb-4">
+      <header className="relative flex items-center justify-between px-4 pt-4 pb-4">
         <div className="flex items-center gap-3">
           <Image
             src="/images/logo/whalesborough-logo.png"
@@ -61,12 +81,44 @@ export function HomeDashboard() {
           </div>
         </div>
         <button
+          onClick={() => setShowNotifications(!showNotifications)}
           className="relative flex h-10 w-10 items-center justify-center rounded-full bg-surface-container"
           aria-label="Notifications"
         >
           <Bell className="h-5 w-5 text-on-surface-variant" />
           <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-primary" />
         </button>
+
+        {/* Notification dropdown */}
+        <AnimatePresence>
+          {showNotifications && (
+            <motion.div
+              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute top-full right-4 z-50 w-[calc(100%-2rem)] max-w-sm mt-1"
+            >
+              <div className="bg-surface-container rounded-2xl shadow-lg border border-black/5 overflow-hidden">
+                <div className="px-4 py-3 border-b border-black/5">
+                  <p className="font-body text-xs font-semibold text-on-surface-muted uppercase tracking-wide">
+                    Notifications
+                  </p>
+                </div>
+                <ul className="divide-y divide-black/5">
+                  {notifications.map((n) => (
+                    <li key={n.id} className="flex items-center gap-3 px-4 py-3">
+                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+                        <n.icon className={`h-4 w-4 ${n.color}`} />
+                      </div>
+                      <p className="font-body text-sm text-on-surface">{n.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       <div className="flex flex-col gap-5 px-4">
@@ -76,6 +128,8 @@ export function HomeDashboard() {
           initial="hidden"
           animate="visible"
           custom={0}
+          whileTap={{ scale: 0.98 }}
+          transition={{ type: "spring", stiffness: 400, damping: 20 }}
         >
           <Link href="/stay/booking/dates" className="block">
             <div className="relative h-40 overflow-hidden rounded-2xl">
@@ -134,6 +188,7 @@ export function HomeDashboard() {
           initial="hidden"
           animate="visible"
           custom={2}
+          whileTap={{ scale: 0.98 }}
           className="rounded-2xl bg-surface-container-low p-4"
         >
           <div className="flex items-center gap-2 mb-2">
@@ -283,11 +338,15 @@ export function HomeDashboard() {
           <div className="relative -mx-4">
             <div className="flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory scrollbar-hide">
               {properties.map((property) => (
-                <Link
+                <motion.div
                   key={property.name}
-                  href="/stay"
+                  whileTap={{ scale: 0.98 }}
                   className="flex-shrink-0 snap-start"
                 >
+                  <Link
+                    href="/stay"
+                    className="block"
+                  >
                   <div className="w-[180px] overflow-hidden rounded-xl bg-surface-container-low">
                     <div className="relative h-[120px]">
                       <Image
@@ -306,7 +365,8 @@ export function HomeDashboard() {
                       </p>
                     </div>
                   </div>
-                </Link>
+                  </Link>
+                </motion.div>
               ))}
             </div>
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent" />
@@ -319,6 +379,7 @@ export function HomeDashboard() {
           initial="hidden"
           animate="visible"
           custom={5}
+          whileTap={{ scale: 0.98 }}
           className="rounded-2xl bg-surface-container-low p-4"
         >
           <h2 className="font-display text-base italic text-on-surface mb-3">

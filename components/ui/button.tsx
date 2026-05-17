@@ -21,7 +21,8 @@ const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2",
     "font-body font-medium uppercase",
-    "transition-colors duration-fast ease-out-luxury",
+    "transition-[colors,transform] duration-fast ease-out-luxury",
+    "active:scale-[0.97]",
     "focus-visible:outline-none focus-visible:shadow-focus",
     "disabled:cursor-not-allowed disabled:pointer-events-none",
     "select-none whitespace-nowrap",

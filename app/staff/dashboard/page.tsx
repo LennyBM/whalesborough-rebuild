@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { BackButton } from "@/components/app-shell/back-button"
+import { AnimatedNumber } from "@/components/ui/animated-number"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -172,7 +173,7 @@ export default function DirectorDashboard() {
         <div className="mt-3 flex items-end justify-between">
           <div>
             <p className="font-display text-3xl font-semibold italic text-on-surface">
-              &pound;12,450
+              <AnimatedNumber value={12450} prefix="£" className="tabular-nums" />
             </p>
             <p className="text-xs text-secondary">This week</p>
           </div>
@@ -197,9 +198,9 @@ export default function DirectorDashboard() {
         <div className="mt-5">
           <div className="flex items-center justify-between text-xs">
             <span className="text-secondary">
-              This month: <span className="font-medium text-on-surface">&pound;48,200</span>
+              This month: <span className="font-medium text-on-surface"><AnimatedNumber value={48200} prefix="£" /></span>
             </span>
-            <span className="text-secondary">Target &pound;55,000</span>
+            <span className="text-secondary">Target £55,000</span>
           </div>
           <div className="mt-2">
             <ProgressBar value={48200} max={55000} />

@@ -140,10 +140,21 @@ function formatDate(offset: number = 0) {
 
 /* ─── Components ─── */
 
+const statusDotColor: Record<Status, string> = {
+  ready: "bg-emerald-500",
+  "in-progress": "bg-amber-500",
+  waiting: "bg-gray-400",
+  flagged: "bg-red-500",
+};
+
 function StatusBadge({ status }: { status: Status }) {
   const { label, bg, text } = statusConfig[status];
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium font-body ${bg} ${text}`}>
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium font-body ${bg} ${text}`}>
+      <span className="relative flex h-2 w-2">
+        <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-50 ${statusDotColor[status]}`} />
+        <span className={`relative inline-flex h-2 w-2 rounded-full ${statusDotColor[status]}`} />
+      </span>
       {label}
     </span>
   );

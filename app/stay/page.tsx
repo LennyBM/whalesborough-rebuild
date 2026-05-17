@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { PawPrint } from "lucide-react";
 import { properties as allProperties } from "@/lib/data/properties";
 
@@ -115,9 +116,14 @@ export default function StayPage() {
 
       {/* Property list */}
       <div className="mt-2 flex flex-col gap-3 px-4">
-        {filteredProperties.map((property) => (
-          <Link
+        {filteredProperties.map((property, index) => (
+          <motion.div
             key={property.slug}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.05, duration: 0.35, ease: "easeOut" }}
+          >
+          <Link
             href={`/stay/${property.slug}`}
             className="flex gap-3 rounded-xl bg-surface-container-low p-2 shadow-sm ring-1 ring-black/5 transition-all active:scale-[0.98] active:shadow-none"
           >
@@ -156,6 +162,7 @@ export default function StayPage() {
               </p>
             </div>
           </Link>
+          </motion.div>
         ))}
       </div>
 
