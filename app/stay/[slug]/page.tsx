@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { PawPrint } from "lucide-react";
 import { properties } from "@/lib/data/properties";
 import { BackButton } from "@/components/app-shell/back-button";
+import { PropertyPriceDisplay } from "./property-price-display";
 
 export function generateStaticParams() {
   return properties.map((property) => ({
@@ -55,7 +57,7 @@ export default function PropertyDetailPage({ params }: { params: { slug: string 
             {property.name}
           </h1>
           <p className="text-sm text-on-surface-muted font-body">
-            Sleeps {property.sleeps} · {property.bedrooms} bedrooms · From £{property.price}/night
+            Sleeps {property.sleeps} · {property.bedrooms} bedrooms · From <PropertyPriceDisplay price={property.price} />
           </p>
           {/* Feature tags */}
           <div className="flex flex-wrap gap-2 mt-3">
@@ -70,6 +72,19 @@ export default function PropertyDetailPage({ params }: { params: { slug: string 
           </div>
         </div>
       </div>
+
+      {/* Dog-friendly callout */}
+      {(property.features as readonly string[]).includes("Dog friendly") && (
+        <div className="px-4 mt-4">
+          <div className="flex items-center gap-3 rounded-xl bg-[#4a6457]/10 border border-[#4a6457]/20 px-4 py-3">
+            <PawPrint className="h-5 w-5 shrink-0 text-[#4a6457]" />
+            <div>
+              <p className="text-sm font-semibold font-body text-[#4a6457]">Dog friendly property</p>
+              <p className="text-xs font-body text-[#4a6457]/80 mt-0.5">Up to 2 well-behaved dogs welcome. Charges may apply.</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Book this property button */}
       <div className="px-4 mt-4">
@@ -166,7 +181,7 @@ export default function PropertyDetailPage({ params }: { params: { slug: string 
           href="/stay/booking/dates"
           className="block w-full text-center py-3.5 bg-primary text-white font-body font-semibold text-sm tracking-wide"
         >
-          Book from £{property.price}/night
+          Book from <PropertyPriceDisplay price={property.price} />
         </Link>
       </div>
     </div>

@@ -1,152 +1,400 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { LinkArrow } from '@/components/ui/button'
+import { Calendar, Share2, MapPin, Users, Clock, Dog } from 'lucide-react'
 
-export default function BookingConfirmationDemoPage() {
+// --- Confetti CSS animation (lightweight, no library) ---
+const confettiColors = [
+  '#703a1d', // cognac
+  '#4a6457', // sage
+  '#e8b87d', // gold
+  '#8fb5a3', // light sage
+  '#d4956a', // warm amber
+  '#5c8a72', // deep sage
+]
+
+function ConfettiPiece({ index }: { index: number }) {
+  const color = confettiColors[index % confettiColors.length]
+  const left = Math.random() * 100
+  const delay = Math.random() * 0.8
+  const duration = 2.5 + Math.random() * 1.5
+  const rotation = Math.random() * 360
+  const size = 6 + Math.random() * 6
+
   return (
-    <main className="min-h-screen bg-background py-16 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-2xl">
-        {/* Checkmark celebration */}
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.1 }}
-          className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-secondary/10"
-        >
-          <motion.svg
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
-            className="h-12 w-12 text-secondary"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <motion.path
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
-              d="M5 13l4 4L19 7"
-            />
-          </motion.svg>
-        </motion.div>
-
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 text-center"
-        >
-          <h1 className="heading-editorial text-display-md text-on-surface">
-            Booking Confirmed
-          </h1>
-          <p className="mt-3 text-body text-on-surface-muted">
-            Reference: <span className="font-medium text-on-surface">WB-2026-4821</span>
-          </p>
-        </motion.div>
-
-        {/* Confirmation details card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-10 bg-surface-container-low p-6 sm:p-8"
-        >
-          {/* Property header */}
-          <div className="flex items-start gap-4">
-            <div className="relative h-20 w-28 flex-shrink-0 overflow-hidden">
-              <Image
-                src="/images/cottages/the-farmhouse.webp"
-                alt="The Farmhouse"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <p className="eyebrow text-on-surface-variant">Your stay</p>
-              <h2 className="text-h3 text-on-surface">The Farmhouse</h2>
-            </div>
-          </div>
-
-          {/* Details grid */}
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <DetailRow label="Dates" value="Sat 12 July – Wed 16 July 2026" />
-            <DetailRow label="Guests" value="8 adults, 2 children, 1 dog" />
-            <DetailRow label="Check-in" value="4:00pm" />
-            <DetailRow label="Check-out" value="10:00am" />
-          </div>
-
-          {/* Add-ons */}
-          <div className="mt-6 border-t border-on-surface/10 pt-6">
-            <p className="eyebrow text-on-surface-variant">Add-ons</p>
-            <ul className="mt-2 space-y-1 text-body text-on-surface">
-              <li>Cornish Welcome Hamper</li>
-              <li>Dog Welcome Kit</li>
-              <li>2x Spa Day Pass</li>
-            </ul>
-          </div>
-
-          {/* Total */}
-          <div className="mt-6 border-t border-on-surface/10 pt-6 flex items-baseline justify-between">
-            <p className="text-body text-on-surface-muted">Total paid</p>
-            <p className="text-h2 text-on-surface">&pound;1,395</p>
-          </div>
-        </motion.div>
-
-        {/* What happens next */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mt-10"
-        >
-          <h2 className="text-h3 text-on-surface">What happens next</h2>
-          <ol className="mt-6 space-y-6">
-            <TimelineItem
-              step={1}
-              title="Confirmation email sent"
-              description="A full summary of your booking is on its way to your inbox now."
-            />
-            <TimelineItem
-              step={2}
-              title="3 days before arrival"
-              description="We'll send a pre-arrival email with directions, entry codes, and our local recommendations."
-            />
-            <TimelineItem
-              step={3}
-              title="On arrival"
-              description="A welcome pack will be waiting in your cottage when you arrive."
-            />
-          </ol>
-        </motion.div>
-
-        {/* Quick links */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-          className="mt-12 flex flex-col gap-3 sm:flex-row sm:gap-6"
-        >
-          <LinkArrow href="/account/bookings">View my bookings</LinkArrow>
-          <LinkArrow href="/estate">Explore the estate</LinkArrow>
-          <LinkArrow href="/spa/booking">Book a spa treatment</LinkArrow>
-        </motion.div>
-      </div>
-    </main>
+    <div
+      className="confetti-piece absolute top-0 pointer-events-none"
+      style={{
+        left: `${left}%`,
+        width: `${size}px`,
+        height: `${size * 0.4}px`,
+        backgroundColor: color,
+        borderRadius: '2px',
+        animationDelay: `${delay}s`,
+        animationDuration: `${duration}s`,
+        transform: `rotate(${rotation}deg)`,
+      }}
+    />
   )
 }
 
-function DetailRow({ label, value }: { label: string; value: string }) {
+function Confetti() {
+  const [pieces] = useState(() =>
+    Array.from({ length: 60 }, (_, i) => i)
+  )
+
   return (
-    <div>
-      <p className="eyebrow text-on-surface-variant">{label}</p>
-      <p className="mt-0.5 text-body text-on-surface">{value}</p>
+    <div className="confetti-container fixed inset-0 pointer-events-none overflow-hidden z-50">
+      {pieces.map((i) => (
+        <ConfettiPiece key={i} index={i} />
+      ))}
+    </div>
+  )
+}
+
+// --- Animated checkmark that draws itself ---
+function AnimatedCheckmark() {
+  return (
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 180, damping: 14, delay: 0.2 }}
+      className="relative mx-auto flex h-28 w-28 items-center justify-center"
+    >
+      {/* Outer ring pulse */}
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1.4, opacity: 0 }}
+        transition={{ duration: 1.2, delay: 0.6, ease: 'easeOut' }}
+        className="absolute inset-0 rounded-full bg-secondary/20"
+      />
+      {/* Inner circle */}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.15 }}
+        className="absolute inset-0 rounded-full bg-secondary/10"
+      />
+      {/* Checkmark SVG */}
+      <svg
+        className="relative h-14 w-14 text-secondary"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <motion.path
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
+          d="M5 13l4 4L19 7"
+        />
+      </svg>
+    </motion.div>
+  )
+}
+
+// --- Add to Calendar helper ---
+function generateCalendarUrl() {
+  const start = '20260712T160000'
+  const end = '20260716T100000'
+  const title = encodeURIComponent('Whalesborough - The Farmhouse')
+  const location = encodeURIComponent('Whalesborough Farm, Bude, Cornwall EX23 0AS')
+  const details = encodeURIComponent(
+    'Your stay at The Farmhouse. Check-in: 4pm. Ref: WB-2026-4821'
+  )
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&location=${location}&details=${details}`
+}
+
+// --- Main Page ---
+export default function BookingConfirmationDemoPage() {
+  const [showConfetti, setShowConfetti] = useState(true)
+  const [shareSupported, setShareSupported] = useState(false)
+
+  useEffect(() => {
+    setShareSupported(typeof navigator !== 'undefined' && !!navigator.share)
+    const timer = setTimeout(() => setShowConfetti(false), 4000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Our trip to Whalesborough!',
+      text: 'We\'re heading to The Farmhouse at Whalesborough, 12-16 July 2026. Can\'t wait!',
+      url: typeof window !== 'undefined' ? window.location.href : '',
+    }
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData)
+      } catch {
+        // User cancelled
+      }
+    } else {
+      // Fallback: copy to clipboard
+      await navigator.clipboard.writeText(
+        `${shareData.text}\n${shareData.url}`
+      )
+    }
+  }
+
+  return (
+    <>
+      {/* Confetti keyframes */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes confetti-fall {
+          0% {
+            transform: translateY(-10vh) rotate(0deg);
+            opacity: 1;
+          }
+          80% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+          }
+        }
+        .confetti-piece {
+          animation-name: confetti-fall;
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-fill-mode: forwards;
+        }
+      ` }} />
+
+      {/* Confetti overlay */}
+      <AnimatePresence>
+        {showConfetti && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Confetti />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <main className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-xl">
+          {/* Celebration Checkmark */}
+          <AnimatedCheckmark />
+
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-8 text-center"
+          >
+            <h1 className="font-display italic text-display-md text-on-surface">
+              You&rsquo;re all set
+            </h1>
+            <p className="mt-3 text-body-lg text-on-surface-muted">
+              Your Cornish escape is confirmed
+            </p>
+          </motion.div>
+
+          {/* Booking reference badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            className="mt-6 mx-auto w-fit rounded-full bg-secondary/10 px-5 py-2"
+          >
+            <p className="text-body-sm font-medium text-secondary tracking-wide">
+              Ref: WB-2026-4821
+            </p>
+          </motion.div>
+
+          {/* Main booking card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="mt-10 overflow-hidden rounded-2xl bg-surface-container-low shadow-sm"
+          >
+            {/* Property image header */}
+            <div className="relative h-44 w-full overflow-hidden">
+              <Image
+                src="/images/cottages/the-farmhouse.webp"
+                alt="The Farmhouse at Whalesborough"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-4 left-5">
+                <p className="text-sm font-medium text-white/80">Your stay</p>
+                <h2 className="font-display italic text-h2 text-white">
+                  The Farmhouse
+                </h2>
+              </div>
+            </div>
+
+            {/* Booking details grid */}
+            <div className="p-6 sm:p-8">
+              <div className="grid grid-cols-2 gap-5">
+                <DetailItem
+                  icon={<Calendar className="h-4 w-4" />}
+                  label="Dates"
+                  value="Sat 12 – Wed 16 Jul"
+                  sub="4 nights"
+                />
+                <DetailItem
+                  icon={<Users className="h-4 w-4" />}
+                  label="Guests"
+                  value="8 adults, 2 children"
+                />
+                <DetailItem
+                  icon={<Clock className="h-4 w-4" />}
+                  label="Check-in"
+                  value="4:00 pm"
+                  sub="Check-out 10:00 am"
+                />
+                <DetailItem
+                  icon={<Dog className="h-4 w-4" />}
+                  label="Furry friends"
+                  value="1 dog"
+                />
+              </div>
+
+              {/* Divider */}
+              <div className="my-6 border-t border-on-surface/8" />
+
+              {/* Add-ons */}
+              <div>
+                <p className="text-body-sm font-medium text-on-surface-muted uppercase tracking-wider mb-3">
+                  Extras
+                </p>
+                <div className="space-y-2">
+                  <ExtraRow name="Cornish Welcome Hamper" price="£65" />
+                  <ExtraRow name="Dog Welcome Kit" price="£25" />
+                  <ExtraRow name="Spa Day Pass ×2" price="£190" />
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="my-6 border-t border-on-surface/8" />
+
+              {/* Total */}
+              <div className="flex items-baseline justify-between">
+                <p className="text-body text-on-surface-muted">Total paid</p>
+                <p className="font-display italic text-display-sm text-on-surface">
+                  &pound;1,395
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Action buttons row */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="mt-6 grid grid-cols-2 gap-3"
+          >
+            <button
+              onClick={handleShare}
+              className="flex items-center justify-center gap-2 rounded-2xl bg-surface-container px-4 py-3.5 text-body-sm font-medium text-on-surface transition-colors hover:bg-surface-container-low active:scale-[0.97]"
+            >
+              <Share2 className="h-4 w-4 text-secondary" />
+              <span>{shareSupported ? 'Share trip' : 'Copy link'}</span>
+            </button>
+            <a
+              href={generateCalendarUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-2xl bg-surface-container px-4 py-3.5 text-body-sm font-medium text-on-surface transition-colors hover:bg-surface-container-low active:scale-[0.97]"
+            >
+              <Calendar className="h-4 w-4 text-secondary" />
+              <span>Add to calendar</span>
+            </a>
+          </motion.div>
+
+          {/* What happens next */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="mt-10 rounded-2xl bg-surface-container-low p-6 sm:p-8"
+          >
+            <h2 className="font-display italic text-h3 text-on-surface">
+              What happens next
+            </h2>
+            <ol className="mt-6 space-y-5">
+              <TimelineItem
+                step={1}
+                title="Confirmation email sent"
+                description="A full summary is on its way to your inbox now."
+                delay={1.1}
+              />
+              <TimelineItem
+                step={2}
+                title="3 days before arrival"
+                description="We'll send directions, entry codes, and local recommendations."
+                delay={1.2}
+              />
+              <TimelineItem
+                step={3}
+                title="On arrival"
+                description="A welcome pack will be waiting. Fire laid, hamper chilled."
+                delay={1.3}
+              />
+            </ol>
+          </motion.div>
+
+          {/* Quick links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+            className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-6 pb-8"
+          >
+            <LinkArrow href="/account/bookings">View my bookings</LinkArrow>
+            <LinkArrow href="/estate">Explore the estate</LinkArrow>
+            <LinkArrow href="/spa/booking">Book a spa treatment</LinkArrow>
+          </motion.div>
+        </div>
+      </main>
+    </>
+  )
+}
+
+// --- Sub-components ---
+
+function DetailItem({
+  icon,
+  label,
+  value,
+  sub,
+}: {
+  icon: React.ReactNode
+  label: string
+  value: string
+  sub?: string
+}) {
+  return (
+    <div className="flex items-start gap-2.5">
+      <div className="mt-0.5 text-secondary">{icon}</div>
+      <div>
+        <p className="text-body-sm text-on-surface-muted">{label}</p>
+        <p className="text-body font-medium text-on-surface">{value}</p>
+        {sub && <p className="text-body-sm text-on-surface-muted">{sub}</p>}
+      </div>
+    </div>
+  )
+}
+
+function ExtraRow({ name, price }: { name: string; price: string }) {
+  return (
+    <div className="flex items-center justify-between">
+      <p className="text-body text-on-surface">{name}</p>
+      <p className="text-body text-on-surface-muted">{price}</p>
     </div>
   )
 }
@@ -155,20 +403,27 @@ function TimelineItem({
   step,
   title,
   description,
+  delay,
 }: {
   step: number
   title: string
   description: string
+  delay: number
 }) {
   return (
-    <li className="flex gap-4">
+    <motion.li
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay }}
+      className="flex gap-4"
+    >
       <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-secondary/10">
         <span className="text-sm font-medium text-secondary">{step}</span>
       </div>
       <div>
         <p className="text-body font-medium text-on-surface">{title}</p>
-        <p className="mt-0.5 text-body text-on-surface-muted">{description}</p>
+        <p className="mt-0.5 text-body-sm text-on-surface-muted">{description}</p>
       </div>
-    </li>
+    </motion.li>
   )
 }

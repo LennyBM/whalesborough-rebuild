@@ -1,12 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+
+/* ─── Validated Input ─── */
+function ValidatedInput({
+  id,
+  type = "text",
+  value,
+  onChange,
+  placeholder,
+  autoComplete,
+  required,
+  error,
+  touched,
+}: {
+  id: string;
+  type?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  autoComplete?: string;
+  required?: boolean;
+  error?: string;
+  touched?: boolean;
+}) {
+  const isValid = touched && !error && value.trim().length > 0;
+  const showError = touched && error;
+
+  return (
+    <div className="relative">
+      <input
+        id={id}
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        required={required}
+        className={`block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 transition-all duration-200 outline-none placeholder:text-on-surface-muted/50 ${
+          showError
+            ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20"
+            : isValid
+              ? "border-emerald-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
+              : "border-on-surface-variant/20 focus:border-primary focus:ring-2 focus:ring-primary/20"
+        }`}
+      />
+      {isValid && (
+        <CheckCircle2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-emerald-500" />
+      )}
+      {showError && (
+        <p className="mt-1.5 text-xs font-body text-red-500">{error}</p>
+      )}
+    </div>
+  );
+}
 
 /* ─── Progress Stepper ─── */
 function BookingStepper({ current }: { current: number }) {
@@ -63,6 +116,8 @@ function generateArrivalSlots() {
 export default function BookingGuestDetailsPage() {
   const router = useRouter();
   const [validationError, setValidationError] = useState<string | null>(null);
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -87,7 +142,40 @@ export default function BookingGuestDetailsPage() {
 
   const updateField = (field: string, value: string | boolean) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    setTouched((prev) => ({ ...prev, [field]: true }));
   };
+
+  const markTouched = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  };
+
+  const getFieldError = useCallback((field: string): string | undefined => {
+    const v = form[field as keyof typeof form] as string;
+    switch (field) {
+      case "firstName":
+        return !v.trim() ? "First name is required" : undefined;
+      case "lastName":
+        return !v.trim() ? "Last name is required" : undefined;
+      case "email":
+        if (!v.trim()) return "Email is required";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return "Enter a valid email address";
+        return undefined;
+      case "phone":
+        if (!v.trim()) return "Phone number is required";
+        if (v.replace(/\D/g, "").length < 10) return "Enter a valid phone number";
+        return undefined;
+      case "addressLine1":
+        return !v.trim() ? "Address is required" : undefined;
+      case "city":
+        return !v.trim() ? "City is required" : undefined;
+      case "postcode":
+        return !v.trim() ? "Postcode is required" : undefined;
+      default:
+        return undefined;
+    }
+  }, [form]);
+
+  const isTouched = (field: string) => touched[field] || submitted;
 
   const arrivalSlots = generateArrivalSlots();
 
@@ -124,118 +212,143 @@ export default function BookingGuestDetailsPage() {
           onSubmit={(e) => e.preventDefault()}
         >
           {/* ─── Lead Guest ─── */}
-          <div className="bg-surface-container-low p-6 md:p-8 space-y-6">
+          <div className="bg-surface-container-low rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="font-display text-xl text-on-surface">Lead guest</h2>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <Label htmlFor="firstName">First name</Label>
-                <Input
-                  id="firstName"
-                  value={form.firstName}
-                  onChange={(e) => updateField("firstName", e.target.value)}
-                  className="mt-2"
-                  required
-                  autoComplete="given-name"
-                />
+                <Label htmlFor="firstName">First name *</Label>
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="firstName"
+                    value={form.firstName}
+                    onChange={(e) => updateField("firstName", e.target.value)}
+                    required
+                    autoComplete="given-name"
+                    error={getFieldError("firstName")}
+                    touched={isTouched("firstName")}
+                  />
+                </div>
               </div>
               <div>
-                <Label htmlFor="lastName">Last name</Label>
-                <Input
-                  id="lastName"
-                  value={form.lastName}
-                  onChange={(e) => updateField("lastName", e.target.value)}
-                  className="mt-2"
-                  required
-                  autoComplete="family-name"
-                />
+                <Label htmlFor="lastName">Last name *</Label>
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="lastName"
+                    value={form.lastName}
+                    onChange={(e) => updateField("lastName", e.target.value)}
+                    required
+                    autoComplete="family-name"
+                    error={getFieldError("lastName")}
+                    touched={isTouched("lastName")}
+                  />
+                </div>
               </div>
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <Label htmlFor="email">Email address</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => updateField("email", e.target.value)}
-                  className="mt-2"
-                  required
-                  autoComplete="email"
-                />
+                <Label htmlFor="email">Email address *</Label>
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="email"
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => updateField("email", e.target.value)}
+                    required
+                    autoComplete="email"
+                    error={getFieldError("email")}
+                    touched={isTouched("email")}
+                  />
+                </div>
               </div>
               <div>
-                <Label htmlFor="phone">Phone number</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => updateField("phone", e.target.value)}
-                  className="mt-2"
-                  required
-                  autoComplete="tel"
-                />
+                <Label htmlFor="phone">Phone number *</Label>
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => updateField("phone", e.target.value)}
+                    required
+                    autoComplete="tel"
+                    error={getFieldError("phone")}
+                    touched={isTouched("phone")}
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* ─── Address ─── */}
-          <div className="bg-surface-container-low p-6 md:p-8 space-y-6">
+          <div className="bg-surface-container-low rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="font-display text-xl text-on-surface">Address</h2>
             <div>
-              <Label htmlFor="addressLine1">Address line 1</Label>
-              <Input
-                id="addressLine1"
-                value={form.addressLine1}
-                onChange={(e) => updateField("addressLine1", e.target.value)}
-                className="mt-2"
-                required
-                autoComplete="address-line1"
-              />
+              <Label htmlFor="addressLine1">Address line 1 *</Label>
+              <div className="mt-2">
+                <ValidatedInput
+                  id="addressLine1"
+                  value={form.addressLine1}
+                  onChange={(e) => updateField("addressLine1", e.target.value)}
+                  required
+                  autoComplete="address-line1"
+                  error={getFieldError("addressLine1")}
+                  touched={isTouched("addressLine1")}
+                />
+              </div>
             </div>
             <div>
               <Label htmlFor="addressLine2">Address line 2</Label>
-              <Input
-                id="addressLine2"
-                value={form.addressLine2}
-                onChange={(e) => updateField("addressLine2", e.target.value)}
-                className="mt-2"
-                autoComplete="address-line2"
-              />
+              <div className="mt-2">
+                <ValidatedInput
+                  id="addressLine2"
+                  value={form.addressLine2}
+                  onChange={(e) => updateField("addressLine2", e.target.value)}
+                  autoComplete="address-line2"
+                  touched={false}
+                />
+              </div>
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <Label htmlFor="city">City / Town</Label>
-                <Input
-                  id="city"
-                  value={form.city}
-                  onChange={(e) => updateField("city", e.target.value)}
-                  className="mt-2"
-                  required
-                  autoComplete="address-level2"
-                />
+                <Label htmlFor="city">City / Town *</Label>
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="city"
+                    value={form.city}
+                    onChange={(e) => updateField("city", e.target.value)}
+                    required
+                    autoComplete="address-level2"
+                    error={getFieldError("city")}
+                    touched={isTouched("city")}
+                  />
+                </div>
               </div>
               <div>
                 <Label htmlFor="county">County</Label>
-                <Input
-                  id="county"
-                  value={form.county}
-                  onChange={(e) => updateField("county", e.target.value)}
-                  className="mt-2"
-                  autoComplete="address-level1"
-                />
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="county"
+                    value={form.county}
+                    onChange={(e) => updateField("county", e.target.value)}
+                    autoComplete="address-level1"
+                    touched={false}
+                  />
+                </div>
               </div>
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <Label htmlFor="postcode">Postcode</Label>
-                <Input
-                  id="postcode"
-                  value={form.postcode}
-                  onChange={(e) => updateField("postcode", e.target.value)}
-                  className="mt-2"
-                  required
-                  autoComplete="postal-code"
-                />
+                <Label htmlFor="postcode">Postcode *</Label>
+                <div className="mt-2">
+                  <ValidatedInput
+                    id="postcode"
+                    value={form.postcode}
+                    onChange={(e) => updateField("postcode", e.target.value)}
+                    required
+                    autoComplete="postal-code"
+                    error={getFieldError("postcode")}
+                    touched={isTouched("postcode")}
+                  />
+                </div>
               </div>
               <div>
                 <Label htmlFor="country">Country</Label>
@@ -243,7 +356,7 @@ export default function BookingGuestDetailsPage() {
                   id="country"
                   value={form.country}
                   onChange={(e) => updateField("country", e.target.value)}
-                  className="mt-2 block w-full bg-transparent px-3 py-2.5 font-body text-base text-on-surface border-0 border-b-2 border-on-surface-variant/30 focus:outline-none focus:border-primary"
+                  className="mt-2 block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 border-on-surface-variant/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                   autoComplete="country-name"
                 >
                   <option value="United Kingdom">United Kingdom</option>
@@ -258,7 +371,7 @@ export default function BookingGuestDetailsPage() {
           </div>
 
           {/* ─── Party Details ─── */}
-          <div className="bg-surface-container-low p-6 md:p-8 space-y-6">
+          <div className="bg-surface-container-low rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="font-display text-xl text-on-surface">Party details</h2>
             <div className="grid gap-6 sm:grid-cols-3">
               <div>
@@ -267,7 +380,7 @@ export default function BookingGuestDetailsPage() {
                   id="adults"
                   value={form.adults}
                   onChange={(e) => updateField("adults", e.target.value)}
-                  className="mt-2 block w-full bg-transparent px-3 py-2.5 font-body text-base text-on-surface border-0 border-b-2 border-on-surface-variant/30 focus:outline-none focus:border-primary"
+                  className="mt-2 block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 border-on-surface-variant/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                     <option key={n} value={String(n)}>{n}</option>
@@ -275,12 +388,12 @@ export default function BookingGuestDetailsPage() {
                 </select>
               </div>
               <div>
-                <Label htmlFor="children">Children (2–17)</Label>
+                <Label htmlFor="children">Children (2-17)</Label>
                 <select
                   id="children"
                   value={form.children}
                   onChange={(e) => updateField("children", e.target.value)}
-                  className="mt-2 block w-full bg-transparent px-3 py-2.5 font-body text-base text-on-surface border-0 border-b-2 border-on-surface-variant/30 focus:outline-none focus:border-primary"
+                  className="mt-2 block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 border-on-surface-variant/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                 >
                   {[0, 1, 2, 3, 4, 5, 6].map((n) => (
                     <option key={n} value={String(n)}>{n}</option>
@@ -293,7 +406,7 @@ export default function BookingGuestDetailsPage() {
                   id="infants"
                   value={form.infants}
                   onChange={(e) => updateField("infants", e.target.value)}
-                  className="mt-2 block w-full bg-transparent px-3 py-2.5 font-body text-base text-on-surface border-0 border-b-2 border-on-surface-variant/30 focus:outline-none focus:border-primary"
+                  className="mt-2 block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 border-on-surface-variant/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                 >
                   {[0, 1, 2, 3].map((n) => (
                     <option key={n} value={String(n)}>{n}</option>
@@ -304,7 +417,7 @@ export default function BookingGuestDetailsPage() {
           </div>
 
           {/* ─── Dogs ─── */}
-          <div className="bg-surface-container-low p-6 md:p-8 space-y-6">
+          <div className="bg-surface-container-low rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="font-display text-xl text-on-surface">Dogs</h2>
             <div className="flex items-center gap-3">
               <Checkbox
@@ -325,30 +438,34 @@ export default function BookingGuestDetailsPage() {
               <div className="grid gap-6 sm:grid-cols-2 pt-2">
                 <div>
                   <Label htmlFor="dogBreed">Breed</Label>
-                  <Input
-                    id="dogBreed"
-                    value={form.dogBreed}
-                    onChange={(e) => updateField("dogBreed", e.target.value)}
-                    className="mt-2"
-                    placeholder="e.g. Labrador Retriever"
-                  />
+                  <div className="mt-2">
+                    <ValidatedInput
+                      id="dogBreed"
+                      value={form.dogBreed}
+                      onChange={(e) => updateField("dogBreed", e.target.value)}
+                      placeholder="e.g. Labrador Retriever"
+                      touched={false}
+                    />
+                  </div>
                 </div>
                 <div>
                   <Label htmlFor="dogName">Dog&apos;s name</Label>
-                  <Input
-                    id="dogName"
-                    value={form.dogName}
-                    onChange={(e) => updateField("dogName", e.target.value)}
-                    className="mt-2"
-                    placeholder="e.g. Monty"
-                  />
+                  <div className="mt-2">
+                    <ValidatedInput
+                      id="dogName"
+                      value={form.dogName}
+                      onChange={(e) => updateField("dogName", e.target.value)}
+                      placeholder="e.g. Monty"
+                      touched={false}
+                    />
+                  </div>
                 </div>
               </div>
             )}
           </div>
 
           {/* ─── Special Requests ─── */}
-          <div className="bg-surface-container-low p-6 md:p-8 space-y-6">
+          <div className="bg-surface-container-low rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="font-display text-xl text-on-surface">Special requests</h2>
             <div>
               <Label htmlFor="specialRequests">
@@ -359,14 +476,14 @@ export default function BookingGuestDetailsPage() {
                 value={form.specialRequests}
                 onChange={(e) => updateField("specialRequests", e.target.value)}
                 rows={4}
-                className="mt-2 block w-full bg-transparent px-0 py-3 font-body text-base text-on-surface placeholder:text-on-surface-muted border-0 border-b-2 border-on-surface-variant/30 focus:outline-none focus:ring-0 focus:border-primary resize-none"
+                className="mt-2 block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 border-on-surface-variant/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 placeholder:text-on-surface-muted/50 resize-none"
                 placeholder="Let us know if there is anything we can do to make your stay more comfortable..."
               />
             </div>
           </div>
 
           {/* ─── Arrival Time ─── */}
-          <div className="bg-surface-container-low p-6 md:p-8 space-y-6">
+          <div className="bg-surface-container-low rounded-2xl p-6 md:p-8 space-y-6">
             <h2 className="font-display text-xl text-on-surface">Arrival time</h2>
             <div>
               <Label htmlFor="arrivalTime">Estimated arrival</Label>
@@ -374,7 +491,7 @@ export default function BookingGuestDetailsPage() {
                 id="arrivalTime"
                 value={form.arrivalTime}
                 onChange={(e) => updateField("arrivalTime", e.target.value)}
-                className="mt-2 block w-full bg-transparent px-3 py-2.5 font-body text-base text-on-surface border-0 border-b-2 border-on-surface-variant/30 focus:outline-none focus:border-primary"
+                className="mt-2 block w-full rounded-xl px-4 py-3 font-body text-base text-on-surface bg-white border-2 border-on-surface-variant/20 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
               >
                 <option value="">Select a time</option>
                 {arrivalSlots.map((slot) => (
@@ -416,8 +533,11 @@ export default function BookingGuestDetailsPage() {
                 size="lg"
                 type="button"
                 onClick={() => {
-                  if (!form.firstName.trim() || !form.lastName.trim() || !form.email.trim()) {
-                    setValidationError("Please complete all required fields");
+                  setSubmitted(true);
+                  const requiredFields = ["firstName", "lastName", "email", "phone", "addressLine1", "city", "postcode"];
+                  const hasErrors = requiredFields.some((f) => getFieldError(f));
+                  if (hasErrors) {
+                    setValidationError("Please fix the highlighted fields above");
                     return;
                   }
                   setValidationError(null);

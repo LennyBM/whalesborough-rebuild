@@ -13,6 +13,7 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { properties as allProperties } from "@/lib/data/properties"
+import { AnimatedNumber } from "@/components/ui/animated-number"
 
 function getGreeting(): string {
   const hour = new Date().getHours()
@@ -92,7 +93,7 @@ export function HomeDashboard() {
                 </p>
                 <div className="mt-2 flex items-center justify-between">
                   <span className="font-body text-xs text-white/80">
-                    From £155/night · 30+ properties
+                    From <AnimatedNumber value={155} prefix="£" suffix="/night" /> · 30+ properties
                   </span>
                   <span className="rounded-full bg-primary px-4 py-1.5 font-body text-xs font-semibold text-white">
                     Book now
@@ -152,12 +153,121 @@ export function HomeDashboard() {
           </div>
         </motion.div>
 
-        {/* Property Highlights */}
+        {/* Weather at Whalesborough */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={3}
+          className="rounded-2xl bg-surface-container-low p-4"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <svg
+                className="h-5 w-5 text-secondary"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+              <span className="eyebrow text-secondary">Weather · Bude Coast</span>
+            </div>
+            <span className="font-body text-xs text-on-surface-muted">Now</span>
+          </div>
+
+          {/* Current conditions */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl" role="img" aria-label="Partly cloudy">
+                ⛅
+              </span>
+              <div>
+                <p className="font-display text-2xl italic text-on-surface">
+                  16°C
+                </p>
+                <p className="font-body text-xs text-on-surface-muted">
+                  Partly cloudy · Light breeze
+                </p>
+              </div>
+            </div>
+            <div className="text-right">
+              <p className="font-body text-xs text-on-surface-muted">
+                Feels like 14°C
+              </p>
+              <p className="font-body text-xs text-on-surface-muted">
+                Wind: 12 mph SW
+              </p>
+            </div>
+          </div>
+
+          {/* Perfect for suggestion */}
+          <div className="rounded-xl bg-surface-container p-3 mb-4">
+            <p className="font-body text-xs font-medium text-secondary mb-0.5">
+              Perfect for
+            </p>
+            <p className="font-body text-sm text-on-surface">
+              A coastal walk along the cliffs — mild with clearing skies this afternoon
+            </p>
+          </div>
+
+          {/* 3-day forecast */}
+          <div className="grid grid-cols-3 gap-2">
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-surface-container p-2.5">
+              <span className="font-body text-[11px] text-on-surface-muted">
+                Tomorrow
+              </span>
+              <span className="text-lg" role="img" aria-label="Sunny">
+                ☀️
+              </span>
+              <span className="font-body text-sm font-medium text-on-surface">
+                18°C
+              </span>
+              <span className="font-body text-[10px] text-on-surface-muted">
+                Beach day
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-surface-container p-2.5">
+              <span className="font-body text-[11px] text-on-surface-muted">
+                Thursday
+              </span>
+              <span className="text-lg" role="img" aria-label="Cloudy">
+                🌥️
+              </span>
+              <span className="font-body text-sm font-medium text-on-surface">
+                15°C
+              </span>
+              <span className="font-body text-[10px] text-on-surface-muted">
+                Spa day
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-surface-container p-2.5">
+              <span className="font-body text-[11px] text-on-surface-muted">
+                Friday
+              </span>
+              <span className="text-lg" role="img" aria-label="Light rain">
+                🌦️
+              </span>
+              <span className="font-body text-sm font-medium text-on-surface">
+                14°C
+              </span>
+              <span className="font-body text-[10px] text-on-surface-muted">
+                Cosy pub lunch
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Property Highlights */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={4}
         >
           <div className="flex items-center justify-between mb-3">
             <h2 className="font-display text-base italic text-on-surface">
@@ -208,7 +318,7 @@ export function HomeDashboard() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={4}
+          custom={5}
           className="rounded-2xl bg-surface-container-low p-4"
         >
           <h2 className="font-display text-base italic text-on-surface mb-3">

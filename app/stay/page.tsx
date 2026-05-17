@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { PawPrint } from "lucide-react";
 
 const filters = [
   { label: "All", count: null },
@@ -189,6 +190,12 @@ export default function StayPage() {
                 className="object-cover"
                 sizes="120px"
               />
+              {property.features.includes("Dog friendly") && (
+                <div className="absolute top-1.5 left-1.5 flex items-center gap-1 rounded-full bg-[#4a6457] px-2 py-0.5 shadow-sm">
+                  <PawPrint className="h-3 w-3 text-white" />
+                  <span className="text-[10px] font-semibold text-white">Dog friendly</span>
+                </div>
+              )}
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-center py-1">
               <h3 className="truncate font-display text-base font-semibold text-on-surface">

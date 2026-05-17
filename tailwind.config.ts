@@ -47,65 +47,65 @@ const config: Config = {
       colors: {
         // Brand
         primary: {
-          DEFAULT: "#703a1d",
-          hover: "#5e3018",
-          pressed: "#4d2613",
-          disabled: "#b69783",
-          fg: "#ffffff",
+          DEFAULT: "var(--color-primary)",
+          hover: "var(--color-primary-hover)",
+          pressed: "var(--color-primary-pressed)",
+          disabled: "var(--color-primary-disabled)",
+          fg: "var(--color-on-primary)",
         },
         secondary: {
-          DEFAULT: "#4a6457",
-          hover: "#3e564a",
-          pressed: "#324839",
-          fg: "#ffffff",
+          DEFAULT: "var(--color-secondary)",
+          hover: "var(--color-secondary-hover)",
+          pressed: "var(--color-secondary-pressed)",
+          fg: "var(--color-on-secondary)",
         },
 
         // Surfaces (tonal layering, no borders)
-        background: "#fbf9f6",
+        background: "var(--color-background)",
         surface: {
-          DEFAULT: "#fbf9f6",
-          "container-lowest": "#ffffff",
-          "container-low": "#f5f3f0",
-          container: "#efeeeb",
-          "container-high": "#eae8e5",
-          "container-highest": "#e4e2df",
+          DEFAULT: "var(--color-surface)",
+          "container-lowest": "var(--color-surface-container-lowest)",
+          "container-low": "var(--color-surface-container-low)",
+          container: "var(--color-surface-container)",
+          "container-high": "var(--color-surface-container-high)",
+          "container-highest": "var(--color-surface-container-highest)",
         },
 
         // Text on surfaces
         "on-surface": {
-          DEFAULT: "#1b1c1a",
-          variant: "#424844",
-          muted: "#6b7370",
-          disabled: "#a8aeaa",
+          DEFAULT: "var(--color-on-surface)",
+          variant: "var(--color-on-surface-variant)",
+          muted: "var(--color-on-surface-muted)",
+          disabled: "var(--color-on-surface-disabled)",
         },
 
         // Outline (use sparingly, ghost only)
         outline: {
-          DEFAULT: "#c2c8c3",
-          variant: "rgba(194, 200, 195, 0.15)",
+          DEFAULT: "var(--color-outline)",
+          variant: "var(--color-outline-variant)",
         },
 
         // Semantic — all stay within the sage/cognac family
         success: {
-          DEFAULT: "#4a6e4f",
+          DEFAULT: "var(--color-success)",
           fg: "#ffffff",
           container: "#e8efe9",
           "container-fg": "#1f3322",
         },
         warning: {
-          DEFAULT: "#a86b2a",
+          DEFAULT: "var(--color-warning)",
           fg: "#ffffff",
           container: "#f4e6d4",
           "container-fg": "#4a2f10",
         },
         error: {
-          DEFAULT: "#8a3324",
+          DEFAULT: "var(--color-error)",
           fg: "#ffffff",
           container: "#f1dad5",
           "container-fg": "#3d160f",
         },
         info: {
-          DEFAULT: "#3e5562",
+          DEFAULT: "var(--color-info)",
           fg: "#ffffff",
           container: "#dde4e8",
           "container-fg": "#1a2730",
@@ -113,15 +113,15 @@ const config: Config = {
 
         // Decorative accents
         accent: {
-          gold: "#b89968",
-          bone: "#ece5d6",
+          gold: "var(--color-accent-gold)",
+          bone: "var(--color-accent-bone)",
         },
 
         // Overlays
         overlay: {
-          glass: "rgba(251, 249, 246, 0.05)",
-          scrim: "rgba(27, 28, 26, 0.6)",
-          "image-tint": "rgba(74, 100, 87, 0.2)",
+          glass: "var(--color-overlay-glass)",
+          scrim: "var(--color-overlay-scrim)",
+          "image-tint": "var(--color-overlay-image-tint)",
         },
 
         // App shell — dark theme palette (Whoop-inspired)
