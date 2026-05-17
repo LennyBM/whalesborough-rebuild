@@ -45,7 +45,16 @@ export default function BookingPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
           <BackButton label="Back to Spa" href="/spa" />
-          <p className="eyebrow text-on-surface-muted">The W Club</p>
+          <div className="flex items-center gap-3 mb-2">
+            <Image
+              src="/images/brands/w-club-logo.jpg"
+              alt="The W Club"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <p className="eyebrow text-[#7a8c6e]">The W Club</p>
+          </div>
           <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
             Book a <span className="italic">treatment</span>.
           </h1>

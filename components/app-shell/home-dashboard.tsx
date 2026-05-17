@@ -24,8 +24,8 @@ function getGreeting(): string {
 
 const quickActions = [
   { label: "Book a Stay", icon: BedDouble, href: "/stay/booking/dates" },
-  { label: "Spa & Wellness", icon: Sparkles, href: "/spa" },
-  { label: "Reserve a Table", icon: UtensilsCrossed, href: "/dine/reserve" },
+  { label: "The W Club", icon: Sparkles, href: "/spa" },
+  { label: "The Weir", icon: UtensilsCrossed, href: "/dine" },
   { label: "Explore Estate", icon: Map, href: "/estate" },
 ]
 

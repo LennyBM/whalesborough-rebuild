@@ -10,8 +10,8 @@ const categories = [
   { label: "Cottages", slug: "cottages" },
   { label: "Suites", slug: "suites" },
   { label: "Spa Lodges", slug: "spa-lodges" },
-  { label: "Spa", slug: "spa" },
-  { label: "Restaurant", slug: "restaurant" },
+  { label: "W Club", slug: "spa" },
+  { label: "The Weir", slug: "restaurant" },
   { label: "Estate", slug: "estate" },
   { label: "Dog-Friendly", slug: "dog-friendly" },
   { label: "Activities", slug: "activities" },
@@ -20,13 +20,13 @@ const categories = [
 const featured = [
   {
     image: "/images/spa/pool.webp",
-    title: "Spa Day Escape",
+    title: "W Club Spa Day",
     subtitle: "From £95/person",
     href: "/spa/spa-days",
   },
   {
     image: "/images/restaurant/weir-restaurant-exterior.webp",
-    title: "Sunday Lunch",
+    title: "The Weir · Sunday Lunch",
     subtitle: "12-3pm, from £18",
     href: "/dine",
   },
@@ -43,7 +43,7 @@ const properties = [
 
 const quickLinks = [
   { label: "View all cottages", href: "/stay/cottages" },
-  { label: "Spa treatments", href: "/spa/treatments" },
+  { label: "W Club treatments", href: "/spa/treatments" },
   { label: "Estate walks", href: "/estate/dog-friendly" },
 ];
 

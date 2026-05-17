@@ -172,7 +172,7 @@ export function EnquiryForm() {
             <SelectContent>
               <SelectItem value="booking">Booking enquiry</SelectItem>
               <SelectItem value="spa">Spa enquiry</SelectItem>
-              <SelectItem value="restaurant">Restaurant</SelectItem>
+              <SelectItem value="restaurant">The Weir (dining)</SelectItem>
               <SelectItem value="ownership">Lodge ownership</SelectItem>
               <SelectItem value="general">General</SelectItem>
             </SelectContent>

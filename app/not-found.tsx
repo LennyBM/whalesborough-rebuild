@@ -1,52 +1,40 @@
 import Link from "next/link";
-
-import { Button, LinkArrow } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-content px-6 py-32 lg:px-12 lg:py-48">
-      <p className="eyebrow text-on-surface-muted">404</p>
-      <h1 className="heading-editorial mt-4 text-display-xl text-on-surface">
-        Lost on the estate.
+    <main className="flex min-h-[80vh] flex-col items-center justify-center bg-background px-6 text-center">
+      <Image
+        src="/images/logo/whalesborough-logo.png"
+        alt="Whalesborough Farm Resort & Spa"
+        width={180}
+        height={60}
+        className="mb-10"
+      />
+
+      <h1 className="font-display text-4xl italic text-on-surface md:text-5xl">
+        Page not found
       </h1>
-      <p className="mt-6 max-w-xl text-body-lg text-on-surface-variant">
-        The page you&apos;re looking for may have wandered off — or perhaps it
-        never existed at all. Let us guide you back to somewhere beautiful.
+
+      <p className="mt-4 max-w-md text-lg text-on-surface/70">
+        This page doesn&apos;t exist or has moved.
       </p>
 
-      {/* Key section links */}
-      <nav aria-label="Explore the estate" className="mt-12">
-        <p className="text-caption uppercase tracking-wider text-on-surface-muted mb-5">
-          Explore
-        </p>
-        <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
-          <Link href="/stay">
-            <LinkArrow>Stay</LinkArrow>
-          </Link>
-          <Link href="/spa">
-            <LinkArrow>Spa</LinkArrow>
-          </Link>
-          <Link href="/dine">
-            <LinkArrow>Dine</LinkArrow>
-          </Link>
-          <Link href="/own">
-            <LinkArrow>Own</LinkArrow>
-          </Link>
-        </div>
-      </nav>
+      <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+        <Link
+          href="/"
+          className="inline-flex items-center justify-center rounded-2xl bg-primary px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+        >
+          Go Home
+        </Link>
 
-      {/* Divider */}
-      <div className="mt-16 mb-8 w-16 h-px bg-outline-variant" />
-
-      {/* Home CTA */}
-      <div className="flex flex-wrap gap-4">
-        <Button asChild variant="secondary">
-          <Link href="/">Return to homepage</Link>
-        </Button>
-        <Button asChild variant="ghost">
-          <Link href="/contact">Get in touch</Link>
-        </Button>
+        <Link
+          href="/stay"
+          className="inline-flex items-center justify-center rounded-2xl border border-primary/30 px-8 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+        >
+          Browse Properties
+        </Link>
       </div>
-    </div>
+    </main>
   );
 }

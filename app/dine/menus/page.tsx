@@ -81,7 +81,16 @@ export default function Page() {
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
           <BackButton label="Back to Dine" href="/dine" />
-          <p className="eyebrow text-on-surface-muted">The Weir · Menus</p>
+          <div className="flex items-center gap-3 mt-6 mb-4">
+            <Image
+              src="/images/brands/the-weir-logo.jpg"
+              alt="The Weir"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
+            <p className="eyebrow text-on-surface-muted">The Weir · Menus</p>
+          </div>
           <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg max-w-4xl text-on-surface">
             Menus that follow the{" "}
             <span className="italic">seasons</span>.

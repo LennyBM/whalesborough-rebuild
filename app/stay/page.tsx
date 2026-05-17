@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { PawPrint } from "lucide-react";
+import { properties as allProperties } from "@/lib/data/properties";
 
 const filters = [
   { label: "All", count: null },
@@ -12,88 +13,26 @@ const filters = [
   { label: "Spa Lodges", count: 2 },
 ];
 
-const properties = [
-  {
-    name: "The Farmhouse",
-    slug: "the-farmhouse",
-    type: "Cottages",
-    sleeps: 12,
-    beds: 5,
-    price: 320,
-    features: ["Dog friendly", "Garden"],
-    image: "/images/cottages/the-farmhouse.webp",
-  },
-  {
-    name: "Eagles Nest",
-    slug: "eagles-nest",
-    type: "Cottages",
-    sleeps: 6,
-    beds: 3,
-    price: 195,
-    features: ["Sea views"],
-    image: "/images/cottages/eagles-nest.webp",
-  },
-  {
-    name: "Gwari Spa Barn",
-    slug: "gwari-spa-barn",
-    type: "Spa Lodges",
-    sleeps: 4,
-    beds: 2,
-    price: 285,
-    features: ["Hot tub"],
-    image: "/images/cottages/gwari-spa-barn.webp",
-  },
-  {
-    name: "Arvor Suite",
-    slug: "arvor-suite",
-    type: "Suites",
-    sleeps: 2,
-    beds: 1,
-    price: 150,
-    features: ["Contemporary"],
-    image: "/images/arvor/arvor-exterior.webp",
-  },
-  {
-    name: "Trelowen",
-    slug: "trelowen",
-    type: "Cottages",
-    sleeps: 4,
-    beds: 2,
-    price: 165,
-    features: ["Countryside views"],
-    image: "/images/cottages/trelowen.webp",
-  },
-  {
-    name: "Nettlecoombe",
-    slug: "nettlecoombe",
-    type: "Cottages",
-    sleeps: 6,
-    beds: 3,
-    price: 185,
-    features: ["Dog friendly"],
-    image: "/images/cottages/nettlecoombe.webp",
-  },
-  {
-    name: "Medlands",
-    slug: "medlands",
-    type: "Cottages",
-    sleeps: 4,
-    beds: 2,
-    price: 155,
-    features: ["Peaceful"],
-    image: "/images/cottages/medlands.webp",
-  },
-  {
-    name: "Barley Park",
-    slug: "barley-park",
-    type: "Cottages",
-    sleeps: 5,
-    beds: 2,
-    price: 175,
-    features: ["Family friendly"],
-    image: "/images/cottages/barley-park.webp",
-  },
-];
+/* Map canonical type to filter label */
+function typeToFilter(type: string): string {
+  switch (type) {
+    case "cottage": return "Cottages";
+    case "suite": return "Suites";
+    case "spa-lodge": return "Spa Lodges";
+    default: return "Cottages";
+  }
+}
+
+const properties = allProperties.map((p) => ({
+  name: p.name,
+  slug: p.slug,
+  type: typeToFilter(p.type),
+  sleeps: p.sleeps,
+  beds: p.bedrooms,
+  price: p.price,
+  features: [...p.features],
+  image: p.image,
+}));
 
 export default function StayPage() {
   const [activeFilter, setActiveFilter] = useState("All");

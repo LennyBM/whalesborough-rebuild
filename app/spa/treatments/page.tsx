@@ -137,9 +137,18 @@ export default function TreatmentsPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
           <BackButton label="Back to Spa" href="/spa" />
-          <p className="eyebrow text-on-surface-muted">
-            The W Club · Treatments
-          </p>
+          <div className="flex items-center gap-3 mb-2">
+            <Image
+              src="/images/brands/w-club-logo.jpg"
+              alt="The W Club"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <p className="eyebrow text-[#7a8c6e]">
+              The W Club · Treatments
+            </p>
+          </div>
           <h1 className="heading-editorial mt-6 max-w-4xl text-display-md text-on-surface md:text-display-lg lg:text-display-xl">
             A menu drawn from{" "}
             <span className="italic">Cornish botanicals</span>.

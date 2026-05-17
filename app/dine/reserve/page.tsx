@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BackButton } from "@/components/app-shell/back-button";
 import { Input } from "@/components/ui/input";
@@ -64,7 +65,16 @@ export default function Page() {
             >
               {/* Header */}
               <div className="mb-16">
-                <p className="eyebrow text-on-surface-muted">The Weir Restaurant</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <Image
+                    src="/images/brands/the-weir-logo.jpg"
+                    alt="The Weir"
+                    width={40}
+                    height={40}
+                    className="rounded-lg"
+                  />
+                  <p className="eyebrow text-on-surface-muted">The Weir</p>
+                </div>
                 <h1 className="heading-editorial mt-4 text-display-md md:text-display-lg text-on-surface">
                   Reserve a <span className="italic">table</span>
                 </h1>

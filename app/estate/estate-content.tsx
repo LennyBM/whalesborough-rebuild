@@ -42,17 +42,17 @@ const features = [
   },
   {
     icon: Sparkles,
-    title: "W Club Spa",
+    title: "The W Club",
     subtitle: "Pool, thermal, treatments",
     href: "/spa",
-    color: "#703a1d",
+    color: "#7a8c6e",
   },
   {
     icon: UtensilsCrossed,
     title: "The Weir",
     subtitle: "Estate-to-plate dining",
     href: "/dine",
-    color: "#703a1d",
+    color: "#7a8c6e",
   },
   {
     icon: Dog,

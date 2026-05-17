@@ -217,7 +217,7 @@ export default function BookingConfirmationPage() {
             {/* Property image */}
             <div className="relative h-44 w-full overflow-hidden">
               <Image
-                src="/images/cottages/trevose-cottage.webp"
+                src="/images/cottages/whalesborough-cottage.webp"
                 alt="Trevose Cottage at Whalesborough"
                 fill
                 className="object-cover"

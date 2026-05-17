@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -182,6 +183,7 @@ export default function BookingGuestDetailsPage() {
   return (
     <article className="bg-background min-h-screen">
       <header className="mx-auto max-w-3xl px-6 pt-24 lg:pt-32">
+        <BackButton label="Back" href="/stay/booking/add-ons" />
         <BookingStepper current={4} />
       </header>
 

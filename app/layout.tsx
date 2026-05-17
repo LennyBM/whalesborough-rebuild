@@ -26,6 +26,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ?? "https://whalesborough.co.uk",
   ),
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Whalesborough",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+  },
   title: {
     default: "Whalesborough Farm Resort & Spa — Cornish coast luxury",
     template: "%s · Whalesborough Farm Resort & Spa",
@@ -84,7 +93,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#4a6457",
+  themeColor: "#703a1d",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,

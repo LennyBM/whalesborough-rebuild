@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Input } from "@/components/ui/input";
 import { Lock, ShieldCheck } from "lucide-react";
 
@@ -152,6 +153,7 @@ export default function BookingPaymentPage() {
   return (
     <article className="bg-background min-h-screen">
       <header className="mx-auto max-w-5xl px-6 pt-24 lg:px-12 lg:pt-32">
+        <BackButton label="Back" href="/stay/booking/guest-details" />
         <BookingStepper current={5} />
       </header>
 

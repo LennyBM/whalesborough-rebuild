@@ -89,7 +89,7 @@ export default function PropertyDetailPage({ params }: { params: { slug: string 
       {/* Book this property button */}
       <div className="px-4 mt-4">
         <Link
-          href="/stay/booking/dates"
+          href={`/stay/booking/dates?property=${property.slug}`}
           className="block w-full text-center py-3.5 bg-primary text-white font-body font-semibold text-sm tracking-wide"
         >
           Book this property
@@ -178,7 +178,7 @@ export default function PropertyDetailPage({ params }: { params: { slug: string 
       {/* Bottom sticky CTA */}
       <div className="fixed bottom-0 inset-x-0 z-50 bg-background border-t border-surface-container px-4 py-3">
         <Link
-          href="/stay/booking/dates"
+          href={`/stay/booking/dates?property=${property.slug}`}
           className="block w-full text-center py-3.5 bg-primary text-white font-body font-semibold text-sm tracking-wide"
         >
           Book from <PropertyPriceDisplay price={property.price} />

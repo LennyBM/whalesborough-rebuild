@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/app-shell/back-button";
 import { Check, ShoppingBag, Gift, Dog, Sparkles, UtensilsCrossed, Clock, Waves } from "lucide-react";
 
 /* ─── Progress Stepper ─── */
@@ -218,6 +219,7 @@ export default function BookingAddOnsPage() {
     <article className="bg-background min-h-screen">
       {/* Header */}
       <header className="mx-auto max-w-content px-6 pt-24 lg:px-12 lg:pt-32">
+        <BackButton label="Back" href="/stay/booking/select" />
         <BookingStepper current={3} />
 
         {/* Summary bar */}

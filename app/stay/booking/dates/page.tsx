@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { BackButton } from "@/components/app-shell/back-button";
 import { Minus, Plus, ChevronLeft, ChevronRight } from "lucide-react";
@@ -251,6 +251,8 @@ function NumberStepper({
 /* ─── Main Page ─── */
 export default function BookingDatesPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const preSelectedProperty = searchParams.get("property");
   const now = new Date();
   const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
@@ -327,7 +329,7 @@ export default function BookingDatesPage() {
   return (
     <article className="bg-background min-h-screen">
       <header className="mx-auto max-w-5xl px-6 pt-24 lg:px-12 lg:pt-32">
-        <BackButton label="Cancel" href="/stay" />
+        <BackButton label="Cancel" href={preSelectedProperty ? `/stay/${preSelectedProperty}` : "/stay"} />
         <BookingStepper current={1} />
         <p className="eyebrow text-on-surface-muted">Step 1 of 5</p>
         <h1 className="heading-editorial mt-4 text-on-surface" style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}>
@@ -457,9 +459,13 @@ export default function BookingDatesPage() {
             size="lg"
             className="w-full sm:w-auto"
             disabled={!startDate || !endDate}
-            onClick={() => router.push("/stay/booking/select")}
+            onClick={() => router.push(
+              preSelectedProperty
+                ? `/stay/booking/add-ons?property=${preSelectedProperty}`
+                : "/stay/booking/select"
+            )}
           >
-            Search available properties
+            {preSelectedProperty ? "Continue" : "Search available properties"}
           </Button>
         </div>
       </section>

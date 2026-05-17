@@ -36,25 +36,24 @@ export default function SpaPage() {
     <div className="min-h-screen bg-background pb-24">
       {/* Header */}
       <div className="flex items-center gap-4 px-4 pt-6 pb-4">
+        <Image
+          src="/images/brands/w-club-logo.jpg"
+          alt="The W Club"
+          width={48}
+          height={48}
+          className="rounded-full"
+        />
         <div className="flex-1">
           <h1 className="font-display text-2xl font-semibold text-on-surface">
             The W Club
           </h1>
-          <p className="text-sm text-on-surface-muted">Spa & Wellness</p>
-        </div>
-        <div className="relative h-[60px] w-[60px] overflow-hidden rounded-full">
-          <Image
-            src="/images/spa/pool.webp"
-            alt="The W Club Spa pool"
-            fill
-            className="object-cover"
-          />
+          <p className="text-sm text-[#7a8c6e]">Spa & Wellness</p>
         </div>
       </div>
 
       {/* Status card */}
       <div className="mx-4 rounded-xl bg-surface-container-low px-4 py-3">
-        <p className="text-sm font-medium text-secondary">
+        <p className="text-sm font-medium text-[#7a8c6e]">
           Open now{" "}
           <span className="text-on-surface-muted">
             · Pool until 8pm · Treatments until 7pm
@@ -139,7 +138,7 @@ export default function SpaPage() {
       <div className="mt-6 px-4">
         <Link
           href="/spa/booking"
-          className="block w-full rounded-xl bg-[#703a1d] py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-opacity active:opacity-90"
+          className="block w-full rounded-xl bg-[#7a8c6e] py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-opacity active:opacity-90"
         >
           Book a treatment
         </Link>

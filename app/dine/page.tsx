@@ -31,14 +31,13 @@ export default function Page() {
     <div className="min-h-screen bg-background px-4 py-6 pb-24">
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
-        <div className="relative w-[72px] h-[72px] rounded-xl overflow-hidden shrink-0">
-          <Image
-            src="/images/restaurant/weir-restaurant-exterior.webp"
-            alt="The Weir Restaurant"
-            fill
-            className="object-cover"
-          />
-        </div>
+        <Image
+          src="/images/brands/the-weir-logo.jpg"
+          alt="The Weir"
+          width={72}
+          height={72}
+          className="rounded-xl shrink-0"
+        />
         <div>
           <h1 className="font-display text-2xl font-semibold text-on-surface">
             The Weir
