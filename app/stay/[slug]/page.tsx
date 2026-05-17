@@ -5,6 +5,7 @@ import { PawPrint } from "lucide-react";
 import { properties } from "@/lib/data/properties";
 import { BackButton } from "@/components/app-shell/back-button";
 import { PropertyPriceDisplay } from "./property-price-display";
+import { PropertyGallery } from "./property-gallery";
 
 export function generateStaticParams() {
   return properties.map((property) => ({
@@ -49,6 +50,9 @@ export default function PropertyDetailPage({ params }: { params: { slug: string 
           priority
         />
       </div>
+
+      {/* Photo gallery */}
+      <PropertyGallery propertyName={property.name} heroImage={property.image} />
 
       {/* Property header card */}
       <div className="px-4 -mt-4 relative z-10">

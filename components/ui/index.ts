@@ -8,3 +8,5 @@ export * from "./radio-group";
 export * from "./card";
 export * from "./badge";
 export * from "./skeleton";
+export * from "./image-lightbox";
+export * from "./image-gallery";

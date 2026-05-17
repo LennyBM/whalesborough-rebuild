@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ImageLightbox } from "@/components/ui/image-lightbox";
 
 const galleryImages = [
   { src: "/images/gallery/gallery-001.webp", width: 800, height: 1200, caption: "The Farmhouse kitchen" },
@@ -24,8 +26,24 @@ const galleryImages = [
 ];
 
 export function GalleryContent() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const lightboxImages = galleryImages.map((img) => ({
+    src: img.src,
+    alt: img.caption || "Whalesborough estate",
+  }));
+
   return (
     <>
+      {/* Lightbox */}
+      <ImageLightbox
+        images={lightboxImages}
+        initialIndex={lightboxIndex}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
+
       {/* Heading */}
       <section className="bg-background">
         <div className="mx-auto max-w-hero px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-40">
@@ -55,7 +73,13 @@ export function GalleryContent() {
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
               >
-                <div className="group relative overflow-hidden">
+                <button
+                  onClick={() => {
+                    setLightboxIndex(i);
+                    setLightboxOpen(true);
+                  }}
+                  className="group relative w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
                   <Image
                     src={image.src}
                     alt={image.caption || "Whalesborough estate"}
@@ -71,7 +95,7 @@ export function GalleryContent() {
                       </p>
                     </div>
                   )}
-                </div>
+                </button>
               </motion.div>
             ))}
           </div>
