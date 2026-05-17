@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -61,10 +62,17 @@ export function SiteHeader() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-lg uppercase tracking-[0.15em] text-secondary-fg hover:text-white/90"
+            className="block hover:opacity-90 transition-opacity"
             aria-label="Whalesborough Farm Resort and Spa — Home"
           >
-            Whalesborough
+            <Image
+              src="/images/logo/whalesborough-logo.png"
+              alt="Whalesborough"
+              width={140}
+              height={40}
+              className="h-auto w-[100px] lg:w-[140px]"
+              priority
+            />
           </Link>
 
           {/* Center nav — desktop only */}
@@ -132,9 +140,13 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
       >
         <div className="flex h-16 items-center justify-between px-6">
-          <span className="font-display text-lg uppercase tracking-[0.15em]">
-            Whalesborough
-          </span>
+          <Image
+              src="/images/logo/whalesborough-logo.png"
+              alt="Whalesborough"
+              width={140}
+              height={40}
+              className="h-auto w-[100px]"
+            />
           <button
             type="button"
             onClick={() => setMobileOpen(false)}

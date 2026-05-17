@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, AlertCircle, Car, Train, Plane } from "lucide-react";
 
 import { LinkArrow } from "@/components/ui/button";
 import { EnquiryForm } from "./enquiry-form";
 
 export const metadata: Metadata = {
-  title: "Contact us — Whalesborough Farm",
+  title: "Get in touch — Whalesborough Estate",
   description:
-    "Get in touch with the Whalesborough team. Phone, email, address, and opening hours for the estate, spa, and restaurant near Bude, Cornwall.",
+    "Contact the Whalesborough Estate team. Phone, email, directions, and reception hours for the estate near Bude, Cornwall.",
+  openGraph: {
+    title: "Get in touch — Whalesborough Estate",
+    description:
+      "Contact the Whalesborough Estate team. Phone, email, directions, and reception hours for the estate near Bude, Cornwall.",
+  },
 };
 
 export default function Page() {
   return (
     <>
-      {/* Hero */}
+      {/* Editorial Header */}
       <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
+        <div className="mx-auto max-w-content px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-40">
           <p className="eyebrow text-on-surface-muted">Contact</p>
-          <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
-            We are here to{" "}
-            <span className="italic">help</span>.
+          <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg max-w-3xl text-on-surface">
+            Get in touch
           </h1>
           <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
-            Whether you have a question about ownership, a spa booking, the
-            restaurant, or anything else about life on the estate — our team
-            is happy to assist. Send us a message or pick up the phone.
+            Whether it concerns a booking, a question about the estate, or
+            simply directions to our door — we are always happy to hear from
+            you.
           </p>
         </div>
       </section>
@@ -34,11 +37,11 @@ export default function Page() {
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-5 lg:gap-20">
-            {/* Enquiry Form */}
+            {/* Contact Form */}
             <div className="lg:col-span-3">
               <p className="eyebrow text-on-surface-muted">Send a message</p>
-              <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
-                General enquiry
+              <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
+                How can we help?
               </h2>
               <p className="mt-4 text-body text-on-surface-variant">
                 Fill in the form below and a member of our team will respond
@@ -48,48 +51,22 @@ export default function Page() {
               <EnquiryForm />
             </div>
 
-            {/* Contact Details Sidebar */}
+            {/* Contact Details */}
             <div className="lg:col-span-2">
-              <div className="space-y-12">
-                {/* Phone Numbers */}
+              <div className="space-y-10">
+                {/* Phone */}
                 <div>
                   <p className="eyebrow text-on-surface-muted">Phone</p>
-                  <div className="mt-4 space-y-4">
-                    <div className="flex items-start gap-4">
-                      <Phone className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
-                      <div>
-                        <p className="text-body font-medium text-on-surface">Sales & general</p>
-                        <a
-                          href="tel:+441288361940"
-                          className="text-body text-on-surface-variant hover:text-primary transition-colors duration-fast"
-                        >
-                          01288 361940
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Phone className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
-                      <div>
-                        <p className="text-body font-medium text-on-surface">VIP viewings</p>
-                        <a
-                          href="tel:+441288361941"
-                          className="text-body text-on-surface-variant hover:text-primary transition-colors duration-fast"
-                        >
-                          01288 361941
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <Phone className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
-                      <div>
-                        <p className="text-body font-medium text-on-surface">The Weir restaurant</p>
-                        <a
-                          href="tel:+441288362234"
-                          className="text-body text-on-surface-variant hover:text-primary transition-colors duration-fast"
-                        >
-                          01288 362234
-                        </a>
-                      </div>
+                  <div className="mt-4 flex items-start gap-4">
+                    <Phone className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
+                    <div>
+                      <p className="text-body font-medium text-on-surface">Reception</p>
+                      <a
+                        href="tel:+441288361361"
+                        className="text-body text-on-surface-variant hover:text-primary transition-colors"
+                      >
+                        01288 361361
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -100,12 +77,11 @@ export default function Page() {
                   <div className="mt-4 flex items-start gap-4">
                     <Mail className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
                     <div>
-                      <p className="text-body font-medium text-on-surface">Restaurant</p>
                       <a
-                        href="mailto:theweir@whalesborough.co.uk"
-                        className="text-body text-on-surface-variant hover:text-primary transition-colors duration-fast break-all"
+                        href="mailto:hello@whalesborough.co.uk"
+                        className="text-body text-on-surface-variant hover:text-primary transition-colors break-all"
                       >
-                        theweir@whalesborough.co.uk
+                        hello@whalesborough.co.uk
                       </a>
                     </div>
                   </div>
@@ -117,42 +93,39 @@ export default function Page() {
                   <div className="mt-4 flex items-start gap-4">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
                     <address className="text-body text-on-surface-variant not-italic leading-relaxed">
-                      Whalesborough Farm<br />
+                      Whalesborough Estate<br />
                       Marhamchurch<br />
-                      Bude<br />
-                      Cornwall<br />
-                      EX23 0JD
+                      Bude, Cornwall<br />
+                      EX23 0HR
                     </address>
                   </div>
                 </div>
 
-                {/* Opening Hours */}
+                {/* Reception Hours */}
                 <div>
-                  <p className="eyebrow text-on-surface-muted">Opening hours</p>
+                  <p className="eyebrow text-on-surface-muted">Reception hours</p>
                   <div className="mt-4 flex items-start gap-4">
                     <Clock className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
-                    <div className="space-y-2">
-                      <div>
-                        <p className="text-body font-medium text-on-surface">Estate & reception</p>
-                        <p className="text-body-sm text-on-surface-variant">Mon–Sun, 9:00am – 5:00pm</p>
-                      </div>
-                      <div>
-                        <p className="text-body font-medium text-on-surface">Spa</p>
-                        <p className="text-body-sm text-on-surface-variant">Mon–Sun, 9:00am – 7:00pm</p>
-                      </div>
-                      <div>
-                        <p className="text-body font-medium text-on-surface">The Weir restaurant</p>
-                        <p className="text-body-sm text-on-surface-variant">Daily, 8:30am – 3:00pm</p>
-                      </div>
-                    </div>
+                    <p className="text-body text-on-surface-variant">
+                      8am&ndash;8pm, daily
+                    </p>
                   </div>
                 </div>
 
-                {/* Finding Us Link */}
-                <div className="pt-4">
-                  <LinkArrow href="/contact/finding-us">
-                    Directions & parking
-                  </LinkArrow>
+                {/* Emergency */}
+                <div>
+                  <p className="eyebrow text-on-surface-muted">Emergency (guests only)</p>
+                  <div className="mt-4 flex items-start gap-4">
+                    <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
+                    <div>
+                      <a
+                        href="tel:+441288361362"
+                        className="text-body text-on-surface-variant hover:text-primary transition-colors"
+                      >
+                        01288 361362
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -160,58 +133,87 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Quick Contact Cards */}
+      {/* Finding Us */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">Specific enquiries</p>
+          <p className="eyebrow text-on-surface-muted">Directions</p>
           <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
-            Speak to the right team
+            Finding us
           </h2>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <ContactCard
-              title="Lodge ownership"
-              description="Speak with our ownership team about purchasing, viewing availability, and the buying process."
-              phone="01288 361940"
-              href="/own"
-            />
-            <ContactCard
-              title="Spa bookings"
-              description="Book a treatment, enquire about spa days, or ask about memberships and gift vouchers."
-              phone="01288 361940"
-              href="/spa"
-            />
-            <ContactCard
-              title="The Weir restaurant"
-              description="Private dining, events, dietary requirements, or questions about our menus."
-              phone="01288 362234"
-              href="/dine"
-            />
+          <p className="mt-6 max-w-2xl text-body-lg text-on-surface-variant">
+            Tucked into the North Cornwall countryside between Bude and
+            Widemouth Bay — just a few minutes from the coast.
+          </p>
+
+          <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+            {/* By Car */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Car className="h-5 w-5 text-secondary" aria-hidden="true" />
+                <p className="text-body font-medium text-on-surface">By car</p>
+              </div>
+              <p className="text-body-sm text-on-surface-variant leading-relaxed">
+                Exit M5 at J27, take the A361 to Barnstaple, then A39 to Bude.
+                Follow B3314 signed Marhamchurch.
+              </p>
+            </div>
+
+            {/* Train */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Train className="h-5 w-5 text-secondary" aria-hidden="true" />
+                <p className="text-body font-medium text-on-surface">Nearest train</p>
+              </div>
+              <p className="text-body-sm text-on-surface-variant leading-relaxed">
+                Bodmin Parkway — approximately 45 minutes by car.
+              </p>
+            </div>
+
+            {/* Airport */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Plane className="h-5 w-5 text-secondary" aria-hidden="true" />
+                <p className="text-body font-medium text-on-surface">Nearest airport</p>
+              </div>
+              <p className="text-body-sm text-on-surface-variant leading-relaxed">
+                Newquay Cornwall Airport — approximately 40 minutes by car.
+              </p>
+            </div>
+
+            {/* Sat Nav */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-5 w-5 text-secondary" aria-hidden="true" />
+                <p className="text-body font-medium text-on-surface">Sat nav</p>
+              </div>
+              <p className="text-body-sm text-on-surface-variant leading-relaxed">
+                Use postcode <span className="font-medium text-on-surface">EX23 0HR</span> for
+                accurate directions to the estate entrance.
+              </p>
+            </div>
+          </div>
+
+          {/* Map Placeholder */}
+          <div className="mt-16">
+            <div className="relative flex aspect-[16/7] items-center justify-center bg-surface-container-low">
+              <div className="text-center">
+                <MapPin className="mx-auto h-8 w-8 text-on-surface-muted" aria-hidden="true" />
+                <p className="mt-3 text-body text-on-surface-muted">
+                  Whalesborough Estate
+                </p>
+                <a
+                  href="https://www.google.com/maps?q=50.8367,-4.5258"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block text-body-sm font-medium text-primary hover:underline"
+                >
+                  View on Google Maps &rarr;
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </>
-  );
-}
-
-function ContactCard({
-  title,
-  description,
-  phone,
-  href,
-}: {
-  title: string;
-  description: string;
-  phone: string;
-  href: string;
-}) {
-  return (
-    <div className="bg-surface-container-low p-8">
-      <h3 className="text-h3 font-display text-on-surface">{title}</h3>
-      <p className="mt-3 text-body-sm text-on-surface-variant">{description}</p>
-      <p className="mt-6 text-body font-medium text-on-surface">{phone}</p>
-      <div className="mt-4">
-        <LinkArrow href={href}>Learn more</LinkArrow>
-      </div>
-    </div>
   );
 }

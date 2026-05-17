@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  }),
+};
 
 export function EnquiryForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -66,10 +76,16 @@ export function EnquiryForm() {
 
   if (status === "success") {
     return (
-      <div className="mt-10 rounded-lg bg-surface-container-low p-8 text-center">
-        <p className="text-h3 font-display text-on-surface">Thank you for your enquiry</p>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        className="mt-10 bg-background p-8 text-center"
+      >
+        <p className="text-h3 font-display text-on-surface">Thank you</p>
         <p className="mt-3 text-body text-on-surface-variant">
-          We have received your message and will be in touch shortly.
+          We have received your message and will be in touch within one working
+          day.
         </p>
         <Button
           type="button"
@@ -80,19 +96,30 @@ export function EnquiryForm() {
         >
           Send another enquiry
         </Button>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <form className="mt-10 space-y-8" onSubmit={handleSubmit}>
+    <motion.form
+      className="mt-10 space-y-8"
+      onSubmit={handleSubmit}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+    >
       {status === "error" && errorMessage && (
-        <div className="rounded-md bg-red-50 p-4 text-body-sm text-red-800">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="bg-red-50 p-4 text-body-sm text-red-800"
+        >
           {errorMessage}
-        </div>
+        </motion.div>
       )}
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+      {/* Name + Email */}
+      <motion.div className="grid grid-cols-1 gap-8 sm:grid-cols-2" variants={fadeUp} custom={0}>
         <div className="space-y-2">
           <Label htmlFor="name">Full name</Label>
           <Input
@@ -120,11 +147,14 @@ export function EnquiryForm() {
             <p className="text-caption text-red-600">{fieldErrors.email[0]}</p>
           )}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+      {/* Phone + Subject */}
+      <motion.div className="grid grid-cols-1 gap-8 sm:grid-cols-2" variants={fadeUp} custom={1}>
         <div className="space-y-2">
-          <Label htmlFor="phone">Phone number</Label>
+          <Label htmlFor="phone">
+            Phone number <span className="text-on-surface-muted">(optional)</span>
+          </Label>
           <Input
             id="phone"
             name="phone"
@@ -140,39 +170,40 @@ export function EnquiryForm() {
               <SelectValue placeholder="Select a topic" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="booking">Booking enquiry</SelectItem>
+              <SelectItem value="spa">Spa enquiry</SelectItem>
+              <SelectItem value="restaurant">Restaurant</SelectItem>
               <SelectItem value="ownership">Lodge ownership</SelectItem>
-              <SelectItem value="viewing">Book a viewing</SelectItem>
-              <SelectItem value="stay">Holiday stays</SelectItem>
-              <SelectItem value="spa">Spa & treatments</SelectItem>
-              <SelectItem value="restaurant">The Weir restaurant</SelectItem>
-              <SelectItem value="events">Events & private dining</SelectItem>
-              <SelectItem value="wedding">Weddings & celebrations</SelectItem>
-              <SelectItem value="press">Press & media</SelectItem>
-              <SelectItem value="other">Something else</SelectItem>
+              <SelectItem value="general">General</SelectItem>
             </SelectContent>
           </Select>
           {fieldErrors.subject && (
             <p className="text-caption text-red-600">{fieldErrors.subject[0]}</p>
           )}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="space-y-2">
+      {/* Message */}
+      <motion.div className="space-y-2" variants={fadeUp} custom={2}>
         <Label htmlFor="message">Your message</Label>
         <Textarea
           id="message"
           name="message"
           placeholder="Tell us how we can help..."
           required
+          rows={6}
         />
         {fieldErrors.message && (
           <p className="text-caption text-red-600">{fieldErrors.message[0]}</p>
         )}
-      </div>
+      </motion.div>
 
-      <Button type="submit" variant="primary" size="lg" disabled={status === "loading"}>
-        {status === "loading" ? "Sending..." : "Send enquiry"}
-      </Button>
-    </form>
+      {/* Submit */}
+      <motion.div variants={fadeUp} custom={3}>
+        <Button type="submit" variant="primary" size="lg" disabled={status === "loading"}>
+          {status === "loading" ? "Sending..." : "Send enquiry"}
+        </Button>
+      </motion.div>
+    </motion.form>
   );
 }

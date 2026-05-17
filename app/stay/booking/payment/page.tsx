@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CreditCard, Smartphone, Lock } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Lock, ShieldCheck } from "lucide-react";
 
 /* ─── Progress Stepper ─── */
 function BookingStepper({ current }: { current: number }) {
@@ -17,16 +18,16 @@ function BookingStepper({ current }: { current: number }) {
           return (
             <li key={label} className="flex items-center gap-2">
               <span
-                className={`flex h-8 w-8 items-center justify-center font-body text-button text-sm ${
+                className={`flex h-8 w-8 items-center justify-center font-body text-sm ${
                   isActive
-                    ? "bg-primary text-primary-fg"
+                    ? "bg-primary text-white"
                     : isComplete
-                      ? "bg-secondary text-secondary-fg"
+                      ? "bg-on-surface text-white"
                       : "bg-surface-container text-on-surface-muted"
                 }`}
                 aria-current={isActive ? "step" : undefined}
               >
-                {step}
+                {isComplete ? "✓" : step}
               </span>
               <span
                 className={`hidden sm:inline font-body text-sm uppercase tracking-wide ${
@@ -36,7 +37,7 @@ function BookingStepper({ current }: { current: number }) {
                 {label}
               </span>
               {i < steps.length - 1 && (
-                <span className="mx-2 h-px w-4 bg-outline-variant sm:w-8" aria-hidden="true" />
+                <span className="mx-2 h-px w-4 bg-on-surface-muted/20 sm:w-8" aria-hidden="true" />
               )}
             </li>
           );
@@ -46,59 +47,90 @@ function BookingStepper({ current }: { current: number }) {
   );
 }
 
-/* ─── Order Summary (mock) ─── */
+/* ─── Accepted Payment Methods ─── */
+function AcceptedPayments() {
+  const methods = ["Visa", "Mastercard", "Amex", "Apple Pay", "Google Pay"];
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {methods.map((method) => (
+        <span
+          key={method}
+          className="bg-surface-container px-3 py-1.5 font-body text-xs uppercase tracking-wide text-on-surface-muted"
+        >
+          {method}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/* ─── Order Summary ─── */
 function OrderSummary() {
   return (
-    <div className="bg-surface-container-low p-8">
-      <h2 className="font-display text-h3 text-on-surface mb-6">
+    <div className="bg-surface-container-low p-8 lg:p-10">
+      <h2 className="font-display text-2xl text-on-surface mb-6">
         Order summary
       </h2>
 
-      <div className="space-y-4 border-b border-outline-variant/30 pb-6">
-        <div className="flex justify-between">
-          <div>
-            <p className="text-body text-on-surface">Trevose Cottage</p>
-            <p className="text-body-sm text-on-surface-muted">
-              Fri 20 Jun — Mon 23 Jun 2026 (3 nights)
-            </p>
-          </div>
-          <span className="font-body text-on-surface">&pound;895</span>
-        </div>
+      {/* Property */}
+      <div className="space-y-1 pb-6">
+        <p className="font-body text-on-surface font-medium">The Farmhouse</p>
+        <p className="font-body text-sm text-on-surface-muted">
+          12 Jul – 16 Jul 2026 · 4 nights
+        </p>
+        <p className="font-body text-sm text-on-surface-muted">
+          8 adults, 2 children
+        </p>
+      </div>
 
-        <div className="flex justify-between">
-          <div>
-            <p className="text-body text-on-surface">Relaxation Massage x2</p>
-            <p className="text-body-sm text-on-surface-muted">Spa treatment</p>
-          </div>
-          <span className="font-body text-on-surface">&pound;170</span>
-        </div>
-
-        <div className="flex justify-between">
-          <div>
-            <p className="text-body text-on-surface">Cornish Welcome Hamper</p>
-            <p className="text-body-sm text-on-surface-muted">Hamper</p>
-          </div>
-          <span className="font-body text-on-surface">&pound;65</span>
-        </div>
-
-        <div className="flex justify-between">
-          <div>
-            <p className="text-body text-on-surface">Dog Welcome Pack x1</p>
-            <p className="text-body-sm text-on-surface-muted">Dog extra</p>
-          </div>
-          <span className="font-body text-on-surface">&pound;25</span>
+      {/* Base rate */}
+      <div className="space-y-3 py-6" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+        <div className="flex justify-between font-body text-sm">
+          <span className="text-on-surface">£320/night × 4</span>
+          <span className="text-on-surface">£1,280</span>
         </div>
       </div>
 
-      <div className="flex justify-between pt-6">
-        <span className="font-display text-h3 text-on-surface">Total</span>
-        <span className="font-display text-h2 text-on-surface">
-          &pound;1,155
-        </span>
+      {/* Add-ons */}
+      <div className="space-y-3 py-6" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+        <p className="font-body text-xs uppercase tracking-wide text-on-surface-muted mb-3">
+          Add-ons
+        </p>
+        <div className="flex justify-between font-body text-sm">
+          <span className="text-on-surface">Cornish Welcome Hamper</span>
+          <span className="text-on-surface">£45</span>
+        </div>
+        <div className="flex justify-between font-body text-sm">
+          <span className="text-on-surface">Dog Welcome Kit</span>
+          <span className="text-on-surface">£25</span>
+        </div>
+        <div className="flex justify-between font-body text-sm">
+          <span className="text-on-surface">Spa Day Pass × 2</span>
+          <span className="text-on-surface">£110</span>
+        </div>
       </div>
 
-      <p className="mt-4 text-body-sm text-on-surface-muted">
-        Free cancellation until 13 Jun 2026
+      {/* Subtotal & Discount */}
+      <div className="space-y-3 py-6" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+        <div className="flex justify-between font-body text-sm">
+          <span className="text-on-surface-muted">Subtotal</span>
+          <span className="text-on-surface">£1,460</span>
+        </div>
+        <div className="flex justify-between font-body text-sm">
+          <span className="text-on-surface-muted">Early booking discount</span>
+          <span className="text-green-700">-£65</span>
+        </div>
+      </div>
+
+      {/* Total */}
+      <div className="flex justify-between items-baseline pt-6" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+        <span className="font-display text-lg text-on-surface">Total</span>
+        <span className="font-display text-3xl text-on-surface">£1,395</span>
+      </div>
+
+      {/* Cancellation policy */}
+      <p className="mt-6 font-body text-xs text-on-surface-muted leading-relaxed">
+        Free cancellation until 14 days before arrival
       </p>
     </div>
   );
@@ -107,114 +139,107 @@ function OrderSummary() {
 export default function BookingPaymentPage() {
   return (
     <article className="bg-background min-h-screen">
-      <header className="mx-auto max-w-content px-6 pt-24 lg:px-12 lg:pt-32">
+      <header className="mx-auto max-w-5xl px-6 pt-24 lg:px-12 lg:pt-32">
         <BookingStepper current={5} />
-        <p className="eyebrow text-on-surface-muted">Step 5 of 5</p>
-        <h1 className="heading-editorial mt-4 text-display-md md:text-display-lg max-w-3xl text-on-surface">
-          Payment
-        </h1>
-        <p className="mt-6 max-w-2xl text-body-lg text-on-surface-variant">
-          Secure checkout. Your card details are processed by Stripe and never
-          stored on our servers.
-        </p>
       </header>
 
-      <section className="mx-auto max-w-content px-6 pb-32 pt-12 lg:px-12">
-        <div className="grid gap-12 lg:grid-cols-[1fr_400px]">
-          {/* Payment form area */}
-          <div className="space-y-8">
-            {/* Express checkout */}
+      <section className="mx-auto max-w-5xl px-6 pb-32 pt-4 lg:px-12">
+        <div className="grid gap-12 lg:grid-cols-[1fr_380px]">
+          {/* LEFT: Payment form */}
+          <div className="space-y-10">
             <div>
-              <h2 className="font-display text-h3 text-on-surface mb-4">
-                Express checkout
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <button
-                  type="button"
-                  className="flex h-14 items-center justify-center gap-3 bg-black text-white font-body text-sm transition-opacity hover:opacity-90"
-                >
-                  <Smartphone className="h-5 w-5" aria-hidden="true" />
-                  Apple Pay
-                </button>
-                <button
-                  type="button"
-                  className="flex h-14 items-center justify-center gap-3 bg-surface-container text-on-surface font-body text-sm transition-colors hover:bg-surface-container-high"
-                >
-                  <Smartphone className="h-5 w-5" aria-hidden="true" />
-                  Google Pay
-                </button>
-              </div>
+              <h1 className="font-display text-3xl md:text-4xl text-on-surface mb-2">
+                Pay securely
+              </h1>
+              <p className="font-body text-on-surface-variant">
+                Your card details are encrypted and processed by Stripe. We never store your payment information.
+              </p>
             </div>
 
-            {/* Divider */}
-            <div className="flex items-center gap-4">
-              <span className="flex-1 h-px bg-outline-variant/30" />
-              <span className="text-body-sm text-on-surface-muted uppercase tracking-wide">
-                Or pay with card
-              </span>
-              <span className="flex-1 h-px bg-outline-variant/30" />
-            </div>
-
-            {/* Stripe Elements placeholder */}
-            <div className="space-y-6">
-              <div className="bg-surface-container-low p-8 border border-dashed border-outline-variant/50">
-                <div className="flex items-center gap-3 mb-4">
-                  <CreditCard className="h-5 w-5 text-on-surface-muted" aria-hidden="true" />
-                  <span className="font-body text-sm text-on-surface-muted uppercase tracking-wide">
-                    Stripe Elements
-                  </span>
-                </div>
-                <p className="text-body text-on-surface-variant">
-                  Card number, expiry and CVC fields will render here via Stripe
-                  Elements. This is a UI placeholder for development.
-                </p>
-                <div className="mt-6 space-y-4">
-                  <div className="h-12 bg-surface-container animate-pulse" />
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="h-12 bg-surface-container animate-pulse" />
-                    <div className="h-12 bg-surface-container animate-pulse" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Klarna notice */}
-              <div className="bg-surface-container-low p-4 flex items-start gap-3">
-                <span className="text-body-sm text-on-surface-muted">
-                  Klarna pay-in-3 available. Split your payment into 3
-                  interest-free instalments.
+            {/* Mock Stripe Payment Element */}
+            <div className="bg-surface-container-low p-8 space-y-6">
+              <div className="flex items-center gap-2 mb-2">
+                <ShieldCheck className="h-4 w-4 text-on-surface-muted" aria-hidden="true" />
+                <span className="font-body text-xs uppercase tracking-wide text-on-surface-muted">
+                  Card details
                 </span>
               </div>
+
+              {/* Card Number */}
+              <div>
+                <label className="block font-body text-sm text-on-surface mb-2">
+                  Card number
+                </label>
+                <Input
+                  type="text"
+                  placeholder="1234 5678 9012 3456"
+                  className="h-12 bg-background font-body text-on-surface placeholder:text-on-surface-muted/50"
+                  readOnly
+                />
+              </div>
+
+              {/* Expiry + CVC row */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-body text-sm text-on-surface mb-2">
+                    Expiry date
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="MM / YY"
+                    className="h-12 bg-background font-body text-on-surface placeholder:text-on-surface-muted/50"
+                    readOnly
+                  />
+                </div>
+                <div>
+                  <label className="block font-body text-sm text-on-surface mb-2">
+                    CVC
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="123"
+                    className="h-12 bg-background font-body text-on-surface placeholder:text-on-surface-muted/50"
+                    readOnly
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Accepted payments */}
+            <div className="space-y-3">
+              <p className="font-body text-xs uppercase tracking-wide text-on-surface-muted">
+                Accepted payment methods
+              </p>
+              <AcceptedPayments />
             </div>
 
             {/* Pay button */}
-            <div className="flex items-center gap-4">
-              <Link href="/stay/booking/confirmation/WB-2026-001">
-                <Button variant="primary" size="lg">
+            <div>
+              <Link href="/stay/booking/confirmation/demo">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto">
                   <Lock className="h-4 w-4" aria-hidden="true" />
-                  Pay &pound;1,155
+                  Pay £1,395
                 </Button>
               </Link>
             </div>
 
-            {/* Security notice */}
-            <div className="flex items-center gap-2 text-body-sm text-on-surface-muted">
-              <Lock className="h-4 w-4" aria-hidden="true" />
-              <span>
-                256-bit SSL encrypted. PCI DSS Level 1 compliant via Stripe.
-              </span>
-            </div>
+            {/* Trust signals */}
+            <p className="font-body text-xs text-on-surface-muted tracking-wide">
+              256-bit encryption · PCI DSS compliant · Instant confirmation
+            </p>
 
-            {/* Back */}
-            <div>
-              <Link href="/stay/booking/guest-details">
-                <Button variant="ghost" size="sm">
-                  &larr; Back to guest details
-                </Button>
+            {/* Back link */}
+            <div className="pt-4">
+              <Link
+                href="/stay/booking/guest-details"
+                className="font-body text-sm text-on-surface-muted hover:text-on-surface transition-colors"
+              >
+                ← Back to guest details
               </Link>
             </div>
           </div>
 
-          {/* Sidebar: Order Summary */}
+          {/* RIGHT: Order summary */}
           <aside className="lg:sticky lg:top-8 lg:self-start">
             <OrderSummary />
           </aside>
