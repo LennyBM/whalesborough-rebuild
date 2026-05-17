@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { LinkArrow } from "@/components/ui/button";
@@ -6,77 +7,127 @@ import { LinkArrow } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Spa Treatments | The W Club | Whalesborough",
   description:
-    "Facials, massage, body rituals and Gaia Natural Skincare treatments. A menu drawn from Cornish botanicals at The W Club Spa.",
+    "Massage, facials, body rituals and couples packages at The W Club Spa. Treatments from £50, using Cornish botanicals on a 500-acre private estate.",
 };
 
-const facials = [
+/* ─── Treatment data ─────────────────────────────────────────────── */
+
+interface Treatment {
+  name: string;
+  options: { duration: string; price: number }[];
+  description?: string;
+}
+
+interface Category {
+  title: string;
+  from: number;
+  intro: string;
+  treatments: Treatment[];
+}
+
+const categories: Category[] = [
   {
-    name: "The Estate Facial",
-    duration: "80 mins",
-    description:
-      "Our signature. A deep-cleansing, results-driven facial using Gaia botanical serums. Includes scalp massage, facial pressure-point work and a hydrating mask tailored to your skin.",
+    title: "Massage & Body",
+    from: 75,
+    intro:
+      "Hands-on bodywork tailored to you. Your therapist adjusts pressure, pace and focus throughout — just tell them what you need.",
+    treatments: [
+      {
+        name: "Coastal Deep Tissue",
+        options: [
+          { duration: "60 min", price: 85 },
+          { duration: "90 min", price: 115 },
+        ],
+      },
+      {
+        name: "Cornish Hot Stone Ritual",
+        options: [{ duration: "75 min", price: 95 }],
+      },
+      {
+        name: "Restorative Back & Shoulders",
+        options: [
+          { duration: "30 min", price: 50 },
+          { duration: "60 min", price: 75 },
+        ],
+      },
+      {
+        name: "Pregnancy Nurture",
+        options: [{ duration: "60 min", price: 85 }],
+      },
+      {
+        name: "Sports Recovery",
+        options: [{ duration: "60 min", price: 85 }],
+      },
+    ],
   },
   {
-    name: "Coastal Glow",
-    duration: "55 mins",
-    description:
-      "Gentle exfoliation with mineral-rich sea salts, followed by a vitamin C infusion and LED light therapy. Designed to restore radiance after time outdoors.",
+    title: "Facials",
+    from: 65,
+    intro:
+      "Skin analysis, deep cleansing, targeted serums and mask work. Each facial is adapted to your skin on the day.",
+    treatments: [
+      {
+        name: "The Whalesborough Glow",
+        options: [{ duration: "60 min", price: 85 }],
+      },
+      {
+        name: "Deep Cleanse & Renewal",
+        options: [{ duration: "45 min", price: 65 }],
+      },
+      {
+        name: "Age-Defying Intensive",
+        options: [{ duration: "75 min", price: 110 }],
+      },
+      {
+        name: "Men's Skin Reset",
+        options: [{ duration: "45 min", price: 65 }],
+      },
+    ],
   },
   {
-    name: "Express Renewal",
-    duration: "30 mins",
-    description:
-      "A focused cleanse, exfoliation and hydration boost. Ideal before an evening event or as an introduction to the Gaia range.",
+    title: "Rituals & Journeys",
+    from: 120,
+    intro:
+      "Extended, multi-stage experiences that combine techniques into a single uninterrupted session. No clock-watching — just immersion.",
+    treatments: [
+      {
+        name: "Estate Immersion",
+        options: [{ duration: "120 min", price: 165 }],
+        description: "Full body scrub, wrap, massage and facial",
+      },
+      {
+        name: "Coastal Detox Journey",
+        options: [{ duration: "90 min", price: 120 }],
+        description: "Sea-salt scrub, mud wrap and scalp massage",
+      },
+      {
+        name: "The Sunset Ritual",
+        options: [{ duration: "150 min", price: 195 }],
+        description: "Our signature — ends at golden hour",
+      },
+    ],
+  },
+  {
+    title: "Couples",
+    from: 180,
+    intro:
+      "Side-by-side treatments in our dual suite. Arrive together, leave together — everything in between is taken care of.",
+    treatments: [
+      {
+        name: "Side by Side",
+        options: [{ duration: "60 min", price: 180 }],
+        description: "Dual massage in our couples suite",
+      },
+      {
+        name: "Celebration Package",
+        options: [{ duration: "120 min", price: 295 }],
+        description: "Dual treatment, prosecco and private suite",
+      },
+    ],
   },
 ];
 
-const massages = [
-  {
-    name: "Deep Tissue Restoration",
-    duration: "90 mins",
-    description:
-      "Targeted work on chronic tension areas. Firm pressure combined with heated stones on the back and shoulders. Followed by stretching and a cooling balm application.",
-  },
-  {
-    name: "Coastal Calm",
-    duration: "60 mins",
-    description:
-      "A flowing Swedish-style massage using warm Gaia body oil. Long, rhythmic strokes designed to calm the nervous system and ease you into stillness.",
-  },
-  {
-    name: "Back, Neck & Shoulders",
-    duration: "30 mins",
-    description:
-      "Focused relief for the upper body. Ideal after long drives to Cornwall or days spent at a desk. Deep pressure where you carry tension most.",
-  },
-  {
-    name: "Hot Stone Journey",
-    duration: "75 mins",
-    description:
-      "Heated basalt stones placed along the spine and used to massage deep into tissue. The warmth penetrates further than hands alone, releasing held tension layer by layer.",
-  },
-];
-
-const bodyTreatments = [
-  {
-    name: "Salt & Oil Body Ritual",
-    duration: "60 mins",
-    description:
-      "Full-body exfoliation with Atlantic sea salts blended with botanical oils. Followed by a warm wrap and moisturising application. Skin feels renewed, soft to the touch.",
-  },
-  {
-    name: "Mud & Mineral Wrap",
-    duration: "75 mins",
-    description:
-      "Mineral-rich marine mud applied to the full body, wrapped in warmth to draw impurities and nourish the skin. Finished with a light massage using Gaia body cream.",
-  },
-  {
-    name: "Pregnancy Massage",
-    duration: "60 mins",
-    description:
-      "Gentle, nurturing bodywork adapted for expectant mothers. Side-lying positioning, light to medium pressure, and products safe for pregnancy. Available from the second trimester.",
-  },
-];
+/* ─── Page ────────────────────────────────────────────────────────── */
 
 export default function TreatmentsPage() {
   return (
@@ -84,15 +135,17 @@ export default function TreatmentsPage() {
       {/* Hero */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
-          <p className="eyebrow text-on-surface-muted">The W Club · Treatments</p>
-          <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
-            Rituals drawn from{" "}
+          <p className="eyebrow text-on-surface-muted">
+            The W Club · Treatments
+          </p>
+          <h1 className="heading-editorial mt-6 max-w-4xl text-display-md text-on-surface md:text-display-lg lg:text-display-xl">
+            A menu drawn from{" "}
             <span className="italic">Cornish botanicals</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
-            Every treatment on our menu uses Gaia Natural Skincare — formulated
-            in Cornwall from plant-based actives. No synthetics, no fragrance
-            overload. Just clean ingredients that work with the skin.
+            Every treatment uses plant-based actives formulated in Cornwall. No
+            synthetics, no fragrance overload — just clean ingredients that work
+            with the skin.
           </p>
           <div className="mt-10">
             <Link href="/spa/booking">
@@ -102,72 +155,71 @@ export default function TreatmentsPage() {
         </div>
       </section>
 
-      {/* Facials */}
+      {/* Image band */}
       <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">01</p>
-          <h2 className="heading-editorial mt-4 text-h1 text-on-surface">Facials</h2>
-          <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant">
-            Skin analysis, deep cleansing, targeted serums and mask work.
-            Each facial is adapted to your skin type on the day.
-          </p>
-          <div className="mt-12 space-y-10">
-            {facials.map((t) => (
-              <TreatmentCard key={t.name} {...t} />
-            ))}
+        <div className="mx-auto max-w-content px-6 lg:px-12">
+          <div className="relative aspect-[21/9] w-full overflow-hidden">
+            <Image
+              src="/images/spa/spa-treatment.webp"
+              alt="Treatment room at The W Club Spa"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* Massage */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">02</p>
-          <h2 className="heading-editorial mt-4 text-h1 text-on-surface">Massage</h2>
-          <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant">
-            From targeted deep tissue to slow, calming strokes. Your therapist
-            adjusts pressure throughout — tell them what you need.
-          </p>
-          <div className="mt-12 space-y-10">
-            {massages.map((t) => (
-              <TreatmentCard key={t.name} {...t} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Treatment categories */}
+      {categories.map((category, idx) => (
+        <section
+          key={category.title}
+          className={idx % 2 === 0 ? "bg-surface-container-low" : "bg-background"}
+        >
+          <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <div>
+                <p className="eyebrow text-on-surface-muted">
+                  {String(idx + 1).padStart(2, "0")}
+                </p>
+                <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
+                  {category.title}
+                </h2>
+              </div>
+              <p className="text-body text-on-surface-muted">
+                From £{category.from}
+              </p>
+            </div>
+            <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant">
+              {category.intro}
+            </p>
 
-      {/* Body Treatments */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">03</p>
-          <h2 className="heading-editorial mt-4 text-h1 text-on-surface">Body treatments</h2>
-          <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant">
-            Full-body rituals that exfoliate, nourish and restore. Ideal
-            mid-stay or as part of a spa day package.
-          </p>
-          <div className="mt-12 space-y-10">
-            {bodyTreatments.map((t) => (
-              <TreatmentCard key={t.name} {...t} />
-            ))}
+            <div className="mt-14 space-y-0">
+              {category.treatments.map((treatment) => (
+                <TreatmentRow key={treatment.name} treatment={treatment} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      {/* Gaia Products CTA */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+      {/* Bottom CTA */}
+      <section className="bg-surface-container">
+        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-28">
           <div className="max-w-2xl">
-            <p className="eyebrow text-on-surface-muted">Gaia Natural Skincare</p>
+            <p className="eyebrow text-on-surface-muted">Ready to book?</p>
             <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-              Take the ritual home
+              Your time on the estate starts here.
             </h2>
             <p className="mt-4 text-body-lg text-on-surface-variant">
-              Every product used in our treatment rooms is available to purchase.
-              Cornish-made, plant-based, refillable where possible.
+              Treatments are available to estate guests and day visitors. We
+              recommend booking at least 48 hours in advance, especially for
+              weekend and school holiday dates.
             </p>
             <div className="mt-8">
-              <Link href="/spa/products">
-                <LinkArrow>Shop the range</LinkArrow>
+              <Link href="/spa/booking">
+                <LinkArrow>Book a treatment</LinkArrow>
               </Link>
             </div>
           </div>
@@ -177,24 +229,29 @@ export default function TreatmentsPage() {
   );
 }
 
-function TreatmentCard({
-  name,
-  duration,
-  description,
-}: {
-  name: string;
-  duration: string;
-  description: string;
-}) {
+/* ─── Treatment row ───────────────────────────────────────────────── */
+
+function TreatmentRow({ treatment }: { treatment: Treatment }) {
   return (
-    <div className="border-b border-outline-variant pb-8 last:border-0">
-      <div className="flex flex-wrap items-baseline justify-between gap-4">
-        <h3 className="text-h3 text-on-surface">{name}</h3>
-        <span className="text-body-sm text-on-surface-muted">{duration}</span>
+    <div className="border-b border-outline-variant py-6 last:border-b-0">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+        <h3 className="text-h3 text-on-surface">{treatment.name}</h3>
+        <div className="flex flex-wrap gap-x-6 gap-y-1">
+          {treatment.options.map((opt) => (
+            <span
+              key={opt.duration}
+              className="whitespace-nowrap text-body text-on-surface-muted"
+            >
+              {opt.duration} — £{opt.price}
+            </span>
+          ))}
+        </div>
       </div>
-      <p className="mt-3 max-w-2xl text-body text-on-surface-variant">
-        {description}
-      </p>
+      {treatment.description && (
+        <p className="mt-2 text-body text-on-surface-variant">
+          {treatment.description}
+        </p>
+      )}
     </div>
   );
 }
