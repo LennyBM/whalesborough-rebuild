@@ -1,13 +1,77 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 
 import { LinkArrow } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Menus",
+  title: "Menus | The Weir Restaurant",
   description:
     "Seasonal breakfast and lunch menus at The Weir. Estate-grown produce, Cornish suppliers, and a kitchen that follows the seasons.",
 };
+
+/* ─────────────────────────── Data ─────────────────────────── */
+
+const breakfast = [
+  { name: "Full Cornish", description: "Eggs, bacon, sausage, black pudding, mushrooms, toast", price: 16 },
+  { name: "Smoked salmon & scrambled eggs", price: 14 },
+  { name: "Granola, yoghurt & seasonal fruit", price: 9 },
+  { name: "Eggs Benedict / Royale / Florentine", price: 12 },
+  { name: "Toast & preserves", description: "Sourdough, farmhouse white", price: 5 },
+  { name: "Pastries selection", price: 7 },
+];
+
+const starters = [
+  { name: "Estate soup of the day", description: "Sourdough", price: 8 },
+  { name: "Crab on toast", description: "Lemon, chive", price: 14 },
+  { name: "Burrata", description: "Heritage tomato, basil oil", price: 12 },
+  { name: "Chicken liver parfait", description: "Onion jam, toast", price: 11 },
+];
+
+const mains = [
+  { name: "Beer-battered haddock", description: "Triple-cooked chips, mushy peas", price: 18 },
+  { name: "8oz Whalesborough sirloin", description: "Fat chips, peppercorn", price: 28 },
+  { name: "Pan-fried sea bass", description: "Samphire, new potatoes", price: 24 },
+  { name: "Wild mushroom risotto", description: "Truffle, parmesan", price: 17 },
+  { name: "Weir burger", description: "Bacon, cheddar, brioche, slaw", price: 16 },
+];
+
+const desserts = [
+  { name: "Sticky toffee pudding", description: "Clotted cream", price: 9 },
+  { name: "Cornish ice cream selection", description: "Three scoops", price: 8 },
+  { name: "Dark chocolate torte", description: "Sea salt, raspberries", price: 11 },
+  { name: "Cheese board", description: "Cornish selection, chutney", price: 14 },
+];
+
+/* ─────────────────────────── Helpers ─────────────────────────── */
+
+function MenuItem({ name, description, price }: { name: string; description?: string; price: number }) {
+  return (
+    <li className="flex items-baseline justify-between gap-4 py-3">
+      <div>
+        <span className="text-body text-on-surface">{name}</span>
+        {description && (
+          <span className="ml-2 text-body text-on-surface-muted">{description}</span>
+        )}
+      </div>
+      <span className="shrink-0 text-body text-on-surface-variant">£{price}</span>
+    </li>
+  );
+}
+
+function MenuSection({ title, items }: { title: string; items: { name: string; description?: string; price: number }[] }) {
+  return (
+    <div>
+      <h3 className="heading-editorial text-h3 text-on-surface">{title}</h3>
+      <ul className="mt-4 divide-y divide-on-surface/10">
+        {items.map((item) => (
+          <MenuItem key={item.name} {...item} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* ─────────────────────────── Page ─────────────────────────── */
 
 export default function Page() {
   return (
@@ -23,101 +87,79 @@ export default function Page() {
           <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
             Our kitchen works to what the estate and its suppliers provide
             each day. Menus shift with the market garden, the weather, and
-            whatever the boats have brought in from the Cornish coast. Below
-            you will find our current breakfast and lunch offerings.
+            whatever the boats have brought in from the Cornish coast.
           </p>
         </div>
       </section>
 
-      {/* Menu Cards */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-            {/* Breakfast */}
-            <Link
-              href="/dine/menus/breakfast"
-              className="group block"
-              aria-label="View breakfast menu"
-            >
-              <div className="aspect-[4/3] bg-surface-container-high relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-display text-display-sm italic text-secondary-fg/40">
-                    Breakfast
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8">
-                <p className="eyebrow text-on-surface-muted">
-                  8:30am – 11:00am
-                </p>
-                <h2 className="heading-editorial mt-3 text-h1 text-on-surface group-hover:text-primary transition-colors duration-fast ease-out-luxury">
-                  Breakfast
-                </h2>
-                <p className="mt-4 max-w-md text-body text-on-surface-variant">
-                  Estate eggs, sourdough from the Bude bakery, seasonal fruit
-                  from the garden. A slow start, done properly.
-                </p>
-                <div className="mt-6">
-                  <LinkArrow href="/dine/menus/breakfast">
-                    View breakfast menu
-                  </LinkArrow>
-                </div>
-              </div>
-            </Link>
-
-            {/* Lunch */}
-            <Link
-              href="/dine/menus/lunch"
-              className="group block lg:mt-16"
-              aria-label="View lunch menu"
-            >
-              <div className="aspect-[4/3] bg-surface-container-high relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-display text-display-sm italic text-secondary-fg/40">
-                    Lunch
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8">
-                <p className="eyebrow text-on-surface-muted">
-                  12:00pm – 3:00pm
-                </p>
-                <h2 className="heading-editorial mt-3 text-h1 text-on-surface group-hover:text-primary transition-colors duration-fast ease-out-luxury">
-                  Lunch
-                </h2>
-                <p className="mt-4 max-w-md text-body text-on-surface-variant">
-                  Cornish suppliers, estate-grown salads, daily specials from
-                  whatever arrived that morning. Long lunches by the lake.
-                </p>
-                <div className="mt-6">
-                  <LinkArrow href="/dine/menus/lunch">
-                    View lunch menu
-                  </LinkArrow>
-                </div>
-              </div>
-            </Link>
+      {/* Hero Image */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-content px-6 lg:px-12">
+          <div className="relative aspect-[21/9] w-full overflow-hidden">
+            <Image
+              src="/images/restaurant/breakfast-coffee.webp"
+              alt="Morning coffee and pastries at The Weir"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* Note */}
+      {/* Breakfast Menu */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-on-surface-muted">7:30am – 10:00am</p>
+            <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
+              Breakfast
+            </h2>
+            <p className="mt-4 text-body-lg text-on-surface-variant">
+              Included for accommodation guests. Non-resident guests are welcome
+              to join us — prices shown below.
+            </p>
+
+            <ul className="mt-10 divide-y divide-on-surface/10">
+              {breakfast.map((item) => (
+                <MenuItem key={item.name} {...item} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Lunch Menu */}
+      <section className="bg-surface-container-low">
+        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-on-surface-muted">12:00pm – 3:00pm · Open to all</p>
+            <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
+              Lunch
+            </h2>
+            <p className="mt-4 text-body-lg text-on-surface-variant">
+              Cornish suppliers, estate-grown salads, and daily specials from
+              whatever arrived that morning.
+            </p>
+
+            <div className="mt-12 space-y-12">
+              <MenuSection title="Starters" items={starters} />
+              <MenuSection title="Mains" items={mains} />
+              <MenuSection title="Desserts" items={desserts} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Note + CTA */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
           <div className="max-w-2xl">
-            <p className="eyebrow text-on-surface-muted">A note on menus</p>
-            <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-              Always in season
-            </h2>
-            <p className="mt-6 text-body-lg text-on-surface-variant">
-              Our menus change frequently — sometimes daily — based on what
-              the estate and our suppliers provide. The menus shown here are
-              representative, not fixed. If you have dietary requirements or
-              allergens, our team will always find something for you.
+            <p className="text-body text-on-surface-muted italic">
+              Menu changes seasonally. Please inform us of any allergies.
             </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <LinkArrow href="/dine/faqs">Allergen information</LinkArrow>
+            <div className="mt-10">
+              <LinkArrow href="/dine/reserve">Reserve a table</LinkArrow>
             </div>
           </div>
         </div>
