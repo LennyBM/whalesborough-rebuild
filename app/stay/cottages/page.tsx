@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 
 import { LinkArrow } from "@/components/ui/button";
 
@@ -9,230 +9,99 @@ export const metadata: Metadata = {
     "Twenty-seven individually designed cottages across 500 acres. Grade II listed farmhouse, private hot tubs, enclosed gardens, all dog-friendly. VisitEngland 5-Star Gold.",
 };
 
+interface Cottage {
+  name: string;
+  slug: string;
+  image: string;
+  sleeps: number;
+  bedrooms: number;
+  features: string[];
+  price: number;
+}
+
+const cottages: Cottage[] = [
+  { name: "The Farmhouse", slug: "the-farmhouse", image: "/images/cottages/the-farmhouse.webp", sleeps: 12, bedrooms: 5, features: ["Log fire", "Games room", "Garden"], price: 320 },
+  { name: "Eagles Nest", slug: "eagles-nest", image: "/images/cottages/eagles-nest.webp", sleeps: 6, bedrooms: 3, features: ["Sea views", "Hot tub"], price: 195 },
+  { name: "Trelowen", slug: "trelowen", image: "/images/cottages/trelowen.webp", sleeps: 4, bedrooms: 2, features: ["Open fire", "Dog friendly"], price: 165 },
+  { name: "Trevelyan", slug: "trevelyan", image: "/images/cottages/trevelyan.webp", sleeps: 4, bedrooms: 2, features: ["Courtyard", "Dog friendly"], price: 170 },
+  { name: "Nettlecoombe", slug: "nettlecoombe", image: "/images/cottages/nettlecoombe.webp", sleeps: 6, bedrooms: 3, features: ["Hot tub", "Garden"], price: 185 },
+  { name: "Barley Park", slug: "barley-park", image: "/images/cottages/barley-park.webp", sleeps: 5, bedrooms: 2, features: ["Garden", "Parking"], price: 175 },
+  { name: "Sand Parks", slug: "sand-parks", image: "/images/cottages/sand-parks.webp", sleeps: 4, bedrooms: 2, features: ["Sea views", "Coastal"], price: 160 },
+  { name: "Medlands", slug: "medlands", image: "/images/cottages/medlands.webp", sleeps: 4, bedrooms: 2, features: ["Wood burner", "Dog friendly"], price: 155 },
+  { name: "Moleyns", slug: "moleyns", image: "/images/cottages/moleyns.webp", sleeps: 4, bedrooms: 2, features: ["Cosy", "Dog friendly"], price: 155 },
+  { name: "Beachcombers", slug: "beachcombers", image: "/images/cottages/beachcombers.webp", sleeps: 6, bedrooms: 3, features: ["Open plan", "Garden"], price: 190 },
+  { name: "Chapel Park", slug: "chapel-park", image: "/images/cottages/chapel-park.webp", sleeps: 4, bedrooms: 2, features: ["Character", "Beams"], price: 160 },
+  { name: "Jack’s House", slug: "jacks-house", image: "/images/cottages/jacks-house.webp", sleeps: 4, bedrooms: 2, features: ["Hot tub", "Private"], price: 175 },
+  { name: "Long Down", slug: "long-down", image: "/images/cottages/long-down.webp", sleeps: 6, bedrooms: 3, features: ["Hot tub", "Valley views"], price: 210 },
+  { name: "Westcotts", slug: "westcotts", image: "/images/cottages/westcotts.webp", sleeps: 6, bedrooms: 3, features: ["Family", "Garden"], price: 185 },
+  { name: "Warrens", slug: "warrens", image: "/images/cottages/warrens.webp", sleeps: 4, bedrooms: 2, features: ["Dog friendly", "Cosy"], price: 155 },
+  { name: "Middle Hill", slug: "middle-hill", image: "/images/cottages/middle-hill.webp", sleeps: 4, bedrooms: 2, features: ["Views", "Peaceful"], price: 160 },
+  { name: "Little Main", slug: "little-main", image: "/images/cottages/little-main.webp", sleeps: 2, bedrooms: 1, features: ["Romantic", "Compact"], price: 155 },
+  { name: "Windy Hills", slug: "windy-hills", image: "/images/cottages/windy-hills.webp", sleeps: 6, bedrooms: 3, features: ["Hot tub", "Clifftop"], price: 215 },
+  { name: "Woodyplatt", slug: "woodyplatt", image: "/images/cottages/woodyplatt.webp", sleeps: 4, bedrooms: 2, features: ["Woodland", "Quiet"], price: 165 },
+  { name: "Calf House", slug: "calf-house", image: "/images/cottages/calf-house.webp", sleeps: 4, bedrooms: 2, features: ["Vaulted ceiling", "Barn conversion"], price: 170 },
+  { name: "Venners", slug: "venners", image: "/images/cottages/venners.webp", sleeps: 4, bedrooms: 2, features: ["Dog friendly", "Garden"], price: 160 },
+  { name: "Arundell", slug: "arundell", image: "/images/cottages/arundell.webp", sleeps: 4, bedrooms: 2, features: ["Historic", "Stone walls"], price: 165 },
+  { name: "Whalesborough Cottage", slug: "whalesborough-cottage", image: "/images/cottages/whalesborough-cottage.webp", sleeps: 6, bedrooms: 3, features: ["Hot tub", "South-facing"], price: 205 },
+  { name: "Sheep’s House", slug: "sheeps-house", image: "/images/cottages/sheeps-house.webp", sleeps: 4, bedrooms: 2, features: ["Hot tub", "Meadow views"], price: 180 },
+  { name: "Gwari Spa Barn", slug: "gwari-spa-barn", image: "/images/cottages/gwari-spa-barn.webp", sleeps: 8, bedrooms: 4, features: ["Spa bath", "Barn conversion"], price: 260 },
+];
+
 export default function CottagesPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Editorial Header */}
       <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
+        <div className="mx-auto max-w-content px-6 pb-16 pt-24 lg:px-12 lg:pb-24 lg:pt-40">
           <p className="eyebrow text-on-surface-muted">
-            Accommodation · 27 cottages
+            Accommodation
           </p>
           <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
-            Stone, slate and{" "}
-            <span className="italic">six centuries of story</span>.
+            Heritage <span className="italic">Cottages</span>
           </h1>
           <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
-            Twenty-seven cottages scattered across five hundred acres of working
-            farmland. From a Grade II listed 14th-century farmhouse to converted
-            barns with clifftop views — each property has its own character,
-            garden and key to the estate.
+            Twenty-seven cottages converted from farm buildings dating back to
+            the 14th century. Stone barns, slate roofs and centuries of character
+            — each one individually restored and set within five hundred acres of
+            private Cornish estate.
           </p>
-          <div className="mt-10 flex flex-wrap gap-6">
-            <LinkArrow href="/stay/availability">
-              Check availability
-            </LinkArrow>
-            <LinkArrow href="/estate/dog-friendly">
-              Dog-friendly info
-            </LinkArrow>
-          </div>
         </div>
       </section>
 
-      {/* Featured Image */}
+      {/* Key Info Bar */}
       <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-hero px-6 py-20 lg:px-12 lg:py-32">
-          <div className="aspect-[16/7] bg-surface-container-high relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <p className="font-display text-display-sm italic text-secondary-fg/40">
-                Cottage Collection
-              </p>
+        <div className="mx-auto max-w-content px-6 py-8 lg:px-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-center">
+            <div>
+              <p className="heading-editorial text-h3 text-on-surface">27</p>
+              <p className="text-body-sm text-on-surface-muted">Properties</p>
+            </div>
+            <div className="hidden sm:block h-8 w-px bg-on-surface/10" />
+            <div>
+              <p className="heading-editorial text-h3 text-on-surface">2–12</p>
+              <p className="text-body-sm text-on-surface-muted">Sleeps</p>
+            </div>
+            <div className="hidden sm:block h-8 w-px bg-on-surface/10" />
+            <div>
+              <p className="heading-editorial text-h3 text-on-surface">£155</p>
+              <p className="text-body-sm text-on-surface-muted">From / night</p>
+            </div>
+            <div className="hidden sm:block h-8 w-px bg-on-surface/10" />
+            <div>
+              <p className="heading-editorial text-h3 text-on-surface">Dogs</p>
+              <p className="text-body-sm text-on-surface-muted">Welcome on most</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* Cottage Grid */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <p className="eyebrow text-on-surface-muted">The collection</p>
-              <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-                No two the same
-              </h2>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7">
-              <p className="text-body-lg text-on-surface-variant">
-                Every cottage has been individually designed — not decorated
-                from a catalogue. Interiors draw on the building&apos;s history:
-                exposed beams in the 14th-century farmhouse, vaulted ceilings in
-                the converted barns, panoramic glazing where the coastline
-                demands attention.
-              </p>
-              <p className="mt-4 text-body text-on-surface-variant">
-                All twenty-seven properties carry VisitEngland 5-Star Gold
-                accreditation. Each has an enclosed private garden, luxury
-                bedding, a fully equipped kitchen, and the kind of quiet that
-                only five hundred acres can provide.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Signature Properties */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">Signature properties</p>
-          <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-            Estate <span className="italic">favourites</span>
-          </h2>
-          <p className="mt-6 max-w-2xl text-body text-on-surface-variant">
-            From a medieval farmhouse to clifftop retreats, these are the
-            properties guests ask for by name.
-          </p>
-
-          <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-            <CottageCard
-              name="Whalesborough Farmhouse"
-              detail="Grade II listed · 14th century · Sleeps 8"
-              description="The original heart of the estate. Flagstone floors, inglenook fireplaces, and walled gardens — six centuries of Cornish history, impeccably restored."
-            />
-            <CottageCard
-              name="Whalesborough Cottage"
-              detail="Hot tub · Sleeps 6 · Enclosed garden"
-              description="Directly adjacent to the farmhouse with its own private hot tub and south-facing garden. The most requested property on the estate."
-            />
-            <CottageCard
-              name="Calf House"
-              detail="Converted barn · Sleeps 4 · Vaulted ceiling"
-              description="A former calf pen reimagined as a light-filled retreat. Double-height living space, original stonework, and views across the upper meadow."
-            />
-            <CottageCard
-              name="Eagles Nest"
-              detail="Clifftop position · Sleeps 6 · Sea views"
-              description="The estate's most elevated property, perched above the coastal path. Uninterrupted views to Lundy Island. Wake to the sound of waves below."
-            />
-            <CottageCard
-              name="Beachcombers"
-              detail="Coastal · Sleeps 4 · Dog-friendly"
-              description="Steps from the cliff path and minutes from Widemouth Bay. A compact coastal hideaway with an enclosed garden perfect for sandy paws."
-            />
-            <CottageCard
-              name="Moleyns"
-              detail="Hot tub · Sleeps 6 · Woodland setting"
-              description="Tucked into the estate's ancient woodland with a private hot tub beneath the tree canopy. The most secluded property in the collection."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Dog-Friendly Feature */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <p className="eyebrow text-on-surface-muted">
-                Dog-friendly estate
-              </p>
-              <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-                Designed for{" "}
-                <span className="italic">the whole pack</span>
-              </h2>
-              <p className="mt-6 text-body text-on-surface-variant">
-                All twenty-seven cottages welcome dogs — no supplements, no
-                compromise. Every property has an enclosed garden so your dog
-                can roam freely. On arrival, find luxury dog bedding, a pooch
-                welcome pack with Cornish treats, and towels for muddy-paw
-                days.
-              </p>
-              <p className="mt-4 text-body text-on-surface-variant">
-                The estate offers five hundred acres of walks — from lake
-                circuits to clifftop paths — plus a dedicated dog shower station
-                for post-beach returns. Widemouth Bay, dog-friendly year-round,
-                is a ten-minute walk through the grounds.
-              </p>
-              <div className="mt-8">
-                <LinkArrow href="/estate/dog-friendly">
-                  Dog-friendly guide
-                </LinkArrow>
-              </div>
-            </div>
-            <div className="lg:col-span-5 lg:col-start-8">
-              <div className="aspect-[3/4] bg-surface-container-high relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-display text-display-sm italic text-secondary-fg/40">
-                    Dogs
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hot Tub Feature */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-            <div className="order-2 lg:order-1 lg:col-span-5">
-              <div className="aspect-[4/5] bg-surface-container-high relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-display text-display-sm italic text-secondary-fg/40">
-                    Hot Tubs
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 lg:col-span-6 lg:col-start-7">
-              <p className="eyebrow text-on-surface-muted">Seven hot tubs</p>
-              <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-                Starlight, steam and{" "}
-                <span className="italic">absolute silence</span>
-              </h2>
-              <p className="mt-6 text-body text-on-surface-variant">
-                Seven cottages include private hot tubs — from woodland settings
-                beneath ancient oaks to open positions with sea views toward
-                Lundy Island. No light pollution, no neighbours, nothing between
-                you and the Cornish sky.
-              </p>
-              <ul className="mt-6 space-y-2 text-body-sm text-on-surface-variant">
-                <li>Whalesborough Cottage · South-facing garden</li>
-                <li>Moleyns · Woodland canopy</li>
-                <li>Sheep&apos;s House · Meadow outlook</li>
-                <li>Jack&apos;s House · Estate views</li>
-                <li>Windy Hills Spa · Clifftop position</li>
-                <li>Warrens Spa · Lakeside setting</li>
-                <li>Long Down Spa · Valley floor</li>
-              </ul>
-              <div className="mt-8">
-                <LinkArrow href="/stay/availability">
-                  View hot tub properties
-                </LinkArrow>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Facts */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted text-center">
-            At a glance
-          </p>
-          <h2 className="heading-editorial mt-4 text-h2 text-on-surface text-center">
-            Cottage essentials
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <Fact label="Properties" value="27" />
-            <Fact label="Hot tubs" value="7" />
-            <Fact label="VisitEngland" value="5★ Gold" />
-            <Fact label="Dogs" value="All welcome" />
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+            {cottages.map((cottage) => (
+              <CottageCard key={cottage.slug} cottage={cottage} />
+            ))}
           </div>
         </div>
       </section>
@@ -240,16 +109,16 @@ export default function CottagesPage() {
       {/* CTA */}
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32 text-center">
-          <p className="eyebrow text-on-surface-muted">Book your cottage</p>
+          <p className="eyebrow text-on-surface-muted">Ready to book?</p>
           <h2 className="heading-editorial mt-4 text-h2 text-on-surface">
-            Find your dates
+            Find your <span className="italic">perfect week</span>
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-body text-on-surface-variant">
             Friday and Monday arrivals, with seven-night stays the most popular
-            rhythm. Browse the full collection and secure your preferred week.
+            rhythm. Browse the full collection and secure your preferred dates.
           </p>
           <div className="mt-10 flex justify-center">
-            <LinkArrow href="/stay/availability">
+            <LinkArrow href="/stay/booking/dates">
               Check availability
             </LinkArrow>
           </div>
@@ -259,39 +128,37 @@ export default function CottagesPage() {
   );
 }
 
-function CottageCard({
-  name,
-  detail,
-  description,
-}: {
-  name: string;
-  detail: string;
-  description: string;
-}) {
+function CottageCard({ cottage }: { cottage: Cottage }) {
   return (
     <div className="group">
-      <div className="aspect-[4/3] bg-surface-container-high relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="font-display text-body italic text-secondary-fg/40">
-            {name}
-          </p>
-        </div>
+      <div className="aspect-[4/3] relative overflow-hidden bg-surface-container-low">
+        <Image
+          src={cottage.image}
+          alt={cottage.name}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
       </div>
-      <h3 className="heading-editorial mt-6 text-h3 text-on-surface">
-        {name}
+      <h3 className="heading-editorial mt-5 text-h3 text-on-surface">
+        {cottage.name}
       </h3>
-      <p className="eyebrow mt-2 text-on-surface-muted">{detail}</p>
-      <p className="mt-3 text-body-sm text-on-surface-variant">{description}</p>
-    </div>
-  );
-}
-
-function Fact({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="text-center">
-      <p className="heading-editorial text-h2 text-on-surface">{value}</p>
-      <p className="eyebrow mt-2 text-on-surface-muted">{label}</p>
+      <p className="mt-1.5 text-body-sm text-on-surface-muted">
+        Sleeps {cottage.sleeps} · {cottage.bedrooms} {cottage.bedrooms === 1 ? "bedroom" : "bedrooms"}
+      </p>
+      <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+        {cottage.features.map((feature) => (
+          <span
+            key={feature}
+            className="text-body-sm text-on-surface-variant"
+          >
+            {feature}
+          </span>
+        ))}
+      </div>
+      <p className="mt-3 text-body font-medium text-on-surface">
+        From £{cottage.price}/night
+      </p>
     </div>
   );
 }
