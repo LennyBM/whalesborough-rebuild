@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { SiteHeader } from "@/components/marketing/site-header";
 import { BottomTabs } from "@/components/app-shell/bottom-tabs";
+import { PageTransition } from "@/components/app-shell/page-transition";
 
 /**
  * Layout Shell — conditionally renders marketing chrome (header + footer)
@@ -43,7 +44,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
       </a>
       <SiteHeader />
       <main id="main" className="min-h-[60vh] pb-20">
-        {children}
+        <PageTransition>{children}</PageTransition>
       </main>
       <BottomTabs />
     </>

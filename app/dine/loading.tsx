@@ -1,37 +1,21 @@
-import { Skeleton } from "@/components/ui/skeleton";
-
-/**
- * Dine section loading — header skeleton + menu preview skeletons.
- */
-export default function DineLoading() {
+export default function Loading() {
   return (
-    <div className="min-h-screen bg-background px-6 py-16 lg:px-12">
-      {/* Header */}
-      <div className="mb-12 space-y-4">
-        <Skeleton className="h-10 w-1/3" />
-        <Skeleton className="h-5 w-1/2" />
+    <div className="min-h-screen bg-background px-4 pt-6 pb-24 animate-pulse">
+      <div className="flex gap-3 mb-6">
+        <div className="h-16 w-16 bg-surface-container-high rounded-xl flex-shrink-0" />
+        <div className="space-y-2 py-1">
+          <div className="h-5 w-24 bg-surface-container-high rounded" />
+          <div className="h-3 w-32 bg-surface-container rounded" />
+        </div>
       </div>
-
-      {/* Menu preview skeletons */}
-      <div className="space-y-10">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <div key={i} className="space-y-4">
-            <Skeleton className="h-7 w-1/4" />
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              {Array.from({ length: 4 }).map((_, j) => (
-                <div key={j} className="flex items-start gap-4">
-                  <Skeleton className="h-20 w-20 shrink-0" />
-                  <div className="flex-1 space-y-2">
-                    <Skeleton className="h-5 w-2/3" />
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-1/4" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="h-16 w-full bg-surface-container-low rounded-xl mb-4" />
+      <div className="flex gap-3 mb-6">
+        <div className="h-11 flex-1 bg-surface-container-high rounded-xl" />
+        <div className="h-11 flex-1 bg-surface-container rounded-xl" />
       </div>
+      {[1,2,3,4].map(i => (
+        <div key={i} className="h-16 w-full bg-surface-container-low rounded-xl mb-3" />
+      ))}
     </div>
   );
 }

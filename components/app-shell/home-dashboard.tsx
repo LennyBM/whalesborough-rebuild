@@ -170,33 +170,36 @@ export function HomeDashboard() {
               View all <ChevronRight className="h-3 w-3" />
             </Link>
           </div>
-          <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory scrollbar-hide">
-            {properties.map((property) => (
-              <Link
-                key={property.name}
-                href="/stay"
-                className="flex-shrink-0 snap-start"
-              >
-                <div className="w-[180px] overflow-hidden rounded-xl bg-surface-container-low">
-                  <div className="relative h-[120px]">
-                    <Image
-                      src={property.image}
-                      alt={property.name}
-                      fill
-                      className="object-cover"
-                    />
+          <div className="relative -mx-4">
+            <div className="flex gap-3 overflow-x-auto px-4 pb-1 snap-x snap-mandatory scrollbar-hide">
+              {properties.map((property) => (
+                <Link
+                  key={property.name}
+                  href="/stay"
+                  className="flex-shrink-0 snap-start"
+                >
+                  <div className="w-[180px] overflow-hidden rounded-xl bg-surface-container-low">
+                    <div className="relative h-[120px]">
+                      <Image
+                        src={property.image}
+                        alt={property.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-2.5">
+                      <p className="font-body text-sm font-medium text-on-surface truncate">
+                        {property.name}
+                      </p>
+                      <p className="font-body text-xs text-on-surface-muted">
+                        Sleeps {property.sleeps} · from £{property.price}/night
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-2.5">
-                    <p className="font-body text-sm font-medium text-on-surface truncate">
-                      {property.name}
-                    </p>
-                    <p className="font-body text-xs text-on-surface-muted">
-                      Sleeps {property.sleeps} · from £{property.price}/night
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent" />
           </div>
         </motion.div>
 

@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -15,6 +16,8 @@ import {
 } from "lucide-react"
 
 export default function MyStayPage() {
+  const [showWifiPassword, setShowWifiPassword] = useState(false)
+  const [showKeySafe, setShowKeySafe] = useState(false)
   return (
     <main className="min-h-screen bg-background pb-24">
       <div className="mx-auto max-w-lg px-4 py-6 space-y-4">
@@ -64,9 +67,17 @@ export default function MyStayPage() {
             <p className="text-sm font-medium text-on-surface">
               Whalesborough-Guest
             </p>
-            <p className="text-xs text-on-surface-variant mt-0.5">
-              Password: coastal2026
-            </p>
+            <button
+              onClick={() => setShowWifiPassword(!showWifiPassword)}
+              className="text-left mt-0.5"
+            >
+              <p className="text-xs text-on-surface-variant">
+                Password: {showWifiPassword ? "coastal2026" : "••••••••"}
+              </p>
+              {!showWifiPassword && (
+                <p className="text-[10px] text-on-surface-muted mt-0.5">Tap to show</p>
+              )}
+            </button>
           </div>
 
           <div className="rounded-xl bg-surface-container-low p-3 shadow-sm">
@@ -79,7 +90,17 @@ export default function MyStayPage() {
             <p className="text-sm font-medium text-on-surface">
               Key safe code
             </p>
-            <p className="text-xs text-on-surface-variant mt-0.5">4857</p>
+            <button
+              onClick={() => setShowKeySafe(!showKeySafe)}
+              className="text-left mt-0.5"
+            >
+              <p className="text-xs text-on-surface-variant">
+                {showKeySafe ? "4857" : "••••"}
+              </p>
+              {!showKeySafe && (
+                <p className="text-[10px] text-on-surface-muted mt-0.5">Tap to show</p>
+              )}
+            </button>
           </div>
 
           <div className="rounded-xl bg-surface-container-low p-3 shadow-sm">
