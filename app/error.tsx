@@ -25,9 +25,9 @@ export default function Error({
         {/* Whalesborough logo */}
         <div className="mb-8 flex justify-center">
           <img
-            src="/images/logo/whalesborough-mark.svg"
+            src="/images/logo/whalesborough-logo.png"
             alt="Whalesborough"
-            className="h-10 w-10"
+            className="h-10 w-10 rounded-lg"
           />
         </div>
 

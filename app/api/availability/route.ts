@@ -20,7 +20,7 @@ const MOCK_PROPERTIES = [
     bedrooms: 3,
     pricePerNight: 295,
     features: ["private hot tub", "lake view", "spa access"],
-    image: "/images/properties/spa-lodge-01.jpg",
+    image: "/images/cottages/gwari-spa-barn.webp",
   },
   {
     id: "prop_spa_lodge_02",
@@ -30,7 +30,7 @@ const MOCK_PROPERTIES = [
     bedrooms: 2,
     pricePerNight: 245,
     features: ["private hot tub", "woodland setting", "spa access"],
-    image: "/images/properties/spa-lodge-02.jpg",
+    image: "/images/cottages/long-down.webp",
   },
   {
     id: "prop_cottage_01",
@@ -40,7 +40,7 @@ const MOCK_PROPERTIES = [
     bedrooms: 4,
     pricePerNight: 320,
     features: ["garden", "dog friendly", "farm views"],
-    image: "/images/properties/cottage-01.jpg",
+    image: "/images/cottages/the-farmhouse.webp",
   },
   {
     id: "prop_cottage_02",
@@ -50,7 +50,7 @@ const MOCK_PROPERTIES = [
     bedrooms: 2,
     pricePerNight: 195,
     features: ["garden", "dog friendly", "orchard setting"],
-    image: "/images/properties/cottage-02.jpg",
+    image: "/images/cottages/nettlecoombe.webp",
   },
   {
     id: "prop_arvor_01",
@@ -60,7 +60,7 @@ const MOCK_PROPERTIES = [
     bedrooms: 1,
     pricePerNight: 175,
     features: ["sea view", "balcony", "spa access"],
-    image: "/images/properties/arvor-01.jpg",
+    image: "/images/arvor/arvor-exterior.webp",
   },
 ];
 
