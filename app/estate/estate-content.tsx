@@ -17,7 +17,7 @@ import {
 import { BackButton } from "@/components/app-shell/back-button"
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 1, y: 12 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,

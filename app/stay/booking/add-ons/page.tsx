@@ -255,7 +255,7 @@ export default function BookingAddOnsPage() {
             <motion.div
               key={addon.id}
               variants={{
-                hidden: { opacity: 0, y: 16 },
+                hidden: { opacity: 1, y: 16 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
               }}
             >
@@ -271,7 +271,7 @@ export default function BookingAddOnsPage() {
         {/* Running Total + CTA */}
         <motion.div
           className="sticky bottom-0 mt-16 -mx-6 px-6 py-6 bg-background/95 backdrop-blur-sm border-t border-on-surface/5 lg:-mx-12 lg:px-12"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.4 }}
         >

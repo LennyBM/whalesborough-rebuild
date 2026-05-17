@@ -64,7 +64,7 @@ export default function Page() {
       {status === "success" ? (
         <motion.section
           key="success"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="bg-background"
@@ -90,7 +90,7 @@ export default function Page() {
         <motion.div
           key="form"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
           {/* Hero */}

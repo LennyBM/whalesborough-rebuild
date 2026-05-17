@@ -85,9 +85,9 @@ export function ImageLightbox({ images, initialIndex = 0, open, onClose }: Image
       {open && (
         <motion.div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: 0.25 }}
           onClick={onClose}
           onTouchStart={handleTouchStart}
@@ -143,9 +143,9 @@ export function ImageLightbox({ images, initialIndex = 0, open, onClose }: Image
             <motion.div
               key={currentIndex}
               className="relative flex h-[80vh] w-[90vw] max-w-4xl items-center justify-center"
-              initial={{ opacity: 0, scale: 0.92 }}
+              initial={{ opacity: 1, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
+              exit={{ opacity: 1, scale: 0.92 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
             >

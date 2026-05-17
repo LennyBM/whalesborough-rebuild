@@ -5,7 +5,7 @@ import { BackButton } from "@/components/app-shell/back-button"
 import { AnimatedNumber } from "@/components/ui/animated-number"
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 1, y: 16 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,

@@ -231,7 +231,7 @@ function PropertyCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 1, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
       onClick={onSelect}
@@ -252,7 +252,7 @@ function PropertyCard({
         />
         {isSelected && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 1, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center bg-sage text-white"
           >

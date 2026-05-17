@@ -59,15 +59,15 @@ function Confetti() {
 function AnimatedCheckmark() {
   return (
     <motion.div
-      initial={{ scale: 0, opacity: 0 }}
+      initial={{ scale: 0, opacity: 1 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 180, damping: 14, delay: 0.2 }}
       className="relative mx-auto flex h-28 w-28 items-center justify-center"
     >
       {/* Outer ring pulse */}
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1.4, opacity: 0 }}
+        initial={{ scale: 0.8, opacity: 1 }}
+        animate={{ scale: 1.4, opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.6, ease: 'easeOut' }}
         className="absolute inset-0 rounded-full bg-secondary/20"
       />
@@ -89,7 +89,7 @@ function AnimatedCheckmark() {
         strokeLinejoin="round"
       >
         <motion.path
-          initial={{ pathLength: 0, opacity: 0 }}
+          initial={{ pathLength: 0, opacity: 1 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
           d="M5 13l4 4L19 7"
@@ -171,7 +171,7 @@ export default function BookingConfirmationDemoPage() {
         {showConfetti && (
           <motion.div
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
             <Confetti />
@@ -186,7 +186,7 @@ export default function BookingConfirmationDemoPage() {
 
           {/* Heading */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 1, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-8 text-center"
@@ -201,7 +201,7 @@ export default function BookingConfirmationDemoPage() {
 
           {/* Booking reference badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 1, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.6 }}
             className="mt-6 mx-auto w-fit rounded-full bg-secondary/10 px-5 py-2"
@@ -213,7 +213,7 @@ export default function BookingConfirmationDemoPage() {
 
           {/* Main booking card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
             className="mt-10 overflow-hidden rounded-2xl bg-surface-container-low shadow-sm"
@@ -293,7 +293,7 @@ export default function BookingConfirmationDemoPage() {
 
           {/* Action buttons row */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
             className="mt-6 grid grid-cols-2 gap-3"
@@ -318,7 +318,7 @@ export default function BookingConfirmationDemoPage() {
 
           {/* What happens next */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
             className="mt-10 rounded-2xl bg-surface-container-low p-6 sm:p-8"
@@ -350,7 +350,7 @@ export default function BookingConfirmationDemoPage() {
 
           {/* Quick links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3 }}
             className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-6 pb-8"
@@ -412,7 +412,7 @@ function TimelineItem({
 }) {
   return (
     <motion.li
-      initial={{ opacity: 0, x: -10 }}
+      initial={{ opacity: 1, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.4, delay }}
       className="flex gap-4"

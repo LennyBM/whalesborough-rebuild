@@ -34,7 +34,7 @@ const quickActions = [
 const properties = allProperties.slice(0, 5)
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 1, y: 0 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -56,7 +56,7 @@ export function HomeDashboard() {
       {/* Pull-down hint */}
       <motion.div
         className="flex justify-center pt-10 pb-0"
-        initial={{ opacity: 0, y: -4 }}
+        initial={{ opacity: 1, y: -4 }}
         animate={{ opacity: 0.4, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
@@ -93,9 +93,9 @@ export function HomeDashboard() {
         <AnimatePresence>
           {showNotifications && (
             <motion.div
-              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              initial={{ opacity: 1, y: -8, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              exit={{ opacity: 1, y: -8, scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="absolute top-full right-4 z-50 w-[calc(100%-2rem)] max-w-sm mt-1"
             >

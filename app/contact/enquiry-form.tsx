@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 1, y: 16 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -77,7 +77,7 @@ export function EnquiryForm() {
   if (status === "success") {
     return (
       <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
+        initial={{ opacity: 1, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
         className="mt-10 bg-background p-8 text-center"
@@ -110,7 +110,7 @@ export function EnquiryForm() {
     >
       {status === "error" && errorMessage && (
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           className="bg-red-50 p-4 text-body-sm text-red-800"
         >

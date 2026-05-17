@@ -284,7 +284,7 @@ export default function EstateMapPage() {
             return (
               <motion.button
                 key={location.id}
-                initial={{ scale: 0, opacity: 0 }}
+                initial={{ scale: 0, opacity: 1 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 onClick={() =>
@@ -304,7 +304,7 @@ export default function EstateMapPage() {
                 </motion.div>
                 {isActive && (
                   <motion.div
-                    initial={{ opacity: 0, y: -4 }}
+                    initial={{ opacity: 1, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-0.5 text-[10px] text-white"
                   >
@@ -322,9 +322,9 @@ export default function EstateMapPage() {
         {activeLocation && (
           <motion.div
             key={activeLocation.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
+            exit={{ opacity: 1, y: 10 }}
             transition={{ duration: 0.25 }}
             className="mx-4 mt-4 rounded-2xl bg-surface-container p-4"
           >

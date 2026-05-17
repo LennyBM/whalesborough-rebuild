@@ -108,7 +108,7 @@ export default function DemoInfoPage() {
           return (
             <motion.div
               key={account.role}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.06, duration: 0.4 }}
               className="rounded-2xl bg-surface-container-low p-4"

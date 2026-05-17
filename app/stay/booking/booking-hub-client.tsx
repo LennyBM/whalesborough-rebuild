@@ -19,7 +19,7 @@ import {
 /* ─── Animation helpers ──────────────────────────────────────────── */
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 1, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -120,7 +120,7 @@ export function BookingHubClient() {
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-content px-6 pb-16 lg:px-12 lg:pb-24">
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="eyebrow text-white/80"
@@ -128,7 +128,7 @@ export function BookingHubClient() {
               Direct booking
             </motion.p>
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="heading-editorial mt-3 text-display-md md:text-display-lg text-white max-w-3xl"
@@ -136,7 +136,7 @@ export function BookingHubClient() {
               Book your stay
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-4 max-w-xl text-body-lg text-white/90"
@@ -151,7 +151,7 @@ export function BookingHubClient() {
       {/* ── Quick Book CTA ── */}
       <section className="mx-auto max-w-content px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 1, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
@@ -343,7 +343,7 @@ export function BookingHubClient() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 1, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -394,7 +394,7 @@ export function BookingHubClient() {
       <section className="bg-surface-container-low">
         <div className="mx-auto max-w-content px-6 py-24 lg:px-12 lg:py-32 text-center">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -403,7 +403,7 @@ export function BookingHubClient() {
             Your Cornish escape starts here
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 1, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -413,7 +413,7 @@ export function BookingHubClient() {
             No payment until checkout.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 1, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}

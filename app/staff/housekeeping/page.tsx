@@ -271,9 +271,9 @@ function CottageCard({
       <AnimatePresence>
         {expanded && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 1 }}
             animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            exit={{ height: 0, opacity: 1 }}
             transition={{ duration: 0.25 }}
             className="overflow-hidden"
           >
@@ -359,9 +359,9 @@ function CottageCard({
               <AnimatePresence>
                 {flagMode && (
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
+                    initial={{ height: 0, opacity: 1 }}
                     animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
+                    exit={{ height: 0, opacity: 1 }}
                     className="overflow-hidden"
                   >
                     <div className="flex gap-2 mt-3">
@@ -393,9 +393,9 @@ function CottageCard({
       <AnimatePresence>
         {justCompleted && (
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 1 }}
             className="absolute inset-0 bg-emerald-500/5 rounded-2xl pointer-events-none"
           />
         )}

@@ -119,7 +119,7 @@ export default function StayPage() {
         {filteredProperties.map((property, index) => (
           <motion.div
             key={property.slug}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 1, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05, duration: 0.35, ease: "easeOut" }}
           >
