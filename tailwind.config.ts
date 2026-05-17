@@ -123,6 +123,20 @@ const config: Config = {
           scrim: "rgba(27, 28, 26, 0.6)",
           "image-tint": "rgba(74, 100, 87, 0.2)",
         },
+
+        // App shell — dark theme palette (Whoop-inspired)
+        // Used in the (app) route group for the PWA experience.
+        // Dark surface, muted text, accent = estate sage.
+        app: {
+          surface: "#0f1210",
+          card: "#1a1f1c",
+          "card-hover": "#222823",
+          border: "#2d3530",
+          "on-surface": "#f0ede9",
+          muted: "#7a847e",
+          accent: "#7ba68b",
+          "accent-hover": "#6b9479",
+        },
       },
 
       fontFamily: {
@@ -183,6 +197,11 @@ const config: Config = {
       borderRadius: {
         none: "0",
         DEFAULT: "0",
+        sm: "0.25rem",
+        md: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        "2xl": "1.5rem",
         full: "9999px",
       },
 

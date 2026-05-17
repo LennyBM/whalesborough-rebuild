@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
 
-import { SiteHeader } from "@/components/marketing/site-header";
-import { SiteFooter } from "@/components/marketing/site-footer";
+import { LayoutShell } from "@/components/layout-shell";
 import { Providers } from "@/app/providers";
 import { cn } from "@/lib/utils";
 
@@ -101,17 +100,7 @@ export default function RootLayout({
     <html lang="en-GB" className={cn(newsreader.variable, jakarta.variable)}>
       <body className="font-body antialiased">
         <Providers>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-toast focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-fg"
-          >
-            Skip to content
-          </a>
-          <SiteHeader />
-          <main id="main" className="min-h-[60vh]">
-            {children}
-          </main>
-          <SiteFooter />
+          <LayoutShell>{children}</LayoutShell>
         </Providers>
       </body>
     </html>
