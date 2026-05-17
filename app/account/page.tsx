@@ -1,72 +1,197 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarDays, User, Settings } from "lucide-react";
+import {
+  CalendarDays,
+  Heart,
+  ChevronRight,
+  CreditCard,
+  Bell,
+  Phone,
+  HelpCircle,
+  FileText,
+  LogOut,
+  ClipboardList,
+} from "lucide-react";
 
-const quickLinks = [
+const quickActions = [
   {
-    title: "My Bookings",
-    description: "View upcoming stays, spa treatments, and restaurant reservations",
-    href: "/account/bookings",
+    label: "My Bookings",
     icon: CalendarDays,
+    href: "/account/bookings",
   },
   {
-    title: "Profile Settings",
-    description: "Update your name, email, and contact preferences",
-    href: "/account/profile",
-    icon: User,
+    label: "Saved Properties",
+    icon: Heart,
+    href: "#",
   },
   {
-    title: "Preferences",
-    description: "Manage communication preferences and notification settings",
-    href: "/account/preferences",
-    icon: Settings,
+    label: "Guest Preferences",
+    icon: ClipboardList,
+    href: "#",
+  },
+  {
+    label: "Payment Methods",
+    icon: CreditCard,
+    href: "#",
+  },
+  {
+    label: "Notifications",
+    icon: Bell,
+    href: "#",
   },
 ];
 
-export default function AccountDashboardPage() {
-  return (
-    <main className="min-h-screen bg-background">
-      <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-content">
-          {/* Welcome header */}
-          <div className="mb-12">
-            <p className="eyebrow text-secondary mb-3">Your Account</p>
-            <h1 className="font-display text-h1 text-on-surface">
-              Welcome Back
-            </h1>
-            <p className="mt-4 font-body text-body-lg text-on-surface-variant max-w-2xl">
-              Manage your bookings, update your details, and personalise your
-              experience at Whalesborough Farm Resort &amp; Spa.
-            </p>
-          </div>
+const supportLinks = [
+  {
+    label: "Contact Reception",
+    icon: Phone,
+    href: "tel:01288361361",
+  },
+  {
+    label: "Help & FAQs",
+    icon: HelpCircle,
+    href: "#",
+  },
+  {
+    label: "Cancellation Policy",
+    icon: FileText,
+    href: "/legal/terms-of-use",
+  },
+];
 
-          {/* Quick links grid */}
-          <div className="grid gap-6 md:grid-cols-3">
-            {quickLinks.map((link) => {
-              const Icon = link.icon;
+export default function AccountPage() {
+  return (
+    <main className="min-h-screen bg-background pb-24">
+      <div className="mx-auto max-w-lg px-5 pt-10">
+        {/* Profile Header */}
+        <section className="flex flex-col items-center text-center mb-8">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-secondary">
+            <span className="font-display text-2xl text-white">LM</span>
+          </div>
+          <h1 className="mt-4 font-display text-2xl text-on-surface">
+            Leonard Millard
+          </h1>
+          <p className="mt-1 font-body text-sm text-on-surface-muted">
+            Member since 2024
+          </p>
+          <Link
+            href="#"
+            className="mt-3 font-body text-sm font-medium text-primary underline underline-offset-2"
+          >
+            Edit profile
+          </Link>
+        </section>
+
+        {/* Upcoming Bookings */}
+        <section className="mb-6">
+          <h2 className="mb-3 font-display text-base text-on-surface-muted uppercase tracking-wide">
+            Upcoming Booking
+          </h2>
+          <div className="rounded-2xl bg-surface-container-low p-5">
+            <p className="font-display text-lg text-on-surface">
+              The Farmhouse
+            </p>
+            <p className="mt-1 font-body text-sm text-on-surface-variant">
+              12–16 Jul 2026 · 4 nights
+            </p>
+            <div className="mt-4 flex gap-4">
+              <Link
+                href="#"
+                className="font-body text-sm font-medium text-primary underline underline-offset-2"
+              >
+                View booking
+              </Link>
+              <Link
+                href="#"
+                className="font-body text-sm font-medium text-secondary underline underline-offset-2"
+              >
+                Book again
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Actions */}
+        <section className="mb-6">
+          <h2 className="mb-3 font-display text-base text-on-surface-muted uppercase tracking-wide">
+            Quick Actions
+          </h2>
+          <div className="rounded-2xl bg-surface-container-low overflow-hidden divide-y divide-on-surface/5">
+            {quickActions.map((action) => {
+              const Icon = action.icon;
               return (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className="group bg-surface p-8 transition-colors duration-fast hover:bg-surface-container-low"
+                  key={action.label}
+                  href={action.href}
+                  className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-surface-container"
                 >
-                  <Icon
-                    className="h-6 w-6 text-secondary mb-4"
-                    aria-hidden="true"
-                  />
-                  <h2 className="font-display text-h3 text-on-surface mb-2">
-                    {link.title}
-                  </h2>
-                  <p className="font-body text-body-sm text-on-surface-variant">
-                    {link.description}
-                  </p>
+                  <Icon className="h-5 w-5 text-on-surface-variant shrink-0" />
+                  <span className="flex-1 font-body text-sm text-on-surface">
+                    {action.label}
+                  </span>
+                  <ChevronRight className="h-4 w-4 text-on-surface-muted shrink-0" />
                 </Link>
               );
             })}
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Loyalty / Membership */}
+        <section className="mb-6">
+          <h2 className="mb-3 font-display text-base text-on-surface-muted uppercase tracking-wide">
+            Membership
+          </h2>
+          <div className="rounded-2xl bg-surface-container-low p-5">
+            <p className="font-display text-lg text-on-surface">
+              Whalesborough Club
+            </p>
+            <p className="mt-1 font-body text-sm text-on-surface-variant">
+              3 stays completed · Next reward at 5
+            </p>
+            <div className="mt-4 h-2 w-full rounded-full bg-surface-container overflow-hidden">
+              <div
+                className="h-full rounded-full bg-secondary transition-all"
+                style={{ width: "60%" }}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Support */}
+        <section className="mb-8">
+          <h2 className="mb-3 font-display text-base text-on-surface-muted uppercase tracking-wide">
+            Support
+          </h2>
+          <div className="rounded-2xl bg-surface-container-low overflow-hidden divide-y divide-on-surface/5">
+            {supportLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-surface-container"
+                >
+                  <Icon className="h-5 w-5 text-on-surface-variant shrink-0" />
+                  <span className="flex-1 font-body text-sm text-on-surface">
+                    {link.label}
+                  </span>
+                  <ChevronRight className="h-4 w-4 text-on-surface-muted shrink-0" />
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Sign Out */}
+        <button
+          type="button"
+          className="flex w-full items-center justify-center gap-2 rounded-2xl border border-on-surface/10 px-5 py-4 font-body text-sm text-on-surface-variant transition-colors hover:bg-surface-container-low"
+        >
+          <LogOut className="h-4 w-4" />
+          Sign Out
+        </button>
+      </div>
     </main>
   );
 }

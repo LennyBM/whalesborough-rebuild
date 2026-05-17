@@ -4,7 +4,7 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 
 import { SiteHeader } from "@/components/marketing/site-header";
-import { SiteFooter } from "@/components/marketing/site-footer";
+import { BottomTabs } from "@/components/app-shell/bottom-tabs";
 
 /**
  * Layout Shell — conditionally renders marketing chrome (header + footer)
@@ -32,7 +32,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
     return <>{children}</>;
   }
 
-  // Marketing routes — standard header + footer
+  // All non-app routes — header + bottom tabs (app layout)
   return (
     <>
       <a
@@ -42,10 +42,10 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main" className="min-h-[60vh]">
+      <main id="main" className="min-h-[60vh] pb-20">
         {children}
       </main>
-      <SiteFooter />
+      <BottomTabs />
     </>
   );
 }
