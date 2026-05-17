@@ -9,7 +9,8 @@ import type { NextRequest } from "next/server";
  * 3. Sets CSP in report-only mode
  */
 
-const protectedPaths = ["/account"];
+// Disabled for demo — all pages accessible without auth
+const protectedPaths: string[] = [];
 
 const CSP_POLICY = [
   "default-src 'self'",

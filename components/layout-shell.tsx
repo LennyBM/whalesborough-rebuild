@@ -8,32 +8,36 @@ import { BottomTabs } from "@/components/app-shell/bottom-tabs";
 import { PageTransition } from "@/components/app-shell/page-transition";
 
 /**
- * Layout Shell — conditionally renders marketing chrome (header + footer)
- * or the bare app shell depending on the current route.
- *
- * Routes under the (app) group (/today, /book, /my-stay, /club, /explore)
- * get NO header/footer — their own layout handles navigation.
- *
- * All other routes get the standard SiteHeader + SiteFooter.
+ * Layout Shell — renders the app shell with bottom tabs on all routes.
+ * The SiteHeader is hidden on routes that have their own header
+ * (most app pages handle their own header/back button).
  */
-const APP_ROUTES = ["/today", "/book", "/my-stay", "/club", "/explore"];
 
-function isAppRoute(pathname: string): boolean {
-  return APP_ROUTES.some(
+// Routes where we hide the top site header (they have their own headers)
+const HIDE_HEADER_ROUTES = [
+  "/",
+  "/stay",
+  "/spa",
+  "/dine",
+  "/explore",
+  "/estate",
+  "/my-stay",
+  "/account",
+  "/login",
+  "/demo",
+  "/staff",
+];
+
+function shouldHideHeader(pathname: string): boolean {
+  return HIDE_HEADER_ROUTES.some(
     (route) => pathname === route || pathname.startsWith(`${route}/`),
   );
 }
 
 export function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isApp = isAppRoute(pathname);
+  const hideHeader = shouldHideHeader(pathname);
 
-  if (isApp) {
-    // App routes — no marketing chrome. The (app)/layout.tsx handles its own shell.
-    return <>{children}</>;
-  }
-
-  // All non-app routes — header + bottom tabs (app layout)
   return (
     <>
       <a
@@ -42,7 +46,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
       >
         Skip to content
       </a>
-      <SiteHeader />
+      {!hideHeader && <SiteHeader />}
       <main id="main" className="min-h-[60vh] pb-20">
         <PageTransition>{children}</PageTransition>
       </main>
