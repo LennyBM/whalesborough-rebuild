@@ -1,141 +1,312 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
-import { LinkArrow } from "@/components/ui/button";
-
-export const metadata: Metadata = {
-  title: "Book a Spa Treatment | The W Club | Whalesborough",
-  description:
-    "Book treatments, spa days and gift vouchers online via our booking system. The W Club Spa at Whalesborough Farm Resort, Bude, Cornwall.",
-};
+import { Button, LinkArrow } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function BookingPage() {
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success">(
+    "idle",
+  );
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    preferredDate: "",
+    treatment: "",
+    message: "",
+  });
+
+  function handleChange(
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setFormState("submitting");
+    // Simulate submission
+    setTimeout(() => {
+      setFormState("success");
+    }, 1200);
+  }
+
   return (
     <>
       {/* Hero */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
-          <p className="eyebrow text-on-surface-muted">The W Club · Booking</p>
+          <p className="eyebrow text-on-surface-muted">The W Club</p>
           <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
-            Book your{" "}
-            <span className="italic">time</span>.
+            Book a <span className="italic">treatment</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
-            Treatments, spa days and gift vouchers can all be booked online.
-            Choose your experience, pick a date and we will take care of
-            the rest.
+            Whether you are planning a spa day, a couples ritual or a single
+            treatment between walks on the coast, we make booking simple. Call,
+            click or ask at reception.
           </p>
         </div>
       </section>
 
-      {/* Booking CTA */}
+      {/* Spa interior image */}
       <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="heading-editorial text-h1 text-on-surface">
-              Online booking
-            </h2>
-            <p className="mt-6 text-body-lg text-on-surface-variant">
-              Our booking system is powered by Try.be. You will be taken to a
-              secure external page where you can browse availability, select
-              your treatment and complete your booking.
-            </p>
-            <div className="mt-10">
-              <a
-                href="https://thewclub.try.be"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-fg font-body font-medium uppercase h-14 px-10 text-button transition-colors duration-fast ease-out-luxury hover:bg-primary-hover active:bg-primary-pressed focus-visible:outline-none focus-visible:shadow-focus"
-              >
-                Book online via Try.be
-              </a>
-            </div>
-            <p className="mt-6 text-body-sm text-on-surface-muted">
-              You will be redirected to our secure booking partner.
-            </p>
+        <div className="mx-auto max-w-content px-6 lg:px-12">
+          <div className="relative aspect-[21/9] w-full overflow-hidden">
+            <Image
+              src="/images/spa/spa-interior.webp"
+              alt="The W Club spa interior with thermal pool and relaxation loungers"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1200px"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* Alternative contact */}
+      {/* How to book */}
+      <section className="bg-surface-container-low">
+        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+          <h2 className="heading-editorial text-h1 text-on-surface">
+            How to book
+          </h2>
+          <p className="mt-4 max-w-2xl text-body-lg text-on-surface-variant">
+            Three ways to secure your treatment time.
+          </p>
+
+          <div className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-3">
+            {/* Call */}
+            <div>
+              <p className="eyebrow text-on-surface-muted">01</p>
+              <h3 className="mt-4 text-h3 text-on-surface">Call us</h3>
+              <p className="mt-3 text-body text-on-surface-variant">
+                Speak directly with our spa reception team who can check
+                availability and book your preferred time.
+              </p>
+              <p className="mt-6 text-h3 text-on-surface">01288 361364</p>
+              <p className="mt-2 text-body-sm text-on-surface-muted">
+                Mon&ndash;Sun, 9am&ndash;7pm
+              </p>
+            </div>
+
+            {/* Online */}
+            <div>
+              <p className="eyebrow text-on-surface-muted">02</p>
+              <h3 className="mt-4 text-h3 text-on-surface">Book online</h3>
+              <p className="mt-3 text-body text-on-surface-variant">
+                Browse treatments, check live availability and book instantly
+                through our online booking partner.
+              </p>
+              <div className="mt-6">
+                <Button variant="primary" size="lg">
+                  Book via Try.be
+                </Button>
+              </div>
+              <p className="mt-3 text-body-sm text-on-surface-muted">
+                Opens our secure booking system
+              </p>
+            </div>
+
+            {/* In person */}
+            <div>
+              <p className="eyebrow text-on-surface-muted">03</p>
+              <h3 className="mt-4 text-h3 text-on-surface">In person</h3>
+              <p className="mt-3 text-body text-on-surface-variant">
+                Staying with us? Visit the spa reception desk during your stay to
+                book treatments for the same day or later in your visit.
+              </p>
+              <p className="mt-6 text-body-sm text-on-surface-muted">
+                Reception desk open daily, 9am&ndash;7pm
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enquiry form + sidebar */}
       <section className="bg-background">
         <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-            <div>
-              <h3 className="text-h3 text-on-surface">Call the spa</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                Prefer to speak to someone? Our reception team can check
-                availability and book treatments over the phone.
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
+            {/* Form — 2 columns wide */}
+            <div className="lg:col-span-2">
+              <h2 className="heading-editorial text-h1 text-on-surface">
+                Request a callback
+              </h2>
+              <p className="mt-4 max-w-xl text-body-lg text-on-surface-variant">
+                Not sure which treatment to choose? Leave your details and
+                one of our therapists will call you back to discuss options and
+                availability.
               </p>
-              <p className="mt-4 text-body text-on-surface">
-                01288 361 354
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-on-surface">Spa reception hours</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                Monday to Sunday: 8:00am – 8:00pm. Last treatment booking at
-                6:30pm. Pool and thermal access until 9:00pm for spa day guests
-                and members.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-on-surface">Cancellation policy</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                We ask for 24 hours&apos; notice for cancellations. Late
-                cancellations or no-shows may be charged at 50% of the
-                treatment value.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* What to expect */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <p className="eyebrow text-on-surface-muted">Before you arrive</p>
-          <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
-            What to expect
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div>
-              <h3 className="text-h3 text-on-surface">Arrival</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                Please arrive 15 minutes before your treatment to complete a
-                consultation form, change and use the thermal facilities. This
-                time helps your body and mind transition into the spa pace.
-              </p>
+              {formState === "success" ? (
+                <div className="mt-12 bg-surface-container-low p-10">
+                  <h3 className="text-h3 text-on-surface">
+                    Thank you for your enquiry
+                  </h3>
+                  <p className="mt-4 text-body text-on-surface-variant">
+                    We have received your request and a member of our spa team
+                    will be in touch within 24 hours. If your enquiry is urgent,
+                    please call us on 01288 361364.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="mt-12 space-y-8">
+                  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email address</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone number</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="07000 000000"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="preferredDate">Preferred date</Label>
+                      <Input
+                        id="preferredDate"
+                        name="preferredDate"
+                        type="date"
+                        value={formData.preferredDate}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="treatment">Treatment interest</Label>
+                    <select
+                      id="treatment"
+                      name="treatment"
+                      value={formData.treatment}
+                      onChange={handleChange}
+                      required
+                      className="flex h-12 w-full bg-surface-container px-4 py-3 text-body text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:shadow-focus disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <option value="">Select a treatment type</option>
+                      <option value="massage">Massage</option>
+                      <option value="facial">Facial</option>
+                      <option value="ritual">Ritual</option>
+                      <option value="spa-day">Spa Day</option>
+                      <option value="couples">Couples</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">
+                      Message{" "}
+                      <span className="text-on-surface-muted font-normal">
+                        (optional)
+                      </span>
+                    </Label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about any preferences, health considerations or questions"
+                      className="flex w-full bg-surface-container px-4 py-3 text-body text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:shadow-focus disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="lg"
+                    loading={formState === "submitting"}
+                  >
+                    Request callback
+                  </Button>
+                </form>
+              )}
             </div>
-            <div>
-              <h3 className="text-h3 text-on-surface">What we provide</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                Robe, towel, slippers and a secure locker are provided for all
-                treatment guests. Bring swimwear for pool and thermal access.
-                Hair dryers and vanity amenities available in changing rooms.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-on-surface">Health considerations</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                Please let us know about any health conditions, allergies or
-                pregnancy when booking. Some treatments require adaptation and
-                we want to give you the best possible experience.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-on-surface">After your treatment</h3>
-              <p className="mt-3 text-body text-on-surface-variant">
-                Take your time in the relaxation suite. Drink water, avoid heavy
-                meals immediately and let the products absorb. Your therapist
-                will recommend a home-care routine if you wish.
-              </p>
-            </div>
-          </div>
-          <div className="mt-12">
-            <Link href="/spa/faqs">
-              <LinkArrow>Read our full FAQs</LinkArrow>
-            </Link>
+
+            {/* Sidebar */}
+            <aside className="space-y-10 lg:pt-16">
+              {/* Opening hours */}
+              <div className="bg-surface-container-low p-8">
+                <h3 className="text-h4 text-on-surface">Opening hours</h3>
+                <dl className="mt-6 space-y-4">
+                  <div>
+                    <dt className="text-body-sm text-on-surface-muted uppercase tracking-wider">
+                      Spa facilities
+                    </dt>
+                    <dd className="mt-1 text-body text-on-surface">
+                      7am &ndash; 9pm daily
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-body-sm text-on-surface-muted uppercase tracking-wider">
+                      Treatments
+                    </dt>
+                    <dd className="mt-1 text-body text-on-surface">
+                      9am &ndash; 7pm daily
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+
+              {/* Priority note */}
+              <div className="bg-surface-container-low p-8">
+                <h3 className="text-h4 text-on-surface">Guest priority</h3>
+                <p className="mt-3 text-body text-on-surface-variant">
+                  Residential guests have priority booking for all treatments.
+                  We recommend booking ahead of your stay to secure your
+                  preferred times.
+                </p>
+              </div>
+
+              {/* Gift vouchers */}
+              <div className="bg-surface-container-low p-8">
+                <h3 className="text-h4 text-on-surface">Gift vouchers</h3>
+                <p className="mt-3 text-body text-on-surface-variant">
+                  Give the gift of relaxation. Vouchers are available for
+                  specific treatments or monetary values and can be posted or
+                  emailed.
+                </p>
+                <div className="mt-6">
+                  <Link href="/spa/gift-vouchers">
+                    <LinkArrow>View gift vouchers</LinkArrow>
+                  </Link>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>

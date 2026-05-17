@@ -1,30 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
-import { Button, LinkArrow } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 export default function Page() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
-  const [collection, setCollection] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
-    setFieldErrors({});
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -36,9 +27,13 @@ export default function Page() {
       name: `${firstName} ${lastName}`.trim(),
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
-      collection: collection || "tevi",
+      preferredDate: formData.get("preferredDate") as string,
+      preferredTime: formData.get("preferredTime") as string,
+      collection: formData.get("interest") as string,
+      budget: formData.get("budget") as string,
+      source: formData.get("source") as string,
       type: "viewing" as const,
-      message: formData.get("message") as string || undefined,
+      message: formData.get("notes") as string || undefined,
     };
 
     try {
@@ -53,11 +48,6 @@ export default function Page() {
       if (res.ok) {
         setStatus("success");
         form.reset();
-        setCollection("");
-      } else if (res.status === 400) {
-        setStatus("error");
-        setFieldErrors(data.details || {});
-        setErrorMessage(data.error || "Please check your details and try again.");
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Something went wrong. Please try again.");
@@ -68,217 +58,317 @@ export default function Page() {
     }
   }
 
-  if (status === "success") {
-    return (
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40 text-center">
-          <p className="eyebrow text-primary">Viewing requested</p>
-          <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg text-on-surface">
-            We will be in touch
-          </h1>
-          <p className="mt-6 max-w-lg mx-auto text-body-lg text-on-surface-variant">
-            Rebecca will contact you within twenty-four hours to confirm your
-            viewing date and share directions to the estate.
-          </p>
-          <div className="mt-10">
-            <LinkArrow href="/own">Back to ownership</LinkArrow>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <>
-      {/* Hero */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-content px-6 pb-20 pt-24 lg:px-12 lg:pb-32 lg:pt-40">
-          <p className="eyebrow text-on-surface-muted">Lodge Ownership</p>
-          <h1 className="heading-editorial mt-6 text-display-md md:text-display-lg lg:text-display-xl max-w-4xl text-on-surface">
-            Book a{" "}
-            <span className="italic">private viewing</span>.
-          </h1>
-          <p className="mt-8 max-w-2xl text-body-lg text-on-surface-variant">
-            Half-day private tours every Tuesday and Thursday. Walk the
-            available plots, tour the show lodge, explore the spa, restaurant
-            and wider estate. No obligation, no pressure — just the space to
-            imagine a life here.
-          </p>
-        </div>
-      </section>
-
-      {/* Form + Info */}
-      <section className="bg-surface-container-low">
-        <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-            <div>
-              <p className="eyebrow text-on-surface-muted">What to expect</p>
-              <h2 className="heading-editorial mt-4 text-h1 text-on-surface">
-                Your viewing day
-              </h2>
-              <div className="mt-8 space-y-6">
-                <ViewingDetail
-                  title="Private and unhurried"
-                  text="Your tour is just for you — no group viewings. Take as long as you need at each stop."
-                />
-                <ViewingDetail
-                  title="Walk the plots"
-                  text="See available positions on the estate. Understand the views, orientation and access from each."
-                />
-                <ViewingDetail
-                  title="Tour the show lodge"
-                  text="Step inside a fully finished lodge to experience the space, specification and finishes first-hand."
-                />
-                <ViewingDetail
-                  title="Explore the estate"
-                  text="Visit The W Club Spa, The Weir Restaurant, the lakes and woodland trails."
-                />
-                <ViewingDetail
-                  title="Meet the team"
-                  text="Graeme hosts all site tours. Rebecca is available for ownership questions and next steps."
-                />
-              </div>
-
-              <div className="mt-12 bg-background p-8">
-                <p className="text-h3 font-display text-on-surface">
-                  Prefer to call?
-                </p>
-                <p className="mt-2 text-body-sm text-on-surface-variant">
-                  Ring our VIP Viewings line directly to arrange your visit.
-                </p>
-                <div className="mt-4">
-                  <LinkArrow href="tel:01288361941">01288 361941</LinkArrow>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <form
-                className="space-y-8 bg-background p-8 lg:p-10"
-                onSubmit={handleSubmit}
-              >
-                {status === "error" && errorMessage && (
-                  <div className="rounded-md bg-red-50 p-4 text-body-sm text-red-800">
-                    {errorMessage}
-                  </div>
-                )}
-
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First name</Label>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      placeholder="First name"
-                      required
-                      autoComplete="given-name"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last name</Label>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      placeholder="Last name"
-                      required
-                      autoComplete="family-name"
-                    />
-                  </div>
-                </div>
-                {fieldErrors.name && (
-                  <p className="text-caption text-red-600">{fieldErrors.name[0]}</p>
-                )}
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email address</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    required
-                    autoComplete="email"
-                  />
-                  {fieldErrors.email && (
-                    <p className="text-caption text-red-600">{fieldErrors.email[0]}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone number</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="01234 567 890"
-                    required
-                    autoComplete="tel"
-                  />
-                  {fieldErrors.phone && (
-                    <p className="text-caption text-red-600">{fieldErrors.phone[0]}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="preferredDate">Preferred date</Label>
-                  <Input
-                    id="preferredDate"
-                    name="preferredDate"
-                    type="date"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="collection">Collections of interest</Label>
-                  <Select name="collection" value={collection} onValueChange={setCollection}>
-                    <SelectTrigger id="collection">
-                      <SelectValue placeholder="Which lodges interest you?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="tevi">Tevi Luxury Lodges</SelectItem>
-                      <SelectItem value="gwelva">Gwelva Luxury Villas</SelectItem>
-                      <SelectItem value="trelowen">Trelowen Exclusive Lodges</SelectItem>
-                      <SelectItem value="bespoke">Bespoke Lodges</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  {fieldErrors.collection && (
-                    <p className="text-caption text-red-600">{fieldErrors.collection[0]}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Anything else we should know?</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Questions, accessibility requirements, or specific interests..."
-                  />
-                </div>
-
-                <Button type="submit" variant="primary" size="lg" className="w-full" disabled={status === "loading"}>
-                  {status === "loading" ? "Sending..." : "Request viewing"}
-                </Button>
-
-                <p className="text-body-sm text-on-surface-muted">
-                  We will confirm your viewing within twenty-four hours. Tours
-                  run Tuesday and Thursday — we will suggest the nearest
-                  available date.
-                </p>
-              </form>
+    <AnimatePresence mode="wait">
+      {status === "success" ? (
+        <motion.section
+          key="success"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-background"
+        >
+          <div className="mx-auto max-w-content px-6 py-32 lg:px-12 lg:py-48 text-center">
+            <p className="font-body text-sm uppercase tracking-widest text-primary">
+              Viewing confirmed
+            </p>
+            <h1 className="font-display italic text-4xl md:text-5xl lg:text-6xl text-on-surface mt-6">
+              Thank you
+            </h1>
+            <p className="mt-8 max-w-lg mx-auto text-lg text-on-surface-variant leading-relaxed">
+              We have received your viewing request. A member of our sales team
+              will be in touch within twenty-four hours to confirm your date and
+              share directions to the estate.
+            </p>
+            <div className="mt-6 text-on-surface-muted text-sm">
+              01288 361365 &middot; lodges@whalesborough.co.uk
             </div>
           </div>
-        </div>
-      </section>
-    </>
+        </motion.section>
+      ) : (
+        <motion.div
+          key="form"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Hero */}
+          <section className="bg-background">
+            <div className="mx-auto max-w-content px-6 pt-24 pb-16 lg:px-12 lg:pt-40 lg:pb-24">
+              <p className="font-body text-sm uppercase tracking-widest text-on-surface-muted">
+                Lodge Ownership
+              </p>
+              <h1 className="font-display italic text-4xl md:text-5xl lg:text-6xl text-on-surface mt-6 max-w-3xl">
+                Book a private viewing
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg text-on-surface-variant leading-relaxed">
+                Visit the estate in person. Walk the available plots, tour a
+                finished lodge, and explore the grounds at your own pace. Our
+                team will be on hand to answer any questions about ownership.
+              </p>
+            </div>
+          </section>
+
+          {/* Estate image */}
+          <section className="bg-background">
+            <div className="mx-auto max-w-content px-6 lg:px-12">
+              <div className="relative aspect-[21/9] w-full overflow-hidden">
+                <Image
+                  src="/images/general/estate-view.webp"
+                  alt="Aerial view of the Whalesborough estate and surrounding countryside"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Form + Side content */}
+          <section className="bg-surface-container-low">
+            <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+              <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+                {/* Form */}
+                <div className="lg:col-span-7">
+                  <form
+                    className="space-y-8 bg-background p-8 lg:p-12"
+                    onSubmit={handleSubmit}
+                  >
+                    <div>
+                      <h2 className="font-display italic text-2xl text-on-surface">
+                        Your details
+                      </h2>
+                      <p className="mt-2 text-sm text-on-surface-muted">
+                        All fields marked with * are required.
+                      </p>
+                    </div>
+
+                    {status === "error" && errorMessage && (
+                      <div className="bg-red-50 p-4 text-sm text-red-800">
+                        {errorMessage}
+                      </div>
+                    )}
+
+                    {/* Name */}
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName">First name *</Label>
+                        <Input
+                          id="firstName"
+                          name="firstName"
+                          required
+                          autoComplete="given-name"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastName">Last name *</Label>
+                        <Input
+                          id="lastName"
+                          name="lastName"
+                          required
+                          autoComplete="family-name"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Contact */}
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email address *</Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          autoComplete="email"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone number *</Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          required
+                          autoComplete="tel"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Date and time */}
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="preferredDate">Preferred viewing date *</Label>
+                        <Input
+                          id="preferredDate"
+                          name="preferredDate"
+                          type="date"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="preferredTime">Preferred time *</Label>
+                        <select
+                          id="preferredTime"
+                          name="preferredTime"
+                          required
+                          className="flex h-11 w-full bg-surface-container px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          <option value="">Select a time</option>
+                          <option value="morning">Morning (10am)</option>
+                          <option value="afternoon">Afternoon (2pm)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Interest */}
+                    <div className="space-y-2">
+                      <Label htmlFor="interest">Collection of interest</Label>
+                      <select
+                        id="interest"
+                        name="interest"
+                        className="flex h-11 w-full bg-surface-container px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        <option value="">Select a collection</option>
+                        <option value="gwelva">Gwelva Collection (from £650k)</option>
+                        <option value="trelowen">Trelowen Collection (from £425k)</option>
+                        <option value="tevi">Tevi Collection (from £285k)</option>
+                        <option value="bespoke">Bespoke</option>
+                        <option value="unsure">Not sure yet</option>
+                      </select>
+                    </div>
+
+                    {/* Budget */}
+                    <div className="space-y-2">
+                      <Label htmlFor="budget">Budget range</Label>
+                      <select
+                        id="budget"
+                        name="budget"
+                        className="flex h-11 w-full bg-surface-container px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        <option value="">Select a range</option>
+                        <option value="under-300k">Under £300k</option>
+                        <option value="300-450k">£300k – £450k</option>
+                        <option value="450-650k">£450k – £650k</option>
+                        <option value="650k-plus">£650k+</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                      </select>
+                    </div>
+
+                    {/* Source */}
+                    <div className="space-y-2">
+                      <Label htmlFor="source">How did you hear about us?</Label>
+                      <select
+                        id="source"
+                        name="source"
+                        className="flex h-11 w-full bg-surface-container px-4 py-2 text-sm text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        <option value="">Select an option</option>
+                        <option value="google">Google</option>
+                        <option value="social-media">Social media</option>
+                        <option value="word-of-mouth">Word of mouth</option>
+                        <option value="press">Press</option>
+                        <option value="estate-visit">Estate visit</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    {/* Notes */}
+                    <div className="space-y-2">
+                      <Label htmlFor="notes">Additional notes</Label>
+                      <textarea
+                        id="notes"
+                        name="notes"
+                        rows={4}
+                        placeholder="Questions, accessibility requirements, or anything else we should know..."
+                        className="flex w-full bg-surface-container px-4 py-3 text-sm text-on-surface placeholder:text-on-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+                      />
+                    </div>
+
+                    {/* Submit */}
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      size="lg"
+                      className="w-full"
+                      disabled={status === "loading"}
+                    >
+                      {status === "loading" ? "Sending..." : "Request Viewing"}
+                    </Button>
+
+                    <p className="text-xs text-on-surface-muted leading-relaxed">
+                      By submitting this form you agree to be contacted by our
+                      sales team regarding your viewing request. We will never
+                      share your information with third parties.
+                    </p>
+                  </form>
+                </div>
+
+                {/* Side content */}
+                <div className="lg:col-span-5">
+                  <div className="sticky top-32 space-y-10">
+                    {/* What to expect */}
+                    <div>
+                      <p className="font-body text-sm uppercase tracking-widest text-on-surface-muted">
+                        What to expect
+                      </p>
+                      <h2 className="font-display italic text-2xl text-on-surface mt-4">
+                        A personal tour of the estate
+                      </h2>
+                      <ul className="mt-6 space-y-4">
+                        <ExpectItem text="A private, one-hour tour with our sales team" />
+                        <ExpectItem text="Walk available plots and see the views first-hand" />
+                        <ExpectItem text="Tour a fully finished show lodge" />
+                        <ExpectItem text="Explore the spa, restaurant and estate grounds" />
+                        <ExpectItem text="Discuss design options and personalisation" />
+                        <ExpectItem text="No obligation — viewings are at your pace" />
+                      </ul>
+                    </div>
+
+                    {/* Contact card */}
+                    <div className="bg-background p-8 space-y-4">
+                      <p className="font-display italic text-xl text-on-surface">
+                        Prefer to speak with us?
+                      </p>
+                      <div className="space-y-2">
+                        <a
+                          href="tel:01288361365"
+                          className="block text-on-surface hover:text-primary transition-colors text-sm"
+                        >
+                          01288 361365
+                        </a>
+                        <a
+                          href="mailto:lodges@whalesborough.co.uk"
+                          className="block text-on-surface hover:text-primary transition-colors text-sm"
+                        >
+                          lodges@whalesborough.co.uk
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Reassurance */}
+                    <p className="text-sm text-on-surface-muted italic leading-relaxed">
+                      No obligation. Viewings are private and at your pace.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
-function ViewingDetail({ title, text }: { title: string; text: string }) {
+function ExpectItem({ text }: { text: string }) {
   return (
-    <div>
-      <h3 className="text-h3 font-display text-on-surface">{title}</h3>
-      <p className="mt-1 text-body-sm text-on-surface-variant">{text}</p>
-    </div>
+    <li className="flex items-start gap-3">
+      <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-primary" />
+      <span className="text-sm text-on-surface-variant leading-relaxed">
+        {text}
+      </span>
+    </li>
   );
 }
