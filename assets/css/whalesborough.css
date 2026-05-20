@@ -386,6 +386,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 24px; /* WCAG 2.5.8 touch target for these standalone CTAs */
   transition: gap 0.2s;
 }
 .btn-text:hover { gap: 0.75rem; }

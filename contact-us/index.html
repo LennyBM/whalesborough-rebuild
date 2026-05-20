@@ -41,7 +41,7 @@
  <link rel="preload" href="/assets/fonts/newsreader-italic-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/css/fonts.min.css?v=25e5e2b" />
- <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=menu-v2" />
+ <link rel="stylesheet" href="/assets/css/whalesborough.min.css?v=mob-a11y" />
 
  <script type="application/ld+json">
  {
@@ -82,7 +82,7 @@
    border-bottom: 1px solid var(--outline-variant);
    padding: 0.875rem 0;
    font-family: var(--font-body);
-   font-size: 0.9rem;
+   font-size: 16px; /* 16px prevents iOS zoom-on-focus (was 0.9rem/14.4px) */
    color: var(--on-surface);
    width: 100%;
    outline: none;

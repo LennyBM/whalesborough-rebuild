@@ -44,8 +44,8 @@
   <link rel="stylesheet" href="assets/css/fonts.min.css?v=25e5e2b" />
 
  <!-- Styles -->
- <link rel="preload" as="style" href="assets/css/whalesborough.min.css?v=menu-v2" />
- <link rel="stylesheet" href="assets/css/whalesborough.min.css?v=menu-v2" />
+ <link rel="preload" as="style" href="assets/css/whalesborough.min.css?v=mob-a11y" />
+ <link rel="stylesheet" href="assets/css/whalesborough.min.css?v=mob-a11y" />
 
  <!-- LCP: preload hero poster frame so it paints before video metadata arrives -->
  <link rel="preload" as="image" href="assets/images/general/cottages-exterior.webp" type="image/webp" fetchpriority="high" />
@@ -364,9 +364,11 @@
   }
   .testimonials-wrap { position: relative; min-height: 200px; }
   .testimonial-slide { transition: opacity 0.6s ease; }
-  .testimonial-dots { display: flex; gap: 0.5rem; justify-content: center; margin-top: 2rem; }
-  .testimonial-dots button { width: 6px; height: 6px; background: var(--outline-variant); border: none; cursor: pointer; transition: background 0.2s; }
-  .testimonial-dots button.active { background: var(--primary); }
+  .testimonial-dots { display: flex; gap: 0.25rem; justify-content: center; margin-top: 2rem; }
+  /* 24×24 tap target (WCAG 2.5.8) with a small 6px visual dot centred inside */
+  .testimonial-dots button { width: 24px; height: 24px; padding: 0; background: transparent; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .testimonial-dots button::before { content: ''; width: 6px; height: 6px; background: var(--outline-variant); transition: background 0.2s; }
+  .testimonial-dots button.active::before { background: var(--primary); }
   .awards-strip { display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: center; }
   .award-badge { background: var(--surface-low); padding: 1.5rem 2rem; text-align: center; border-top: 2px solid var(--primary); min-width: 170px; transition: background 0.2s; }
   .award-badge:hover { background: var(--surface-high); }
