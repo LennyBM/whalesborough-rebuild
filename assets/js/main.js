@@ -23,10 +23,38 @@ function init() {
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileClose = document.querySelector('.mobile-close');
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-    mobileClose?.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    const menuFocusable = () => mobileMenu.querySelectorAll('a[href], button:not([disabled])');
+    const onMenuKeydown = (e) => {
+      if (e.key === 'Escape') { closeMenu(); return; }
+      if (e.key !== 'Tab') return;
+      const items = menuFocusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    };
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.addEventListener('keydown', onMenuKeydown);
+      const items = menuFocusable();
+      if (items.length) items[0].focus();
+    };
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('keydown', onMenuKeydown);
+      hamburger.focus();
+    };
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.addEventListener('click', openMenu);
+    mobileClose?.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+      a.addEventListener('click', closeMenu);
     });
   }
 
@@ -272,19 +300,48 @@ function init() {
     `;
     document.body.appendChild(backdrop);
 
+    const dialog = backdrop.querySelector('.exit-modal');
+    const focusable = () => dialog.querySelectorAll('a[href], button:not([disabled])');
+    let lastFocused = null;
+
+    const onKeydown = (e) => {
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key !== 'Tab') return;
+      // Focus trap — keep Tab inside the dialog (WCAG 2.1.2 / 2.4.3)
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    };
+
+    const openModal = () => {
+      lastFocused = document.activeElement;
+      backdrop.classList.add('open');
+      sessionStorage.setItem('whalesborough-exit-shown', '1');
+      document.addEventListener('keydown', onKeydown);
+      const items = focusable();
+      if (items.length) items[0].focus();
+    };
+
     const closeModal = () => {
       backdrop.classList.remove('open');
       sessionStorage.setItem('whalesborough-exit-shown', '1');
+      document.removeEventListener('keydown', onKeydown);
+      // Restore focus to wherever the user was before the modal stole it
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
     };
     backdrop.querySelector('.exit-modal-close').addEventListener('click', closeModal);
     backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
     const onMouseLeave = (e) => {
       if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
         if (sessionStorage.getItem('whalesborough-exit-shown')) return;
-        backdrop.classList.add('open');
-        sessionStorage.setItem('whalesborough-exit-shown', '1');
+        openModal();
         document.removeEventListener('mouseout', onMouseLeave);
       }
     };
