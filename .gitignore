@@ -25,3 +25,13 @@ npm-debug.log*
 # Python
 __pycache__/
 *.pyc
+
+# Internal docs, build scripts, scraped data & dev mockups — never deploy to the public site
+*-Brief*.md
+Whalesborough-Digital-Manifesto.md
+_*.py
+build.py
+inject_explore_schema.py
+scraped-content/
+design-system/
+.claude/
