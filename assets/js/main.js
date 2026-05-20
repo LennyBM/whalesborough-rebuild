@@ -293,7 +293,7 @@ function init() {
         <h2 id="exit-modal-title">Before you go…</h2>
         <p>Cottages book up fastest in spring. Call us now or view our 2026 availability — we're here if you need a hand.</p>
         <div class="exit-modal-actions">
-          <a href="https://www.landal.co.uk/parks/whalesborough-resort/" target="_blank" rel="noopener noreferrer" class="btn-book">See 2026 Dates</a>
+          <a href="https://www.landal.co.uk/parks/whalesborough-resort/?utm_source=whalesborough&utm_medium=website&utm_campaign=book_direct&utm_content=exit_intent" target="_blank" rel="noopener noreferrer" class="btn-book" data-track="book-click">See 2026 Dates</a>
           <a href="tel:01288361940" class="btn-ghost">Call 01288 361940</a>
         </div>
       </div>
