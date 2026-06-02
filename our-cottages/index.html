@@ -13,6 +13,7 @@
  <title>Luxury Holiday Cottages Cornwall | 26 Award-Winning Properties | Whalesborough</title>
  <meta name="description" content="26 award-winning 5-star luxury self-catering cottages on a 428-acre Cornish estate near Bude. All dog-friendly, all with free spa, pool and gym access. Sleeps 2–10+." />
  <link rel="canonical" href="https://www.whalesborough.co.uk/our-cottages/" />
+ <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/images/landal-reference/hero/resort-welcome-960.avif 960w, /assets/images/landal-reference/hero/resort-welcome.avif 1280w" imagesizes="100vw" fetchpriority="high" />
  <link rel="alternate" hreflang="en-gb" href="https://www.whalesborough.co.uk/our-cottages/" />
  <link rel="alternate" hreflang="x-default" href="https://www.whalesborough.co.uk/our-cottages/" />
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -240,7 +241,7 @@
  <a href="#main-content" class="skip-link">Skip to main content</a>
 
  <div class="urgency-banner">
-  Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Arvor Suite Packages from £175 per night per person &nbsp;|&nbsp; Call 01288 361940
+  Best Rate Guaranteed — Book Direct &nbsp;|&nbsp; Arvor Suite Wellness Stays and Packages from £175 per person &nbsp;|&nbsp; Call 01288 361940
  </div>
 
  <nav class="site-nav" aria-label="Main navigation">
@@ -300,7 +301,11 @@
 
 
   <section class="page-hero" aria-label="Our Cottages">
-   <img class="page-hero-bg" src="/assets/images/landal-reference/hero/resort-welcome.webp" alt="Whalesborough Farm Resort — luxury holiday cottages in North Cornwall" fetchpriority="high" loading="eager" decoding="async" width="1800" height="1200" />
+   <picture style="display:contents">
+    <source type="image/avif" srcset="/assets/images/landal-reference/hero/resort-welcome-960.avif 960w, /assets/images/landal-reference/hero/resort-welcome.avif 1280w" sizes="100vw" />
+    <source type="image/webp" srcset="/assets/images/landal-reference/hero/resort-welcome-960.webp 960w, /assets/images/landal-reference/hero/resort-welcome.webp 1280w" sizes="100vw" />
+    <img class="page-hero-bg" src="/assets/images/landal-reference/hero/resort-welcome.webp" alt="Whalesborough Farm Resort — luxury holiday cottages in North Cornwall" fetchpriority="high" loading="eager" decoding="async" width="1800" height="1200" />
+   </picture>
    <div class="page-hero-overlay"></div>
    <div class="page-hero-content">
     <p class="label" style="color:rgba(255,255,255,0.65);margin-bottom:1.25rem;">The Collections</p>
@@ -970,7 +975,7 @@
   </div>
  </footer>
 
- <script src="/assets/js/main.js?v=c252162" defer></script>
+ <script src="/assets/js/main.js?v=3ab16d7e" defer></script>
  <script>
   const chips = document.querySelectorAll('.filter-chip');
   const cards = document.querySelectorAll('.cottage-card');

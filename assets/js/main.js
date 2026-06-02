@@ -120,25 +120,33 @@ function init() {
         showTestimonial(current);
       });
     });
-    let autoAdvance = setInterval(() => {
-      current = (current + 1) % testimonials.length;
-      showTestimonial(current);
-    }, 7000);
+    // Auto-advance — respects reduced-motion, pauses on hover/focus, tab-hidden & unload (WCAG 2.2.1)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const carousel = document.querySelector('.testimonials-wrap');
+    let autoAdvance = null;
+    const advance = () => { current = (current + 1) % testimonials.length; showTestimonial(current); };
+    const startAuto = () => {
+      if (autoAdvance || reduceMotion.matches || document.visibilityState === 'hidden') return;
+      autoAdvance = setInterval(advance, 7000);
+    };
+    const stopAuto = () => { clearInterval(autoAdvance); autoAdvance = null; };
+    startAuto();
 
-    // Pause auto-advance when tab is hidden, resume when visible (INP / battery)
-    document.addEventListener('visibilitychange', function onVisibilityChange() {
-      if (document.visibilityState === 'hidden') {
-        clearInterval(autoAdvance);
-      } else {
-        autoAdvance = setInterval(() => {
-          current = (current + 1) % testimonials.length;
-          showTestimonial(current);
-        }, 7000);
-      }
+    // Pause when tab is hidden (INP / battery), resume when visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') stopAuto(); else startAuto();
     });
-
+    // Pause while the visitor is reading (hover) or tabbing through the carousel
+    if (carousel) {
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', startAuto);
+      carousel.addEventListener('focusin', stopAuto);
+      carousel.addEventListener('focusout', startAuto);
+    }
+    // Stop immediately if the visitor turns on reduced-motion mid-session
+    reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) stopAuto(); else startAuto(); });
     // Clean up interval if page unloads
-    window.addEventListener('pagehide', () => clearInterval(autoAdvance));
+    window.addEventListener('pagehide', stopAuto);
   }
 
   /* --- Scroll-triggered fade-up for elements with .reveal --- */

@@ -13,6 +13,7 @@
  <title>The W Club Spa | Indoor Pool, Treatments & Wellness | Whalesborough Bude Cornwall</title>
  <meta name="description" content="The W Club Spa at Whalesborough Farm. Indoor infinity pool (29–30°C), Swedish sauna, aroma steam room, Gaia treatments, Technogym fitness suite. Spa days and treatment packages available." />
  <link rel="canonical" href="https://www.whalesborough.co.uk/spa-and-treatments/" />
+ <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/images/spa/pool-shoot-960.avif 960w, /assets/images/spa/pool-shoot.avif 1200w" imagesizes="100vw" fetchpriority="high" />
  <link rel="alternate" hreflang="en-gb" href="https://www.whalesborough.co.uk/spa-and-treatments/" />
  <link rel="alternate" hreflang="x-default" href="https://www.whalesborough.co.uk/spa-and-treatments/" />
  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -292,7 +293,11 @@
 
   <!-- Hero -->
   <section class="page-hero" aria-label="The W Club Spa at Whalesborough">
-   <img class="page-hero-bg" src="/assets/images/spa/pool-shoot.webp" alt="The W Club Spa — indoor infinity pool at Whalesborough Farm Resort, Bude Cornwall" fetchpriority="high" loading="eager" decoding="async" width="1800" height="1200" />
+   <picture style="display:contents">
+    <source type="image/avif" srcset="/assets/images/spa/pool-shoot-960.avif 960w, /assets/images/spa/pool-shoot.avif 1200w" sizes="100vw" />
+    <source type="image/webp" srcset="/assets/images/spa/pool-shoot-960.webp 960w, /assets/images/spa/pool-shoot.webp 1200w" sizes="100vw" />
+    <img class="page-hero-bg" src="/assets/images/spa/pool-shoot.webp" alt="The W Club Spa — indoor infinity pool at Whalesborough Farm Resort, Bude Cornwall" fetchpriority="high" loading="eager" decoding="async" width="1800" height="1200" />
+   </picture>
    <div class="page-hero-overlay"></div>
    <div class="page-hero-content">
     <p class="label" style="color:rgba(255,255,255,0.65);margin-bottom:1.25rem;">The Sanctuary</p>
@@ -651,7 +656,7 @@
   </div>
  </footer>
 
- <script src="/assets/js/main.js?v=c252162" defer></script>
+ <script src="/assets/js/main.js?v=3ab16d7e" defer></script>
  <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
 
  <!-- Sticky mobile booking bar -->
