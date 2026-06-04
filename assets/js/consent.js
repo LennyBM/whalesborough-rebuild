@@ -13,6 +13,18 @@
   var STORAGE_KEY = 'wb_consent_v2';
   var CONSENT_VERSION = '2026-05';
 
+  // Load first-party analytics + client error monitoring on every page.
+  // analytics.js self-gates: page views/conversions/Web Vitals wait for analytics
+  // consent; error capture runs always (no identifiers, no device storage).
+  (function injectAnalytics() {
+    if (window.__wbAnalyticsInjected) return;
+    window.__wbAnalyticsInjected = true;
+    var s = document.createElement('script');
+    s.src = '/assets/js/analytics.js?v=fp1';
+    s.defer = true;
+    (document.head || document.documentElement).appendChild(s);
+  }());
+
   function getStored() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) { return null; }
   }
@@ -56,8 +68,8 @@
     '<div class="wb-consent-inner">' +
       '<div class="wb-consent-text">' +
         '<strong>Cookies &amp; Privacy</strong>' +
-        '<p id="wb-consent-desc">We use Google Analytics to understand how visitors use this site. ' +
-        'No tracking starts until you choose. ' +
+        '<p id="wb-consent-desc">We use privacy-first, first-party analytics to understand how visitors use this site. ' +
+        'No advertising cookies, nothing sold or shared with third parties, and no tracking starts until you choose. ' +
         '<a href="/cookie-policy/" class="wb-consent-link">Cookie Policy</a></p>' +
       '</div>' +
       '<div class="wb-consent-actions">' +
@@ -78,7 +90,7 @@
         '<div class="wb-pref-row">' +
           '<div class="wb-pref-info">' +
             '<span class="wb-pref-name">Analytics</span>' +
-            '<span class="wb-pref-desc">Google Analytics 4 — helps us understand which pages are most useful. No personal data is shared. Cookies: <em>_ga, _ga_*</em> (2 years).</span>' +
+            '<span class="wb-pref-desc">Privacy-first, first-party analytics — helps us see which pages are most useful. Cookieless, no IP stored, no data shared with third parties. Stored only on your device for the current visit.</span>' +
           '</div>' +
           '<label class="wb-toggle" aria-label="Analytics cookies">' +
             '<input type="checkbox" id="wb-analytics-toggle" />' +

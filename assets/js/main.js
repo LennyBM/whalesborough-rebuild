@@ -233,10 +233,16 @@ function init() {
     }
   }, { passive: true });
 
-  /* --- Analytics utility (consent-safe — gtag only fires after consent.js loads it) --- */
+  /* --- Analytics utility (consent-safe) --- */
+  // Fans out to both sinks; each self-gates on consent:
+  //   • gtag  — only present once consent.js loads GA4 (if a real GA4 ID is set)
+  //   • __wbBeacon — first-party Supabase analytics (analytics.js), consent-gated
   window.wbTrack = function(eventName, params) {
     if (typeof window.gtag === 'function') {
       window.gtag('event', eventName, params || {});
+    }
+    if (typeof window.__wbBeacon === 'function') {
+      window.__wbBeacon(eventName, params || {});
     }
   };
 

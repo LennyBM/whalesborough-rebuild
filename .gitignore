@@ -28,6 +28,7 @@ __pycache__/
 
 # Internal docs, build scripts, scraped data & dev mockups — never deploy to the public site
 *-Brief*.md
+MONITORING-AND-ANALYTICS.md
 Whalesborough-Digital-Manifesto.md
 _*.py
 build.py
