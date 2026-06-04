@@ -205,6 +205,27 @@
 
  <script src="/assets/js/main.js?v=3ab16d7e"></script>
  <script src="/assets/js/consent.js?v=25e5e2b" defer></script>
+ <script>
+ // Record the conversion (consent-gated via wbTrack) and tailor the message to the source.
+ (function () {
+   var src = (new URLSearchParams(location.search).get('source') || 'general').toLowerCase();
+   function fire() {
+     if (typeof window.wbTrack === 'function') { window.wbTrack('lead', { source: src }); }
+     else { setTimeout(fire, 300); }
+   }
+   fire();
+   var copy = {
+     ownership: { eyebrow: 'Whalesborough Living', head: 'Thank you — we’ll be in touch.', sub: 'Your ownership enquiry is with our team. We’ll come back within one business day with pricing, availability and viewing dates.' },
+     brochure: { eyebrow: 'Whalesborough Living', head: 'Your brochure is on its way.', sub: 'Check your inbox for the lodge brochure, plans and price list. We won’t chase you — we’ll only follow up if you ask us to.' }
+   }[src];
+   if (copy) {
+     var e = document.querySelector('.thankyou-eyebrow'), h = document.querySelector('.thankyou-headline'), s = document.querySelector('.thankyou-sub');
+     if (e && copy.eyebrow) e.textContent = copy.eyebrow;
+     if (h && copy.head) h.textContent = copy.head;
+     if (s && copy.sub) s.textContent = copy.sub;
+   }
+ })();
+ </script>
 
  <!-- Sticky mobile booking bar -->
  <div class="sticky-book-bar" aria-label="Quick booking actions">
