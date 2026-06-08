@@ -53,6 +53,11 @@
   .amenities{display:grid;grid-template-columns:repeat(2,1fr)}
   .amenity{font-family:var(--font-body);font-size:.875rem;color:var(--on-surface-variant);padding:.75rem 0;border-bottom:1px solid var(--surface-low);display:flex;align-items:center;gap:.75rem}
   .amenity::before{content:'';width:4px;height:4px;background:var(--secondary);flex-shrink:0}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem 1rem;margin:1rem 0 .5rem}
+  .feature{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.625rem}
+  .feature svg{width:30px;height:30px;stroke:var(--secondary);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .feature span{font-family:var(--font-body);font-size:.8125rem;color:var(--on-surface-variant);line-height:1.3}
+  @media(max-width:480px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
   .similar{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
   .sim-card{background:var(--surface);overflow:hidden}
   .sim-img{height:200px;overflow:hidden}
@@ -160,9 +165,9 @@
  </div>
 
  <section class="gallery" aria-label="Westcotts photography">
-  <div class="gallery-main"><img width="1600" height="900" src="/assets/images/cottages/westcotts.webp" alt="Westcotts - luxury cottage at Whalesborough Farm Resort, Cornwall" fetchpriority="high" decoding="sync" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
-  <div class="gallery-thumb"><img width="1600" height="900" src="/assets/images/gallery/gallery-045.webp" alt="Luxury interior at Whalesborough Farm cottage" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
-  <div class="gallery-thumb"><img width="1600" height="900" src="/assets/images/gallery/gallery-046.webp" alt="Living space at Whalesborough Farm cottage" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  <div class="gallery-main"><img width="1600" height="900" src="/assets/images/cottages/westcotts/01.webp" alt="Westcotts — Whalesborough Farm Resort, Cornwall" fetchpriority="high" decoding="sync" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  <div class="gallery-thumb"><img width="1600" height="900" src="/assets/images/cottages/westcotts/02.webp" alt="Westcotts interior — Whalesborough Farm Resort" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  <div class="gallery-thumb"><img width="1600" height="900" src="/assets/images/cottages/westcotts/03.webp" alt="Westcotts at Whalesborough — living space" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
  </section>
 
  <div class="container">
@@ -192,17 +197,19 @@
     </div>
     <p class="section-head">Living &amp; Amenities</p>
     <p style="color:var(--on-surface-variant);line-height:1.8;max-width:60ch;margin-bottom:1.25rem;">The centrepiece of Westcotts is its large open-plan living and dining area — a generous, light-filled space ideal for couples or small families who want space to breathe. Two sofas, an armchair, a wood burner and easy access to the resort's full facilities make this a cottage where the simplest things feel luxurious.</p>
-    <div class="amenities">
-     <div class="amenity">Large open-plan living / dining</div>
-     <div class="amenity">Two sofas &amp; armchair</div>
-     <div class="amenity">Wood burner</div>
-     <div class="amenity">Smart TV</div>
-     <div class="amenity">Fully equipped kitchen</div>
-     <div class="amenity">Free superfast WiFi</div>
-     <div class="amenity">Private garden</div>
-     <div class="amenity">Dog friendly</div>
-     <div class="amenity">All bed linen &amp; towels</div>
-     <div class="amenity">Welcome pack</div>
+    <div class="feature-grid" role="list" aria-label="Westcotts features">
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Sleeps 4</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg><span>2 bedrooms</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><circle cx="9" cy="18" r="1.4"/><path d="M3.5 18c0-3 .5-7 5.5-7s5.5 4 5.5 7"/><path d="M9 11V4l9 3-9 1"/></svg><span>Dog friendly</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></svg><span>Free superfast WiFi</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg><span>Wood burner</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M7 21h10"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="m10 8 4 3-4 3z"/></svg><span>Smart TV</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z"/><path d="M5 10h14"/><path d="M15 7v6"/></svg><span>Fully equipped kitchen</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="2"/><path d="M12 10v12"/><path d="M12 22c4.2 0 7-1.67 7-5-4.2 0-7 1.67-7 5Z"/><path d="M12 22c-4.2 0-7-1.67-7-5 4.2 0 7 1.67 7 5Z"/></svg><span>Private garden</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg><span>W Club spa &amp; pools</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><span>Parking</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg><span>Welcome pack</span></div>
+     <div class="feature" role="listitem"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span>Five Star Gold</span></div>
     </div>
 
     <p class="section-head">Resort Access</p>
@@ -242,6 +249,7 @@
      <p style="font-family:var(--font-body);font-size:.5625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-surface-variant);margin-bottom:.75rem;">Westcotts</p>
      <p style="font-family:var(--font-headline);font-size:2.5rem;font-weight:300;color:var(--primary);line-height:1;margin-bottom:1.5rem;">Check rates</p>
      <a href="https://www.landal.co.uk/parks/whalesborough-resort/?property=westcotts&utm_source=whalesborough&utm_medium=website&utm_campaign=book_direct" data-track="book-click" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;width:100%;box-sizing:border-box;">Check Availability</a>
+     <a href="/brochures/westcotts.html" target="_blank" rel="noopener" data-track="brochure-view" style="display:block;text-align:center;width:100%;box-sizing:border-box;margin-top:.75rem;font-family:var(--font-body);font-size:.8125rem;font-weight:600;letter-spacing:.02em;color:var(--secondary);text-decoration:none;padding:.75rem 0;border:1px solid var(--surface-mid);">↓ Download brochure (PDF)</a>
      <ul class="booking-features">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Sleeps 4</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Dog friendly</li>
