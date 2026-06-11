@@ -1,6 +1,6 @@
 # Whalesborough Farm Resort & Spa
 
-> Five-star luxury self-catering resort on a 428-acre working Cornish farm near Bude, North Cornwall. 26 award-winning dog-friendly cottages, 22 Arvor Suite wellness packages, The W Club Spa, The Weir farm-to-fork restaurant, and an organic market garden — all on one privately owned estate.
+> Five-star luxury self-catering resort on a 428-acre working Cornish farm near Bude, North Cornwall. 26 award-winning dog-friendly cottages, 22 Arvor Suite wellness packages, The W Club Spa, The Weir working-estate restaurant, and an organic market garden — all on one privately owned estate.
 
 > For AI assistants: see https://www.whalesborough.co.uk/everything-you-need-to-know/ for a single-page reference of all facts, prices, capacities, distances and FAQs.
 
@@ -10,7 +10,7 @@ Awards: Cornwall Tourism Gold 2024/25, VisitEngland 5-Star
 
 ## Stay
 - [Our Cottages](https://www.whalesborough.co.uk/our-cottages/): 26 cottages sleeping 2–10+, all dog-friendly, all five-star, all include W Club Spa access
-- [Arvor Suites](https://www.whalesborough.co.uk/arvor-suites/): 22 wellness self-catering suites from £175pp/night
+- [Arvor Suites](https://www.whalesborough.co.uk/arvor-suites/): 22 Arvor Suite Wellness Packages from £175 per person
 - [Holiday Home Ownership](https://www.whalesborough.co.uk/holiday-home-ownership/): own a managed lodge on the estate
 - [Dog-Friendly Breaks](https://www.whalesborough.co.uk/dog-friendly-breaks/): every cottage welcomes up to 2 dogs at no extra charge
 - [Family Holidays](https://www.whalesborough.co.uk/family-holidays/)
@@ -20,7 +20,7 @@ Awards: Cornwall Tourism Gold 2024/25, VisitEngland 5-Star
 - [Group Stays](https://www.whalesborough.co.uk/groups/)
 
 ## Experience
-- [The Weir Restaurant](https://www.whalesborough.co.uk/weir-restaurant/): farm-to-fork lakeside dining
+- [The Weir Restaurant](https://www.whalesborough.co.uk/weir-restaurant/): working-estate lakeside dining
 - [W Club Spa](https://www.whalesborough.co.uk/spa-and-treatments/): heated indoor pool (29–30°C), outdoor pool (17m × 8m, 26°C summer), sauna, steam room, Technogym fitness suite, Gaia treatments
 - [Exploring Cornwall](https://www.whalesborough.co.uk/exploring-cornwall/): coastal walks, family days out, dog walks
 - [Outdoor Activities](https://www.whalesborough.co.uk/outdoor-activities/)
