@@ -291,6 +291,74 @@
  }
  </script>
 
+ <!-- Featured cottages — Product/Offer schema (matches the visible "from" nightly prices on this page) -->
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Featured cottages at Whalesborough Farm Resort & Spa",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+     "@type": "Product",
+     "name": "The Farmhouse",
+     "description": "Grade II listed 14th-century farmhouse sleeping 8, with hot tub, dog-friendly throughout, and complimentary W Club Spa access.",
+     "image": "https://www.whalesborough.co.uk/assets/images/cottages/the-farmhouse.webp",
+     "url": "https://www.whalesborough.co.uk/our-cottages/the-farmhouse/",
+     "brand": { "@type": "Brand", "name": "Whalesborough Farm Resort & Spa" },
+     "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "GBP",
+      "lowPrice": "580",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.whalesborough.co.uk/our-cottages/the-farmhouse/"
+     }
+    }
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+     "@type": "Product",
+     "name": "Gwari Spa Barn 3.0",
+     "description": "Contemporary luxury lodge sleeping 6, with floor-to-ceiling windows, private hot tub, dog-friendly, and complimentary W Club Spa access.",
+     "image": "https://www.whalesborough.co.uk/assets/images/cottages/gwari-spa-barn-3.webp",
+     "url": "https://www.whalesborough.co.uk/our-cottages/gwari-spa-barn-3-0/",
+     "brand": { "@type": "Brand", "name": "Whalesborough Farm Resort & Spa" },
+     "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "GBP",
+      "lowPrice": "420",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.whalesborough.co.uk/our-cottages/gwari-spa-barn-3-0/"
+     }
+    }
+   },
+   {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+     "@type": "Product",
+     "name": "Medlands",
+     "description": "Luxury couples cottage sleeping 4, with open-plan living, private garden, hot tub, dog-friendly, and complimentary W Club Spa access.",
+     "image": "https://www.whalesborough.co.uk/assets/images/cottages/medlands.webp",
+     "url": "https://www.whalesborough.co.uk/our-cottages/medlands/",
+     "brand": { "@type": "Brand", "name": "Whalesborough Farm Resort & Spa" },
+     "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "GBP",
+      "lowPrice": "320",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.whalesborough.co.uk/our-cottages/medlands/"
+     }
+    }
+   }
+  ]
+ }
+ </script>
+
  <style>
   /* Page-specific styles */
   .hero { position: relative; height: 100svh; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; background-color: var(--secondary); }
@@ -564,7 +632,7 @@
     <source src="assets/video/hero.webm?v=mobile" type="video/webm" />
    </video>
    <noscript>
-    <img src="assets/images/general/cottages-exterior.webp" alt="Whalesborough Farm Resort & Spa &mdash; 428-acre Cornish estate near Bude" class="hero-bg" width="1920" height="1080" />
+    <picture><source type="image/avif" srcset="assets/images/general/cottages-exterior.avif" /><img src="assets/images/general/cottages-exterior.webp" alt="Whalesborough Farm Resort & Spa &mdash; 428-acre Cornish estate near Bude" class="hero-bg" width="1920" height="1080" /></picture>
     <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:5;text-align:center;">
      <a data-track="book-click" href="https://www.landal.co.uk/parks/whalesborough-resort/?utm_source=whalesborough&utm_medium=website&utm_campaign=book_direct" rel="noopener" style="display:inline-block;background:#8a7f5a;color:#fff;padding:1rem 2.5rem;font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">Check 2026 Dates &middot; Best Rate</a>
     </div>
@@ -680,22 +748,22 @@
       <a href="green-sustainability-credentials/index.html" class="btn-text">Our sustainability story</a>
      </div>
      <div class="estate-img-stack reveal" style="transition-delay:0.2s;">
-      <img
+      <picture><source type="image/avif" srcset="assets/images/general/cottages-exterior.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
        class="estate-img-main"
        src="assets/images/general/cottages-exterior.webp"
        alt="Rolling green Cornish farmland with historic stone farmhouse and coastal views beyond"
        loading="lazy"
        width="1200"
        height="800"
-       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
-      <img
+       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
+      <picture><source type="image/avif" srcset="assets/images/general/front-garden.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
        class="estate-img-accent"
        src="assets/images/general/front-garden.webp"
        alt="Close-up of Cornish stone wall texture and rustic wooden door detail"
        loading="lazy"
        width="440"
        height="560"
-       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
      </div>
     </div>
    </div>
@@ -716,13 +784,13 @@
      <!-- The Farmhouse -->
      <div class="cottage-card reveal">
       <div class="cottage-card-img">
-       <img
+       <picture><source type="image/avif" srcset="assets/images/cottages/the-farmhouse.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
         src="assets/images/cottages/the-farmhouse.webp"
         alt="The Farmhouse &mdash; Grade II listed 14th-century farmhouse at Whalesborough with inglenook fireplace"
         loading="lazy"
         width="900"
         height="1200"
-        decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+        decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="cottage-card-body">
        <div>
@@ -740,13 +808,13 @@
      <!-- Gwari Spa Barn 3.0 -->
      <div class="cottage-card reveal" style="transition-delay:0.15s;margin-top:4rem;">
       <div class="cottage-card-img">
-       <img
+       <picture><source type="image/avif" srcset="assets/images/cottages/gwari-spa-barn-3.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
         src="assets/images/cottages/gwari-spa-barn-3.webp"
         alt="Gwari Spa Barn 3.0 &mdash; contemporary luxury lodge with floor-to-ceiling windows and private hot tub"
         loading="lazy"
         width="900"
         height="1200"
-        decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+        decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="cottage-card-body">
        <div>
@@ -764,13 +832,13 @@
      <!-- Medlands -->
      <div class="cottage-card reveal" style="transition-delay:0.3s;">
       <div class="cottage-card-img">
-       <img
+       <picture><source type="image/avif" srcset="assets/images/cottages/medlands.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
         src="assets/images/cottages/medlands.webp"
         alt="Medlands &mdash; luxury couples cottage at Whalesborough with open-plan living and private garden"
         loading="lazy"
         width="900"
         height="1200"
-        decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+        decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="cottage-card-body">
        <div>
@@ -826,13 +894,13 @@
     </div>
    </div>
    <div class="arvor-img">
-    <img
+    <picture><source type="image/avif" srcset="assets/images/arvor/arvor-living-room-balcony.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
      src="assets/images/arvor/arvor-living-room-balcony.webp"
      alt="Arvor Suite interior &mdash; modern, calm self-catering suite with countryside views at Whalesborough Farm"
      loading="lazy"
      width="1200"
      height="800"
-     decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+     decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
    </div>
   </section>
 
@@ -967,13 +1035,13 @@
     <!-- The Weir Restaurant -->
     <div class="overlap-feature reveal">
      <div class="overlap-img">
-      <img
+      <picture><source type="image/avif" srcset="assets/images/restaurant/restaurant.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
        src="assets/images/restaurant/restaurant.webp"
        alt="The Weir Restaurant at Whalesborough &mdash; working estate dining with lakeside views"
        loading="lazy"
        width="1200"
        height="800"
-       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
      </div>
      <div class="overlap-text-card">
       <p class="label" style="margin-bottom:1.25rem;">The Kitchen</p>
@@ -987,14 +1055,14 @@
     <!-- The W Club Spa -->
     <div class="overlap-feature reverse reveal">
      <div class="overlap-img">
-      <img
+      <picture><source type="image/avif" srcset="assets/images/spa/pool.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
        src="assets/images/spa/pool.webp"
        alt="The W Club Spa at Whalesborough &mdash; indoor infinity pool, sauna and luxury treatments"
        loading="lazy"
        width="1200"
        height="800"
        style="object-position: right center;"
-       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
      </div>
      <div class="overlap-text-card">
       <p class="label" style="margin-bottom:1.25rem;">The Sanctuary</p>
