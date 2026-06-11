@@ -173,17 +173,19 @@ function init() {
       heroVideo.querySelectorAll('source').forEach(s => s.remove());
       try { heroVideo.load(); } catch (e) { /* noop */ }
     } else {
-      // Nudge autoplay on mobile browsers that are strict about it
+      // Video is deferred (preload="none", no autoplay) so the preloaded AVIF
+      // poster wins LCP. Kick off load+play once the browser is idle, or on the
+      // user's first interaction. play() on a preload="none" element forces load.
       heroVideo.muted = true;
       heroVideo.setAttribute('playsinline', '');
-      const tryPlay = () => {
+      const startVideo = () => {
         const p = heroVideo.play();
         if (p && typeof p.catch === 'function') p.catch(() => { /* poster remains */ });
       };
-      if (heroVideo.readyState >= 2) tryPlay();
-      else heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-      // If the user interacts at all, retry (covers Low Power Mode on iOS)
-      document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+      if ('requestIdleCallback' in window) requestIdleCallback(startVideo, { timeout: 2000 });
+      else setTimeout(startVideo, 700);
+      // Retry on first interaction (covers Low Power Mode / strict autoplay on iOS)
+      document.addEventListener('touchstart', startVideo, { once: true, passive: true });
     }
   }
 

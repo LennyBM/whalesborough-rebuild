@@ -210,13 +210,15 @@ h1, h2, h3, h4 {
 
 /* ── Focus styles ── */
 :focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 3px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--primary);
 }
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 3px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--primary);
   border-radius: 1px;
 }
 
@@ -435,10 +437,13 @@ label {
 }
 
 /* --- Focus Styles --- */
-/* Keyboard users get a clear cognac ring; mouse/pointer users see nothing */
+/* Keyboard users get a dual-tone ring (white + cognac) that stays visible on
+   both the cream light sections and the dark green/video sections — WCAG 2.2
+   SC 2.4.13 Focus Appearance. Mouse/pointer users see nothing. */
 :focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 3px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--primary);
 }
 :focus:not(:focus-visible) {
   outline: none;

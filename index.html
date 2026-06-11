@@ -31,8 +31,8 @@
  <meta name="twitter:description" content="26 award-winning luxury cottages and 22 Arvor Suites on a 428-acre Cornish estate. Spa, working estate dining, and dog-friendly breaks near Bude." />
  <meta name="twitter:image" content="https://www.whalesborough.co.uk/assets/images/og/og-default.jpg" />
  <meta name="twitter:image:alt" content="Whalesborough Farm Resort & Spa | Luxury Holidays in Cornwall" />
- <meta property="og:image:width" content="1137" />
- <meta property="og:image:height" content="722" />
+ <meta property="og:image:width" content="1200" />
+ <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
  <meta property="og:site_name" content="Whalesborough Farm Resort &amp; Spa" />
  <meta property="og:locale" content="en_GB" />
@@ -48,8 +48,8 @@
  <link rel="preload" as="style" href="assets/css/whalesborough.min.css?v=mob-a11y" />
  <link rel="stylesheet" href="assets/css/whalesborough.min.css?v=mob-a11y" />
 
- <!-- LCP: preload hero poster frame so it paints before video metadata arrives -->
- <link rel="preload" as="image" href="assets/images/general/cottages-exterior.webp" type="image/webp" fetchpriority="high" />
+ <!-- LCP: preload the AVIF hero poster so it paints before any video bytes are fetched -->
+ <link rel="preload" as="image" href="assets/images/general/cottages-exterior.avif" type="image/avif" fetchpriority="high" />
 
  <!-- Schema.org -->
  <script type="application/ld+json">
@@ -438,7 +438,7 @@
   .dog-checklist { list-style: none; margin: 1.75rem 0 0; padding: 0; }
   .dog-checklist li { font-size: 0.85rem; color: var(--on-surface-variant); padding: 0.75rem 0; line-height: 1.6; }
   .dog-checklist li + li { border-top: 1px solid var(--surface-high); }
-  .dog-checklist li::before { content: '&mdash; '; color: var(--primary); }
+  .dog-checklist li::before { content: '\2014\00a0'; color: var(--primary); }
 
   @media (max-width: 1100px) {
    .journeys-grid { grid-template-columns: repeat(3, 1fr); }
@@ -545,13 +545,12 @@
   <section class="hero" aria-label="Welcome to Whalesborough">
    <video
     class="hero-bg"
-    autoplay
     muted
     loop
     playsinline
     webkit-playsinline=""
-    preload="metadata"
-    poster="assets/images/general/cottages-exterior.webp"
+    preload="none"
+    poster="assets/images/general/cottages-exterior.avif"
     width="1920"
     height="1080"
     aria-hidden="true"
@@ -617,7 +616,7 @@
 
      <a href="dog-friendly-breaks/index.html" class="journey-tile reveal">
       <div class="journey-img">
-       <img src="assets/images/dog-friendly/dogs-on-estate.webp" alt="Dog-friendly holidays at Whalesborough &mdash; welcome packs, dog showers, enclosed gardens and coastal walks" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       <picture><source type="image/avif" srcset="assets/images/dog-friendly/dogs-on-estate.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img src="assets/images/dog-friendly/dogs-on-estate.webp" alt="Dog-friendly holidays at Whalesborough &mdash; welcome packs, dog showers, enclosed gardens and coastal walks" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="journey-overlay">
        <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:0.375rem;">For you & your dog</p>
@@ -627,7 +626,7 @@
 
      <a href="our-cottages/index.html" class="journey-tile reveal" style="transition-delay:0.08s;">
       <div class="journey-img">
-       <img src="assets/images/landal-reference/facilities/farm-animals.webp" alt="Family farm holidays at Whalesborough &mdash; working farm, animals, kids activities, safe open estate" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       <picture><source type="image/avif" srcset="assets/images/landal-reference/facilities/farm-animals.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img src="assets/images/landal-reference/facilities/farm-animals.webp" alt="Family farm holidays at Whalesborough &mdash; working farm, animals, kids activities, safe open estate" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="journey-overlay">
        <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:0.375rem;">Little ones welcome</p>
@@ -637,7 +636,7 @@
 
      <a href="arvor-suites/index.html" class="journey-tile reveal" style="transition-delay:0.16s;">
       <div class="journey-img">
-       <img src="assets/images/arvor/arvor-living-room-balcony.webp" alt="Couples wellness breaks at Whalesborough &mdash; Arvor Suites, spa treatments, candlelit working estate dining" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       <picture><source type="image/avif" srcset="assets/images/arvor/arvor-living-room-balcony.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img src="assets/images/arvor/arvor-living-room-balcony.webp" alt="Couples wellness breaks at Whalesborough &mdash; Arvor Suites, spa treatments, candlelit working estate dining" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="journey-overlay">
        <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:0.375rem;">Just the two of you</p>
@@ -647,7 +646,7 @@
 
      <a href="our-cottages/index.html" class="journey-tile reveal" style="transition-delay:0.24s;">
       <div class="journey-img">
-       <img src="assets/images/general/outdoor-activities.webp" alt="Large group holidays at Whalesborough &mdash; cottages sleeping up to 14, outdoor space, exclusive estate access" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       <picture><source type="image/avif" srcset="assets/images/general/outdoor-activities.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img src="assets/images/general/outdoor-activities.webp" alt="Large group holidays at Whalesborough &mdash; cottages sleeping up to 14, outdoor space, exclusive estate access" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="journey-overlay">
        <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:0.375rem;">Gather the tribe</p>
@@ -657,7 +656,7 @@
 
      <a href="green-sustainability-credentials/index.html" class="journey-tile reveal" style="transition-delay:0.32s;">
       <div class="journey-img">
-       <img src="assets/images/general/estate-aerial.webp" alt="Eco-conscious luxury holidays at Whalesborough &mdash; Cornwall Tourism Gold Award, microplastic protection" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       <picture><source type="image/avif" srcset="assets/images/general/estate-aerial.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img src="assets/images/general/estate-aerial.webp" alt="Eco-conscious luxury holidays at Whalesborough &mdash; Cornwall Tourism Gold Award, microplastic protection" loading="lazy" width="600" height="900" decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
       </div>
       <div class="journey-overlay">
        <p class="label" style="color:rgba(255,255,255,0.6);margin-bottom:0.375rem;">Luxury with a conscience</p>
@@ -949,13 +948,13 @@
       <p style="font-family:var(--font-body);font-size:0.75rem;color:var(--on-surface-variant);margin-top:1rem;">Same rate by phone &middot; no booking fees &middot; via Landal, our booking partner</p>
      </div>
      <div class="seasonal-img reveal" style="transition-delay:0.2s;">
-      <img
+      <picture><source type="image/avif" srcset="assets/images/general/estate-aerial.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
        src="assets/images/general/estate-aerial.webp"
        alt="Aerial view of Whalesborough Farm estate &mdash; 428 acres of Cornish countryside stretching toward the North Cornwall coast"
        loading="lazy"
        width="1400"
        height="930"
-       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
      </div>
     </div>
    </div>
@@ -1018,7 +1017,7 @@
     <div class="gwelva-teaser reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;">
      <div style="position:relative;min-height:420px;overflow:hidden;">
       <!-- TODO: replace placeholder with Bev's Gwelva Residences CGIs when supplied -->
-      <img src="assets/images/general/estate-view.webp" alt="The Whalesborough estate &mdash; future home of the Gwelva Residences, five front-row premium-view villas" loading="lazy" width="1200" height="800" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" sizes="(max-width: 900px) 100vw, 600px" />
+      <picture><source type="image/avif" srcset="assets/images/general/estate-view.avif" sizes="(max-width: 900px) 100vw, 600px" /><img src="assets/images/general/estate-view.webp" alt="The Whalesborough estate &mdash; future home of the Gwelva Residences, five front-row premium-view villas" loading="lazy" width="1200" height="800" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" sizes="(max-width: 900px) 100vw, 600px" /></picture>
       <span style="position:absolute;top:1.25rem;left:1.25rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.5625rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:var(--primary);padding:0.45rem 0.9rem;">Coming Soon</span>
      </div>
      <div style="background:var(--secondary);color:#fff;padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center;">
@@ -1129,13 +1128,13 @@
    <div class="container">
     <div class="dog-feature reveal">
      <div class="dog-feature-img">
-      <img
+      <picture><source type="image/avif" srcset="assets/images/dog-friendly/cornish-coast-dog-sunset.avif" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /><img
        src="assets/images/dog-friendly/cornish-coast-dog-sunset.webp"
        alt="Dogs on the Cornish coast at sunset &mdash; Whalesborough is dog-friendly across all 26 cottages with enclosed gardens and on-site dog showers"
        loading="lazy"
        width="1200"
        height="800"
-       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" />
+       decoding="async" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 600px" /></picture>
      </div>
      <div class="dog-feature-content">
       <p class="label" style="margin-bottom:1.5rem;">Bring the Pack</p>
